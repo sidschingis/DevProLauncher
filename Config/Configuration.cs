@@ -97,6 +97,11 @@ namespace DevProLauncher.Config
 
         public List<string> ChatChannels = new List<string>();
 
+        // Ranking Settings
+
+        public SerializableColor RankingColor1 = new SerializableColor(Color.LightGray);
+        public SerializableColor RankingColor2 = new SerializableColor(Color.Orange);
+
         // DropBox Settings
         public string AppKey = "xxvyeb0w8ndl3kz";
         public string AppSecret = "sn6ggwgxk3zdsc6";

@@ -52,6 +52,9 @@
             this.MatchRankingListBox = new DevProLauncher.Windows.Components.DoubleBufferedListBox();
             this.loadBtn = new System.Windows.Forms.Button();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
+            this.tableLayoutPanel6 = new System.Windows.Forms.TableLayoutPanel();
+            this.Color2Btn = new System.Windows.Forms.Button();
+            this.Color1Btn = new System.Windows.Forms.Button();
             this.SingleRankingGroupBox.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
             this.tableLayoutPanel3.SuspendLayout();
@@ -59,6 +62,7 @@
             this.tableLayoutPanel4.SuspendLayout();
             this.tableLayoutPanel5.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
+            this.tableLayoutPanel6.SuspendLayout();
             this.SuspendLayout();
             // 
             // SingleRankingGroupBox
@@ -339,9 +343,9 @@
             // 
             this.loadBtn.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.loadBtn.AutoSize = true;
-            this.loadBtn.Location = new System.Drawing.Point(991, 430);
+            this.loadBtn.Location = new System.Drawing.Point(990, 430);
             this.loadBtn.Name = "loadBtn";
-            this.loadBtn.Size = new System.Drawing.Size(89, 35);
+            this.loadBtn.Size = new System.Drawing.Size(90, 35);
             this.loadBtn.TabIndex = 2;
             this.loadBtn.Text = "Load Rankings";
             this.loadBtn.UseVisualStyleBackColor = true;
@@ -355,6 +359,7 @@
             this.tableLayoutPanel1.Controls.Add(this.MatchRankingGroupBox, 1, 0);
             this.tableLayoutPanel1.Controls.Add(this.SingleRankingGroupBox, 0, 0);
             this.tableLayoutPanel1.Controls.Add(this.loadBtn, 1, 1);
+            this.tableLayoutPanel1.Controls.Add(this.tableLayoutPanel6, 0, 1);
             this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 0);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
@@ -363,6 +368,44 @@
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 41F));
             this.tableLayoutPanel1.Size = new System.Drawing.Size(1083, 468);
             this.tableLayoutPanel1.TabIndex = 3;
+            // 
+            // tableLayoutPanel6
+            // 
+            this.tableLayoutPanel6.ColumnCount = 3;
+            this.tableLayoutPanel6.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel6.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 90F));
+            this.tableLayoutPanel6.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 90F));
+            this.tableLayoutPanel6.Controls.Add(this.Color2Btn, 2, 0);
+            this.tableLayoutPanel6.Controls.Add(this.Color1Btn, 1, 0);
+            this.tableLayoutPanel6.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tableLayoutPanel6.Location = new System.Drawing.Point(3, 430);
+            this.tableLayoutPanel6.Name = "tableLayoutPanel6";
+            this.tableLayoutPanel6.RowCount = 1;
+            this.tableLayoutPanel6.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel6.Size = new System.Drawing.Size(535, 35);
+            this.tableLayoutPanel6.TabIndex = 3;
+            // 
+            // Color2Btn
+            // 
+            this.Color2Btn.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.Color2Btn.Location = new System.Drawing.Point(448, 3);
+            this.Color2Btn.Name = "Color2Btn";
+            this.Color2Btn.Size = new System.Drawing.Size(84, 29);
+            this.Color2Btn.TabIndex = 0;
+            this.Color2Btn.Text = "Color2";
+            this.Color2Btn.UseVisualStyleBackColor = true;
+            this.Color2Btn.Click += new System.EventHandler(this.ApplyNewColor);
+            // 
+            // Color1Btn
+            // 
+            this.Color1Btn.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.Color1Btn.Location = new System.Drawing.Point(358, 3);
+            this.Color1Btn.Name = "Color1Btn";
+            this.Color1Btn.Size = new System.Drawing.Size(84, 29);
+            this.Color1Btn.TabIndex = 1;
+            this.Color1Btn.Text = "Color1";
+            this.Color1Btn.UseVisualStyleBackColor = true;
+            this.Color1Btn.Click += new System.EventHandler(this.ApplyNewColor);
             // 
             // RankingFrm
             // 
@@ -380,6 +423,7 @@
             this.tableLayoutPanel5.ResumeLayout(false);
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel1.PerformLayout();
+            this.tableLayoutPanel6.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -410,5 +454,8 @@
         private System.Windows.Forms.Label MatchLossLbl;
         private System.Windows.Forms.Label MatchDrawLbl;
         private System.Windows.Forms.Label MatchTeamLbl;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel6;
+        private System.Windows.Forms.Button Color2Btn;
+        private System.Windows.Forms.Button Color1Btn;
     }
 }

@@ -487,7 +487,10 @@ namespace DevProLauncher.Windows
                 form.BanList.SelectedIndex = 0;
                 form.CheckDeck.Checked = false;
                 form.ShuffleDeck.Checked = false;
-                form.Priority.Checked = false;
+                if (form.CardRules.Text == "TCG")
+                    form.Priority.Checked = true;
+                else
+                    form.Priority.Checked = false;
                 form.CardRules.SelectedIndex = 2;
                 form.LifePoints.Text = form.Mode.Text == "Tag" ? "16000" : "8000";
             }

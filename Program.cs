@@ -16,13 +16,17 @@ namespace DevProLauncher
 {
     static class Program
     {
-        public const string Version = "199700";
+        public const string Version = "199710";
         public static Configuration Config;
         public static LanguageManager LanguageManager;
         public static ChatClient ChatServer;
         public static UserData UserInfo;
         public static int LoginKey = 0;
+#if DEBUG
+        public const string ConfigurationFilename = "launcher_debug.conf";
+#else
         public const string ConfigurationFilename = "launcher.conf";
+#endif
         public static Dictionary<string, ServerInfo> ServerList = new Dictionary<string, ServerInfo>();
         public static MainFrm MainForm;
         public static ServerInfo Server;

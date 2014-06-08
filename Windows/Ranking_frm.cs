@@ -23,6 +23,7 @@ namespace DevProLauncher.Windows
             InitializeComponent();
 
             ApplyTranslation();
+            ApplyRankingSettings();
 
             Dock = DockStyle.Fill;
             Visible = true;
@@ -46,7 +47,6 @@ namespace DevProLauncher.Windows
             SingleDrawLbl.Text      = info.RankingDraw;
             SingleTeamLbl.Text      = info.RankingTeam;
 
-
             MatchRankingGroupBox.Text = info.RankingMatchGb;
             MatchRankLbl.Text = info.RankingRank;
             MatchUsernameLbl.Text  = info.RankingUsername;
@@ -57,6 +57,8 @@ namespace DevProLauncher.Windows
             MatchTeamLbl.Text      = info.RankingTeam;
 
             loadBtn.Text = info.RankingLoadBtn;
+            Color1Btn.Text = info.RankingColor1Btn;
+            Color2Btn.Text = info.RankingColor2Btn;
         }
         private void GameListBox_DrawItem(object sender, DrawItemEventArgs e)
         {
@@ -79,10 +81,10 @@ namespace DevProLauncher.Windows
             string playerteam = playerparts[5];
 
             SolidBrush backgroundcolor;
-            if (index % 2 == 0)
-                backgroundcolor = new SolidBrush(Color.Orange);
+            if (index % 2 == 1)
+                backgroundcolor = new SolidBrush(Program.Config.RankingColor1.ToColor());
             else
-                backgroundcolor = new SolidBrush(Color.LightGray);
+                backgroundcolor = new SolidBrush(Program.Config.RankingColor2.ToColor());
 
             var bounds = list.GetItemRectangle(index);
             var playersSize = e.Graphics.MeasureString(playername, e.Font);
@@ -97,7 +99,7 @@ namespace DevProLauncher.Windows
 
             //draw item
             g.FillRectangle(backgroundcolor, e.Bounds);
-            g.DrawLines((selected) ? new Pen(Brushes.Purple, 5) : new Pen(Brushes.Black, 5),
+            g.DrawLines((selected) ? new Pen(Brushes.Purple, 3) : new Pen(Brushes.Black, 3),
                 new[] { new Point(bounds.X, bounds.Y), new Point(bounds.X + bounds.Width, bounds.Y), new Point(bounds.X + bounds.Width, bounds.Y + bounds.Height), new Point(bounds.X, bounds.Y + bounds.Height), new Point(bounds.X, bounds.Y) });
             //Rank
             g.DrawString((index+1).ToString(), e.Font, Brushes.Black,
@@ -130,7 +132,37 @@ namespace DevProLauncher.Windows
             new RankingRequest(
                 )));
         }
+        private void ApplyNewColor(object sender, EventArgs e)
+        {
+            var button = (Button)sender;
+            var selectcolor = new ColorDialog
+            {
+                Color = button.BackColor,
+                AllowFullOpen = true
+            };
 
+            if (selectcolor.ShowDialog() == DialogResult.OK)
+            {
+                switch (button.Name)
+                {
+                    case "Color1Btn":
+                        Program.Config.RankingColor1 = new SerializableColor(selectcolor.Color);
+                        break;
+                    case "Color2Btn":
+                        Program.Config.RankingColor2 = new SerializableColor(selectcolor.Color);
+                        break;
+                }
+
+                button.BackColor = selectcolor.Color;
+                Program.SaveConfig(Program.ConfigurationFilename, Program.Config);
+                ApplyRankingSettings();
+            }
+        }
+        public void ApplyRankingSettings()
+        {
+            Color1Btn.BackColor = Program.Config.RankingColor1.ToColor();
+            Color2Btn.BackColor = Program.Config.RankingColor2.ToColor();
+        }
         private void UpdateRanking(string message)
         {
             if (InvokeRequired)

@@ -19,6 +19,11 @@ namespace DevProLauncher.Helpers
     {
         private static readonly Dictionary<string, int> Banlists = new Dictionary<string, int>();
 
+#if DEBUG
+        private static string configfile = "system_debug.CONF"; 
+#else
+        private static string configfile = "system.CONF"; 
+#endif
         public static bool TestConnection()
         {
             try
@@ -230,11 +235,11 @@ namespace DevProLauncher.Helpers
         {
             if (server == null)
                 return;
-            if ((File.Exists(Program.Config.LauncherDir + "system.CONF")))
-                File.Delete(Program.Config.LauncherDir + "system.CONF");
+            if ((File.Exists(Program.Config.LauncherDir + configfile)))
+                File.Delete(Program.Config.LauncherDir + configfile);
 
             string gameName = roominfo;
-            StreamWriter writer = new StreamWriter(Program.Config.LauncherDir + "system.CONF");
+            StreamWriter writer = new StreamWriter(Program.Config.LauncherDir + configfile);
 
             writer.WriteLine("#config file");
             writer.WriteLine("#nickname & gamename should be less than 20 characters");
@@ -262,16 +267,16 @@ namespace DevProLauncher.Helpers
             writer.WriteLine("auto_chain_order = " + Convert.ToInt32(Program.Config.AutoChain));
             writer.WriteLine("no_delay_for_chain = " + Convert.ToInt32(Program.Config.NoChainDelay));
             writer.WriteLine("enable_sleeve_loading = " + Convert.ToInt32(Program.Config.EnableCustomSleeves));
-            writer.WriteLine("mute_opponents = " + Convert.ToInt32(Program.Config.MuteOpponent));
+            writer.WriteLine("mute_opponent = " + Convert.ToInt32(Program.Config.MuteOpponent));
             writer.WriteLine("mute_spectators = " + Convert.ToInt32(Program.Config.MuteSpectators));
             writer.Close();
         }
         public static void GenerateConfig()
         {
-            if ((File.Exists(Program.Config.LauncherDir + "system.CONF")))
-                File.Delete(Program.Config.LauncherDir + "system.CONF");
+            if ((File.Exists(Program.Config.LauncherDir + configfile)))
+                File.Delete(Program.Config.LauncherDir + configfile);
 
-            StreamWriter writer = new StreamWriter(Program.Config.LauncherDir + "system.CONF");
+            StreamWriter writer = new StreamWriter(Program.Config.LauncherDir + configfile);
 
             writer.WriteLine("#config file");
             writer.WriteLine("#nickname & gamename should be less than 20 characters");
@@ -300,10 +305,10 @@ namespace DevProLauncher.Helpers
         }
         public static void GenerateConfig(bool isreplay, string file = "")
         {
-            if ((File.Exists(Program.Config.LauncherDir + "system.CONF")))
-                File.Delete(Program.Config.LauncherDir + "system.CONF");
+            if ((File.Exists(Program.Config.LauncherDir + configfile)))
+                File.Delete(Program.Config.LauncherDir + configfile);
 
-            StreamWriter writer = new StreamWriter(Program.Config.LauncherDir + "system.CONF");
+            StreamWriter writer = new StreamWriter(Program.Config.LauncherDir + configfile);
 
             writer.WriteLine("#config file");
             writer.WriteLine("#nickname & gamename should be less than 20 characters");
@@ -338,10 +343,10 @@ namespace DevProLauncher.Helpers
 
         public static void GenerateCheckmateConfig(ServerInfo server, string username, string password)
         {
-            if ((File.Exists(Program.Config.LauncherDir + "system.CONF")))
-                File.Delete(Program.Config.LauncherDir + "system.CONF");
+            if ((File.Exists(Program.Config.LauncherDir + configfile)))
+                File.Delete(Program.Config.LauncherDir + configfile);
 
-            StreamWriter writer = new StreamWriter(Program.Config.LauncherDir + "system.CONF");
+            StreamWriter writer = new StreamWriter(Program.Config.LauncherDir + configfile);
 
             writer.WriteLine("#config file");
             writer.WriteLine("#nickname & gamename should be less than 20 characters");

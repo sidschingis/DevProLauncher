@@ -93,6 +93,8 @@ namespace DevProLauncher.Config
         public string RankingTeam = "Team";
 
         public string RankingLoadBtn = "Load rankings";
+        public string RankingColor1Btn = "Color1";
+        public string RankingColor2Btn = "Color2";
 
         // Option_frm.cs
         public string optionTitle = "Options";

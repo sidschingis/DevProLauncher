@@ -168,7 +168,7 @@ namespace DevProLauncher.Windows.MessageBoxs
                     HostBtn = {Text = Program.LanguageManager.Translation.chatoptionsBtnSave},
                     ShuffleDeck = {Enabled = false},
                     CheckDeck = {Enabled = false},
-                    Priority = {Enabled = false},
+                    Priority = {Enabled = true},
                     LifePoints = {Enabled = false}
                 };
             form.Mode.Items.Remove("Tag");

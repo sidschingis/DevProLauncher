@@ -6,6 +6,7 @@ using System.Data;
 using System.Linq;
 using System.Text;
 using System.Windows.Forms;
+using System.Globalization;
 using DevProLauncher.Network.Data;
 using DevProLauncher.Network.Enums;
 using DevProLauncher.Windows.MessageBoxs;
@@ -33,6 +34,8 @@ namespace DevProLauncher.Windows
 
             SingleRankingListBox.DoubleClick += ShowProfile;
             MatchRankingListBox.DoubleClick += ShowProfile;
+
+            RankingReset.Tick += ResetRanking;
         }
         public void ApplyTranslation()
         {
@@ -131,6 +134,10 @@ namespace DevProLauncher.Windows
             Program.ChatServer.SendPacket(DevServerPackets.GetRanking, JsonSerializer.SerializeToString(
             new RankingRequest(
                 )));
+
+            loadBtn.Enabled = false;
+            loadBtn.Text = "5";
+            RankingReset.Enabled = true;
         }
         private void ApplyNewColor(object sender, EventArgs e)
         {
@@ -189,6 +196,26 @@ namespace DevProLauncher.Windows
             {
                 //do stuff
                 MatchRankingListBox.Items.Add(matchparts[i]);
+            }
+        }
+        private void ResetRanking(object sender, EventArgs e)
+        {
+            if (InvokeRequired)
+            {
+                Invoke(new Action<object, EventArgs>(ResetRanking), sender, e);
+                return;
+            }
+
+            if (loadBtn.Text == "1")
+            {
+                loadBtn.Enabled = true;
+                loadBtn.Text = Program.LanguageManager.Translation.RankingLoadBtn;
+                RankingReset.Enabled = false;
+            }
+            else
+            {
+                int value = Int32.Parse(loadBtn.Text);
+                loadBtn.Text = (value - 1).ToString(CultureInfo.InvariantCulture);
             }
         }
         public void ShowProfile(object sender, EventArgs e)

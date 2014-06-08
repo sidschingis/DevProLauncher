@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.SingleRankingGroupBox = new System.Windows.Forms.GroupBox();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
             this.SingleRankingListBox = new DevProLauncher.Windows.Components.DoubleBufferedListBox();
@@ -55,6 +56,7 @@
             this.tableLayoutPanel6 = new System.Windows.Forms.TableLayoutPanel();
             this.Color2Btn = new System.Windows.Forms.Button();
             this.Color1Btn = new System.Windows.Forms.Button();
+            this.RankingReset = new System.Windows.Forms.Timer(this.components);
             this.SingleRankingGroupBox.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
             this.tableLayoutPanel3.SuspendLayout();
@@ -407,6 +409,10 @@
             this.Color1Btn.UseVisualStyleBackColor = true;
             this.Color1Btn.Click += new System.EventHandler(this.ApplyNewColor);
             // 
+            // RankingReset
+            // 
+            this.RankingReset.Interval = 1000;
+            // 
             // RankingFrm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -457,5 +463,6 @@
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel6;
         private System.Windows.Forms.Button Color2Btn;
         private System.Windows.Forms.Button Color1Btn;
+        private System.Windows.Forms.Timer RankingReset;
     }
 }

@@ -19,6 +19,7 @@ namespace DevProLauncher.Windows
     {
         public delegate void ServerResponse(string message);
         public ServerResponse Ranking;
+        private string rankings="";
         public RankingFrm()
         {
             InitializeComponent();
@@ -35,7 +36,6 @@ namespace DevProLauncher.Windows
             SingleRankingListBox.DoubleClick += ShowProfile;
             MatchRankingListBox.DoubleClick += ShowProfile;
 
-            RankingReset.Tick += ResetRanking;
         }
         public void ApplyTranslation()
         {
@@ -130,14 +130,14 @@ namespace DevProLauncher.Windows
 
         private void loadBtn_Click(object sender, EventArgs e)
         {
-            Program.ChatServer.Ranking += UpdateRanking;
-            Program.ChatServer.SendPacket(DevServerPackets.GetRanking, JsonSerializer.SerializeToString(
-            new RankingRequest(
-                )));
-
-            loadBtn.Enabled = false;
-            loadBtn.Text = "5";
-            RankingReset.Enabled = true;
+            if (rankings.Equals("")) { 
+                Program.ChatServer.Ranking += UpdateRanking;
+                Program.ChatServer.SendPacket(DevServerPackets.GetRanking, JsonSerializer.SerializeToString(
+                new RankingRequest(
+                    )));
+            } else {
+                UpdateRanking(rankings);
+            }
         }
         private void ApplyNewColor(object sender, EventArgs e)
         {
@@ -178,6 +178,9 @@ namespace DevProLauncher.Windows
                 return;
             }
 
+            if (rankings.Equals(""))
+                rankings = message;
+
             string[] parts = message.Split('&');
 
             string[] singleparts = parts[0].Split('|');
@@ -196,26 +199,6 @@ namespace DevProLauncher.Windows
             {
                 //do stuff
                 MatchRankingListBox.Items.Add(matchparts[i]);
-            }
-        }
-        private void ResetRanking(object sender, EventArgs e)
-        {
-            if (InvokeRequired)
-            {
-                Invoke(new Action<object, EventArgs>(ResetRanking), sender, e);
-                return;
-            }
-
-            if (loadBtn.Text == "1")
-            {
-                loadBtn.Enabled = true;
-                loadBtn.Text = Program.LanguageManager.Translation.RankingLoadBtn;
-                RankingReset.Enabled = false;
-            }
-            else
-            {
-                int value = Int32.Parse(loadBtn.Text);
-                loadBtn.Text = (value - 1).ToString(CultureInfo.InvariantCulture);
             }
         }
         public void ShowProfile(object sender, EventArgs e)

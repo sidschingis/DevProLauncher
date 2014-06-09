@@ -28,10 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
             this.SingleRankingGroupBox = new System.Windows.Forms.GroupBox();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
-            this.SingleRankingListBox = new DevProLauncher.Windows.Components.DoubleBufferedListBox();
             this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
             this.SingleRankLbl = new System.Windows.Forms.Label();
             this.SingleUsernameLbl = new System.Windows.Forms.Label();
@@ -50,13 +48,13 @@
             this.MatchDrawLbl = new System.Windows.Forms.Label();
             this.MatchTeamLbl = new System.Windows.Forms.Label();
             this.MatchRankLbl = new System.Windows.Forms.Label();
-            this.MatchRankingListBox = new DevProLauncher.Windows.Components.DoubleBufferedListBox();
             this.loadBtn = new System.Windows.Forms.Button();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanel6 = new System.Windows.Forms.TableLayoutPanel();
             this.Color2Btn = new System.Windows.Forms.Button();
             this.Color1Btn = new System.Windows.Forms.Button();
-            this.RankingReset = new System.Windows.Forms.Timer(this.components);
+            this.MatchRankingListBox = new DevProLauncher.Windows.Components.DoubleBufferedListBox();
+            this.SingleRankingListBox = new DevProLauncher.Windows.Components.DoubleBufferedListBox();
             this.SingleRankingGroupBox.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
             this.tableLayoutPanel3.SuspendLayout();
@@ -93,17 +91,6 @@
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 93.22799F));
             this.tableLayoutPanel2.Size = new System.Drawing.Size(529, 402);
             this.tableLayoutPanel2.TabIndex = 1;
-            // 
-            // SingleRankingListBox
-            // 
-            this.SingleRankingListBox.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.SingleRankingListBox.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
-            this.SingleRankingListBox.FormattingEnabled = true;
-            this.SingleRankingListBox.ItemHeight = 25;
-            this.SingleRankingListBox.Location = new System.Drawing.Point(3, 30);
-            this.SingleRankingListBox.Name = "SingleRankingListBox";
-            this.SingleRankingListBox.Size = new System.Drawing.Size(523, 369);
-            this.SingleRankingListBox.TabIndex = 0;
             // 
             // tableLayoutPanel3
             // 
@@ -330,17 +317,6 @@
             this.MatchRankLbl.TabIndex = 0;
             this.MatchRankLbl.Text = "Rank";
             // 
-            // MatchRankingListBox
-            // 
-            this.MatchRankingListBox.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.MatchRankingListBox.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
-            this.MatchRankingListBox.FormattingEnabled = true;
-            this.MatchRankingListBox.ItemHeight = 25;
-            this.MatchRankingListBox.Location = new System.Drawing.Point(3, 30);
-            this.MatchRankingListBox.Name = "MatchRankingListBox";
-            this.MatchRankingListBox.Size = new System.Drawing.Size(524, 369);
-            this.MatchRankingListBox.TabIndex = 0;
-            // 
             // loadBtn
             // 
             this.loadBtn.Anchor = System.Windows.Forms.AnchorStyles.Right;
@@ -409,9 +385,27 @@
             this.Color1Btn.UseVisualStyleBackColor = true;
             this.Color1Btn.Click += new System.EventHandler(this.ApplyNewColor);
             // 
-            // RankingReset
+            // MatchRankingListBox
             // 
-            this.RankingReset.Interval = 1000;
+            this.MatchRankingListBox.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.MatchRankingListBox.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.MatchRankingListBox.FormattingEnabled = true;
+            this.MatchRankingListBox.ItemHeight = 25;
+            this.MatchRankingListBox.Location = new System.Drawing.Point(3, 30);
+            this.MatchRankingListBox.Name = "MatchRankingListBox";
+            this.MatchRankingListBox.Size = new System.Drawing.Size(524, 369);
+            this.MatchRankingListBox.TabIndex = 0;
+            // 
+            // SingleRankingListBox
+            // 
+            this.SingleRankingListBox.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.SingleRankingListBox.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.SingleRankingListBox.FormattingEnabled = true;
+            this.SingleRankingListBox.ItemHeight = 25;
+            this.SingleRankingListBox.Location = new System.Drawing.Point(3, 30);
+            this.SingleRankingListBox.Name = "SingleRankingListBox";
+            this.SingleRankingListBox.Size = new System.Drawing.Size(523, 369);
+            this.SingleRankingListBox.TabIndex = 0;
             // 
             // RankingFrm
             // 
@@ -463,6 +457,5 @@
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel6;
         private System.Windows.Forms.Button Color2Btn;
         private System.Windows.Forms.Button Color1Btn;
-        private System.Windows.Forms.Timer RankingReset;
     }
 }

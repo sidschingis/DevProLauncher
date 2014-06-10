@@ -19,11 +19,6 @@ namespace DevProLauncher.Helpers
     {
         private static readonly Dictionary<string, int> Banlists = new Dictionary<string, int>();
 
-#if DEBUG
-        private static string configfile = "system_debug.CONF"; 
-#else
-        private static string configfile = "system.CONF"; 
-#endif
         public static bool TestConnection()
         {
             try
@@ -144,32 +139,32 @@ namespace DevProLauncher.Helpers
             Byte[] bytes = new byte[numOfBytes];
 
             for (int i = 0; i < numOfBytes; ++i)
-                bytes[i] = Convert.ToByte(binary.Substring(8*i, 8), 2);
+                bytes[i] = Convert.ToByte(binary.Substring(8 * i, 8), 2);
 
             return Encoding.ASCII.GetString(bytes);
         }
 
         public static string StringToBase64(string text)
         {
-                byte[] bytes = Encoding.UTF8.GetBytes(text);
-                return Convert.ToBase64String(bytes);
+            byte[] bytes = Encoding.UTF8.GetBytes(text);
+            return Convert.ToBase64String(bytes);
         }
 
         public static string Base64ToString(string text)
         {
-                byte[] bytes = Convert.FromBase64String(text);
-                return Encoding.UTF8.GetString(bytes);
+            byte[] bytes = Convert.FromBase64String(text);
+            return Encoding.UTF8.GetString(bytes);
         }
 
         public static string[] OpenFileWindow(string title, string startpath, string filefilter, bool multiselect)
         {
             var dialog = new OpenFileDialog
-                {
-                    InitialDirectory = startpath,
-                    Title = title,
-                    Filter = filefilter,
-                    Multiselect = true
-                };
+            {
+                InitialDirectory = startpath,
+                Title = title,
+                Filter = filefilter,
+                Multiselect = true
+            };
             if ((dialog.ShowDialog() == DialogResult.OK))
             {
                 return dialog.FileNames;
@@ -195,9 +190,9 @@ namespace DevProLauncher.Helpers
                 process.StartInfo.WindowStyle = ProcessWindowStyle.Normal;
                 process.StartInfo.WorkingDirectory = Program.Config.LauncherDir;
 
-                if(arg == "-j")
+                if (arg == "-j")
                     process.Exited += UpdateInfo;
-                if(arg == "-d")
+                if (arg == "-d")
                     process.Exited += RefreshDeckList;
                 if (onExit != null)
                     process.Exited += onExit;
@@ -235,11 +230,11 @@ namespace DevProLauncher.Helpers
         {
             if (server == null)
                 return;
-            if ((File.Exists(Program.Config.LauncherDir + configfile)))
-                File.Delete(Program.Config.LauncherDir + configfile);
+            if ((File.Exists(Program.Config.LauncherDir + "system.CONF")))
+                File.Delete(Program.Config.LauncherDir + "system.CONF");
 
             string gameName = roominfo;
-            StreamWriter writer = new StreamWriter(Program.Config.LauncherDir + configfile);
+            StreamWriter writer = new StreamWriter(Program.Config.LauncherDir + "system.CONF");
 
             writer.WriteLine("#config file");
             writer.WriteLine("#nickname & gamename should be less than 20 characters");
@@ -273,10 +268,10 @@ namespace DevProLauncher.Helpers
         }
         public static void GenerateConfig()
         {
-            if ((File.Exists(Program.Config.LauncherDir + configfile)))
-                File.Delete(Program.Config.LauncherDir + configfile);
+            if ((File.Exists(Program.Config.LauncherDir + "system.CONF")))
+                File.Delete(Program.Config.LauncherDir + "system.CONF");
 
-            StreamWriter writer = new StreamWriter(Program.Config.LauncherDir + configfile);
+            StreamWriter writer = new StreamWriter(Program.Config.LauncherDir + "system.CONF");
 
             writer.WriteLine("#config file");
             writer.WriteLine("#nickname & gamename should be less than 20 characters");
@@ -299,16 +294,14 @@ namespace DevProLauncher.Helpers
             writer.WriteLine("auto_chain_order = " + Convert.ToInt32(Program.Config.AutoChain));
             writer.WriteLine("no_delay_for_chain = " + Convert.ToInt32(Program.Config.NoChainDelay));
             writer.WriteLine("enable_sleeve_loading = " + Convert.ToInt32(Program.Config.EnableCustomSleeves));
-            writer.WriteLine("mute_opponents = " + Convert.ToInt32(Program.Config.MuteOpponent));
-            writer.WriteLine("mute_spectators = " + Convert.ToInt32(Program.Config.MuteSpectators));
             writer.Close();
         }
         public static void GenerateConfig(bool isreplay, string file = "")
         {
-            if ((File.Exists(Program.Config.LauncherDir + configfile)))
-                File.Delete(Program.Config.LauncherDir + configfile);
+            if ((File.Exists(Program.Config.LauncherDir + "system.CONF")))
+                File.Delete(Program.Config.LauncherDir + "system.CONF");
 
-            StreamWriter writer = new StreamWriter(Program.Config.LauncherDir + configfile);
+            StreamWriter writer = new StreamWriter(Program.Config.LauncherDir + "system.CONF");
 
             writer.WriteLine("#config file");
             writer.WriteLine("#nickname & gamename should be less than 20 characters");
@@ -331,7 +324,7 @@ namespace DevProLauncher.Helpers
             writer.WriteLine("auto_chain_order = " + Convert.ToInt32(Program.Config.AutoChain));
             writer.WriteLine("no_delay_for_chain = " + Convert.ToInt32(Program.Config.NoChainDelay));
             writer.WriteLine("enable_sleeve_loading = " + Convert.ToInt32(Program.Config.EnableCustomSleeves));
-            writer.WriteLine("mute_opponents = " + Convert.ToInt32(Program.Config.MuteOpponent));
+            writer.WriteLine("mute_opponent = " + Convert.ToInt32(Program.Config.MuteOpponent));
             writer.WriteLine("mute_spectators = " + Convert.ToInt32(Program.Config.MuteSpectators));
 
             if (isreplay)
@@ -343,17 +336,17 @@ namespace DevProLauncher.Helpers
 
         public static void GenerateCheckmateConfig(ServerInfo server, string username, string password)
         {
-            if ((File.Exists(Program.Config.LauncherDir + configfile)))
-                File.Delete(Program.Config.LauncherDir + configfile);
+            if ((File.Exists(Program.Config.LauncherDir + "system.CONF")))
+                File.Delete(Program.Config.LauncherDir + "system.CONF");
 
-            StreamWriter writer = new StreamWriter(Program.Config.LauncherDir + configfile);
+            StreamWriter writer = new StreamWriter(Program.Config.LauncherDir + "system.CONF");
 
             writer.WriteLine("#config file");
             writer.WriteLine("#nickname & gamename should be less than 20 characters");
             writer.WriteLine("use_d3d = " + Convert.ToInt32(Program.Config.Enabled3D));
             writer.WriteLine(("antialias = " + Program.Config.Antialias));
             writer.WriteLine("errorlog = 1");
-            writer.WriteLine("nickname = " + username +"$" + password);
+            writer.WriteLine("nickname = " + username + "$" + password);
             writer.WriteLine("gamename =");
             writer.WriteLine("roompass =");
             writer.WriteLine("lastdeck = " + Program.Config.DefaultDeck);

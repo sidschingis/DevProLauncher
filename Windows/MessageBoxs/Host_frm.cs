@@ -80,8 +80,8 @@ namespace DevProLauncher.Windows.MessageBoxs
                 label6.Text = Program.LanguageManager.Translation.hostTimeLimit;
                 TimeLimit.Items.Clear();
                 TimeLimit.Items.AddRange(new object[] {
-                "3 "+Program.LanguageManager.Translation.GameMinutes,
-                "5 "+Program.LanguageManager.Translation.GameMinutes});
+                "2 "+Program.LanguageManager.Translation.GameMinutes,
+                "1 "+Program.LanguageManager.Translation.GameMinutes});
 
                 label5.Text = Program.LanguageManager.Translation.hostBanlist;
                 label3.Text = Program.LanguageManager.Translation.hostRules;

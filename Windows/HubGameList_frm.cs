@@ -92,8 +92,8 @@ namespace DevProLauncher.Windows
             BanList.Items[0] = info.GameAll;
 
             TimeLimit.Items[0] = info.GameAll;
-            TimeLimit.Items[1] = "3 "+info.GameMinutes;
-            TimeLimit.Items[2] = "5 "+info.GameMinutes;
+            TimeLimit.Items[1] = "2 "+info.GameMinutes;
+            TimeLimit.Items[2] = "1 "+info.GameMinutes;
         }
 
         public void RefreshDeckList()

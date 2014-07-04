@@ -182,6 +182,7 @@ namespace DevProLauncher.Network
             {
                 case DevClientPackets.LoginFailed:
                 case DevClientPackets.Invalid:
+                case DevClientPackets.InvalidTemp:
                 case DevClientPackets.ValidateAccept:
                 case DevClientPackets.ValidateFailed:
                 case DevClientPackets.ResendAccept:
@@ -291,6 +292,10 @@ namespace DevProLauncher.Network
                         LoginReply(e.Packet, null);
                     break;
                 case DevClientPackets.Invalid:
+                    if (LoginReply != null)
+                        LoginReply(e.Packet, null);
+                    break;
+                case DevClientPackets.InvalidTemp:
                     if (LoginReply != null)
                         LoginReply(e.Packet, null);
                     break;

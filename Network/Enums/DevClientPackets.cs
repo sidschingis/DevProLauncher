@@ -42,6 +42,7 @@
         RemoveChannelUser = 40,
         Ranking = 41,
         Invalid = 42,
+        InvalidTemp = 99,
         ValidateAccept = 43,
         ValidateFailed = 44,
         ResendAccept = 45,

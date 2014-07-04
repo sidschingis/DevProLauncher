@@ -27,7 +27,9 @@ namespace DevProLauncher.Config
         public string LoginMsb2 = "Please enter username.";
         public string LoginMsb3 = "Please enter password.";
         public string LoginSavePass = "Save Password";
-
+        public string LoginInvalid = "You need to validate your account.";
+        public string LoginFailed = "Incorrect Password or Username.";
+        public string LoginBanned = "You are banned.";
         // Register_frm.cs
         public string RegistLbUser = "Username";
         public string RegistLbPw = "Password";

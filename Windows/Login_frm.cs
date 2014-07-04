@@ -171,17 +171,22 @@ namespace DevProLauncher.Windows
 
             if (type == DevClientPackets.Banned)
             {
-                MessageBox.Show("You are banned.");
+                MessageBox.Show(Program.LanguageManager.Translation.LoginBanned);
             }
             else if (type == DevClientPackets.LoginFailed)
             {
                 loginBtn.Enabled = true;
-                MessageBox.Show("Incorrect Password or Username.");
+                MessageBox.Show(Program.LanguageManager.Translation.LoginFailed);
             }
             else if (type == DevClientPackets.Invalid)
             {
                 loginBtn.Enabled = true;
-                MessageBox.Show("You need to validate your account.");
+                MessageBox.Show(Program.LanguageManager.Translation.LoginInvalid);
+            }
+            else if (type == DevClientPackets.InvalidTemp)
+            {
+                loginBtn.Enabled = true;
+                MessageBox.Show("Remember to validate your account.");
             }
             else
             {

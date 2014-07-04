@@ -186,27 +186,48 @@ namespace DevProLauncher.Windows.MessageBoxs
 
         private void UpdatePassword_Click(object sender, EventArgs e)
         {
-            if (string.IsNullOrEmpty(currentPassword.Text) || string.IsNullOrEmpty(newPassword.Text) ||
-                string.IsNullOrEmpty(confirmPassword.Text))
+            if (string.IsNullOrEmpty(currentPassword.Text) || string.IsNullOrEmpty(newPassword.Text) && string.IsNullOrEmpty(emailInput.Text))
             {
-                MessageBox.Show("Cannot have empty values");
+                MessageBox.Show("Cannot have all empty values");
                 return;
             }
 
-            if (newPassword.Text != confirmPassword.Text)
-            {
-                MessageBox.Show("New password does not match the confirm password.");
-                return;
-            }
+            if(!string.IsNullOrEmpty(newPassword.Text)) {
 
-            Program.ChatServer.SendPacket(DevServerPackets.UpdatePassword, 
-                JsonSerializer.SerializeToString(
-                new LoginRequest()
+                if (newPassword.Text != confirmPassword.Text)
+                {
+                    MessageBox.Show("New password does not match the confirm password.");
+                    return;
+                }
+
+                Program.ChatServer.SendPacket(DevServerPackets.UpdatePassword, 
+                    JsonSerializer.SerializeToString(
+                    new LoginRequest()
+                        {
+                            Username = Program.UserInfo.username,
+                            Password = LauncherHelper.EncodePassword(currentPassword.Text),
+                            UID = LauncherHelper.EncodePassword(newPassword.Text)
+                        }));
+            }
+            if (!string.IsNullOrEmpty(emailInput.Text))
+            {
+
+                if (emailInput.Text != confirmEmailInput.Text)
+                {
+                    MessageBox.Show("New email does not match the confirm email.");
+                    return;
+                }
+
+                Program.ChatServer.SendPacket(DevServerPackets.UpdateEmail,
+                    JsonSerializer.SerializeToString(
+                    new EmailRequest()
                     {
                         Username = Program.UserInfo.username,
                         Password = LauncherHelper.EncodePassword(currentPassword.Text),
-                        UID = LauncherHelper.EncodePassword(newPassword.Text)
+                        Email = emailInput.Text,
+                        UID = LauncherHelper.GetUID()
                     }));
+            }
         }
 
         private void EnableMusic_CheckedChanged(object sender, EventArgs e)

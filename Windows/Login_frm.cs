@@ -22,7 +22,8 @@ namespace DevProLauncher.Windows
             Dock = DockStyle.Fill;
             Visible = true;
 
-            Program.ChatServer.LoginReply += LoginResponse;
+            Program.ChatServer.LoginReply += LoginResponse; 
+            //Program.ChatServer.ValidateReply += ValidateResponse;
 
             usernameInput.Text = Program.Config.DefaultUsername;
 
@@ -78,6 +79,7 @@ namespace DevProLauncher.Windows
                 label3.Text = Program.LanguageManager.Translation.LoginLanguage;
                 loginBtn.Text = Program.LanguageManager.Translation.LoginLoginButton;
                 registerBtn.Text = Program.LanguageManager.Translation.LoginRegisterButton;
+                validateBtn.Text = Program.LanguageManager.Translation.LoginValidateButton;
                 savePassCheckBox.Text = Program.LanguageManager.Translation.LoginSavePass;
             }
         }
@@ -151,7 +153,14 @@ namespace DevProLauncher.Windows
             JsonSerializer.SerializeToString(
             new LoginRequest { Username = usernameInput.Text, Password = (encoded ? passwordInput.Text:LauncherHelper.EncodePassword(passwordInput.Text)), UID = LauncherHelper.GetUID(), Version = Convert.ToInt32(Program.Version)}));
         }
-
+        private void ValidateResponse(DevClientPackets type, LoginData data)
+        {
+            if (InvokeRequired)
+            {
+                Invoke(new Action<DevClientPackets, LoginData>(ValidateResponse), type, data);
+                return;
+            }
+        }
         private void LoginResponse(DevClientPackets type, LoginData data)
         {
             if (InvokeRequired)
@@ -168,6 +177,11 @@ namespace DevProLauncher.Windows
             {
                 loginBtn.Enabled = true;
                 MessageBox.Show("Incorrect Password or Username.");
+            }
+            else if (type == DevClientPackets.Invalid)
+            {
+                loginBtn.Enabled = true;
+                MessageBox.Show("You need to validate your account.");
             }
             else
             {
@@ -244,6 +258,21 @@ namespace DevProLauncher.Windows
                         : "http://ygopro.de/en/category/patch-notes/");
             PatchNotes.Navigating += WebRedirect;
             
+        }
+
+        private void validateBtn_Click(object sender, EventArgs e)
+        {
+            if (!Program.ChatServer.Connected())
+            {
+                if (!Connect())
+                {
+                    MessageBox.Show(Program.LanguageManager.Translation.pMsbErrorToServer);
+                    return;
+                }
+            }
+
+            var form = new Validate_frm();
+            form.ShowDialog();
         }
     }
 }

@@ -23,9 +23,11 @@ namespace DevProLauncher.Windows.MessageBoxs
         {
             if (Program.LanguageManager.Loaded)
             {
-                label1.Text = Program.LanguageManager.Translation.RegistLbUser;
-                label2.Text = Program.LanguageManager.Translation.RegistLbPw;
-                label3.Text = Program.LanguageManager.Translation.RegistLbPw2;
+                UsernameLbl.Text = Program.LanguageManager.Translation.RegistLbUser;
+                PasswordLbl.Text = Program.LanguageManager.Translation.RegistLbPw;
+                ConfirmPasswordLbl.Text = Program.LanguageManager.Translation.RegistLbPw2;
+                EmailLbl.Text = Program.LanguageManager.Translation.RegistLbMail;
+                ConfirmEmailLbl.Text = Program.LanguageManager.Translation.RegistLbMail2;
                 RegisterBtn.Text = Program.LanguageManager.Translation.RegistBtnRegister;
                 CancelBtn.Text = Program.LanguageManager.Translation.RegistBtnCancel;
             }
@@ -41,7 +43,12 @@ namespace DevProLauncher.Windows.MessageBoxs
         {
             if (ConfirmInput.Text != PasswordInput.Text)
             {
-                MessageBox.Show("Confirm password is wrong.");
+                MessageBox.Show(Program.LanguageManager.Translation.RegistPassError);
+                return;
+            }
+            if (EmailInput.Text != ConfirmEmailInput.Text)
+            {
+                MessageBox.Show(Program.LanguageManager.Translation.RegistMailError);
                 return;
             }
             if (string.IsNullOrEmpty(ConfirmInput.Text))

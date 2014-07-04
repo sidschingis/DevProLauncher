@@ -21,6 +21,7 @@ namespace DevProLauncher.Config
         public string LoginLanguage = "Language";
         public string LoginLoginButton = "Login";
         public string LoginRegisterButton = "Register";
+        public string LoginValidateButton = "Validate";
         public string LoginAutoLogin = "Log me in automatically next time";
         public string LoginMsb1 = "Not connected to the server.";
         public string LoginMsb2 = "Please enter username.";
@@ -31,6 +32,8 @@ namespace DevProLauncher.Config
         public string RegistLbUser = "Username";
         public string RegistLbPw = "Password";
         public string RegistLbPw2 = "Confirm Password";
+        public string RegistLbMail = "Email";
+        public string RegistLbMail2 = "Confirm Email";
         public string RegistBtnRegister = "Register";
         public string RegistBtnCancel = "Cancel";
         public string RegistMsb1 = "Please confirm your password";
@@ -41,6 +44,24 @@ namespace DevProLauncher.Config
         public string RegistMsb6 = "Username cannot contain special characters";
         public string RegistMsb7 = "Email address reqired.";
         public string RegistMsb8 = "Invalid email address.";
+        public string RegistPassError = "Passwords do not match.";
+        public string RegistMailError = "Email addresses do not match";
+
+
+        // Validate_frm.cs
+
+        public string ValidateLbUser = "Username";
+        public string ValidateLbCode = "Code";
+        public string ValidateBtnSubmit = "Submit";
+        public string ValidateBtnCancel = "Cancel";
+        public string ValidateBtnResend = "Resend";
+        public string ValidateMsbUsername = "Please enter your username.";
+        public string ValidateMsbEmail = "Please enter your email address.";
+        public string ValidateMsbCode = "Please enter your code";
+        public string ValidateMsbResendOK = "Email Sent";
+        public string ValidateMsbResendFail = "Resend failed (wrong Username/Email address)";
+        public string ValidateMsbAccept = "Account Validated!";
+        public string ValidateMsbFailed = "Validation failed (wrong Username/Code combination)!";
 
         // HubGameList_frm
 

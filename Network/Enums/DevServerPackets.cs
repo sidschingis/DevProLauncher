@@ -32,6 +32,9 @@
         UpdatePassword = 29,
         SpectateUser = 30,
         HostDuel = 31,
-        GetRanking = 32
+        GetRanking = 32,
+        Validate = 33,
+        Resend = 34,
+        UpdateEmail = 35
     }
 }

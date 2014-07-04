@@ -40,6 +40,11 @@
         ChannelUsers = 38,
         AddChannelUser = 39,
         RemoveChannelUser = 40,
-        Ranking = 41
+        Ranking = 41,
+        Invalid = 42,
+        ValidateAccept = 43,
+        ValidateFailed = 44,
+        ResendAccept = 45,
+        ResendFailed = 46
     }
 }

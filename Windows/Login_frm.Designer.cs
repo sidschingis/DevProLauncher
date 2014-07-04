@@ -45,6 +45,7 @@
             this.loginBtn = new System.Windows.Forms.Button();
             this.registerBtn = new System.Windows.Forms.Button();
             this.CheckmateBtn = new System.Windows.Forms.Button();
+            this.validateBtn = new System.Windows.Forms.Button();
             this.tableLayoutPanel1.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
             this.tableLayoutPanel3.SuspendLayout();
@@ -215,6 +216,7 @@
             // 
             this.flowLayoutPanel1.Controls.Add(this.loginBtn);
             this.flowLayoutPanel1.Controls.Add(this.registerBtn);
+            this.flowLayoutPanel1.Controls.Add(this.validateBtn);
             this.flowLayoutPanel1.Controls.Add(this.CheckmateBtn);
             this.flowLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.flowLayoutPanel1.FlowDirection = System.Windows.Forms.FlowDirection.BottomUp;
@@ -245,13 +247,23 @@
             // 
             // CheckmateBtn
             // 
-            this.CheckmateBtn.Location = new System.Drawing.Point(3, 399);
+            this.CheckmateBtn.Location = new System.Drawing.Point(3, 370);
             this.CheckmateBtn.Name = "CheckmateBtn";
             this.CheckmateBtn.Size = new System.Drawing.Size(75, 23);
             this.CheckmateBtn.TabIndex = 2;
             this.CheckmateBtn.Text = "Checkmate";
             this.CheckmateBtn.UseVisualStyleBackColor = true;
             this.CheckmateBtn.Click += new System.EventHandler(this.CheckmateBtn_Click);
+            // 
+            // validateBtn
+            // 
+            this.validateBtn.Location = new System.Drawing.Point(3, 399);
+            this.validateBtn.Name = "validateBtn";
+            this.validateBtn.Size = new System.Drawing.Size(75, 23);
+            this.validateBtn.TabIndex = 3;
+            this.validateBtn.Text = "Validate";
+            this.validateBtn.UseVisualStyleBackColor = true;
+            this.validateBtn.Click += new System.EventHandler(this.validateBtn_Click);
             // 
             // LoginFrm
             // 
@@ -291,5 +303,6 @@
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Button LoadBtn;
         private System.Windows.Forms.WebBrowser PatchNotes;
+        private System.Windows.Forms.Button validateBtn;
     }
 }

@@ -48,6 +48,8 @@ namespace DevProLauncher.Network
         public ServerDisconnected Disconnected;
         public LoginResponse LoginReply;
         public ClientPacket RegisterReply;
+        public ClientPacket ValidateReply;
+        public ClientPacket ResendReply;
         public ServerResponse OnFatalError;
         public ServerResponse RemoveRoom;
         public ServerResponse UserStats;
@@ -179,6 +181,11 @@ namespace DevProLauncher.Network
             switch (packet)
             {
                 case DevClientPackets.LoginFailed:
+                case DevClientPackets.Invalid:
+                case DevClientPackets.ValidateAccept:
+                case DevClientPackets.ValidateFailed:
+                case DevClientPackets.ResendAccept:
+                case DevClientPackets.ResendFailed:
                 case DevClientPackets.RegisterAccept:
                 case DevClientPackets.RegisterFailed:
                 case DevClientPackets.Pong:
@@ -203,7 +210,7 @@ namespace DevProLauncher.Network
                     //handle incoming
                     if (m_client.Available >= 1)
                     {
-                        var packet = (DevClientPackets) m_reader.ReadByte();
+                          var packet = (DevClientPackets) m_reader.ReadByte();
                         int len = 0;
                         byte[] content = null;
                         if (!isOneByte(packet))
@@ -283,6 +290,10 @@ namespace DevProLauncher.Network
                     if (LoginReply != null)
                         LoginReply(e.Packet, null);
                     break;
+                case DevClientPackets.Invalid:
+                    if (LoginReply != null)
+                        LoginReply(e.Packet, null);
+                    break;
                 case DevClientPackets.Banned:
                     ServerKickBanMessage = Encoding.UTF8.GetString(e.Reader.ReadBytes(e.Raw.Length));
                     break;
@@ -293,6 +304,22 @@ namespace DevProLauncher.Network
                 case DevClientPackets.RegisterFailed:
                     if (RegisterReply != null)
                         RegisterReply(e.Packet);
+                    break;
+                case DevClientPackets.ValidateAccept:
+                    if (ValidateReply != null)
+                        ValidateReply(e.Packet);
+                    break;
+                case DevClientPackets.ValidateFailed:
+                    if (ValidateReply != null)
+                        ValidateReply(e.Packet);
+                    break;
+                case DevClientPackets.ResendAccept:
+                    if (ResendReply != null)
+                        ResendReply(e.Packet);
+                    break;
+                case DevClientPackets.ResendFailed:
+                    if (ResendReply != null)
+                        ResendReply(e.Packet);
                     break;
                 case DevClientPackets.UserStats:
                     if(UserStats != null)

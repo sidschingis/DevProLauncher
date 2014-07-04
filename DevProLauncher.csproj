@@ -9,9 +9,10 @@
     <OutputType>WinExe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>DevProLauncher</RootNamespace>
-    <AssemblyName>DevPro</AssemblyName>
-    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
-    <TargetFrameworkProfile>Client</TargetFrameworkProfile>
+    <AssemblyName>DevProDebug</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <TargetFrameworkProfile>
+    </TargetFrameworkProfile>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
@@ -19,19 +20,21 @@
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
-    <OutputPath>bin\Debug\</OutputPath>
+    <OutputPath>..\AppData\Roaming\YGOPro\</OutputPath>
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
     <PlatformTarget>x86</PlatformTarget>
     <DebugType>pdbonly</DebugType>
     <Optimize>true</Optimize>
-    <OutputPath>bin\Release\</OutputPath>
+    <OutputPath>..\AppData\Roaming\YGOPro\</OutputPath>
     <DefineConstants>TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
   <PropertyGroup>
     <StartupObject>DevProLauncher.Program</StartupObject>
@@ -71,15 +74,18 @@
     <Compile Include="Helpers\ReplayReader.cs" />
     <Compile Include="Network\Data\ChannelData.cs" />
     <Compile Include="Network\Data\ChannelUsers.cs" />
+    <Compile Include="Network\Data\EmailRequest.cs" />
     <Compile Include="Network\Data\RankingRequest.cs" />
     <Compile Include="Network\Data\DuelRequest.cs" />
     <Compile Include="Network\Data\LoginData.cs" />
     <Compile Include="Network\Data\LoginRequest.cs" />
     <Compile Include="Network\Data\PacketCommand.cs" />
+    <Compile Include="Network\Data\ResendRequest.cs" />
     <Compile Include="Network\Data\RoomInfos.cs" />
     <Compile Include="Network\Data\SearchRequest.cs" />
     <Compile Include="Network\Data\ServerInfo.cs" />
     <Compile Include="Network\Data\UserData.cs" />
+    <Compile Include="Network\Data\ValidateRequest.cs" />
     <Compile Include="Network\Enums\DevClientPackets.cs" />
     <Compile Include="Network\Enums\DevServerPackets.cs" />
     <Compile Include="Network\ChatClient.cs" />
@@ -239,6 +245,12 @@
     <Compile Include="Windows\Chat_frm.Designer.cs">
       <DependentUpon>Chat_frm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Windows\MessageBoxs\Validate_frm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Windows\MessageBoxs\Validate_frm.Designer.cs">
+      <DependentUpon>Validate_frm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Windows\Support_frm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -317,6 +329,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Windows\Chat_frm.resx">
       <DependentUpon>Chat_frm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Windows\MessageBoxs\Validate_frm.resx">
+      <DependentUpon>Validate_frm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Windows\Support_frm.resx">
       <DependentUpon>Support_frm.cs</DependentUpon>

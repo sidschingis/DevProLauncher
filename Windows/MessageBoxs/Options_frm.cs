@@ -189,7 +189,7 @@ namespace DevProLauncher.Windows.MessageBoxs
         {
             if (string.IsNullOrEmpty(currentPassword.Text) || string.IsNullOrEmpty(newPassword.Text) && string.IsNullOrEmpty(emailInput.Text))
             {
-                MessageBox.Show("Cannot have all empty values");
+                MessageBox.Show(Program.LanguageManager.Translation.optionEmptyMsg);
                 return;
             }
 

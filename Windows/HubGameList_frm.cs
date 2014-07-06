@@ -55,7 +55,33 @@ namespace DevProLauncher.Windows
             DeckSelect.SelectedIndexChanged += DeckSelect_SelectedValueChanged;
 
             ApplyTranslation();
+            LoadSettings();
+        }
+        public void SaveSettings()
+        {
+            Program.Config.SearchFormat = Format.SelectedIndex;
+            Program.Config.SearchMode = GameType.SelectedIndex;
+            Program.Config.SearchBanList = BanList.SelectedIndex;
+            Program.Config.SearchTimeLimit = TimeLimit.SelectedIndex;
+            Program.Config.SearchActive = ActiveGames.Checked;
+            Program.Config.SearchIllegal = IllegalGames.Checked;
+            Program.Config.SearchLocked = lockedChk.Checked;
+            Program.Config.SearchMinElo = minEloTxtBox.Text;
+            Program.Config.SearchMaxElo = maxEloTxtBox.Text;
 
+            Program.SaveConfig(Program.ConfigurationFilename, Program.Config);
+        }
+        public void LoadSettings()
+        {
+            Format.SelectedIndex    = Program.Config.SearchFormat;
+            GameType.SelectedIndex  = Program.Config.SearchMode;
+            BanList.SelectedIndex   = Program.Config.SearchBanList;
+            TimeLimit.SelectedIndex = Program.Config.SearchTimeLimit;
+            ActiveGames.Checked     = Program.Config.SearchActive;
+            IllegalGames.Checked    = Program.Config.SearchIllegal;
+            lockedChk.Checked       = Program.Config.SearchLocked;
+            minEloTxtBox.Text       = Program.Config.SearchMinElo;
+            maxEloTxtBox.Text       = Program.Config.SearchMaxElo;
         }
 
         public void ApplyTranslation()
@@ -71,7 +97,7 @@ namespace DevProLauncher.Windows
             label2.Text = info.GameBanList;
             label5.Text = info.GameTimeLimit;
             ActiveGames.Text = info.GameActive;
-            IlligalGames.Text = info.GameIlligal;
+            IllegalGames.Text = info.GameIlligal;
             lockedChk.Text = info.GameLocked;
             label1.Text = info.GameUserFilter;
             minEloLbl.Text = info.GameMinElo;
@@ -368,12 +394,14 @@ namespace DevProLauncher.Windows
                     (GameType.SelectedIndex == -1 ? GameType.SelectedIndex : GameType.SelectedIndex-1),
                     (BanList.SelectedIndex == -1 ? BanList.SelectedIndex : BanList.SelectedIndex-1),
                     (TimeLimit.SelectedIndex == -1 ? TimeLimit.SelectedIndex : TimeLimit.SelectedIndex-1),
-                    ActiveGames.Checked, IlligalGames.Checked, lockedChk.Checked, UserFilter.Text,
+                    ActiveGames.Checked, IllegalGames.Checked, lockedChk.Checked, UserFilter.Text,
                     min, max
                     )));
             SearchRequest_Btn.Enabled = false;
             SearchRequest_Btn.Text = "5";
             SearchReset.Enabled = true;
+
+            SaveSettings();
         }
 
         private void Host_btn_Click(object sender, EventArgs e)

@@ -48,6 +48,19 @@ namespace DevProLauncher.Config
         public string IgnoreList = "";
         public string DefaultChannel = "";
 
+        //search settings
+
+        public int SearchFormat = 0;
+        public int SearchMode = 0;
+        public int SearchBanList = 0;
+        public int SearchTimeLimit =0;
+        public bool SearchActive = false;
+        public bool SearchIllegal = false;
+        public bool SearchLocked = false;
+        public string SearchUser ="";
+        public string SearchMinElo = "";
+        public string SearchMaxElo = "";
+
         //quickhost settings
         public string BanList = "";
         public string TimeLimit = "3 minutes";

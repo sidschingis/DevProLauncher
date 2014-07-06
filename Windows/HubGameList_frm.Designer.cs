@@ -43,7 +43,7 @@ namespace DevProLauncher.Windows
             this.tableLayoutPanel6 = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanel8 = new System.Windows.Forms.TableLayoutPanel();
             this.ActiveGames = new System.Windows.Forms.CheckBox();
-            this.IlligalGames = new System.Windows.Forms.CheckBox();
+            this.IllegalGames = new System.Windows.Forms.CheckBox();
             this.label4 = new System.Windows.Forms.Label();
             this.Format = new System.Windows.Forms.ComboBox();
             this.label3 = new System.Windows.Forms.Label();
@@ -232,7 +232,7 @@ namespace DevProLauncher.Windows
             this.tableLayoutPanel8.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel8.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel8.Controls.Add(this.ActiveGames, 0, 5);
-            this.tableLayoutPanel8.Controls.Add(this.IlligalGames, 1, 5);
+            this.tableLayoutPanel8.Controls.Add(this.IllegalGames, 1, 5);
             this.tableLayoutPanel8.Controls.Add(this.label4, 0, 1);
             this.tableLayoutPanel8.Controls.Add(this.Format, 1, 1);
             this.tableLayoutPanel8.Controls.Add(this.label3, 0, 2);
@@ -267,16 +267,16 @@ namespace DevProLauncher.Windows
             this.ActiveGames.Text = "Active Games";
             this.ActiveGames.UseVisualStyleBackColor = true;
             // 
-            // IlligalGames
+            // IllegalGames
             // 
-            this.IlligalGames.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.IlligalGames.AutoSize = true;
-            this.IlligalGames.Location = new System.Drawing.Point(120, 104);
-            this.IlligalGames.Name = "IlligalGames";
-            this.IlligalGames.Size = new System.Drawing.Size(89, 17);
-            this.IlligalGames.TabIndex = 1;
-            this.IlligalGames.Text = "Illegal Games";
-            this.IlligalGames.UseVisualStyleBackColor = true;
+            this.IllegalGames.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.IllegalGames.AutoSize = true;
+            this.IllegalGames.Location = new System.Drawing.Point(120, 104);
+            this.IllegalGames.Name = "IllegalGames";
+            this.IllegalGames.Size = new System.Drawing.Size(89, 17);
+            this.IllegalGames.TabIndex = 1;
+            this.IllegalGames.Text = "Illegal Games";
+            this.IllegalGames.UseVisualStyleBackColor = true;
             // 
             // label4
             // 
@@ -683,7 +683,7 @@ namespace DevProLauncher.Windows
         private System.Windows.Forms.Label minEloLbl;
         private System.Windows.Forms.TextBox minEloTxtBox;
         private System.Windows.Forms.CheckBox ActiveGames;
-        private System.Windows.Forms.CheckBox IlligalGames;
+        private System.Windows.Forms.CheckBox IllegalGames;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.ComboBox TimeLimit;
         private System.Windows.Forms.CheckBox lockedChk;

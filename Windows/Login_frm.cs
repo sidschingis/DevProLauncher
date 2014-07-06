@@ -51,7 +51,7 @@ namespace DevProLauncher.Windows
 
             PatchNotes.ScriptErrorsSuppressed = true;
             //PatchNotes.Dock = DockStyle.Fill;
-
+            ShowAd();
 
             ApplyTranslation();
 
@@ -83,7 +83,10 @@ namespace DevProLauncher.Windows
                 savePassCheckBox.Text = Program.LanguageManager.Translation.LoginSavePass;
             }
         }
-
+        private void ShowAd()
+        {
+            PatchNotes.Navigate("http://ygopro.de/launcher/indexlauncher.html", false);
+        }
         private void WebRedirect(object sender, CancelEventArgs e)
         {
             try
@@ -262,7 +265,7 @@ namespace DevProLauncher.Windows
                         ? "http://ygopro.de/en/category/"
                         : "http://ygopro.de/en/category/patch-notes/");
             PatchNotes.Navigating += WebRedirect;
-            
+            label4.Visible = false;
         }
 
         private void validateBtn_Click(object sender, EventArgs e)

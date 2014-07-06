@@ -44,8 +44,9 @@
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
             this.loginBtn = new System.Windows.Forms.Button();
             this.registerBtn = new System.Windows.Forms.Button();
-            this.CheckmateBtn = new System.Windows.Forms.Button();
             this.validateBtn = new System.Windows.Forms.Button();
+            this.CheckmateBtn = new System.Windows.Forms.Button();
+            this.label4 = new System.Windows.Forms.Label();
             this.tableLayoutPanel1.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
             this.tableLayoutPanel3.SuspendLayout();
@@ -184,6 +185,7 @@
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.label4);
             this.panel1.Controls.Add(this.LoadBtn);
             this.panel1.Controls.Add(this.PatchNotes);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -245,6 +247,16 @@
             this.registerBtn.UseVisualStyleBackColor = true;
             this.registerBtn.Click += new System.EventHandler(this.registerBtn_Click);
             // 
+            // validateBtn
+            // 
+            this.validateBtn.Location = new System.Drawing.Point(3, 399);
+            this.validateBtn.Name = "validateBtn";
+            this.validateBtn.Size = new System.Drawing.Size(75, 23);
+            this.validateBtn.TabIndex = 3;
+            this.validateBtn.Text = "Validate";
+            this.validateBtn.UseVisualStyleBackColor = true;
+            this.validateBtn.Click += new System.EventHandler(this.validateBtn_Click);
+            // 
             // CheckmateBtn
             // 
             this.CheckmateBtn.Location = new System.Drawing.Point(3, 370);
@@ -255,15 +267,15 @@
             this.CheckmateBtn.UseVisualStyleBackColor = true;
             this.CheckmateBtn.Click += new System.EventHandler(this.CheckmateBtn_Click);
             // 
-            // validateBtn
+            // label4
             // 
-            this.validateBtn.Location = new System.Drawing.Point(3, 399);
-            this.validateBtn.Name = "validateBtn";
-            this.validateBtn.Size = new System.Drawing.Size(75, 23);
-            this.validateBtn.TabIndex = 3;
-            this.validateBtn.Text = "Validate";
-            this.validateBtn.UseVisualStyleBackColor = true;
-            this.validateBtn.Click += new System.EventHandler(this.validateBtn_Click);
+            this.label4.AutoSize = true;
+            this.label4.BackColor = System.Drawing.SystemColors.Window;
+            this.label4.Location = new System.Drawing.Point(3, 3);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(25, 13);
+            this.label4.TabIndex = 3;
+            this.label4.Text = "Ads";
             // 
             // LoginFrm
             // 
@@ -279,6 +291,7 @@
             this.tableLayoutPanel3.ResumeLayout(false);
             this.tableLayoutPanel3.PerformLayout();
             this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
             this.flowLayoutPanel1.ResumeLayout(false);
             this.ResumeLayout(false);
 
@@ -304,5 +317,6 @@
         private System.Windows.Forms.Button LoadBtn;
         private System.Windows.Forms.WebBrowser PatchNotes;
         private System.Windows.Forms.Button validateBtn;
+        private System.Windows.Forms.Label label4;
     }
 }

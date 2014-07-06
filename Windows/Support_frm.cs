@@ -41,7 +41,7 @@ namespace DevProLauncher.Windows
         {
             LanguageInfo lang = Program.LanguageManager.Translation;
 
-            AddItem(Properties.Resources.rankup, lang.SupportItem1Name, FormatString(lang.SupportItem1Des), 100, "DEVSTATUS", false);
+           // AddItem(Properties.Resources.rankup, lang.SupportItem1Name, FormatString(lang.SupportItem1Des), 100, "DEVSTATUS", false);
             AddItem(Properties.Resources.maskchange, lang.SupportItem2Name, FormatString(lang.SupportItem2Des), 200, "DEVRENAME", true);
             AddItem(Properties.Resources.desruct, lang.SupportItem3Name, FormatString(lang.SupportItem3Des), 50, "DEVRESETRANK", false);
             AddItem(Properties.Resources.swords, lang.SupportItem8Name, FormatString(lang.SupportItem8Des), 100, "NULL", false);

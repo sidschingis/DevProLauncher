@@ -124,13 +124,11 @@ namespace DevProLauncher.Windows.MessageBoxs
             {
                 if (BanList.Items.Count > 0)
                     BanList.SelectedIndex = 0;
-                Priority.Checked = true;
             }
             else
             {
                 if (BanList.Items.Count > 1)
                     BanList.SelectedIndex = 1;
-                Priority.Checked = false;
             }
 
 

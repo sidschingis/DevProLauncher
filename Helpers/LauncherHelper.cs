@@ -251,7 +251,6 @@ namespace DevProLauncher.Helpers
             writer.WriteLine(("serverport = " + server.serverPort));
             writer.WriteLine(("lastip = " + server.serverAddress));
             writer.WriteLine(("lastport = " + server.serverPort));
-            writer.WriteLine(("fullscreen = " + Convert.ToInt32(Program.Config.Fullscreen)));
             writer.WriteLine(("enable_sound = " + Convert.ToInt32(Program.Config.EnableSound)));
             writer.WriteLine(("sound_volume = " + Convert.ToDouble(Program.Config.SoundVolume)));
             writer.WriteLine(("enable_music = " + Convert.ToInt32(Program.Config.EnableMusic)));
@@ -283,7 +282,6 @@ namespace DevProLauncher.Helpers
             writer.WriteLine(("lastdeck = " + Program.Config.DefaultDeck));
             writer.WriteLine("textfont = fonts/" + Program.Config.GameFont + " " + Program.Config.FontSize);
             writer.WriteLine("numfont = fonts/arialbd.ttf");
-            writer.WriteLine(("fullscreen = " + Convert.ToInt32(Program.Config.Fullscreen)));
             writer.WriteLine(("enable_sound = " + Convert.ToInt32(Program.Config.EnableSound)));
             writer.WriteLine(("sound_volume = " + Convert.ToDouble(Program.Config.SoundVolume)));
             writer.WriteLine(("enable_music = " + Convert.ToInt32(Program.Config.EnableMusic)));
@@ -313,7 +311,6 @@ namespace DevProLauncher.Helpers
             writer.WriteLine(("lastdeck = " + Program.Config.DefaultDeck));
             writer.WriteLine("textfont = fonts/" + Program.Config.GameFont + " " + Program.Config.FontSize);
             writer.WriteLine("numfont = fonts/arialbd.ttf");
-            writer.WriteLine(("fullscreen = " + Convert.ToInt32(Program.Config.Fullscreen)));
             writer.WriteLine(("enable_sound = " + Convert.ToInt32(Program.Config.EnableSound)));
             writer.WriteLine(("sound_volume = " + Convert.ToDouble(Program.Config.SoundVolume)));
             writer.WriteLine(("enable_music = " + Convert.ToInt32(Program.Config.EnableMusic)));
@@ -355,7 +352,6 @@ namespace DevProLauncher.Helpers
             writer.WriteLine("serverport = " + server.serverPort);
             writer.WriteLine("lastip = " + server.serverAddress);
             writer.WriteLine("lastport = " + server.serverPort);
-            writer.WriteLine("fullscreen = " + Convert.ToInt32(Program.Config.Fullscreen));
             writer.WriteLine(("enable_sound = " + Convert.ToInt32(Program.Config.EnableSound)));
             writer.WriteLine(("sound_volume = " + Convert.ToDouble(Program.Config.SoundVolume)));
             writer.WriteLine(("enable_music = " + Convert.ToInt32(Program.Config.EnableMusic)));

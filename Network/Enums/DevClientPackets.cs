@@ -46,6 +46,8 @@
         ValidateAccept = 43,
         ValidateFailed = 44,
         ResendAccept = 45,
-        ResendFailed = 46
+        ResendFailed = 46,
+        ChangeAccept = 47,
+        ChangeFailed = 48
     }
 }

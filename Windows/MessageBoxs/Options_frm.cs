@@ -15,13 +15,16 @@ namespace DevProLauncher.Windows.MessageBoxs
         public Settings()
         {
             InitializeComponent();
+
+            Program.ChatServer.ChangeReply += ChangeResponse; 
+
             Username.Text = Program.Config.DefaultUsername;
+            FormClosing += ResetEvents;
             
             Antialias.Text = Program.Config.Antialias.ToString(CultureInfo.InvariantCulture);
             EnableMusic.Checked = Program.Config.EnableMusic;
             EnableSound.Checked = Program.Config.EnableSound;
             Enabled3d.Checked = Program.Config.Enabled3D;
-            Fullscreen.Checked = Program.Config.Fullscreen;
             GameFont.Text = Program.Config.GameFont;
             FontSize.Value = Program.Config.FontSize;
             AutoPlacing.Checked = Program.Config.AutoPlacing;
@@ -81,7 +84,6 @@ namespace DevProLauncher.Windows.MessageBoxs
                 EnableSound.Text = info.optionCbSound;
                 EnableMusic.Text = info.optionCbMusic;
                 Enabled3d.Text = info.optionCbDirect;
-                Fullscreen.Text = info.optionCbFull;
                 label2.Text = info.optionTexts;
                 label3.Text = info.optionTextf;
                 QuickSettingsBtn.Text = info.optionBtnQuick;
@@ -120,7 +122,6 @@ namespace DevProLauncher.Windows.MessageBoxs
             Program.Config.EnableMusic = EnableMusic.Checked;
             Program.Config.MusicVolume = MusicVolume.Value;
             Program.Config.Enabled3D = Enabled3d.Checked;
-            Program.Config.Fullscreen = Fullscreen.Checked;
             Program.Config.FontSize = (int)FontSize.Value;
             Program.Config.GameFont = GameFont.Text;
             Program.Config.Skin = SkinList.SelectedIndex == -1 ? -1: SkinList.SelectedIndex - 1;
@@ -228,8 +229,35 @@ namespace DevProLauncher.Windows.MessageBoxs
                         UID = LauncherHelper.GetUID()
                     }));
             }
+            UpdatePassword.Enabled = false;
         }
-
+        private void ChangeResponse(DevClientPackets packet)
+        {
+            if (!IsDisposed)
+            {
+                if (InvokeRequired)
+                {
+                    Invoke(new Action<DevClientPackets>(ChangeResponse), packet);
+                    return;
+                }
+                if (packet == DevClientPackets.ChangeAccept)
+                {
+                    if (MessageBox.Show(Program.LanguageManager.Translation.ChangeAccept) == DialogResult.OK)
+                    {
+                        DialogResult = DialogResult.OK;
+                    }
+                }
+                else if (packet == DevClientPackets.ChangeFailed)
+                {
+                    MessageBox.Show(Program.LanguageManager.Translation.ChangeFailed);
+                }
+                UpdatePassword.Enabled = true;
+            }
+        }
+        private void ResetEvents(object sender, EventArgs e)
+        {
+            Program.ChatServer.ChangeReply -= ChangeResponse;
+        }
         private void EnableMusic_CheckedChanged(object sender, EventArgs e)
         {
             MusicVolume.Enabled = EnableMusic.Checked;

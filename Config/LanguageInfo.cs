@@ -154,6 +154,8 @@ namespace DevProLauncher.Config
         public string optionNewPW = "New Password";
         public string optionConfirmPW = "Confirm Password";
         public string optionUpdatePW = "Update Password";
+        public string ChangeAccept = "Change Accepted";
+        public string ChangeFailed = "Change Failed";
 
         // DropboxSynch_frm.cs
         public string DropboxTitle = "Synchronize with the Cloud";

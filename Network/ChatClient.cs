@@ -47,6 +47,7 @@ namespace DevProLauncher.Network
         public ChannelUsersUpdate RemoveUserFromChannel;
         public ServerDisconnected Disconnected;
         public LoginResponse LoginReply;
+        public ClientPacket ChangeReply;
         public ClientPacket RegisterReply;
         public ClientPacket ValidateReply;
         public ClientPacket ResendReply;
@@ -187,6 +188,8 @@ namespace DevProLauncher.Network
                 case DevClientPackets.ValidateFailed:
                 case DevClientPackets.ResendAccept:
                 case DevClientPackets.ResendFailed:
+                case DevClientPackets.ChangeAccept:
+                case DevClientPackets.ChangeFailed:
                 case DevClientPackets.RegisterAccept:
                 case DevClientPackets.RegisterFailed:
                 case DevClientPackets.Pong:
@@ -309,6 +312,14 @@ namespace DevProLauncher.Network
                 case DevClientPackets.RegisterFailed:
                     if (RegisterReply != null)
                         RegisterReply(e.Packet);
+                    break;
+                case DevClientPackets.ChangeAccept:
+                    if (ChangeReply != null)
+                        ChangeReply(e.Packet);
+                    break;
+                case DevClientPackets.ChangeFailed:
+                    if (ChangeReply != null)
+                        ChangeReply(e.Packet);
                     break;
                 case DevClientPackets.ValidateAccept:
                     if (ValidateReply != null)

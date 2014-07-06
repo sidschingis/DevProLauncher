@@ -28,7 +28,6 @@ namespace DevProLauncher.Config
         public bool Enabled3D = false;
         public int Antialias = 0;
         public bool AutoLogin = false;
-        public bool Fullscreen = false;
         public bool SavePassword = false;
         public string EncodedPassword = "";
         public string SavedUsername = "";

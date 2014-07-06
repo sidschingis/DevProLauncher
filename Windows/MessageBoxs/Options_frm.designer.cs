@@ -62,15 +62,8 @@
             this.flowLayoutPanel6 = new System.Windows.Forms.FlowLayoutPanel();
             this.EnableMusic = new System.Windows.Forms.CheckBox();
             this.MusicVolume = new System.Windows.Forms.TrackBar();
-            this.Fullscreen = new System.Windows.Forms.CheckBox();
             this.accountTab = new System.Windows.Forms.TabPage();
             this.tableLayoutPanel10 = new System.Windows.Forms.TableLayoutPanel();
-            this.groupBox3 = new System.Windows.Forms.GroupBox();
-            this.tableLayoutPanel6 = new System.Windows.Forms.TableLayoutPanel();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.FontSize = new System.Windows.Forms.NumericUpDown();
-            this.GameFont = new System.Windows.Forms.ComboBox();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
             this.tableLayoutPanel9 = new System.Windows.Forms.TableLayoutPanel();
             this.Username = new System.Windows.Forms.TextBox();
@@ -79,18 +72,24 @@
             this.label5 = new System.Windows.Forms.Label();
             this.groupBox5 = new System.Windows.Forms.GroupBox();
             this.tableLayoutPanel11 = new System.Windows.Forms.TableLayoutPanel();
+            this.confirmEmailInput = new System.Windows.Forms.TextBox();
+            this.emailInput = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
-            this.flowLayoutPanel2 = new System.Windows.Forms.FlowLayoutPanel();
-            this.UpdatePassword = new System.Windows.Forms.Button();
             this.currentPassword = new System.Windows.Forms.TextBox();
             this.newPassword = new System.Windows.Forms.TextBox();
             this.confirmPassword = new System.Windows.Forms.TextBox();
+            this.flowLayoutPanel2 = new System.Windows.Forms.FlowLayoutPanel();
+            this.UpdatePassword = new System.Windows.Forms.Button();
             this.emailLbl = new System.Windows.Forms.Label();
             this.confirmEmailLbl = new System.Windows.Forms.Label();
-            this.emailInput = new System.Windows.Forms.TextBox();
-            this.confirmEmailInput = new System.Windows.Forms.TextBox();
+            this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.tableLayoutPanel6 = new System.Windows.Forms.TableLayoutPanel();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.FontSize = new System.Windows.Forms.NumericUpDown();
+            this.GameFont = new System.Windows.Forms.ComboBox();
             this.tableLayoutPanel1.SuspendLayout();
             this.flowLayoutPanel1.SuspendLayout();
             this.OptionTabControl.SuspendLayout();
@@ -110,14 +109,14 @@
             ((System.ComponentModel.ISupportInitialize)(this.MusicVolume)).BeginInit();
             this.accountTab.SuspendLayout();
             this.tableLayoutPanel10.SuspendLayout();
-            this.groupBox3.SuspendLayout();
-            this.tableLayoutPanel6.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.FontSize)).BeginInit();
             this.groupBox4.SuspendLayout();
             this.tableLayoutPanel9.SuspendLayout();
             this.groupBox5.SuspendLayout();
             this.tableLayoutPanel11.SuspendLayout();
             this.flowLayoutPanel2.SuspendLayout();
+            this.groupBox3.SuspendLayout();
+            this.tableLayoutPanel6.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.FontSize)).BeginInit();
             this.SuspendLayout();
             // 
             // tableLayoutPanel1
@@ -130,7 +129,7 @@
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 2;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 85F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 57F));
             this.tableLayoutPanel1.Size = new System.Drawing.Size(608, 316);
             this.tableLayoutPanel1.TabIndex = 0;
             // 
@@ -142,9 +141,9 @@
             this.flowLayoutPanel1.Controls.Add(this.RequestSettingsbtn);
             this.flowLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.flowLayoutPanel1.FlowDirection = System.Windows.Forms.FlowDirection.RightToLeft;
-            this.flowLayoutPanel1.Location = new System.Drawing.Point(3, 234);
+            this.flowLayoutPanel1.Location = new System.Drawing.Point(3, 262);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(602, 79);
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(602, 51);
             this.flowLayoutPanel1.TabIndex = 7;
             // 
             // CancelBtn
@@ -196,7 +195,7 @@
             this.OptionTabControl.Location = new System.Drawing.Point(3, 3);
             this.OptionTabControl.Name = "OptionTabControl";
             this.OptionTabControl.SelectedIndex = 0;
-            this.OptionTabControl.Size = new System.Drawing.Size(602, 225);
+            this.OptionTabControl.Size = new System.Drawing.Size(602, 253);
             this.OptionTabControl.TabIndex = 8;
             // 
             // GameTab
@@ -205,7 +204,7 @@
             this.GameTab.Location = new System.Drawing.Point(4, 25);
             this.GameTab.Name = "GameTab";
             this.GameTab.Padding = new System.Windows.Forms.Padding(3);
-            this.GameTab.Size = new System.Drawing.Size(594, 246);
+            this.GameTab.Size = new System.Drawing.Size(594, 224);
             this.GameTab.TabIndex = 0;
             this.GameTab.Text = "Game Settings";
             this.GameTab.UseVisualStyleBackColor = true;
@@ -223,7 +222,7 @@
             this.tableLayoutPanel2.RowCount = 2;
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 110F));
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 165F));
-            this.tableLayoutPanel2.Size = new System.Drawing.Size(588, 240);
+            this.tableLayoutPanel2.Size = new System.Drawing.Size(588, 218);
             this.tableLayoutPanel2.TabIndex = 2;
             // 
             // groupBox2
@@ -374,13 +373,12 @@
             this.tableLayoutPanel3.ColumnCount = 3;
             this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 71.70731F));
             this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 28.29268F));
-            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 190F));
+            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 191F));
             this.tableLayoutPanel3.Controls.Add(this.Enabled3d, 1, 0);
             this.tableLayoutPanel3.Controls.Add(this.flowLayoutPanel3, 2, 0);
             this.tableLayoutPanel3.Controls.Add(this.flowLayoutPanel4, 2, 1);
             this.tableLayoutPanel3.Controls.Add(this.flowLayoutPanel5, 0, 0);
             this.tableLayoutPanel3.Controls.Add(this.flowLayoutPanel6, 0, 1);
-            this.tableLayoutPanel3.Controls.Add(this.Fullscreen, 1, 1);
             this.tableLayoutPanel3.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel3.Location = new System.Drawing.Point(3, 16);
             this.tableLayoutPanel3.Name = "tableLayoutPanel3";
@@ -396,7 +394,7 @@
             this.Enabled3d.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.Enabled3d.AutoSize = true;
             this.Enabled3d.CheckAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.Enabled3d.Location = new System.Drawing.Point(287, 8);
+            this.Enabled3d.Location = new System.Drawing.Point(286, 8);
             this.Enabled3d.Name = "Enabled3d";
             this.Enabled3d.Size = new System.Drawing.Size(95, 17);
             this.Enabled3d.TabIndex = 2;
@@ -408,7 +406,7 @@
             // 
             this.flowLayoutPanel3.Controls.Add(this.label4);
             this.flowLayoutPanel3.Controls.Add(this.SkinList);
-            this.flowLayoutPanel3.Location = new System.Drawing.Point(388, 3);
+            this.flowLayoutPanel3.Location = new System.Drawing.Point(387, 3);
             this.flowLayoutPanel3.Name = "flowLayoutPanel3";
             this.flowLayoutPanel3.Size = new System.Drawing.Size(179, 28);
             this.flowLayoutPanel3.TabIndex = 4;
@@ -440,9 +438,9 @@
             this.flowLayoutPanel4.Controls.Add(this.label6);
             this.flowLayoutPanel4.Controls.Add(this.Antialias);
             this.flowLayoutPanel4.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.flowLayoutPanel4.Location = new System.Drawing.Point(388, 37);
+            this.flowLayoutPanel4.Location = new System.Drawing.Point(387, 37);
             this.flowLayoutPanel4.Name = "flowLayoutPanel4";
-            this.flowLayoutPanel4.Size = new System.Drawing.Size(185, 28);
+            this.flowLayoutPanel4.Size = new System.Drawing.Size(186, 28);
             this.flowLayoutPanel4.TabIndex = 5;
             // 
             // label6
@@ -539,26 +537,13 @@
             this.MusicVolume.TickFrequency = 10;
             this.MusicVolume.Value = 50;
             // 
-            // Fullscreen
-            // 
-            this.Fullscreen.AutoSize = true;
-            this.Fullscreen.CheckAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.Fullscreen.Dock = System.Windows.Forms.DockStyle.Right;
-            this.Fullscreen.Location = new System.Drawing.Point(279, 43);
-            this.Fullscreen.Margin = new System.Windows.Forms.Padding(3, 9, 3, 3);
-            this.Fullscreen.Name = "Fullscreen";
-            this.Fullscreen.Size = new System.Drawing.Size(103, 22);
-            this.Fullscreen.TabIndex = 3;
-            this.Fullscreen.Text = "       Fullscreen      ";
-            this.Fullscreen.UseVisualStyleBackColor = true;
-            // 
             // accountTab
             // 
             this.accountTab.Controls.Add(this.tableLayoutPanel10);
             this.accountTab.Location = new System.Drawing.Point(4, 25);
             this.accountTab.Name = "accountTab";
             this.accountTab.Padding = new System.Windows.Forms.Padding(3);
-            this.accountTab.Size = new System.Drawing.Size(594, 196);
+            this.accountTab.Size = new System.Drawing.Size(594, 224);
             this.accountTab.TabIndex = 1;
             this.accountTab.Text = "Account Settings";
             this.accountTab.UseVisualStyleBackColor = true;
@@ -577,85 +562,8 @@
             this.tableLayoutPanel10.RowCount = 2;
             this.tableLayoutPanel10.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel10.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 91F));
-            this.tableLayoutPanel10.Size = new System.Drawing.Size(588, 190);
+            this.tableLayoutPanel10.Size = new System.Drawing.Size(588, 218);
             this.tableLayoutPanel10.TabIndex = 0;
-            // 
-            // groupBox3
-            // 
-            this.groupBox3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.groupBox3.Controls.Add(this.tableLayoutPanel6);
-            this.groupBox3.Location = new System.Drawing.Point(3, 109);
-            this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(288, 78);
-            this.groupBox3.TabIndex = 10;
-            this.groupBox3.TabStop = false;
-            this.groupBox3.Text = "Font Settings";
-            // 
-            // tableLayoutPanel6
-            // 
-            this.tableLayoutPanel6.ColumnCount = 2;
-            this.tableLayoutPanel6.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel6.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel6.Controls.Add(this.label3, 0, 1);
-            this.tableLayoutPanel6.Controls.Add(this.label2, 0, 0);
-            this.tableLayoutPanel6.Controls.Add(this.FontSize, 1, 0);
-            this.tableLayoutPanel6.Controls.Add(this.GameFont, 1, 1);
-            this.tableLayoutPanel6.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel6.Location = new System.Drawing.Point(3, 16);
-            this.tableLayoutPanel6.Name = "tableLayoutPanel6";
-            this.tableLayoutPanel6.RowCount = 2;
-            this.tableLayoutPanel6.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 29F));
-            this.tableLayoutPanel6.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 21F));
-            this.tableLayoutPanel6.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutPanel6.Size = new System.Drawing.Size(282, 59);
-            this.tableLayoutPanel6.TabIndex = 2;
-            // 
-            // label3
-            // 
-            this.label3.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(41, 37);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(59, 13);
-            this.label3.TabIndex = 6;
-            this.label3.Text = "Game Font";
-            // 
-            // label2
-            // 
-            this.label2.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(45, 8);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(51, 13);
-            this.label2.TabIndex = 4;
-            this.label2.Text = "Font Size";
-            // 
-            // FontSize
-            // 
-            this.FontSize.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.FontSize.Location = new System.Drawing.Point(144, 3);
-            this.FontSize.Maximum = new decimal(new int[] {
-            32,
-            0,
-            0,
-            0});
-            this.FontSize.Name = "FontSize";
-            this.FontSize.ReadOnly = true;
-            this.FontSize.Size = new System.Drawing.Size(135, 20);
-            this.FontSize.TabIndex = 5;
-            this.FontSize.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // GameFont
-            // 
-            this.GameFont.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.GameFont.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.GameFont.FormattingEnabled = true;
-            this.GameFont.Items.AddRange(new object[] {
-            "simhei.ttf"});
-            this.GameFont.Location = new System.Drawing.Point(144, 32);
-            this.GameFont.Name = "GameFont";
-            this.GameFont.Size = new System.Drawing.Size(135, 21);
-            this.GameFont.TabIndex = 7;
             // 
             // groupBox4
             // 
@@ -663,7 +571,7 @@
             this.groupBox4.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupBox4.Location = new System.Drawing.Point(3, 3);
             this.groupBox4.Name = "groupBox4";
-            this.groupBox4.Size = new System.Drawing.Size(288, 93);
+            this.groupBox4.Size = new System.Drawing.Size(288, 121);
             this.groupBox4.TabIndex = 9;
             this.groupBox4.TabStop = false;
             this.groupBox4.Text = "Launcher Settings";
@@ -684,7 +592,7 @@
             this.tableLayoutPanel9.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tableLayoutPanel9.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tableLayoutPanel9.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tableLayoutPanel9.Size = new System.Drawing.Size(282, 74);
+            this.tableLayoutPanel9.Size = new System.Drawing.Size(282, 102);
             this.tableLayoutPanel9.TabIndex = 2;
             // 
             // Username
@@ -766,6 +674,24 @@
             this.tableLayoutPanel11.Size = new System.Drawing.Size(282, 165);
             this.tableLayoutPanel11.TabIndex = 0;
             // 
+            // confirmEmailInput
+            // 
+            this.confirmEmailInput.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.confirmEmailInput.Location = new System.Drawing.Point(106, 103);
+            this.confirmEmailInput.MaxLength = 99;
+            this.confirmEmailInput.Name = "confirmEmailInput";
+            this.confirmEmailInput.Size = new System.Drawing.Size(173, 20);
+            this.confirmEmailInput.TabIndex = 10;
+            // 
+            // emailInput
+            // 
+            this.emailInput.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.emailInput.Location = new System.Drawing.Point(106, 78);
+            this.emailInput.MaxLength = 99;
+            this.emailInput.Name = "emailInput";
+            this.emailInput.Size = new System.Drawing.Size(173, 20);
+            this.emailInput.TabIndex = 9;
+            // 
             // label7
             // 
             this.label7.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -795,27 +721,6 @@
             this.label9.TabIndex = 2;
             this.label9.Text = "Confirm Password";
             this.label9.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // flowLayoutPanel2
-            // 
-            this.tableLayoutPanel11.SetColumnSpan(this.flowLayoutPanel2, 2);
-            this.flowLayoutPanel2.Controls.Add(this.UpdatePassword);
-            this.flowLayoutPanel2.FlowDirection = System.Windows.Forms.FlowDirection.RightToLeft;
-            this.flowLayoutPanel2.Location = new System.Drawing.Point(3, 128);
-            this.flowLayoutPanel2.Name = "flowLayoutPanel2";
-            this.flowLayoutPanel2.Size = new System.Drawing.Size(276, 32);
-            this.flowLayoutPanel2.TabIndex = 3;
-            // 
-            // UpdatePassword
-            // 
-            this.UpdatePassword.Location = new System.Drawing.Point(84, 3);
-            this.UpdatePassword.Margin = new System.Windows.Forms.Padding(3, 3, 100, 3);
-            this.UpdatePassword.Name = "UpdatePassword";
-            this.UpdatePassword.Size = new System.Drawing.Size(92, 23);
-            this.UpdatePassword.TabIndex = 0;
-            this.UpdatePassword.Text = "Update Password";
-            this.UpdatePassword.UseVisualStyleBackColor = true;
-            this.UpdatePassword.Click += new System.EventHandler(this.UpdatePassword_Click);
             // 
             // currentPassword
             // 
@@ -847,6 +752,27 @@
             this.confirmPassword.TabIndex = 6;
             this.confirmPassword.UseSystemPasswordChar = true;
             // 
+            // flowLayoutPanel2
+            // 
+            this.tableLayoutPanel11.SetColumnSpan(this.flowLayoutPanel2, 2);
+            this.flowLayoutPanel2.Controls.Add(this.UpdatePassword);
+            this.flowLayoutPanel2.FlowDirection = System.Windows.Forms.FlowDirection.RightToLeft;
+            this.flowLayoutPanel2.Location = new System.Drawing.Point(3, 128);
+            this.flowLayoutPanel2.Name = "flowLayoutPanel2";
+            this.flowLayoutPanel2.Size = new System.Drawing.Size(276, 32);
+            this.flowLayoutPanel2.TabIndex = 3;
+            // 
+            // UpdatePassword
+            // 
+            this.UpdatePassword.Location = new System.Drawing.Point(84, 3);
+            this.UpdatePassword.Margin = new System.Windows.Forms.Padding(3, 3, 100, 3);
+            this.UpdatePassword.Name = "UpdatePassword";
+            this.UpdatePassword.Size = new System.Drawing.Size(92, 23);
+            this.UpdatePassword.TabIndex = 0;
+            this.UpdatePassword.Text = "Update Password";
+            this.UpdatePassword.UseVisualStyleBackColor = true;
+            this.UpdatePassword.Click += new System.EventHandler(this.UpdatePassword_Click);
+            // 
             // emailLbl
             // 
             this.emailLbl.Anchor = System.Windows.Forms.AnchorStyles.None;
@@ -867,31 +793,88 @@
             this.confirmEmailLbl.TabIndex = 8;
             this.confirmEmailLbl.Text = "Confirm Email";
             // 
-            // emailInput
+            // groupBox3
             // 
-            this.emailInput.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.emailInput.Location = new System.Drawing.Point(106, 78);
-            this.emailInput.MaxLength = 15;
-            this.emailInput.Name = "emailInput";
-            this.emailInput.Size = new System.Drawing.Size(173, 20);
-            this.emailInput.TabIndex = 9;
-            this.emailInput.UseSystemPasswordChar = true;
+            this.groupBox3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.groupBox3.Controls.Add(this.tableLayoutPanel6);
+            this.groupBox3.Location = new System.Drawing.Point(3, 137);
+            this.groupBox3.Name = "groupBox3";
+            this.groupBox3.Size = new System.Drawing.Size(288, 78);
+            this.groupBox3.TabIndex = 10;
+            this.groupBox3.TabStop = false;
+            this.groupBox3.Text = "Font Settings";
             // 
-            // confirmEmailInput
+            // tableLayoutPanel6
             // 
-            this.confirmEmailInput.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.confirmEmailInput.Location = new System.Drawing.Point(106, 103);
-            this.confirmEmailInput.MaxLength = 15;
-            this.confirmEmailInput.Name = "confirmEmailInput";
-            this.confirmEmailInput.Size = new System.Drawing.Size(173, 20);
-            this.confirmEmailInput.TabIndex = 10;
-            this.confirmEmailInput.UseSystemPasswordChar = true;
+            this.tableLayoutPanel6.ColumnCount = 2;
+            this.tableLayoutPanel6.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel6.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel6.Controls.Add(this.label3, 0, 1);
+            this.tableLayoutPanel6.Controls.Add(this.label2, 0, 0);
+            this.tableLayoutPanel6.Controls.Add(this.FontSize, 1, 0);
+            this.tableLayoutPanel6.Controls.Add(this.GameFont, 1, 1);
+            this.tableLayoutPanel6.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tableLayoutPanel6.Location = new System.Drawing.Point(3, 16);
+            this.tableLayoutPanel6.Name = "tableLayoutPanel6";
+            this.tableLayoutPanel6.RowCount = 2;
+            this.tableLayoutPanel6.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 29F));
+            this.tableLayoutPanel6.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 21F));
+            this.tableLayoutPanel6.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tableLayoutPanel6.Size = new System.Drawing.Size(282, 59);
+            this.tableLayoutPanel6.TabIndex = 2;
+            // 
+            // label3
+            // 
+            this.label3.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(41, 37);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(59, 13);
+            this.label3.TabIndex = 6;
+            this.label3.Text = "Game Font";
+            // 
+            // label2
+            // 
+            this.label2.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(45, 8);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(51, 13);
+            this.label2.TabIndex = 4;
+            this.label2.Text = "Font Size";
+            // 
+            // FontSize
+            // 
+            this.FontSize.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.FontSize.Location = new System.Drawing.Point(144, 3);
+            this.FontSize.Maximum = new decimal(new int[] {
+            32,
+            0,
+            0,
+            0});
+            this.FontSize.Name = "FontSize";
+            this.FontSize.ReadOnly = true;
+            this.FontSize.Size = new System.Drawing.Size(135, 20);
+            this.FontSize.TabIndex = 5;
+            this.FontSize.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // GameFont
+            // 
+            this.GameFont.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.GameFont.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.GameFont.FormattingEnabled = true;
+            this.GameFont.Items.AddRange(new object[] {
+            "simhei.ttf"});
+            this.GameFont.Location = new System.Drawing.Point(144, 32);
+            this.GameFont.Name = "GameFont";
+            this.GameFont.Size = new System.Drawing.Size(135, 21);
+            this.GameFont.TabIndex = 7;
             // 
             // Settings
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(96F, 96F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
-            this.ClientSize = new System.Drawing.Size(618, 266);
+            this.ClientSize = new System.Drawing.Size(613, 294);
             this.ControlBox = false;
             this.Controls.Add(this.tableLayoutPanel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
@@ -923,10 +906,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.MusicVolume)).EndInit();
             this.accountTab.ResumeLayout(false);
             this.tableLayoutPanel10.ResumeLayout(false);
-            this.groupBox3.ResumeLayout(false);
-            this.tableLayoutPanel6.ResumeLayout(false);
-            this.tableLayoutPanel6.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.FontSize)).EndInit();
             this.groupBox4.ResumeLayout(false);
             this.tableLayoutPanel9.ResumeLayout(false);
             this.tableLayoutPanel9.PerformLayout();
@@ -934,6 +913,10 @@
             this.tableLayoutPanel11.ResumeLayout(false);
             this.tableLayoutPanel11.PerformLayout();
             this.flowLayoutPanel2.ResumeLayout(false);
+            this.groupBox3.ResumeLayout(false);
+            this.tableLayoutPanel6.ResumeLayout(false);
+            this.tableLayoutPanel6.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.FontSize)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -952,7 +935,6 @@
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel4;
         private System.Windows.Forms.CheckBox Enabled3d;
-        private System.Windows.Forms.CheckBox Fullscreen;
         private System.Windows.Forms.CheckBox EnableMusic;
         private System.Windows.Forms.CheckBox EnableSound;
         private System.Windows.Forms.Label label6;

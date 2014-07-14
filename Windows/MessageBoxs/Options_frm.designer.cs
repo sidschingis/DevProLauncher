@@ -81,7 +81,7 @@
             this.newPassword = new System.Windows.Forms.TextBox();
             this.confirmPassword = new System.Windows.Forms.TextBox();
             this.flowLayoutPanel2 = new System.Windows.Forms.FlowLayoutPanel();
-            this.UpdatePassword = new System.Windows.Forms.Button();
+            this.Update = new System.Windows.Forms.Button();
             this.emailLbl = new System.Windows.Forms.Label();
             this.confirmEmailLbl = new System.Windows.Forms.Label();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
@@ -125,12 +125,13 @@
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanel1.Controls.Add(this.flowLayoutPanel1, 0, 1);
             this.tableLayoutPanel1.Controls.Add(this.OptionTabControl, 0, 0);
+            this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 0);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 2;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 57F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(608, 316);
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 44F));
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(807, 336);
             this.tableLayoutPanel1.TabIndex = 0;
             // 
             // flowLayoutPanel1
@@ -141,15 +142,15 @@
             this.flowLayoutPanel1.Controls.Add(this.RequestSettingsbtn);
             this.flowLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.flowLayoutPanel1.FlowDirection = System.Windows.Forms.FlowDirection.RightToLeft;
-            this.flowLayoutPanel1.Location = new System.Drawing.Point(3, 262);
+            this.flowLayoutPanel1.Location = new System.Drawing.Point(3, 295);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(602, 51);
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(801, 38);
             this.flowLayoutPanel1.TabIndex = 7;
             // 
             // CancelBtn
             // 
             this.CancelBtn.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-            this.CancelBtn.Location = new System.Drawing.Point(524, 3);
+            this.CancelBtn.Location = new System.Drawing.Point(723, 3);
             this.CancelBtn.Name = "CancelBtn";
             this.CancelBtn.Size = new System.Drawing.Size(75, 23);
             this.CancelBtn.TabIndex = 1;
@@ -158,7 +159,7 @@
             // 
             // SaveBtn
             // 
-            this.SaveBtn.Location = new System.Drawing.Point(443, 3);
+            this.SaveBtn.Location = new System.Drawing.Point(642, 3);
             this.SaveBtn.Name = "SaveBtn";
             this.SaveBtn.Size = new System.Drawing.Size(75, 23);
             this.SaveBtn.TabIndex = 0;
@@ -168,7 +169,7 @@
             // 
             // QuickSettingsBtn
             // 
-            this.QuickSettingsBtn.Location = new System.Drawing.Point(327, 3);
+            this.QuickSettingsBtn.Location = new System.Drawing.Point(526, 3);
             this.QuickSettingsBtn.Name = "QuickSettingsBtn";
             this.QuickSettingsBtn.Size = new System.Drawing.Size(110, 23);
             this.QuickSettingsBtn.TabIndex = 5;
@@ -178,7 +179,7 @@
             // 
             // RequestSettingsbtn
             // 
-            this.RequestSettingsbtn.Location = new System.Drawing.Point(206, 3);
+            this.RequestSettingsbtn.Location = new System.Drawing.Point(405, 3);
             this.RequestSettingsbtn.Name = "RequestSettingsbtn";
             this.RequestSettingsbtn.Size = new System.Drawing.Size(115, 23);
             this.RequestSettingsbtn.TabIndex = 2;
@@ -195,7 +196,7 @@
             this.OptionTabControl.Location = new System.Drawing.Point(3, 3);
             this.OptionTabControl.Name = "OptionTabControl";
             this.OptionTabControl.SelectedIndex = 0;
-            this.OptionTabControl.Size = new System.Drawing.Size(602, 253);
+            this.OptionTabControl.Size = new System.Drawing.Size(801, 286);
             this.OptionTabControl.TabIndex = 8;
             // 
             // GameTab
@@ -204,7 +205,7 @@
             this.GameTab.Location = new System.Drawing.Point(4, 25);
             this.GameTab.Name = "GameTab";
             this.GameTab.Padding = new System.Windows.Forms.Padding(3);
-            this.GameTab.Size = new System.Drawing.Size(594, 224);
+            this.GameTab.Size = new System.Drawing.Size(793, 257);
             this.GameTab.TabIndex = 0;
             this.GameTab.Text = "Game Settings";
             this.GameTab.UseVisualStyleBackColor = true;
@@ -220,9 +221,9 @@
             this.tableLayoutPanel2.Name = "tableLayoutPanel2";
             this.tableLayoutPanel2.Padding = new System.Windows.Forms.Padding(0, 15, 0, 0);
             this.tableLayoutPanel2.RowCount = 2;
-            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 110F));
-            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 165F));
-            this.tableLayoutPanel2.Size = new System.Drawing.Size(588, 218);
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel2.Size = new System.Drawing.Size(787, 251);
             this.tableLayoutPanel2.TabIndex = 2;
             // 
             // groupBox2
@@ -231,7 +232,7 @@
             this.groupBox2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupBox2.Location = new System.Drawing.Point(3, 18);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(582, 104);
+            this.groupBox2.Size = new System.Drawing.Size(781, 112);
             this.groupBox2.TabIndex = 5;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Game Settings";
@@ -247,7 +248,7 @@
             this.tableLayoutPanel4.Name = "tableLayoutPanel4";
             this.tableLayoutPanel4.RowCount = 1;
             this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel4.Size = new System.Drawing.Size(576, 85);
+            this.tableLayoutPanel4.Size = new System.Drawing.Size(775, 93);
             this.tableLayoutPanel4.TabIndex = 0;
             // 
             // tableLayoutPanel7
@@ -270,7 +271,7 @@
             this.tableLayoutPanel7.RowCount = 2;
             this.tableLayoutPanel7.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 35.44304F));
             this.tableLayoutPanel7.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 64.55696F));
-            this.tableLayoutPanel7.Size = new System.Drawing.Size(570, 79);
+            this.tableLayoutPanel7.Size = new System.Drawing.Size(769, 87);
             this.tableLayoutPanel7.TabIndex = 1;
             // 
             // AutoPlacing
@@ -278,7 +279,7 @@
             this.AutoPlacing.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.AutoPlacing.AutoSize = true;
             this.AutoPlacing.CheckAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.AutoPlacing.Location = new System.Drawing.Point(24, 5);
+            this.AutoPlacing.Location = new System.Drawing.Point(72, 6);
             this.AutoPlacing.Name = "AutoPlacing";
             this.AutoPlacing.Size = new System.Drawing.Size(111, 17);
             this.AutoPlacing.TabIndex = 3;
@@ -290,7 +291,7 @@
             this.NoDelay.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.NoDelay.AutoSize = true;
             this.NoDelay.CheckAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.NoDelay.Location = new System.Drawing.Point(158, 45);
+            this.NoDelay.Location = new System.Drawing.Point(254, 50);
             this.NoDelay.Name = "NoDelay";
             this.NoDelay.Size = new System.Drawing.Size(115, 17);
             this.NoDelay.TabIndex = 6;
@@ -302,7 +303,7 @@
             this.RandomPlacing.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.RandomPlacing.AutoSize = true;
             this.RandomPlacing.CheckAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.RandomPlacing.Location = new System.Drawing.Point(6, 45);
+            this.RandomPlacing.Location = new System.Drawing.Point(54, 50);
             this.RandomPlacing.Name = "RandomPlacing";
             this.RandomPlacing.Size = new System.Drawing.Size(129, 17);
             this.RandomPlacing.TabIndex = 4;
@@ -315,7 +316,7 @@
             this.AutoChain.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.AutoChain.AutoSize = true;
             this.AutoChain.CheckAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.AutoChain.Location = new System.Drawing.Point(166, 5);
+            this.AutoChain.Location = new System.Drawing.Point(262, 6);
             this.AutoChain.Name = "AutoChain";
             this.AutoChain.Size = new System.Drawing.Size(107, 17);
             this.AutoChain.TabIndex = 5;
@@ -327,7 +328,7 @@
             this.MuteOpp.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.MuteOpp.AutoSize = true;
             this.MuteOpp.CheckAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.MuteOpp.Location = new System.Drawing.Point(462, 5);
+            this.MuteOpp.Location = new System.Drawing.Point(661, 6);
             this.MuteOpp.Name = "MuteOpp";
             this.MuteOpp.Size = new System.Drawing.Size(105, 17);
             this.MuteOpp.TabIndex = 9;
@@ -339,7 +340,7 @@
             this.MuteSpec.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.MuteSpec.AutoSize = true;
             this.MuteSpec.CheckAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.MuteSpec.Location = new System.Drawing.Point(323, 45);
+            this.MuteSpec.Location = new System.Drawing.Point(474, 50);
             this.MuteSpec.Name = "MuteSpec";
             this.MuteSpec.Size = new System.Drawing.Size(104, 17);
             this.MuteSpec.TabIndex = 8;
@@ -351,7 +352,7 @@
             this.EnableSleeveLoading.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.EnableSleeveLoading.AutoSize = true;
             this.EnableSleeveLoading.CheckAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.EnableSleeveLoading.Location = new System.Drawing.Point(307, 5);
+            this.EnableSleeveLoading.Location = new System.Drawing.Point(458, 6);
             this.EnableSleeveLoading.Name = "EnableSleeveLoading";
             this.EnableSleeveLoading.Size = new System.Drawing.Size(120, 17);
             this.EnableSleeveLoading.TabIndex = 8;
@@ -361,9 +362,10 @@
             // groupBox1
             // 
             this.groupBox1.Controls.Add(this.tableLayoutPanel3);
-            this.groupBox1.Location = new System.Drawing.Point(3, 128);
+            this.groupBox1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.groupBox1.Location = new System.Drawing.Point(3, 136);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(582, 87);
+            this.groupBox1.Size = new System.Drawing.Size(781, 112);
             this.groupBox1.TabIndex = 6;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Audio/Video";
@@ -371,9 +373,9 @@
             // tableLayoutPanel3
             // 
             this.tableLayoutPanel3.ColumnCount = 3;
-            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 71.70731F));
+            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 71.70732F));
             this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 28.29268F));
-            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 191F));
+            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 192F));
             this.tableLayoutPanel3.Controls.Add(this.Enabled3d, 1, 0);
             this.tableLayoutPanel3.Controls.Add(this.flowLayoutPanel3, 2, 0);
             this.tableLayoutPanel3.Controls.Add(this.flowLayoutPanel4, 2, 1);
@@ -383,10 +385,9 @@
             this.tableLayoutPanel3.Location = new System.Drawing.Point(3, 16);
             this.tableLayoutPanel3.Name = "tableLayoutPanel3";
             this.tableLayoutPanel3.RowCount = 2;
-            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutPanel3.Size = new System.Drawing.Size(576, 68);
+            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            this.tableLayoutPanel3.Size = new System.Drawing.Size(775, 93);
             this.tableLayoutPanel3.TabIndex = 0;
             // 
             // Enabled3d
@@ -394,7 +395,7 @@
             this.Enabled3d.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.Enabled3d.AutoSize = true;
             this.Enabled3d.CheckAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.Enabled3d.Location = new System.Drawing.Point(286, 8);
+            this.Enabled3d.Location = new System.Drawing.Point(484, 8);
             this.Enabled3d.Name = "Enabled3d";
             this.Enabled3d.Size = new System.Drawing.Size(95, 17);
             this.Enabled3d.TabIndex = 2;
@@ -406,7 +407,7 @@
             // 
             this.flowLayoutPanel3.Controls.Add(this.label4);
             this.flowLayoutPanel3.Controls.Add(this.SkinList);
-            this.flowLayoutPanel3.Location = new System.Drawing.Point(387, 3);
+            this.flowLayoutPanel3.Location = new System.Drawing.Point(585, 3);
             this.flowLayoutPanel3.Name = "flowLayoutPanel3";
             this.flowLayoutPanel3.Size = new System.Drawing.Size(179, 28);
             this.flowLayoutPanel3.TabIndex = 4;
@@ -438,9 +439,9 @@
             this.flowLayoutPanel4.Controls.Add(this.label6);
             this.flowLayoutPanel4.Controls.Add(this.Antialias);
             this.flowLayoutPanel4.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.flowLayoutPanel4.Location = new System.Drawing.Point(387, 37);
+            this.flowLayoutPanel4.Location = new System.Drawing.Point(585, 37);
             this.flowLayoutPanel4.Name = "flowLayoutPanel4";
-            this.flowLayoutPanel4.Size = new System.Drawing.Size(186, 28);
+            this.flowLayoutPanel4.Size = new System.Drawing.Size(187, 53);
             this.flowLayoutPanel4.TabIndex = 5;
             // 
             // label6
@@ -543,7 +544,7 @@
             this.accountTab.Location = new System.Drawing.Point(4, 25);
             this.accountTab.Name = "accountTab";
             this.accountTab.Padding = new System.Windows.Forms.Padding(3);
-            this.accountTab.Size = new System.Drawing.Size(594, 224);
+            this.accountTab.Size = new System.Drawing.Size(793, 257);
             this.accountTab.TabIndex = 1;
             this.accountTab.Text = "Account Settings";
             this.accountTab.UseVisualStyleBackColor = true;
@@ -554,15 +555,16 @@
             this.tableLayoutPanel10.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel10.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel10.Controls.Add(this.groupBox4, 0, 0);
-            this.tableLayoutPanel10.Controls.Add(this.groupBox5, 1, 0);
             this.tableLayoutPanel10.Controls.Add(this.groupBox3, 0, 1);
+            this.tableLayoutPanel10.Controls.Add(this.groupBox5, 1, 0);
             this.tableLayoutPanel10.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel10.Location = new System.Drawing.Point(3, 3);
             this.tableLayoutPanel10.Name = "tableLayoutPanel10";
             this.tableLayoutPanel10.RowCount = 2;
             this.tableLayoutPanel10.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel10.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 91F));
-            this.tableLayoutPanel10.Size = new System.Drawing.Size(588, 218);
+            this.tableLayoutPanel10.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tableLayoutPanel10.Size = new System.Drawing.Size(787, 251);
             this.tableLayoutPanel10.TabIndex = 0;
             // 
             // groupBox4
@@ -571,7 +573,7 @@
             this.groupBox4.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupBox4.Location = new System.Drawing.Point(3, 3);
             this.groupBox4.Name = "groupBox4";
-            this.groupBox4.Size = new System.Drawing.Size(288, 121);
+            this.groupBox4.Size = new System.Drawing.Size(387, 154);
             this.groupBox4.TabIndex = 9;
             this.groupBox4.TabStop = false;
             this.groupBox4.Text = "Launcher Settings";
@@ -592,22 +594,22 @@
             this.tableLayoutPanel9.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tableLayoutPanel9.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tableLayoutPanel9.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tableLayoutPanel9.Size = new System.Drawing.Size(282, 102);
+            this.tableLayoutPanel9.Size = new System.Drawing.Size(381, 135);
             this.tableLayoutPanel9.TabIndex = 2;
             // 
             // Username
             // 
             this.Username.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.Username.Location = new System.Drawing.Point(144, 3);
+            this.Username.Location = new System.Drawing.Point(193, 3);
             this.Username.Name = "Username";
-            this.Username.Size = new System.Drawing.Size(135, 20);
+            this.Username.Size = new System.Drawing.Size(185, 20);
             this.Username.TabIndex = 0;
             // 
             // label1
             // 
             this.label1.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(24, 6);
+            this.label1.Location = new System.Drawing.Point(49, 6);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(92, 13);
             this.label1.TabIndex = 2;
@@ -618,16 +620,16 @@
             this.DefualtDeck.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.DefualtDeck.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.DefualtDeck.FormattingEnabled = true;
-            this.DefualtDeck.Location = new System.Drawing.Point(144, 29);
+            this.DefualtDeck.Location = new System.Drawing.Point(193, 29);
             this.DefualtDeck.Name = "DefualtDeck";
-            this.DefualtDeck.Size = new System.Drawing.Size(135, 21);
+            this.DefualtDeck.Size = new System.Drawing.Size(185, 21);
             this.DefualtDeck.TabIndex = 3;
             // 
             // label5
             // 
             this.label5.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(35, 33);
+            this.label5.Location = new System.Drawing.Point(60, 33);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(70, 13);
             this.label5.TabIndex = 4;
@@ -636,10 +638,11 @@
             // groupBox5
             // 
             this.groupBox5.Controls.Add(this.tableLayoutPanel11);
-            this.groupBox5.Location = new System.Drawing.Point(297, 3);
+            this.groupBox5.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.groupBox5.Location = new System.Drawing.Point(396, 3);
             this.groupBox5.Name = "groupBox5";
             this.tableLayoutPanel10.SetRowSpan(this.groupBox5, 2);
-            this.groupBox5.Size = new System.Drawing.Size(288, 184);
+            this.groupBox5.Size = new System.Drawing.Size(388, 245);
             this.groupBox5.TabIndex = 0;
             this.groupBox5.TabStop = false;
             this.groupBox5.Text = "Update Password";
@@ -660,7 +663,7 @@
             this.tableLayoutPanel11.Controls.Add(this.flowLayoutPanel2, 0, 5);
             this.tableLayoutPanel11.Controls.Add(this.emailLbl, 0, 3);
             this.tableLayoutPanel11.Controls.Add(this.confirmEmailLbl, 0, 4);
-            this.tableLayoutPanel11.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tableLayoutPanel11.Dock = System.Windows.Forms.DockStyle.Top;
             this.tableLayoutPanel11.Location = new System.Drawing.Point(3, 16);
             this.tableLayoutPanel11.Name = "tableLayoutPanel11";
             this.tableLayoutPanel11.RowCount = 6;
@@ -671,25 +674,25 @@
             this.tableLayoutPanel11.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 25F));
             this.tableLayoutPanel11.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
             this.tableLayoutPanel11.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutPanel11.Size = new System.Drawing.Size(282, 165);
+            this.tableLayoutPanel11.Size = new System.Drawing.Size(382, 165);
             this.tableLayoutPanel11.TabIndex = 0;
             // 
             // confirmEmailInput
             // 
             this.confirmEmailInput.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.confirmEmailInput.Location = new System.Drawing.Point(106, 103);
+            this.confirmEmailInput.Location = new System.Drawing.Point(143, 103);
             this.confirmEmailInput.MaxLength = 99;
             this.confirmEmailInput.Name = "confirmEmailInput";
-            this.confirmEmailInput.Size = new System.Drawing.Size(173, 20);
+            this.confirmEmailInput.Size = new System.Drawing.Size(236, 20);
             this.confirmEmailInput.TabIndex = 10;
             // 
             // emailInput
             // 
             this.emailInput.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.emailInput.Location = new System.Drawing.Point(106, 78);
+            this.emailInput.Location = new System.Drawing.Point(143, 78);
             this.emailInput.MaxLength = 99;
             this.emailInput.Name = "emailInput";
-            this.emailInput.Size = new System.Drawing.Size(173, 20);
+            this.emailInput.Size = new System.Drawing.Size(236, 20);
             this.emailInput.TabIndex = 9;
             // 
             // label7
@@ -697,7 +700,7 @@
             this.label7.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label7.Location = new System.Drawing.Point(3, 0);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(97, 25);
+            this.label7.Size = new System.Drawing.Size(134, 25);
             this.label7.TabIndex = 0;
             this.label7.Text = "Current Password";
             this.label7.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -707,7 +710,7 @@
             this.label8.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label8.Location = new System.Drawing.Point(3, 25);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(97, 25);
+            this.label8.Size = new System.Drawing.Size(134, 25);
             this.label8.TabIndex = 1;
             this.label8.Text = "New Password";
             this.label8.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -717,7 +720,7 @@
             this.label9.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label9.Location = new System.Drawing.Point(3, 50);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(97, 25);
+            this.label9.Size = new System.Drawing.Size(134, 25);
             this.label9.TabIndex = 2;
             this.label9.Text = "Confirm Password";
             this.label9.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -725,59 +728,61 @@
             // currentPassword
             // 
             this.currentPassword.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.currentPassword.Location = new System.Drawing.Point(106, 3);
+            this.currentPassword.Location = new System.Drawing.Point(143, 3);
             this.currentPassword.MaxLength = 15;
             this.currentPassword.Name = "currentPassword";
-            this.currentPassword.Size = new System.Drawing.Size(173, 20);
+            this.currentPassword.Size = new System.Drawing.Size(236, 20);
             this.currentPassword.TabIndex = 4;
             this.currentPassword.UseSystemPasswordChar = true;
             // 
             // newPassword
             // 
             this.newPassword.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.newPassword.Location = new System.Drawing.Point(106, 28);
+            this.newPassword.Location = new System.Drawing.Point(143, 28);
             this.newPassword.MaxLength = 15;
             this.newPassword.Name = "newPassword";
-            this.newPassword.Size = new System.Drawing.Size(173, 20);
+            this.newPassword.Size = new System.Drawing.Size(236, 20);
             this.newPassword.TabIndex = 5;
             this.newPassword.UseSystemPasswordChar = true;
             // 
             // confirmPassword
             // 
             this.confirmPassword.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.confirmPassword.Location = new System.Drawing.Point(106, 53);
+            this.confirmPassword.Location = new System.Drawing.Point(143, 53);
             this.confirmPassword.MaxLength = 15;
             this.confirmPassword.Name = "confirmPassword";
-            this.confirmPassword.Size = new System.Drawing.Size(173, 20);
+            this.confirmPassword.Size = new System.Drawing.Size(236, 20);
             this.confirmPassword.TabIndex = 6;
             this.confirmPassword.UseSystemPasswordChar = true;
             // 
             // flowLayoutPanel2
             // 
             this.tableLayoutPanel11.SetColumnSpan(this.flowLayoutPanel2, 2);
-            this.flowLayoutPanel2.Controls.Add(this.UpdatePassword);
+            this.flowLayoutPanel2.Controls.Add(this.Update);
+            this.flowLayoutPanel2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.flowLayoutPanel2.FlowDirection = System.Windows.Forms.FlowDirection.RightToLeft;
             this.flowLayoutPanel2.Location = new System.Drawing.Point(3, 128);
             this.flowLayoutPanel2.Name = "flowLayoutPanel2";
-            this.flowLayoutPanel2.Size = new System.Drawing.Size(276, 32);
+            this.flowLayoutPanel2.Size = new System.Drawing.Size(376, 34);
             this.flowLayoutPanel2.TabIndex = 3;
             // 
-            // UpdatePassword
+            // Update
             // 
-            this.UpdatePassword.Location = new System.Drawing.Point(84, 3);
-            this.UpdatePassword.Margin = new System.Windows.Forms.Padding(3, 3, 100, 3);
-            this.UpdatePassword.Name = "UpdatePassword";
-            this.UpdatePassword.Size = new System.Drawing.Size(92, 23);
-            this.UpdatePassword.TabIndex = 0;
-            this.UpdatePassword.Text = "Update Password";
-            this.UpdatePassword.UseVisualStyleBackColor = true;
-            this.UpdatePassword.Click += new System.EventHandler(this.UpdatePassword_Click);
+            this.Update.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.Update.Location = new System.Drawing.Point(117, 3);
+            this.Update.Margin = new System.Windows.Forms.Padding(3, 3, 100, 3);
+            this.Update.Name = "Update";
+            this.Update.Size = new System.Drawing.Size(159, 26);
+            this.Update.TabIndex = 0;
+            this.Update.Text = "Update";
+            this.Update.UseVisualStyleBackColor = true;
+            this.Update.Click += new System.EventHandler(this.UpdatePassword_Click);
             // 
             // emailLbl
             // 
             this.emailLbl.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.emailLbl.AutoSize = true;
-            this.emailLbl.Location = new System.Drawing.Point(35, 81);
+            this.emailLbl.Location = new System.Drawing.Point(54, 81);
             this.emailLbl.Name = "emailLbl";
             this.emailLbl.Size = new System.Drawing.Size(32, 13);
             this.emailLbl.TabIndex = 7;
@@ -787,7 +792,7 @@
             // 
             this.confirmEmailLbl.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.confirmEmailLbl.AutoSize = true;
-            this.confirmEmailLbl.Location = new System.Drawing.Point(16, 106);
+            this.confirmEmailLbl.Location = new System.Drawing.Point(35, 106);
             this.confirmEmailLbl.Name = "confirmEmailLbl";
             this.confirmEmailLbl.Size = new System.Drawing.Size(70, 13);
             this.confirmEmailLbl.TabIndex = 8;
@@ -797,7 +802,7 @@
             // 
             this.groupBox3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.groupBox3.Controls.Add(this.tableLayoutPanel6);
-            this.groupBox3.Location = new System.Drawing.Point(3, 137);
+            this.groupBox3.Location = new System.Drawing.Point(3, 170);
             this.groupBox3.Name = "groupBox3";
             this.groupBox3.Size = new System.Drawing.Size(288, 78);
             this.groupBox3.TabIndex = 10;
@@ -874,10 +879,9 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(96F, 96F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
-            this.ClientSize = new System.Drawing.Size(613, 294);
+            this.ClientSize = new System.Drawing.Size(807, 336);
             this.ControlBox = false;
             this.Controls.Add(this.tableLayoutPanel1);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Name = "Settings";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Options";
@@ -955,7 +959,7 @@
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel2;
-        private System.Windows.Forms.Button UpdatePassword;
+        private System.Windows.Forms.Button Update;
         private System.Windows.Forms.TextBox currentPassword;
         private System.Windows.Forms.TextBox newPassword;
         private System.Windows.Forms.TextBox confirmPassword;

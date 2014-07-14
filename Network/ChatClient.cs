@@ -192,6 +192,9 @@ namespace DevProLauncher.Network
                 case DevClientPackets.ChangeFailed:
                 case DevClientPackets.RegisterAccept:
                 case DevClientPackets.RegisterFailed:
+                case DevClientPackets.DuplicateMail:
+                case DevClientPackets.BlacklistMail:
+                case DevClientPackets.MailFormat:
                 case DevClientPackets.Pong:
                 case DevClientPackets.RefuseDuelRequest:
                     return true;
@@ -310,6 +313,18 @@ namespace DevProLauncher.Network
                         RegisterReply(e.Packet);
                     break;
                 case DevClientPackets.RegisterFailed:
+                    if (RegisterReply != null)
+                        RegisterReply(e.Packet);
+                    break;
+                case DevClientPackets.DuplicateMail:
+                    if (RegisterReply != null)
+                        RegisterReply(e.Packet);
+                    break;
+                case DevClientPackets.BlacklistMail:
+                    if (RegisterReply != null)
+                        RegisterReply(e.Packet);
+                    break;
+                case DevClientPackets.MailFormat:
                     if (RegisterReply != null)
                         RegisterReply(e.Packet);
                     break;

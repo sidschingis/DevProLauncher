@@ -115,6 +115,18 @@ namespace DevProLauncher.Windows.MessageBoxs
                 {
                     MessageBox.Show(Program.LanguageManager.Translation.RegistMsb5);
                 }
+                else if (packet == DevClientPackets.DuplicateMail)
+                {
+                    MessageBox.Show(Program.LanguageManager.Translation.RegistMailExists);
+                }
+                else if (packet == DevClientPackets.BlacklistMail)
+                {
+                    MessageBox.Show(Program.LanguageManager.Translation.RegistMailBlacklist);
+                }
+                else if (packet == DevClientPackets.MailFormat)
+                {
+                    MessageBox.Show(Program.LanguageManager.Translation.RegistMailFormat);
+                }
                 RegisterBtn.Enabled = true;
             }
 

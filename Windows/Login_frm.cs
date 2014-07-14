@@ -87,6 +87,7 @@ namespace DevProLauncher.Windows
         {
             PatchNotes.Navigate("http://ygopro.de/launcher/indexlauncher.html", false);
         }
+        /*deprecated*/
         private void WebRedirect(object sender, CancelEventArgs e)
         {
             try
@@ -103,7 +104,6 @@ namespace DevProLauncher.Windows
                 
             }
         }
-
         private void UsernameInput_KeyDown(object sender, KeyEventArgs e)
         {
             if (e.KeyCode == Keys.Space)
@@ -264,7 +264,7 @@ namespace DevProLauncher.Windows
             PatchNotes.Navigate(languageSelect.SelectedItem.ToString() == "German"
                         ? "http://ygopro.de/en/category/"
                         : "http://ygopro.de/en/category/patch-notes/");
-            PatchNotes.Navigating += WebRedirect;
+            //PatchNotes.Navigating += WebRedirect;
             label4.Visible = false;
         }
 

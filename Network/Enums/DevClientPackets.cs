@@ -48,6 +48,9 @@
         ResendAccept = 45,
         ResendFailed = 46,
         ChangeAccept = 47,
-        ChangeFailed = 48
+        ChangeFailed = 48,
+        DuplicateMail = 49,
+        BlacklistMail = 50,
+        MailFormat = 51
     }
 }

@@ -1156,10 +1156,34 @@ namespace DevProLauncher.Windows
         private void BanUser(object sender, EventArgs e)
         {
             ListBox list = UserListTabs.SelectedTab.Name == ChannelTab.Name ? ChannelList : UserList;
+         /*  
             if (list.SelectedItem != null && MessageBox.Show("Are you sure you want to ban " + ((UserData)list.SelectedItem).username, "Ban User", MessageBoxButtons.YesNo) == DialogResult.Yes)
             {
                 Program.ChatServer.SendPacket(DevServerPackets.ChatCommand, JsonSerializer.SerializeToString(
                     new PacketCommand { Command = "BAN", Data = ((UserData)list.SelectedItem).username }));
+            }
+          */
+            var input = new BanFrm( Program.LanguageManager.Translation.banTitle, 
+                                    Program.LanguageManager.Translation.banMessageLbl,
+                                    Program.LanguageManager.Translation.banTimeLbl,
+                                    Program.LanguageManager.Translation.banReasonLbl,
+                                    Program.LanguageManager.Translation.banConfirm,
+                                    Program.LanguageManager.Translation.banCancel);
+            if ((!(list.SelectedItems.Count > 1)))
+            {
+
+                if ((input.ShowDialog() == DialogResult.OK))
+                {
+                    try
+                    {
+                        Program.ChatServer.SendPacket(DevServerPackets.ChatCommand, JsonSerializer.SerializeToString(
+                     new PacketCommand { Command = "BAN", Data = ((UserData)list.SelectedItem).username+ " " +input.inputBox1.Text + " " + input.inputBox2.Text }));
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show(ex.Message);
+                    }
+                }
             }
         }
 
@@ -1170,8 +1194,33 @@ namespace DevProLauncher.Windows
             {
                 return;
             }
+           /*
             Program.ChatServer.SendPacket(DevServerPackets.ChatCommand, JsonSerializer.SerializeToString(
                 new PacketCommand { Command = "KICK", Data = ((UserData)list.SelectedItem).username }));
+            */
+            var input = new BanFrm( Program.LanguageManager.Translation.kickTitle,
+                                    Program.LanguageManager.Translation.kickMessageLbl,
+                                    Program.LanguageManager.Translation.kickReasonLbl,
+                                    "",
+                                    Program.LanguageManager.Translation.kickConfirm,
+                                    Program.LanguageManager.Translation.kickCancel);
+            input.inputBox2.Visible = false;
+            if ((!(list.SelectedItems.Count > 1)))
+            {
+
+                if ((input.ShowDialog() == DialogResult.OK))
+                {
+                    try
+                    {
+                        Program.ChatServer.SendPacket(DevServerPackets.ChatCommand, JsonSerializer.SerializeToString(
+                     new PacketCommand { Command = "BAN", Data = ((UserData)list.SelectedItem).username + " " + input.inputBox1.Text}));
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show(ex.Message);
+                    }
+                }
+            }
         }
 
         private void SpectateUser(object sender, EventArgs e)

@@ -208,6 +208,12 @@
     <Compile Include="Windows\MessageBoxs\Host_frm.designer.cs">
       <DependentUpon>Host_frm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Windows\MessageBoxs\Ban_frm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Windows\MessageBoxs\Ban_frm.designer.cs">
+      <DependentUpon>Ban_frm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Windows\MessageBoxs\Input_frm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -310,6 +316,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Windows\MessageBoxs\Host_frm.resx">
       <DependentUpon>Host_frm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Windows\MessageBoxs\Ban_frm.resx">
+      <DependentUpon>Ban_frm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Windows\MessageBoxs\Input_frm.resx">
       <DependentUpon>Input_frm.cs</DependentUpon>

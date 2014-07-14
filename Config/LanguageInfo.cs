@@ -202,6 +202,7 @@ namespace DevProLauncher.Config
         public string fileAskDelete = "Are you sure you want to delete the following item(s) ";
         public string fileNewName = "Enter new name";
         public string fileInputConfirm = "Rename";
+        public string fileInputCancel= "Cancel";
         public string fileBtnRefresh = "Refresh";
         public string fileBtnImport = "Import";
 
@@ -328,7 +329,22 @@ namespace DevProLauncher.Config
         public string chatOptionTab = "Options";
         public string chatChannelTab = "Channel";
         public string chatUserListTab = "UserList";
-        
+
+        // Ban_frm.cs
+
+        public string banTitle = "Ban User";
+        public string banMessageLbl = "Please fill out the form";
+        public string banTimeLbl = "Time to ban (in hours)";
+        public string banReasonLbl = "Reason for ban";
+        public string banConfirm   = "Confirm";
+        public string banCancel = "Cancel";
+
+        public string kickTitle = "Kick User";
+        public string kickMessageLbl = "Please fill out the form";
+        public string kickReasonLbl = "Reason for kick";
+        public string kickConfirm = "Confirm";
+        public string kickCancel = "Cancel";
+
         // Checkmate_frm.cs
 
         public string checkmateInfo = "- To register an account simply type a username and password! \n" +

@@ -85,7 +85,7 @@ namespace DevProLauncher.Windows
         }
         private void ShowAd()
         {
-            PatchNotes.Navigate("http://ygopro.de/launcher/indexlauncher.html", false);
+            PatchNotes.Navigate("http://ygopro.de/launcher/indexlauncher.php", false);
         }
         /*deprecated*/
         private void WebRedirect(object sender, CancelEventArgs e)

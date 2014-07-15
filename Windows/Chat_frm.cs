@@ -249,7 +249,7 @@ namespace DevProLauncher.Windows
             string[] users = Program.Config.IgnoreList.Split(new[] { ',' }, StringSplitOptions.RemoveEmptyEntries);
             foreach (string user in users)
             {
-                IgnoreList.Items.Add(user);
+                IgnoreList.Items.Add(user.ToLower());
             }
         }
 
@@ -382,7 +382,7 @@ namespace DevProLauncher.Windows
 
         public bool IgnoreUser(UserData user)
         {
-            return IgnoreList.Items.Contains(user.username) && user.rank < 1;
+            return IgnoreList.Items.Contains(user.username.ToLower()) && user.rank < 1;
 
         }
 
@@ -1256,13 +1256,13 @@ namespace DevProLauncher.Windows
                 return;
             }
 
-            if (IgnoreList.Items.Contains(((UserData)list.SelectedItem).username))
+            if (IgnoreList.Items.Contains(((UserData)list.SelectedItem).username.ToLower()))
             {
                 WriteMessage(new ChatMessage(MessageType.System, CommandType.None, null, ((UserData)list.SelectedItem).username + " is already on your ignore list."));
                 return;
             }
 
-            IgnoreList.Items.Add(((UserData)list.SelectedItem).username);
+            IgnoreList.Items.Add(((UserData)list.SelectedItem).username.ToLower());
             SaveIgnoreList();
             WriteMessage(new ChatMessage(MessageType.System, CommandType.None, null, ((UserData)list.SelectedItem).username + " has been added to your ignore list."));
         }
@@ -1341,7 +1341,7 @@ namespace DevProLauncher.Windows
                 return;
             }
 
-            if (Program.Config.RefuseDuelRequests || IgnoreList.Items.Contains(command.username))
+            if (Program.Config.RefuseDuelRequests || IgnoreList.Items.Contains(command.username.ToLower()))
             {
                 Program.ChatServer.SendPacket(DevServerPackets.RefuseDuel);
                 return;

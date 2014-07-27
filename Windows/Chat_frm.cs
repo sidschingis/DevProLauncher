@@ -922,6 +922,8 @@ namespace DevProLauncher.Windows
                         WriteMessage(new ChatMessage(MessageType.System, CommandType.None, null, "/msg - Sends a server message"));
                         WriteMessage(new ChatMessage(MessageType.System, CommandType.None, null, "/smsg - Sends a server message that displays on the bottom of the launcher"));
                         WriteMessage(new ChatMessage(MessageType.System, CommandType.None, null, "/getaccounts username - Gets a list of accounts for the the inputted username"));
+                        WriteMessage(new ChatMessage(MessageType.System, CommandType.None, null, "/cmute roomname - Mutes a room so that only admins can speak"));
+                        WriteMessage(new ChatMessage(MessageType.System, CommandType.None, null, "/cunmute roomname - Unmutes a room that was muted."));
                     }
 
                     if (Program.UserInfo.rank > 2)
@@ -937,6 +939,8 @@ namespace DevProLauncher.Windows
                         WriteMessage(new ChatMessage(MessageType.System, CommandType.None, null, "/roomowner roomname - Gets the creator of a channel"));
                         WriteMessage(new ChatMessage(MessageType.System, CommandType.None, null, "/killroom roomname - forces a chat channel to close"));
                         WriteMessage(new ChatMessage(MessageType.System, CommandType.None, null, "/getuid username - Gets the UID of a username"));
+                        WriteMessage(new ChatMessage(MessageType.System, CommandType.None, null, "/gmute username - Globally mutes a user."));
+                        WriteMessage(new ChatMessage(MessageType.System, CommandType.None, null, "/gunmute username - Unmutes a user that was muted globally"));
                     }
 
                     if (Program.UserInfo.rank == 99)
@@ -945,6 +949,7 @@ namespace DevProLauncher.Windows
                         WriteMessage(new ChatMessage(MessageType.System, CommandType.None, null, "/op username level - Sets a users level"));
                         WriteMessage(new ChatMessage(MessageType.System, CommandType.None, null, "/addpoints username amount of DevPoints - Gives a user DevPoints"));
                         WriteMessage(new ChatMessage(MessageType.System, CommandType.None, null, "/removepoints username amount of DevPoints - Removes DevPoints from a user"));
+                        WriteMessage(new ChatMessage(MessageType.System, CommandType.None, null, "/mps number - Changes the messages per second"));
                     }
 
                     if (Program.UserInfo.teamRank >= 0 && Program.UserInfo.team != string.Empty)

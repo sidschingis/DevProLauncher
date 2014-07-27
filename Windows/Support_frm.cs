@@ -42,15 +42,15 @@ namespace DevProLauncher.Windows
             LanguageInfo lang = Program.LanguageManager.Translation;
 
            // AddItem(Properties.Resources.rankup, lang.SupportItem1Name, FormatString(lang.SupportItem1Des), 100, "DEVSTATUS", false);
-            AddItem(Properties.Resources.maskchange, lang.SupportItem2Name, FormatString(lang.SupportItem2Des), 200, "DEVRENAME", true);
+            AddItem(Properties.Resources.maskchange, lang.SupportItem2Name, FormatString(lang.SupportItem2Des), 500, "DEVRENAME", true);
             AddItem(Properties.Resources.desruct, lang.SupportItem3Name, FormatString(lang.SupportItem3Des), 50, "DEVRESETRANK", false);
             AddItem(Properties.Resources.swords, lang.SupportItem8Name, FormatString(lang.SupportItem8Des), 100, "NULL", false);
             AddItem(Properties.Resources.DNA, lang.SupportItem5Name, FormatString(lang.SupportItem5Des), 300, "DEVCOLOR", true);
             AddItem(Properties.Resources.sixsam, lang.SupportItem6Name, FormatString(lang.SupportItem6Des), 500, "DEVCREATETEAM", true);
             AddItem(Properties.Resources.message, lang.SupportItem7Name, FormatString(lang.SupportItem7Des), 150, "DEVMSG", true);
-            AddItem(Properties.Resources.bookoflife, lang.SupportItem4Name, FormatString(lang.SupportItem4Des), 1000, "DEVUNBAN", true);
+           // AddItem(Properties.Resources.bookoflife, lang.SupportItem4Name, FormatString(lang.SupportItem4Des), 1000, "DEVUNBAN", true);
             m_descriptions.Add("DEVRENAME", lang.SupportRenameInput);
-            m_descriptions.Add("DEVUNBAN", lang.SupportUnbanInput);
+           // m_descriptions.Add("DEVUNBAN", lang.SupportUnbanInput);
             m_descriptions.Add("DEVCREATETEAM", lang.SupportTeamNameInput);
             m_descriptions.Add("DEVMSG", lang.SupportMSGInput);
 

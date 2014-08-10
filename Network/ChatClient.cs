@@ -73,6 +73,9 @@ namespace DevProLauncher.Network
         public ChannelList ChannelRequest;
         public ServerResponse AddGameServer;
         public ServerResponse RemoveGameServer;
+        public ServerResponse MatchFound;
+        public ServerResponse MatchCanceled;
+        public UserDuelRequest MatchStart;
 
         public string ServerKickBanMessage;
 
@@ -195,6 +198,7 @@ namespace DevProLauncher.Network
                 case DevClientPackets.DuplicateMail:
                 case DevClientPackets.BlacklistMail:
                 case DevClientPackets.MailFormat:
+                case DevClientPackets.QueueFail:
                 case DevClientPackets.Pong:
                 case DevClientPackets.RefuseDuelRequest:
                     return true;
@@ -217,7 +221,7 @@ namespace DevProLauncher.Network
                     //handle incoming
                     if (m_client.Available >= 1)
                     {
-                          var packet = (DevClientPackets) m_reader.ReadByte();
+                        var packet = (DevClientPackets) m_reader.ReadByte();
                         int len = 0;
                         byte[] content = null;
                         if (!isOneByte(packet))
@@ -289,6 +293,18 @@ namespace DevProLauncher.Network
         {
             switch (e.Packet)
             {
+                case DevClientPackets.MatchFound:
+                    if (MatchFound != null)
+                        MatchFound(Encoding.UTF8.GetString(e.Reader.ReadBytes(e.Raw.Length)));
+                    break;
+                case DevClientPackets.MatchCanceled:
+                    if (MatchCanceled != null)
+                        MatchCanceled(Encoding.UTF8.GetString(e.Reader.ReadBytes(e.Raw.Length)));
+                    break;
+                case DevClientPackets.MatchStart:
+                    if (MatchStart != null)
+                        MatchStart(JsonSerializer.DeserializeFromString<DuelRequest>(Encoding.UTF8.GetString(e.Reader.ReadBytes(e.Raw.Length))));
+                    break;
                 case DevClientPackets.LoginAccepted:
                     if (LoginReply != null)
                         LoginReply(e.Packet, JsonSerializer.DeserializeFromString<LoginData>(Encoding.UTF8.GetString(e.Reader.ReadBytes(e.Raw.Length))));

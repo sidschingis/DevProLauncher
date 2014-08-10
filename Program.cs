@@ -16,7 +16,7 @@ namespace DevProLauncher
 {
     static class Program
     {
-        public const string Version = "199890";
+        public const string Version = "199891";
         public static Configuration Config;
         public static LanguageManager LanguageManager;
         public static ChatClient ChatServer;
@@ -46,11 +46,11 @@ namespace DevProLauncher
 
             LanguageManager = new LanguageManager();  
             LanguageManager.Load(Config.Language);
-
+#if !DEBUG
             if (LauncherHelper.CheckInstance())
                 if (MessageBox.Show(LanguageManager.Translation.pmsbProgRun) == DialogResult.OK)
                     return;
-
+#endif
             ChatServer = new ChatClient();
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);

@@ -51,6 +51,10 @@
         ChangeFailed = 48,
         DuplicateMail = 49,
         BlacklistMail = 50,
-        MailFormat = 51
+        MailFormat = 51,
+        QueueFail = 52,
+        MatchFound = 53,
+        MatchCanceled = 54,
+        MatchStart = 55
     }
 }

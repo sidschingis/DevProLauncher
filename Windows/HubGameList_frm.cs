@@ -41,6 +41,9 @@ namespace DevProLauncher.Windows
             Program.ChatServer.UpdateRoomPlayers += OnRoomPlayersUpdate;
             Program.ChatServer.AddGameServer += AddServer;
             Program.ChatServer.RemoveGameServer += RemoveServer;
+            Program.ChatServer.MatchFound += OnMatchFound;
+            Program.ChatServer.MatchCanceled += OnMatchCancel;
+            Program.ChatServer.MatchStart += OnMatchStart;
             RankedList.DrawItem += GameListBox_DrawItem;
             UnrankedList.DrawItem += GameListBox_DrawItem;
             UnrankedList.DoubleClick += LoadRoom;
@@ -746,6 +749,103 @@ namespace DevProLauncher.Windows
             SpectateBtn.Enabled = false;
             SpectateBtn.Text = "5";
             SpectateTimer.Enabled = true;
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            bool isranked = true;
+            string mode = "Match";
+            var ran = new Random();
+            var form = new Host(false, false)
+            {
+                CardRules = { Text = Program.Config.CardRules },
+                Mode = { Text = mode },
+                Priority = { Checked = Program.Config.EnablePrority },
+                CheckDeck = { Checked = Program.Config.DisableCheckDeck },
+                ShuffleDeck = { Checked = Program.Config.DisableShuffleDeck },
+                LifePoints = { Text = Program.Config.Lifepoints },
+                GameName = LauncherHelper.GenerateString().Substring(0, 5),
+                BanList = { SelectedItem = Program.Config.BanList },
+                TimeLimit = { SelectedItem = Program.Config.TimeLimit }
+            };
+
+            ListBox list = (isranked) ? RankedList : UnrankedList;
+
+            if (isranked)
+            {
+                form.BanList.SelectedIndex = 0;
+                form.CheckDeck.Checked = false;
+                form.ShuffleDeck.Checked = false;
+                form.Priority.Checked = false;
+                form.CardRules.SelectedIndex = 2;
+                form.LifePoints.Text = form.Mode.Text == "Tag" ? "16000" : "8000";
+            }
+            else
+            {
+                if (Program.Config.Lifepoints != ((mode == "Tag") ? "16000" : "8000"))
+                {
+                    if (MessageBox.Show(Program.LanguageManager.Translation.GameLPChange, Program.LanguageManager.Translation.hostLifep, MessageBoxButtons.YesNo) == DialogResult.Yes)
+                    {
+                        form.LifePoints.Text = mode == "Tag" ? "16000" : "8000";
+
+                    }
+                }
+            }
+
+            RoomInfos userinfo = RoomInfos.FromName(form.GenerateURI(isranked));
+
+            Program.ChatServer.SendPacket(DevServerPackets.JoinQueue,JsonSerializer.SerializeToString(userinfo));
+
+            /*
+            var matchedRooms = (from object room in list.Items where m_rooms.ContainsKey(room.ToString()) select m_rooms[room.ToString()] into info where RoomInfos.CompareRoomInfo(userinfo, info) select info).ToList();
+            string server = string.Empty;
+            if (matchedRooms.Count > 0)
+            {
+                var selectroom = ran.Next(matchedRooms.Count);
+                form.GameName = matchedRooms[selectroom].roomName;
+                server = matchedRooms[selectroom].server;
+            }
+
+            if (string.IsNullOrEmpty(server))
+            {
+                LauncherHelper.GenerateConfig(GetServer(), form.GenerateURI(isranked));
+                LauncherHelper.RunGame("-j");
+            }
+            else
+            {
+                LauncherHelper.GenerateConfig(Program.ServerList[server], form.GenerateURI(isranked));
+                LauncherHelper.RunGame("-j");
+            }
+            */
+        }
+        public void OnMatchFound(string matchnumber)
+        {
+            var form = new DuelRequestFrm(
+            "Found a Match, are you ready?",true);
+
+            if (form.ShowDialog() == DialogResult.Yes)
+            {
+               Program.ChatServer.SendPacket(DevServerPackets.AcceptMatch,matchnumber);
+            }
+            else
+            {
+               Program.ChatServer.SendPacket(DevServerPackets.RefuseMatch,matchnumber);
+            }
+        }
+        public void OnMatchCancel(string data)
+        {
+             MessageBox.Show(Program.LanguageManager.Translation.GameMatchCancel +"("+data+")");
+        }
+        public void OnMatchStart(DuelRequest request)
+        {
+            ServerInfo server = null;
+            if (Program.ServerList.ContainsKey(request.server))
+                server = Program.ServerList[request.server];
+            if (server != null)
+            {
+                LauncherHelper.GenerateConfig(server, request.duelformatstring);
+                LauncherHelper.RunGame("-j");
+            }  
         }
     }
 }

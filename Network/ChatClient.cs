@@ -293,6 +293,9 @@ namespace DevProLauncher.Network
         {
             switch (e.Packet)
             {
+                case DevClientPackets.QueueFail:
+                    MessageBox.Show("You can only join once.");
+                    break;
                 case DevClientPackets.MatchFound:
                     if (MatchFound != null)
                         MatchFound(Encoding.UTF8.GetString(e.Reader.ReadBytes(e.Raw.Length)));

@@ -37,7 +37,8 @@
         Resend = 34,
         UpdateEmail = 35,
         JoinQueue = 36,
-        AcceptMatch = 37,
-        RefuseMatch = 38
+        LeaveQueue = 37,
+        AcceptMatch = 38,
+        RefuseMatch = 39
     }
 }

@@ -19,6 +19,7 @@ namespace DevProLauncher.Windows
 
         private readonly Dictionary<string, RoomInfos> m_rooms = new Dictionary<string, RoomInfos>();
         private List<string> ServerList = new List<string>();
+        private int timer;
 
         public HubGameList_frm()
         {
@@ -50,8 +51,10 @@ namespace DevProLauncher.Windows
             RankedList.DoubleClick += LoadRoom;
 
             SearchReset.Tick += ResetSearch;
+            QueueTimer.Tick += Timer;
             SpectateTimer.Tick += ResetSpectate;
             GameListUpdateTimer.Tick += UpdateGameListTimer;
+            timer = 0;
 
             RefreshDeckList();
             LauncherHelper.DeckEditClosed += RefreshDeckList;
@@ -197,7 +200,29 @@ namespace DevProLauncher.Windows
                 SearchRequest_Btn.Text = (value - 1).ToString(CultureInfo.InvariantCulture);
             }
         }
-
+        private void Timer(object sender, EventArgs e){
+            if (InvokeRequired)
+            {
+                Invoke(new Action<object, EventArgs>(Timer), sender, e);
+                return;
+            }
+            timer++;
+            QueueLabel.Text = "Queue Status: Searching for " + timer + " seconds";
+        }
+        private void ResetQueue(/*object sender, EventArgs e*/)
+        {
+            //stub
+            if (InvokeRequired)
+            {
+                Invoke(new Action(ResetQueue));
+                return;
+            }
+            QueueTimer.Enabled = false;
+            timer = 0;
+            QueueLabel.Text = "Queue Status: Not Searching";
+            joinBtn.Enabled = true;
+            LeaveBtn.Enabled = false;
+        }
         private void ResetSpectate(object sender, EventArgs e)
         {
             if (InvokeRequired)
@@ -464,18 +489,20 @@ namespace DevProLauncher.Windows
                 var mnuSingle = new ToolStripMenuItem("Single") { Name = "Single" };
                 var mnuMatch = new ToolStripMenuItem("Match") { Name = "Match" };
                 var mnuTag = new ToolStripMenuItem("Tag") { Name = "Tag" };
+                var mnuTest = new ToolStripMenuItem("Test") { Name = "Test" };
                 var mnuRSingle = new ToolStripMenuItem("Single") { Name = "RSingle" };
                 var mnuRMatch = new ToolStripMenuItem("Match") { Name = "RMatch" };
                 var mnuRTag = new ToolStripMenuItem("Tag") { Name = "RTag" };
 
                 mnuRanked.DropDownItems.AddRange(new ToolStripItem[]{ mnuRSingle,mnuRMatch,mnuRTag});
                 mnuRanked.DropDownDirection = ToolStripDropDownDirection.Right;
-                mnuUnRanked.DropDownItems.AddRange(new ToolStripItem[] { mnuSingle, mnuMatch, mnuTag });
+                mnuUnRanked.DropDownItems.AddRange(new ToolStripItem[] { mnuSingle, mnuMatch, mnuTag, mnuTest });
                 mnuUnRanked.DropDownDirection = ToolStripDropDownDirection.Right;
 
                 mnuSingle.Click += QuickHostItem_Click;
                 mnuMatch.Click += QuickHostItem_Click;
                 mnuTag.Click += QuickHostItem_Click;
+                mnuTest.Click += button1_Click;
                 mnuRSingle.Click += QuickHostItem_Click;
                 mnuRMatch.Click += QuickHostItem_Click;
                 mnuRTag.Click += QuickHostItem_Click;
@@ -796,6 +823,7 @@ namespace DevProLauncher.Windows
 
             Program.ChatServer.SendPacket(DevServerPackets.JoinQueue,JsonSerializer.SerializeToString(userinfo));
 
+            QueueLabel.Text = "Queue Status: searching";
             /*
             var matchedRooms = (from object room in list.Items where m_rooms.ContainsKey(room.ToString()) select m_rooms[room.ToString()] into info where RoomInfos.CompareRoomInfo(userinfo, info) select info).ToList();
             string server = string.Empty;
@@ -834,7 +862,7 @@ namespace DevProLauncher.Windows
         }
         public void OnMatchCancel(string data)
         {
-             MessageBox.Show(Program.LanguageManager.Translation.GameMatchCancel +"("+data+")");
+            MessageBox.Show(Program.LanguageManager.Translation.GameMatchCancel +"("+data+")");
         }
         public void OnMatchStart(DuelRequest request)
         {
@@ -845,7 +873,22 @@ namespace DevProLauncher.Windows
             {
                 LauncherHelper.GenerateConfig(server, request.duelformatstring);
                 LauncherHelper.RunGame("-j");
-            }  
+            }
+            ResetQueue();
+        }
+
+        private void joinBtn_Click(object sender, EventArgs e)
+        {
+            button1_Click(sender, e);
+            QueueTimer.Enabled = true;
+            joinBtn.Enabled = false;
+            LeaveBtn.Enabled = true;
+        }
+
+        private void LeaveBtn_Click(object sender, EventArgs e)
+        {
+            Program.ChatServer.SendPacket(DevServerPackets.LeaveQueue);
+            ResetQueue();
         }
     }
 }

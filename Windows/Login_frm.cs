@@ -9,6 +9,9 @@ using DevProLauncher.Network.Enums;
 using DevProLauncher.Network.Data;
 using ServiceStack.Text;
 using DevProLauncher.Windows.MessageBoxs;
+using DevProLauncher.Windows.Components;
+using System.Drawing;
+using System.Threading;
 
 namespace DevProLauncher.Windows
 {
@@ -51,7 +54,9 @@ namespace DevProLauncher.Windows
 
             PatchNotes.ScriptErrorsSuppressed = true;
             //PatchNotes.Dock = DockStyle.Fill;
-            ShowAd();
+
+            Thread adthread = new Thread(ShowAd) { IsBackground = true };
+            adthread.Start();
 
             ApplyTranslation();
 
@@ -85,7 +90,37 @@ namespace DevProLauncher.Windows
         }
         private void ShowAd()
         {
-            PatchNotes.Navigate("http://ygopro.de/launcher/indexlauncher.php", false);
+            //PatchNotes.Navigate("http://ygopro.de/launcher/indexlauncher.php", false);
+
+            string loc = LauncherHelper.GetLocation();
+
+            if (!LauncherHelper.IsEuropeanLocation(loc))
+                return;
+            Image image ;
+
+            switch (loc)
+            {
+                case "DE":
+                    image = Properties.Resources.cardmarketDE;
+                    break;
+                case "ES":
+                    image = Properties.Resources.cardmarketES;
+                    break;
+                case "FR":
+                    image = Properties.Resources.cardmarketFR;
+                    break;
+                case "IT":
+                    image = Properties.Resources.cardmarketIT;
+                    break;
+                default:
+                    image = Properties.Resources.cardmarketEN;
+                    break;
+            }      
+            
+            this.BeginInvoke((MethodInvoker) delegate {
+                var item = new Banner("tcgmarket", "http://ygopro.de/launcher/werbung/linktrackercheck.php?tcgmarket=bannerheader/" , image);
+                AdPanel.Controls.Add(item, 0, 0);
+            }); 
         }
         /*deprecated*/
         private void WebRedirect(object sender, CancelEventArgs e)
@@ -266,6 +301,7 @@ namespace DevProLauncher.Windows
                         : "http://ygopro.de/en/category/patch-notes/");
             //PatchNotes.Navigating += WebRedirect;
             label4.Visible = false;
+            AdPanel.Visible = false;
         }
 
         private void validateBtn_Click(object sender, EventArgs e)

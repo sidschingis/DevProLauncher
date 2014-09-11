@@ -405,5 +405,31 @@ namespace DevProLauncher.Helpers
             RegEditor.Write("Software\\devpro\\", "UID", GenerateString());
             return RegEditor.Read("Software\\devpro\\", "UID");
         }
+        /// <summary>
+        /// Get computer INTERNET Location Code like DE
+        /// </summary>
+        /// <returns></returns>
+        public static string GetLocation()
+        {
+            // check Location using hostip's service
+            WebRequest request = WebRequest.Create("http://api.hostip.info/country.php");
+            // IMPORTANT: set Proxy to null, to drastically INCREASE the speed of request
+            request.Proxy = null;
+
+            WebResponse response = request.GetResponse();
+            StreamReader stream = new StreamReader(response.GetResponseStream());
+
+            // read complete response
+            return stream.ReadToEnd();
+        }
+
+        private static readonly string[] euLocations = new string[]{ 
+            "AL", "AD", "AM", "AT", "BY", "BE", "BA", "BG", "CH", "CY", "CZ", "DE", "DK", "EE", "ES", "FO", "FI", "FR", "GB", "GE", "GI", "GR", "HU", "HR", "IE", "IS", "IT", "LT", "LU", "LV", "MC", "MK", "MT", "NO", "NL", "PO", "PT", "RO", "RU", "SE", "SI", "SK", "SM", "TR", "UA", "VA"
+        };
+
+        public static bool IsEuropeanLocation(string loc)
+        {
+            return euLocations.Contains(loc);
+        }
     }
 }

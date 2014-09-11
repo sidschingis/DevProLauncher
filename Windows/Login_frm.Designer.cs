@@ -39,6 +39,8 @@
             this.passwordInput = new System.Windows.Forms.TextBox();
             this.savePassCheckBox = new System.Windows.Forms.CheckBox();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.AdPanel = new System.Windows.Forms.TableLayoutPanel();
+            this.label4 = new System.Windows.Forms.Label();
             this.LoadBtn = new System.Windows.Forms.Button();
             this.PatchNotes = new System.Windows.Forms.WebBrowser();
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
@@ -46,7 +48,6 @@
             this.registerBtn = new System.Windows.Forms.Button();
             this.validateBtn = new System.Windows.Forms.Button();
             this.CheckmateBtn = new System.Windows.Forms.Button();
-            this.label4 = new System.Windows.Forms.Label();
             this.tableLayoutPanel1.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
             this.tableLayoutPanel3.SuspendLayout();
@@ -186,6 +187,7 @@
             // panel1
             // 
             this.panel1.Controls.Add(this.label4);
+            this.panel1.Controls.Add(this.AdPanel);
             this.panel1.Controls.Add(this.LoadBtn);
             this.panel1.Controls.Add(this.PatchNotes);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -193,6 +195,29 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(875, 438);
             this.panel1.TabIndex = 1;
+            // 
+            // AdPanel
+            // 
+            this.AdPanel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.AdPanel.ColumnCount = 1;
+            this.AdPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.AdPanel.Location = new System.Drawing.Point(272, 19);
+            this.AdPanel.Name = "AdPanel";
+            this.AdPanel.RowCount = 1;
+            this.AdPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 230F));
+            this.AdPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 156F));
+            this.AdPanel.Size = new System.Drawing.Size(366, 135);
+            this.AdPanel.TabIndex = 4;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.BackColor = System.Drawing.SystemColors.Window;
+            this.label4.Location = new System.Drawing.Point(269, 3);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(25, 13);
+            this.label4.TabIndex = 3;
+            this.label4.Text = "Ads";
             // 
             // LoadBtn
             // 
@@ -267,16 +292,6 @@
             this.CheckmateBtn.UseVisualStyleBackColor = true;
             this.CheckmateBtn.Click += new System.EventHandler(this.CheckmateBtn_Click);
             // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.BackColor = System.Drawing.SystemColors.Window;
-            this.label4.Location = new System.Drawing.Point(3, 3);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(25, 13);
-            this.label4.TabIndex = 3;
-            this.label4.Text = "Ads";
-            // 
             // LoginFrm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -318,5 +333,6 @@
         private System.Windows.Forms.WebBrowser PatchNotes;
         private System.Windows.Forms.Button validateBtn;
         private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.TableLayoutPanel AdPanel;
     }
 }

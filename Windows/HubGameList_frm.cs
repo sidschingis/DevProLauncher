@@ -489,20 +489,18 @@ namespace DevProLauncher.Windows
                 var mnuSingle = new ToolStripMenuItem("Single") { Name = "Single" };
                 var mnuMatch = new ToolStripMenuItem("Match") { Name = "Match" };
                 var mnuTag = new ToolStripMenuItem("Tag") { Name = "Tag" };
-                var mnuTest = new ToolStripMenuItem("Test") { Name = "Test" };
                 var mnuRSingle = new ToolStripMenuItem("Single") { Name = "RSingle" };
                 var mnuRMatch = new ToolStripMenuItem("Match") { Name = "RMatch" };
                 var mnuRTag = new ToolStripMenuItem("Tag") { Name = "RTag" };
 
                 mnuRanked.DropDownItems.AddRange(new ToolStripItem[]{ mnuRSingle,mnuRMatch,mnuRTag});
                 mnuRanked.DropDownDirection = ToolStripDropDownDirection.Right;
-                mnuUnRanked.DropDownItems.AddRange(new ToolStripItem[] { mnuSingle, mnuMatch, mnuTag, mnuTest });
+                mnuUnRanked.DropDownItems.AddRange(new ToolStripItem[] { mnuSingle, mnuMatch, mnuTag });
                 mnuUnRanked.DropDownDirection = ToolStripDropDownDirection.Right;
 
                 mnuSingle.Click += QuickHostItem_Click;
                 mnuMatch.Click += QuickHostItem_Click;
                 mnuTag.Click += QuickHostItem_Click;
-                mnuTest.Click += button1_Click;
                 mnuRSingle.Click += QuickHostItem_Click;
                 mnuRMatch.Click += QuickHostItem_Click;
                 mnuRTag.Click += QuickHostItem_Click;

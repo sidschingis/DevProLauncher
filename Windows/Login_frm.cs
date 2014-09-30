@@ -118,7 +118,7 @@ namespace DevProLauncher.Windows
             }      
             
             this.BeginInvoke((MethodInvoker) delegate {
-                var item = new Banner("tcgmarket", "http://ygopro.de/launcher/werbung/linktrackercheck.php?tcgmarket=bannerheader/" , image);
+                var item = new Banner("tcgmarket", "http://ygopro.de/launcher/werbung/linktrackercheck.php?tcgmarket=bannerheader" , image);
                 AdPanel.Controls.Add(item, 0, 0);
             }); 
         }

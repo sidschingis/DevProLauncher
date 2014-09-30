@@ -15,8 +15,14 @@ namespace DevProLauncher.Config
         public int ServerPort = 6922;
         public string DefaultServer = "";
         
+#if DEBUG
+        public int GamePort = 9911;
+        public int ChatPort = 9933;
+#else
         public int GamePort = 8911;
         public int ChatPort = 8933;
+#endif
+
         public string GameExe = "devpro.dll";
         public string LauncherDir =  "";
         public string DefaultUsername = "";

@@ -35,6 +35,10 @@
         GetRanking = 32,
         Validate = 33,
         Resend = 34,
-        UpdateEmail = 35
+        UpdateEmail = 35,
+        JoinQueue = 36,
+        LeaveQueue = 37,
+        AcceptMatch = 38,
+        RefuseMatch = 39
     }
 }

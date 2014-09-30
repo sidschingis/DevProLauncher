@@ -98,13 +98,14 @@ namespace DevProLauncher.Config
 
         public string GameNoServers = "No servers are available.";
 
-
         public string GamePasswordExsists = "A room with that password already exists.";
         public string GameLocked = "Locked";
         public string GameOpen = "Open";
         public string GameLPChange = "Your quick host settings does not follow the recommend lifepoints rule, do you want to change this to the default?";
         public string GameEnterPassword = "Enter password";
         public string GameWrongPassword = "Incorrect password";
+
+        public string GameMatchCancel = "The Match was canceled, returning to queue. ";
 
         // Ranking_frm.cs
         public string RankingSingleGb = "Single Rankings";

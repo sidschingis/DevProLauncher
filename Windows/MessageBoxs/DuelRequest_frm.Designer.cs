@@ -28,11 +28,14 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
             this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.RequestText = new System.Windows.Forms.Label();
+            this.ResponseTimer = new System.Windows.Forms.Timer(this.components);
+            this.TimerLbl = new System.Windows.Forms.Label();
             this.tableLayoutPanel1.SuspendLayout();
             this.flowLayoutPanel1.SuspendLayout();
             this.SuspendLayout();
@@ -56,6 +59,7 @@
             // 
             this.flowLayoutPanel1.Controls.Add(this.button1);
             this.flowLayoutPanel1.Controls.Add(this.button2);
+            this.flowLayoutPanel1.Controls.Add(this.TimerLbl);
             this.flowLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.flowLayoutPanel1.FlowDirection = System.Windows.Forms.FlowDirection.RightToLeft;
             this.flowLayoutPanel1.Location = new System.Drawing.Point(3, 68);
@@ -92,7 +96,21 @@
             this.RequestText.TabIndex = 1;
             this.RequestText.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // DuelRequest_frm
+            // ResponseTimer
+            // 
+            this.ResponseTimer.Interval = 1000;
+            // 
+            // TimerLbl
+            // 
+            this.TimerLbl.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.TimerLbl.AutoSize = true;
+            this.TimerLbl.Location = new System.Drawing.Point(120, 8);
+            this.TimerLbl.Name = "TimerLbl";
+            this.TimerLbl.Size = new System.Drawing.Size(19, 13);
+            this.TimerLbl.TabIndex = 1;
+            this.TimerLbl.Text = "15";
+            // 
+            // DuelRequestFrm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -105,6 +123,7 @@
             this.Text = "Duel Request";
             this.tableLayoutPanel1.ResumeLayout(false);
             this.flowLayoutPanel1.ResumeLayout(false);
+            this.flowLayoutPanel1.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -116,5 +135,7 @@
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Label RequestText;
+        private System.Windows.Forms.Timer ResponseTimer;
+        private System.Windows.Forms.Label TimerLbl;
     }
 }

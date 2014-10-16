@@ -946,6 +946,9 @@ namespace DevProLauncher.Windows
                     if (Program.UserInfo.rank == 99)
                     {
                         WriteMessage(new ChatMessage(MessageType.System, CommandType.None, null, "-- Level 99 Commands --"));
+                        WriteMessage(new ChatMessage(MessageType.System, CommandType.None, null, "/shutdown [forced]- instructs the duel server to shutdown. If 'forced' is added: Do not wait for games to finish."));
+                        WriteMessage(new ChatMessage(MessageType.System, CommandType.None, null, "/restart [forced]- instructs the duel server to restart. If 'forced' is added: Do not wait for games to finish."));
+                        WriteMessage(new ChatMessage(MessageType.System, CommandType.None, null, "/kill [forced]- Kills all crashed cores. If 'forced' is added: Kill all cores (including running games)."));
                         WriteMessage(new ChatMessage(MessageType.System, CommandType.None, null, "/op username level - Sets a users level"));
                         WriteMessage(new ChatMessage(MessageType.System, CommandType.None, null, "/addpoints username amount of DevPoints - Gives a user DevPoints"));
                         WriteMessage(new ChatMessage(MessageType.System, CommandType.None, null, "/removepoints username amount of DevPoints - Removes DevPoints from a user"));

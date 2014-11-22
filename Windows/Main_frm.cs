@@ -189,7 +189,7 @@ namespace DevProLauncher.Windows
             else if (Program.LanguageManager.language.Equals("French"))
                 Process.Start("http://ygopro.de/fr/");
             else
-                Process.Start("http://devpro.org/blog");
+                Process.Start("http://ygopro.de/en/");
         }
 
         private void DeckBtn_Click(object sender, EventArgs e)

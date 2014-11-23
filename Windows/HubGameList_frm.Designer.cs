@@ -74,7 +74,6 @@ namespace DevProLauncher.Windows
             this.QueueLabel = new System.Windows.Forms.Label();
             this.tableLayoutPanel7 = new System.Windows.Forms.TableLayoutPanel();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
-            this.button1 = new System.Windows.Forms.Button();
             this.RankedList = new DevProLauncher.Windows.Components.DoubleBufferedListBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.UnrankedList = new DevProLauncher.Windows.Components.DoubleBufferedListBox();
@@ -627,7 +626,6 @@ namespace DevProLauncher.Windows
             // 
             // groupBox3
             // 
-            this.groupBox3.Controls.Add(this.button1);
             this.groupBox3.Controls.Add(this.RankedList);
             this.groupBox3.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupBox3.Location = new System.Drawing.Point(332, 3);
@@ -636,17 +634,6 @@ namespace DevProLauncher.Windows
             this.groupBox3.TabIndex = 2;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Ranked";
-            // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(124, 321);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 1;
-            this.button1.Text = "button1";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Visible = false;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // RankedList
             // 
@@ -778,7 +765,6 @@ namespace DevProLauncher.Windows
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.ComboBox TimeLimit;
         private System.Windows.Forms.CheckBox lockedChk;
-        private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Label QueueLabel;
         private System.Windows.Forms.Timer QueueTimer;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel11;

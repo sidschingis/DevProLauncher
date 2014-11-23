@@ -14,7 +14,7 @@ namespace DevProLauncher.Windows.MessageBoxs
             inputLbl2.Text = input2Lbl;
             Confirmbtn.Text = confirmbtn;
             Cancelbtn.Text = cancelbtn;
-            inputBox2.KeyPress += KeyPress_Enter;
+            inputBox1.KeyPress += KeyPress_Enter;
         }
 
         public override sealed string Text
@@ -25,7 +25,7 @@ namespace DevProLauncher.Windows.MessageBoxs
 
         private void Confirmbtn_Click(object sender, EventArgs e)
         {
-            if (inputBox2.Text == "") MessageBox.Show("Input box is empty.", "Error", MessageBoxButtons.OK);
+            if (String.IsNullOrEmpty(inputBox1.Text)) MessageBox.Show("Input box is empty.", "Error", MessageBoxButtons.OK);
             else
             DialogResult = DialogResult.OK;
         }
@@ -33,7 +33,7 @@ namespace DevProLauncher.Windows.MessageBoxs
         {
             if (e.KeyChar == 13)
             {
-                if (inputBox2.Text == "")
+                if (String.IsNullOrEmpty(inputBox1.Text))
                     return;
 
                 DialogResult = DialogResult.OK;

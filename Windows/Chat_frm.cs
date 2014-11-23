@@ -905,12 +905,6 @@ namespace DevProLauncher.Windows
                     WriteMessage(new ChatMessage(MessageType.System, CommandType.None, null, "/unmute username - (Channel Owners/Admins) Allows a muted user to send messages again"));
                     WriteMessage(new ChatMessage(MessageType.System, CommandType.None, null, "/setmotd message - (Channel Owners/Admins) Sets a message of the day that is sent to users when they join the channel."));
 
-                    if (Program.UserInfo.rank != 0)
-                    {
-                        WriteMessage(new ChatMessage(MessageType.System, CommandType.None, null, "-- Donator Commands --"));
-                        WriteMessage(new ChatMessage(MessageType.System, CommandType.None, null, "None at this moment"));
-                    }
-
                     if(Program.UserInfo.rank == 1)
                         WriteMessage(new ChatMessage(MessageType.System, CommandType.None, null, " -- Level 1 users are classed as helpers and don't need any extra commands"));
                         WriteMessage(new ChatMessage(MessageType.System, CommandType.None, null, "/msg - Sends a server message"));
@@ -929,6 +923,23 @@ namespace DevProLauncher.Windows
                     if (Program.UserInfo.rank > 2)
                     {
                         WriteMessage(new ChatMessage(MessageType.System, CommandType.None, null, "-- Level 3 Commands --"));
+                        WriteMessage(new ChatMessage(MessageType.System, CommandType.None, null, "/roomowner roomname - Gets the creator of a channel"));
+                        WriteMessage(new ChatMessage(MessageType.System, CommandType.None, null, "/killroom roomname - forces a chat channel to close"));
+                        WriteMessage(new ChatMessage(MessageType.System, CommandType.None, null, "/getuid username - Gets the UID of a username")); 
+                        WriteMessage(new ChatMessage(MessageType.System, CommandType.None, null, "/gmute username - Globally mutes a user."));
+                        WriteMessage(new ChatMessage(MessageType.System, CommandType.None, null, "/gunmute username - Unmutes a user that was muted globally"));
+                    }
+                    if (Program.UserInfo.rank > 3)
+                    {
+                        WriteMessage(new ChatMessage(MessageType.System, CommandType.None, null, "-- Level 4 Commands --"));
+                        WriteMessage(new ChatMessage(MessageType.System, CommandType.None, null, "/shutdown [forced]- instructs the duel server to shutdown. If 'forced' is added: Does not wait for games to finish."));
+                        WriteMessage(new ChatMessage(MessageType.System, CommandType.None, null, "/restart [forced]- instructs the duel server to restart. If 'forced' is added: Does not wait for games to finish."));
+                        WriteMessage(new ChatMessage(MessageType.System, CommandType.None, null, "/kill [forced]- Kills all crashed cores. If 'forced' is added: Kills all cores (including running games)."));
+                    }
+
+                    if (Program.UserInfo.rank == 99)
+                    {
+                        WriteMessage(new ChatMessage(MessageType.System, CommandType.None, null, "-- Level 99 Commands --"));
                         WriteMessage(new ChatMessage(MessageType.System, CommandType.None, null, "/ban username time reason - Bans a user, time format has to be in hours, also you must give a reason."));
                         WriteMessage(new ChatMessage(MessageType.System, CommandType.None, null, "/banusername username - Bans a user's account"));
                         WriteMessage(new ChatMessage(MessageType.System, CommandType.None, null, "/unban username - Unbans a user"));
@@ -936,19 +947,6 @@ namespace DevProLauncher.Windows
                         WriteMessage(new ChatMessage(MessageType.System, CommandType.None, null, "/banip ip - Bans an IP"));
                         WriteMessage(new ChatMessage(MessageType.System, CommandType.None, null, "/unbanip ip - Unbans IP"));
                         WriteMessage(new ChatMessage(MessageType.System, CommandType.None, null, "/getbanlist - Gets ban list"));
-                        WriteMessage(new ChatMessage(MessageType.System, CommandType.None, null, "/roomowner roomname - Gets the creator of a channel"));
-                        WriteMessage(new ChatMessage(MessageType.System, CommandType.None, null, "/killroom roomname - forces a chat channel to close"));
-                        WriteMessage(new ChatMessage(MessageType.System, CommandType.None, null, "/getuid username - Gets the UID of a username")); 
-                        WriteMessage(new ChatMessage(MessageType.System, CommandType.None, null, "/gmute username - Globally mutes a user."));
-                        WriteMessage(new ChatMessage(MessageType.System, CommandType.None, null, "/gunmute username - Unmutes a user that was muted globally"));
-                    }
-
-                    if (Program.UserInfo.rank == 99)
-                    {
-                        WriteMessage(new ChatMessage(MessageType.System, CommandType.None, null, "-- Level 99 Commands --"));
-                        WriteMessage(new ChatMessage(MessageType.System, CommandType.None, null, "/shutdown [forced]- instructs the duel server to shutdown. If 'forced' is added: Do not wait for games to finish."));
-                        WriteMessage(new ChatMessage(MessageType.System, CommandType.None, null, "/restart [forced]- instructs the duel server to restart. If 'forced' is added: Do not wait for games to finish."));
-                        WriteMessage(new ChatMessage(MessageType.System, CommandType.None, null, "/kill [forced]- Kills all crashed cores. If 'forced' is added: Kill all cores (including running games)."));
                         WriteMessage(new ChatMessage(MessageType.System, CommandType.None, null, "/op username level - Sets a users level"));
                         WriteMessage(new ChatMessage(MessageType.System, CommandType.None, null, "/addpoints username amount of DevPoints - Gives a user DevPoints"));
                         WriteMessage(new ChatMessage(MessageType.System, CommandType.None, null, "/removepoints username amount of DevPoints - Removes DevPoints from a user"));

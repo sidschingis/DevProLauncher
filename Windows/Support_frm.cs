@@ -64,6 +64,7 @@ namespace DevProLauncher.Windows
             label2.Text = lang.Supportgb4text;
 
             refreshbtn.Text = lang.SupportRefreshBtn;
+            transferBtn.Text = lang.SupportTransferBtn;
         }
         private string FormatString(string text)
         {
@@ -198,6 +199,11 @@ namespace DevProLauncher.Windows
         {
             refreshbtn.Enabled = true;
             refreshtimer.Stop();
+        }
+
+        private void transferBtn_Click(object sender, EventArgs e)
+        {
+            Process.Start("http://ygopro.de/web-devpro/index.php?sites=dpTransfer");
         }
     }
 }

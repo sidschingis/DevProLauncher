@@ -49,6 +49,8 @@
             this.DevPointCount = new System.Windows.Forms.Label();
             this.refreshbtn = new System.Windows.Forms.Button();
             this.refreshtimer = new System.Windows.Forms.Timer(this.components);
+            this.tableLayoutPanel6 = new System.Windows.Forms.TableLayoutPanel();
+            this.transferBtn = new System.Windows.Forms.Button();
             this.tableLayoutPanel1.SuspendLayout();
             this.tableLayoutPanel5.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
@@ -60,6 +62,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.OfferLink)).BeginInit();
             this.groupBox2.SuspendLayout();
             this.groupBox4.SuspendLayout();
+            this.tableLayoutPanel6.SuspendLayout();
             this.SuspendLayout();
             // 
             // tableLayoutPanel1
@@ -111,7 +114,7 @@
             // 
             this.RightItems.AutoScroll = true;
             this.RightItems.ColumnCount = 1;
-            this.RightItems.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 300F));
+            this.RightItems.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 371F));
             this.RightItems.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
             this.RightItems.Dock = System.Windows.Forms.DockStyle.Fill;
             this.RightItems.Location = new System.Drawing.Point(380, 3);
@@ -126,18 +129,20 @@
             // 
             this.tableLayoutPanel2.ColumnCount = 1;
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel2.Controls.Add(this.groupBox3, 0, 3);
-            this.tableLayoutPanel2.Controls.Add(this.groupBox1, 0, 2);
-            this.tableLayoutPanel2.Controls.Add(this.groupBox2, 0, 1);
+            this.tableLayoutPanel2.Controls.Add(this.groupBox3, 0, 4);
+            this.tableLayoutPanel2.Controls.Add(this.groupBox1, 0, 3);
+            this.tableLayoutPanel2.Controls.Add(this.groupBox2, 0, 2);
             this.tableLayoutPanel2.Controls.Add(this.groupBox4, 0, 0);
+            this.tableLayoutPanel2.Controls.Add(this.tableLayoutPanel6, 0, 1);
             this.tableLayoutPanel2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel2.Location = new System.Drawing.Point(763, 3);
             this.tableLayoutPanel2.Name = "tableLayoutPanel2";
-            this.tableLayoutPanel2.RowCount = 4;
-            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 60F));
+            this.tableLayoutPanel2.RowCount = 5;
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 56F));
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 100F));
-            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 89F));
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 204F));
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 99F));
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 90F));
             this.tableLayoutPanel2.Size = new System.Drawing.Size(172, 488);
             this.tableLayoutPanel2.TabIndex = 0;
             // 
@@ -145,9 +150,9 @@
             // 
             this.groupBox3.Controls.Add(this.tableLayoutPanel3);
             this.groupBox3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.groupBox3.Location = new System.Drawing.Point(3, 402);
+            this.groupBox3.Location = new System.Drawing.Point(3, 401);
             this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(166, 83);
+            this.groupBox3.Size = new System.Drawing.Size(166, 84);
             this.groupBox3.TabIndex = 3;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Donate!";
@@ -164,7 +169,7 @@
             this.tableLayoutPanel3.RowCount = 2;
             this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 48.4375F));
             this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 51.5625F));
-            this.tableLayoutPanel3.Size = new System.Drawing.Size(160, 64);
+            this.tableLayoutPanel3.Size = new System.Drawing.Size(160, 65);
             this.tableLayoutPanel3.TabIndex = 0;
             // 
             // DonateLink
@@ -174,7 +179,7 @@
             this.DonateLink.Image = global::DevProLauncher.Properties.Resources.GetDevpoints;
             this.DonateLink.Location = new System.Drawing.Point(3, 34);
             this.DonateLink.Name = "DonateLink";
-            this.DonateLink.Size = new System.Drawing.Size(154, 27);
+            this.DonateLink.Size = new System.Drawing.Size(154, 28);
             this.DonateLink.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
             this.DonateLink.TabIndex = 0;
             this.DonateLink.TabStop = false;
@@ -194,7 +199,7 @@
             this.groupBox1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupBox1.Location = new System.Drawing.Point(3, 302);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(166, 94);
+            this.groupBox1.Size = new System.Drawing.Size(166, 93);
             this.groupBox1.TabIndex = 2;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Earn DevPoints";
@@ -210,8 +215,8 @@
             this.tableLayoutPanel4.Name = "tableLayoutPanel4";
             this.tableLayoutPanel4.RowCount = 2;
             this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 39F));
-            this.tableLayoutPanel4.Size = new System.Drawing.Size(160, 75);
+            this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 35F));
+            this.tableLayoutPanel4.Size = new System.Drawing.Size(160, 74);
             this.tableLayoutPanel4.TabIndex = 0;
             // 
             // OfferLink
@@ -220,9 +225,9 @@
             this.OfferLink.Dock = System.Windows.Forms.DockStyle.Fill;
             this.OfferLink.ErrorImage = null;
             this.OfferLink.Image = global::DevProLauncher.Properties.Resources.OfferWall_Btn;
-            this.OfferLink.Location = new System.Drawing.Point(3, 39);
+            this.OfferLink.Location = new System.Drawing.Point(3, 42);
             this.OfferLink.Name = "OfferLink";
-            this.OfferLink.Size = new System.Drawing.Size(154, 33);
+            this.OfferLink.Size = new System.Drawing.Size(154, 29);
             this.OfferLink.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
             this.OfferLink.TabIndex = 1;
             this.OfferLink.TabStop = false;
@@ -233,7 +238,7 @@
             this.label3.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label3.Location = new System.Drawing.Point(3, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(154, 36);
+            this.label3.Size = new System.Drawing.Size(154, 39);
             this.label3.TabIndex = 0;
             this.label3.Text = "Earn points by completing offers.";
             // 
@@ -241,9 +246,9 @@
             // 
             this.groupBox2.Controls.Add(this.label1);
             this.groupBox2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.groupBox2.Location = new System.Drawing.Point(3, 63);
+            this.groupBox2.Location = new System.Drawing.Point(3, 98);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(166, 233);
+            this.groupBox2.Size = new System.Drawing.Size(166, 198);
             this.groupBox2.TabIndex = 1;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Support DevPro";
@@ -253,7 +258,7 @@
             this.label1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label1.Location = new System.Drawing.Point(3, 16);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(160, 214);
+            this.label1.Size = new System.Drawing.Size(160, 179);
             this.label1.TabIndex = 0;
             this.label1.Text = resources.GetString("label1.Text");
             // 
@@ -263,7 +268,7 @@
             this.groupBox4.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupBox4.Location = new System.Drawing.Point(3, 3);
             this.groupBox4.Name = "groupBox4";
-            this.groupBox4.Size = new System.Drawing.Size(166, 54);
+            this.groupBox4.Size = new System.Drawing.Size(166, 50);
             this.groupBox4.TabIndex = 4;
             this.groupBox4.TabStop = false;
             this.groupBox4.Text = "Balance";
@@ -274,17 +279,17 @@
             this.DevPointCount.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.DevPointCount.Location = new System.Drawing.Point(3, 16);
             this.DevPointCount.Name = "DevPointCount";
-            this.DevPointCount.Size = new System.Drawing.Size(160, 35);
+            this.DevPointCount.Size = new System.Drawing.Size(160, 31);
             this.DevPointCount.TabIndex = 0;
             this.DevPointCount.Text = "0";
             this.DevPointCount.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // refreshbtn
             // 
-            this.refreshbtn.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.refreshbtn.Location = new System.Drawing.Point(874, 47);
+            this.refreshbtn.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.refreshbtn.Location = new System.Drawing.Point(85, 3);
             this.refreshbtn.Name = "refreshbtn";
-            this.refreshbtn.Size = new System.Drawing.Size(57, 23);
+            this.refreshbtn.Size = new System.Drawing.Size(78, 27);
             this.refreshbtn.TabIndex = 1;
             this.refreshbtn.Text = "Refresh";
             this.refreshbtn.UseVisualStyleBackColor = true;
@@ -294,12 +299,36 @@
             // 
             this.refreshtimer.Interval = 2000;
             // 
+            // tableLayoutPanel6
+            // 
+            this.tableLayoutPanel6.ColumnCount = 2;
+            this.tableLayoutPanel6.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel6.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 84F));
+            this.tableLayoutPanel6.Controls.Add(this.refreshbtn, 1, 0);
+            this.tableLayoutPanel6.Controls.Add(this.transferBtn, 0, 0);
+            this.tableLayoutPanel6.Location = new System.Drawing.Point(3, 59);
+            this.tableLayoutPanel6.Name = "tableLayoutPanel6";
+            this.tableLayoutPanel6.RowCount = 1;
+            this.tableLayoutPanel6.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel6.Size = new System.Drawing.Size(166, 33);
+            this.tableLayoutPanel6.TabIndex = 5;
+            // 
+            // transferBtn
+            // 
+            this.transferBtn.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.transferBtn.Location = new System.Drawing.Point(3, 3);
+            this.transferBtn.Name = "transferBtn";
+            this.transferBtn.Size = new System.Drawing.Size(76, 27);
+            this.transferBtn.TabIndex = 2;
+            this.transferBtn.Text = "Transfer";
+            this.transferBtn.UseVisualStyleBackColor = true;
+            this.transferBtn.Click += new System.EventHandler(this.transferBtn_Click);
+            // 
             // SupportFrm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(938, 494);
-            this.Controls.Add(this.refreshbtn);
             this.Controls.Add(this.tableLayoutPanel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "SupportFrm";
@@ -316,6 +345,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.OfferLink)).EndInit();
             this.groupBox2.ResumeLayout(false);
             this.groupBox4.ResumeLayout(false);
+            this.tableLayoutPanel6.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -341,5 +371,7 @@
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel5;
         private System.Windows.Forms.TableLayoutPanel LeftItems;
         private System.Windows.Forms.TableLayoutPanel RightItems;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel6;
+        private System.Windows.Forms.Button transferBtn;
     }
 }

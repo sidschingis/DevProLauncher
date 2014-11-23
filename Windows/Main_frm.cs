@@ -25,7 +25,7 @@ namespace DevProLauncher.Windows
             InitializeComponent();
 
             var version = Program.Version.ToCharArray();
-            Text = "DevPro" + " v" + version[0] + "." + version[1] + "." + version[2] + " r" + Program.Version[3];
+            Text = "DevPro" + " v" + version[0] + "." + version[1] + "." + version[2] + "." + Program.Version[3] + "." + Program.Version[4];
 
             LauncherHelper.LoadBanlist();
 
@@ -138,7 +138,7 @@ namespace DevProLauncher.Windows
 
         public void UpdateUsername()
         {
-            Text = "DevPro" + " v" + Program.Version[0] + "." + Program.Version[1] + "." + Program.Version[2] + " r" + Program.Version[3] + " - " + Program.UserInfo.username;
+            Text = "DevPro" + " v" + Program.Version[0] + "." + Program.Version[1] + "." + Program.Version[2] + "." + Program.Version[3] + "." + Program.Version[4] + " - " + Program.UserInfo.username;
         }
 
         public void ReLoadLanguage()
@@ -189,7 +189,7 @@ namespace DevProLauncher.Windows
             else if (Program.LanguageManager.language.Equals("French"))
                 Process.Start("http://ygopro.de/fr/");
             else
-                Process.Start("http://devpro.org/blog");
+                Process.Start("http://ygopro.de/en/");
         }
 
         private void DeckBtn_Click(object sender, EventArgs e)

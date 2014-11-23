@@ -425,7 +425,8 @@ namespace DevProLauncher.Config
         public string SupportTeamNameInput = "Enter Team Name";
         public string SupportMSGInput = "Enter Message";
 
-        public string SupportRefreshBtn = "Refresh";
+        public string SupportRefreshBtn = "Refresh"; 
+        public string SupportTransferBtn = "Transfer";
         public string SupportGetBtn = "Get";
     }
 }

@@ -776,7 +776,7 @@ namespace DevProLauncher.Windows
             SpectateTimer.Enabled = true;
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void JoinQueue()
         {
             bool isranked = true;
             string mode = "Match";
@@ -822,27 +822,6 @@ namespace DevProLauncher.Windows
             Program.ChatServer.SendPacket(DevServerPackets.JoinQueue,JsonSerializer.SerializeToString(userinfo));
 
             QueueLabel.Text = "Queue Status: searching";
-            /*
-            var matchedRooms = (from object room in list.Items where m_rooms.ContainsKey(room.ToString()) select m_rooms[room.ToString()] into info where RoomInfos.CompareRoomInfo(userinfo, info) select info).ToList();
-            string server = string.Empty;
-            if (matchedRooms.Count > 0)
-            {
-                var selectroom = ran.Next(matchedRooms.Count);
-                form.GameName = matchedRooms[selectroom].roomName;
-                server = matchedRooms[selectroom].server;
-            }
-
-            if (string.IsNullOrEmpty(server))
-            {
-                LauncherHelper.GenerateConfig(GetServer(), form.GenerateURI(isranked));
-                LauncherHelper.RunGame("-j");
-            }
-            else
-            {
-                LauncherHelper.GenerateConfig(Program.ServerList[server], form.GenerateURI(isranked));
-                LauncherHelper.RunGame("-j");
-            }
-            */
         }
         public void OnMatchFound(string matchnumber)
         {
@@ -861,6 +840,8 @@ namespace DevProLauncher.Windows
         public void OnMatchCancel(string data)
         {
             MessageBox.Show(Program.LanguageManager.Translation.GameMatchCancel +"("+data+")");
+            joinBtn.Enabled = true;
+            LeaveBtn.Enabled = false;
         }
         public void OnMatchStart(DuelRequest request)
         {
@@ -877,7 +858,7 @@ namespace DevProLauncher.Windows
 
         private void joinBtn_Click(object sender, EventArgs e)
         {
-            button1_Click(sender, e);
+            JoinQueue();
             QueueTimer.Enabled = true;
             joinBtn.Enabled = false;
             LeaveBtn.Enabled = true;

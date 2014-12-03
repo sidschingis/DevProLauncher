@@ -94,8 +94,8 @@ namespace DevProLauncher.Windows
 
             string loc = LauncherHelper.GetLocation();
 
-            if (!LauncherHelper.IsEuropeanLocation(loc))
-                return;
+            //if (!LauncherHelper.IsEuropeanLocation(loc))
+            //    return;
             Image image ;
 
             switch (loc)

@@ -416,11 +416,19 @@ namespace DevProLauncher.Helpers
             // IMPORTANT: set Proxy to null, to drastically INCREASE the speed of request
             request.Proxy = null;
 
-            WebResponse response = request.GetResponse();
-            StreamReader stream = new StreamReader(response.GetResponseStream());
+            try
+            {
+                request.Timeout = 10000;
+                WebResponse response = request.GetResponse();
+                StreamReader stream = new StreamReader(response.GetResponseStream());
+                // read complete response
+                return stream.ReadToEnd();
+            }
+            catch (WebException ex)
+            {
+                return "Unknown";
+            }
 
-            // read complete response
-            return stream.ReadToEnd();
         }
 
         private static readonly string[] euLocations = new string[]{ 

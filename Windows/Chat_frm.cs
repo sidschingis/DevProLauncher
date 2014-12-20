@@ -935,12 +935,13 @@ namespace DevProLauncher.Windows
                         WriteMessage(new ChatMessage(MessageType.System, CommandType.None, null, "/shutdown [forced]- instructs the duel server to shutdown. If 'forced' is added: Does not wait for games to finish."));
                         WriteMessage(new ChatMessage(MessageType.System, CommandType.None, null, "/restart [forced]- instructs the duel server to restart. If 'forced' is added: Does not wait for games to finish."));
                         WriteMessage(new ChatMessage(MessageType.System, CommandType.None, null, "/kill [forced]- Kills all crashed cores. If 'forced' is added: Kills all cores (including running games)."));
+                        WriteMessage(new ChatMessage(MessageType.System, CommandType.None, null, "/ban username time reason - Bans a user, time format has to be in hours (max 1 hour), also you must give a reason."));
                     }
 
                     if (Program.UserInfo.rank == 99)
                     {
                         WriteMessage(new ChatMessage(MessageType.System, CommandType.None, null, "-- Level 99 Commands --"));
-                        WriteMessage(new ChatMessage(MessageType.System, CommandType.None, null, "/ban username time reason - Bans a user, time format has to be in hours, also you must give a reason."));
+                        WriteMessage(new ChatMessage(MessageType.System, CommandType.None, null, "/ban username time reason - Bans a user, time format has to be in hours, also you must give a reason."));              
                         WriteMessage(new ChatMessage(MessageType.System, CommandType.None, null, "/banusername username - Bans a user's account"));
                         WriteMessage(new ChatMessage(MessageType.System, CommandType.None, null, "/unban username - Unbans a user"));
                         WriteMessage(new ChatMessage(MessageType.System, CommandType.None, null, "/ip username - Gets a users IP"));

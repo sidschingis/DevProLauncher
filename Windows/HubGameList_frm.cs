@@ -434,30 +434,13 @@ namespace DevProLauncher.Windows
 
         private void Host_btn_Click(object sender, EventArgs e)
         {
-            HostBtn_MouseUp(sender, new MouseEventArgs(MouseButtons.Right, 1, 1, 1, 1));
+            HostGame();
+            //HostBtn_MouseUp(sender, new MouseEventArgs(MouseButtons.Right, 1, 1, 1, 1));
         }
 
-        private void HostGame(object sender, EventArgs e)
+        private void HostGame()
         {
-            var button = (ToolStripMenuItem)sender;
-            var form = new Host(false, (button.Name == "Ranked"));
-            if (button.Name == "Ranked")
-            {
-                form.Mode.Items.Clear();
-                form.Mode.Items.AddRange(new object[] { "Single", "Match", "Tag" });
-                form.Mode.SelectedItem = "Match";
-                if (form.BanList.Items.Count > 0)
-                    form.BanList.SelectedIndex = 0;
-                form.CardRules.SelectedIndexChanged += form.FormatChanged;
-                form.BanList.Enabled = false;
-                form.Priority.Enabled = false;
-                form.ShuffleDeck.Enabled = false;
-                form.CheckDeck.Enabled = false;
-                form.LifePoints.Enabled = false;
-                form.CardRules.Items.Clear();
-                form.CardRules.Items.AddRange(new object[] { "TCG", "OCG" });
-                form.CardRules.SelectedItem = "TCG";
-            }
+            var form = new Host(false, false);
 
             if (form.ShowDialog() == DialogResult.OK)
             {
@@ -472,7 +455,7 @@ namespace DevProLauncher.Windows
                     return;
                 }
 
-                LauncherHelper.GenerateConfig(GetServer(), form.GenerateURI((button.Name == "Ranked")));
+                LauncherHelper.GenerateConfig(GetServer(), form.GenerateURI(false));
                 LauncherHelper.RunGame("-j");
                 Program.ChatServer.SendPacket(DevServerPackets.HostDuel);
             }
@@ -484,30 +467,16 @@ namespace DevProLauncher.Windows
             {
                 LanguageInfo info = Program.LanguageManager.Translation;
                 var mnu = new ContextMenuStrip();
-                var mnuRanked = new ToolStripMenuItem(info.GameRanked);
-                var mnuUnRanked = new ToolStripMenuItem(info.GameUnranked);
+               
                 var mnuSingle = new ToolStripMenuItem("Single") { Name = "Single" };
                 var mnuMatch = new ToolStripMenuItem("Match") { Name = "Match" };
                 var mnuTag = new ToolStripMenuItem("Tag") { Name = "Tag" };
-                var mnuRSingle = new ToolStripMenuItem("Single") { Name = "RSingle" };
-                var mnuRMatch = new ToolStripMenuItem("Match") { Name = "RMatch" };
-                var mnuRTag = new ToolStripMenuItem("Tag") { Name = "RTag" };
-
-                mnuRanked.DropDownItems.AddRange(new ToolStripItem[]{ mnuRSingle,mnuRMatch,mnuRTag});
-                mnuRanked.DropDownDirection = ToolStripDropDownDirection.Right;
-                mnuUnRanked.DropDownItems.AddRange(new ToolStripItem[] { mnuSingle, mnuMatch, mnuTag });
-                mnuUnRanked.DropDownDirection = ToolStripDropDownDirection.Right;
 
                 mnuSingle.Click += QuickHostItem_Click;
                 mnuMatch.Click += QuickHostItem_Click;
                 mnuTag.Click += QuickHostItem_Click;
-                mnuRSingle.Click += QuickHostItem_Click;
-                mnuRMatch.Click += QuickHostItem_Click;
-                mnuRTag.Click += QuickHostItem_Click;
 
-
-
-                mnu.Items.AddRange(new ToolStripItem[] {mnuRanked, mnuUnRanked});
+                mnu.Items.AddRange(new ToolStripItem[] { mnuSingle, mnuMatch, mnuTag });
 
                 mnu.DefaultDropDownDirection = ToolStripDropDownDirection.BelowRight;
                 mnu.Show((Button)sender, new Point(0, 0 - mnu.Height));
@@ -583,30 +552,6 @@ namespace DevProLauncher.Windows
 
         }
 
-        private void HostBtn_MouseUp(object sender, MouseEventArgs e)
-        {
-            if (e.Button == MouseButtons.Right || sender is Button)
-            {
-                LanguageInfo info = Program.LanguageManager.Translation;
-                var mnu = new ContextMenuStrip();
-                var mnuranked = new ToolStripMenuItem(info.GameRanked);
-                mnuranked.Name = "Ranked";
-                var mnuunranked = new ToolStripMenuItem(info.GameUnranked);
-
-                mnuranked.Click += HostGame;
-                mnuunranked.Click += HostGame;
-
-                mnu.Items.AddRange(new ToolStripItem[]
-                {
-                    mnuunranked,
-                    mnuranked
-                });
-
-                mnu.DefaultDropDownDirection = ToolStripDropDownDirection.BelowRight;
-                mnu.Show((Button)sender, new Point(0, 0 - mnu.Height));
-            }
-        }
-
         public void LoadRoom(object sender, EventArgs e)
         {
             var rooms = (ListBox)sender;
@@ -616,6 +561,13 @@ namespace DevProLauncher.Windows
                 return;
 
             RoomInfos item = m_rooms[rooms.SelectedItem.ToString()];
+
+            if (item.isRanked && !item.hasStarted)
+            {
+                MessageBox.Show("Cannot manually join a ranked game.");
+                return;
+            }
+
             if (item.isLocked)
             {
                 var form = new InputFrm(string.Empty, Program.LanguageManager.Translation.GameEnterPassword, Program.LanguageManager.Translation.QuickHostBtn, Program.LanguageManager.Translation.optionBtnCancel)
@@ -776,52 +728,38 @@ namespace DevProLauncher.Windows
             SpectateTimer.Enabled = true;
         }
 
-        private void JoinQueue()
+        private bool JoinQueue(bool isQuick=false)
         {
-            bool isranked = true;
-            string mode = "Match";
-            var ran = new Random();
-            var form = new Host(false, false)
-            {
-                CardRules = { Text = Program.Config.CardRules },
-                Mode = { Text = mode },
-                Priority = { Checked = Program.Config.EnablePrority },
-                CheckDeck = { Checked = Program.Config.DisableCheckDeck },
-                ShuffleDeck = { Checked = Program.Config.DisableShuffleDeck },
-                LifePoints = { Text = Program.Config.Lifepoints },
-                GameName = LauncherHelper.GenerateString().Substring(0, 5),
-                BanList = { SelectedItem = Program.Config.BanList },
-                TimeLimit = { SelectedItem = Program.Config.TimeLimit }
-            };
+            
+            var form = new Host(false, false);
 
-            ListBox list = (isranked) ? RankedList : UnrankedList;
-
-            if (isranked)
-            {
+            form.Mode.Items.Clear();
+            form.HostBtn.Text = "Join Queue";
+            form.Mode.Items.AddRange(new object[] { "Single", "Match"});
+            form.Mode.SelectedItem = form.Mode.Items.Contains(Program.Config.Mode) ? Program.Config.Mode : "Match";               
+            if (form.BanList.Items.Count > 0)
                 form.BanList.SelectedIndex = 0;
-                form.CheckDeck.Checked = false;
-                form.ShuffleDeck.Checked = false;
-                form.Priority.Checked = false;
-                form.CardRules.SelectedIndex = 2;
-                form.LifePoints.Text = form.Mode.Text == "Tag" ? "16000" : "8000";
-            }
-            else
+            form.CardRules.SelectedIndexChanged += form.FormatChanged;
+            form.BanList.Enabled = false;
+            form.Priority.Enabled = false;
+            form.ShuffleDeck.Enabled = false;
+            form.CheckDeck.Enabled = false;
+            form.LifePoints.Enabled = false;
+            form.TimeLimit.Enabled = false;
+            form.PasswordInput.Enabled = false;
+            form.CardRules.Items.Clear();
+            form.CardRules.Items.AddRange(new object[] { "TCG", "OCG" });
+            form.CardRules.SelectedItem = form.CardRules.Items.Contains(Program.Config.CardRules) ? Program.Config.CardRules : "TCG";      
+
+            if (isQuick || form.ShowDialog() == DialogResult.OK) 
             {
-                if (Program.Config.Lifepoints != ((mode == "Tag") ? "16000" : "8000"))
-                {
-                    if (MessageBox.Show(Program.LanguageManager.Translation.GameLPChange, Program.LanguageManager.Translation.hostLifep, MessageBoxButtons.YesNo) == DialogResult.Yes)
-                    {
-                        form.LifePoints.Text = mode == "Tag" ? "16000" : "8000";
+                QueueRequest request = new QueueRequest(form.CardRules.SelectedItem.ToString(), form.Mode.SelectedItem.ToString());
 
-                    }
-                }
+                Program.ChatServer.SendPacket(DevServerPackets.JoinQueue, JsonSerializer.SerializeToString(request));
+                QueueLabel.Text = "Queue Status: searching";
+                return true;
             }
-
-            RoomInfos userinfo = RoomInfos.FromName(form.GenerateURI(isranked));
-
-            Program.ChatServer.SendPacket(DevServerPackets.JoinQueue,JsonSerializer.SerializeToString(userinfo));
-
-            QueueLabel.Text = "Queue Status: searching";
+            return false;
         }
         public void OnMatchFound(string matchnumber)
         {
@@ -851,23 +789,37 @@ namespace DevProLauncher.Windows
             if (server != null)
             {
                 LauncherHelper.GenerateConfig(server, request.duelformatstring);
-                LauncherHelper.RunGame("-j");
+                LauncherHelper.RunGame("-f");
             }
             ResetQueue();
         }
 
         private void joinBtn_Click(object sender, EventArgs e)
         {
-            JoinQueue();
-            QueueTimer.Enabled = true;
-            joinBtn.Enabled = false;
-            LeaveBtn.Enabled = true;
+            if (JoinQueue())
+            {
+                QueueTimer.Enabled = true;
+                joinBtn.Enabled = false;
+                qJoinBtn.Enabled = false;
+                LeaveBtn.Enabled = true;
+            }
         }
 
         private void LeaveBtn_Click(object sender, EventArgs e)
         {
             Program.ChatServer.SendPacket(DevServerPackets.LeaveQueue);
             ResetQueue();
+        }
+
+        private void qJoinBtn_Click(object sender, EventArgs e)
+        {
+            if (JoinQueue(true))
+            {
+                QueueTimer.Enabled = true;
+                joinBtn.Enabled = false;
+                qJoinBtn.Enabled = false;
+                LeaveBtn.Enabled = true;
+            }
         }
     }
 }

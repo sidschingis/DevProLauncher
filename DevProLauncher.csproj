@@ -74,6 +74,7 @@
     <Compile Include="Network\Data\ChannelData.cs" />
     <Compile Include="Network\Data\ChannelUsers.cs" />
     <Compile Include="Network\Data\EmailRequest.cs" />
+    <Compile Include="Network\Data\QueueRequest.cs" />
     <Compile Include="Network\Data\RankingRequest.cs" />
     <Compile Include="Network\Data\DuelRequest.cs" />
     <Compile Include="Network\Data\LoginData.cs" />

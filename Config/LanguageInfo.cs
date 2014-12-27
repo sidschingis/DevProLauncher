@@ -388,7 +388,7 @@ namespace DevProLauncher.Config
         public string MainServerMessage = "Server messages will spawn here.";
 
         //DuelRequest_frm
-        public string DuelReqestMessage = " has challenged you to a ranked duel! Do you accept?";
+        public string DuelReqestMessage = " has challenged you to an unranked duel! Do you accept?";
         public string DuelRequestBanlist = " Banlist: ";
         public string DuelRequestRules = " Rules: ";
         public string DuelRequestMode = " Type: ";

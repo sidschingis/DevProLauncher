@@ -41,8 +41,8 @@
             this.ReplaysBtn = new System.Windows.Forms.Button();
             this.ProfileBtn = new System.Windows.Forms.Button();
             this.siteBtn = new System.Windows.Forms.Button();
-            this.MessageLabel = new System.Windows.Forms.Label();
             this.forumBtn = new System.Windows.Forms.Button();
+            this.MessageLabel = new System.Windows.Forms.Label();
             this.tableLayoutPanel1.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
             this.flowLayoutPanel1.SuspendLayout();
@@ -64,7 +64,7 @@
             this.tableLayoutPanel1.RowCount = 2;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 40F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(989, 562);
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(1008, 602);
             this.tableLayoutPanel1.TabIndex = 0;
             // 
             // mainTabs
@@ -73,7 +73,7 @@
             this.mainTabs.Location = new System.Drawing.Point(3, 3);
             this.mainTabs.Name = "mainTabs";
             this.mainTabs.SelectedIndex = 0;
-            this.mainTabs.Size = new System.Drawing.Size(983, 516);
+            this.mainTabs.Size = new System.Drawing.Size(1002, 556);
             this.mainTabs.TabIndex = 3;
             // 
             // tableLayoutPanel2
@@ -84,11 +84,11 @@
             this.tableLayoutPanel2.Controls.Add(this.flowLayoutPanel1, 1, 0);
             this.tableLayoutPanel2.Controls.Add(this.MessageLabel, 0, 0);
             this.tableLayoutPanel2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel2.Location = new System.Drawing.Point(3, 525);
+            this.tableLayoutPanel2.Location = new System.Drawing.Point(3, 565);
             this.tableLayoutPanel2.Name = "tableLayoutPanel2";
             this.tableLayoutPanel2.RowCount = 1;
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel2.Size = new System.Drawing.Size(983, 34);
+            this.tableLayoutPanel2.Size = new System.Drawing.Size(1002, 34);
             this.tableLayoutPanel2.TabIndex = 4;
             // 
             // flowLayoutPanel1
@@ -101,7 +101,7 @@
             this.flowLayoutPanel1.Controls.Add(this.siteBtn);
             this.flowLayoutPanel1.Controls.Add(this.forumBtn);
             this.flowLayoutPanel1.FlowDirection = System.Windows.Forms.FlowDirection.RightToLeft;
-            this.flowLayoutPanel1.Location = new System.Drawing.Point(458, 3);
+            this.flowLayoutPanel1.Location = new System.Drawing.Point(477, 3);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
             this.flowLayoutPanel1.Size = new System.Drawing.Size(522, 28);
             this.flowLayoutPanel1.TabIndex = 9;
@@ -167,17 +167,6 @@
             this.siteBtn.UseVisualStyleBackColor = true;
             this.siteBtn.Click += new System.EventHandler(this.siteBtn_Click);
             // 
-            // MessageLabel
-            // 
-            this.MessageLabel.AutoSize = true;
-            this.MessageLabel.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.MessageLabel.Location = new System.Drawing.Point(3, 0);
-            this.MessageLabel.Name = "MessageLabel";
-            this.MessageLabel.Size = new System.Drawing.Size(449, 34);
-            this.MessageLabel.TabIndex = 0;
-            this.MessageLabel.Text = "Server messages will spawn here.";
-            this.MessageLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
             // forumBtn
             // 
             this.forumBtn.Location = new System.Drawing.Point(3, 3);
@@ -188,11 +177,22 @@
             this.forumBtn.UseVisualStyleBackColor = true;
             this.forumBtn.Click += new System.EventHandler(this.forumBtn_Click);
             // 
+            // MessageLabel
+            // 
+            this.MessageLabel.AutoSize = true;
+            this.MessageLabel.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.MessageLabel.Location = new System.Drawing.Point(3, 0);
+            this.MessageLabel.Name = "MessageLabel";
+            this.MessageLabel.Size = new System.Drawing.Size(468, 34);
+            this.MessageLabel.TabIndex = 0;
+            this.MessageLabel.Text = "Server messages will spawn here.";
+            this.MessageLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
             // MainFrm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(989, 562);
+            this.ClientSize = new System.Drawing.Size(1008, 602);
             this.Controls.Add(this.tableLayoutPanel1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "MainFrm";

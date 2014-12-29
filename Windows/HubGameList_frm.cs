@@ -209,20 +209,6 @@ namespace DevProLauncher.Windows
             timer++;
             QueueLabel.Text = "Queue Status: Searching for " + timer + " seconds";
         }
-        private void ResetQueue(/*object sender, EventArgs e*/)
-        {
-            //stub
-            if (InvokeRequired)
-            {
-                Invoke(new Action(ResetQueue));
-                return;
-            }
-            QueueTimer.Enabled = false;
-            timer = 0;
-            QueueLabel.Text = "Queue Status: Not Searching";
-            joinBtn.Enabled = true;
-            LeaveBtn.Enabled = false;
-        }
         private void ResetSpectate(object sender, EventArgs e)
         {
             if (InvokeRequired)
@@ -778,8 +764,7 @@ namespace DevProLauncher.Windows
         public void OnMatchCancel(string data)
         {
             MessageBox.Show(Program.LanguageManager.Translation.GameMatchCancel +"("+data+")");
-            joinBtn.Enabled = true;
-            LeaveBtn.Enabled = false;
+            ResetQueue();
         }
         public void OnMatchStart(DuelRequest request)
         {
@@ -788,7 +773,7 @@ namespace DevProLauncher.Windows
                 server = Program.ServerList[request.server];
             if (server != null)
             {
-                LauncherHelper.GenerateConfig(server, request.duelformatstring);
+                LauncherHelper.GenerateConfig(server, request.duelformatstring,1);
                 LauncherHelper.RunGame("-f");
             }
             ResetQueue();
@@ -810,7 +795,21 @@ namespace DevProLauncher.Windows
             Program.ChatServer.SendPacket(DevServerPackets.LeaveQueue);
             ResetQueue();
         }
-
+        private void ResetQueue(/*object sender, EventArgs e*/)
+        {
+            //stub
+            if (InvokeRequired)
+            {
+                Invoke(new Action(ResetQueue));
+                return;
+            }
+            QueueTimer.Enabled = false;
+            timer = 0;
+            QueueLabel.Text = "Queue Status: Not Searching";
+            joinBtn.Enabled = true;
+            qJoinBtn.Enabled = true;
+            LeaveBtn.Enabled = false;
+        }
         private void qJoinBtn_Click(object sender, EventArgs e)
         {
             if (JoinQueue(true))

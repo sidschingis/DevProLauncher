@@ -190,7 +190,7 @@ namespace DevProLauncher.Helpers
                 process.StartInfo.WindowStyle = ProcessWindowStyle.Normal;
                 process.StartInfo.WorkingDirectory = Program.Config.LauncherDir;
 
-                if (arg == "-j")
+                if (arg == "-j" || arg == "-f")
                     process.Exited += UpdateInfo;
                 if (arg == "-d")
                     process.Exited += RefreshDeckList;
@@ -226,7 +226,7 @@ namespace DevProLauncher.Helpers
             return (count > 0);
         }
 
-        public static void GenerateConfig(ServerInfo server, string roominfo)
+        public static void GenerateConfig(ServerInfo server, string roominfo,int forced=0)
         {
             if (server == null)
                 return;
@@ -263,6 +263,7 @@ namespace DevProLauncher.Helpers
             writer.WriteLine("enable_sleeve_loading = " + Convert.ToInt32(Program.Config.EnableCustomSleeves));
             writer.WriteLine("mute_opponent = " + Convert.ToInt32(Program.Config.MuteOpponent));
             writer.WriteLine("mute_spectators = " + Convert.ToInt32(Program.Config.MuteSpectators));
+            writer.WriteLine("forced = " + forced);
             writer.Close();
         }
         public static void GenerateConfig()

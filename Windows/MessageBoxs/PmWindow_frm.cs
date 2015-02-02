@@ -99,6 +99,8 @@ namespace DevProLauncher.Windows.MessageBoxs
                     return;
                 if (IsPrivate && ChatInput.Text.StartsWith("/me"))
                 {
+                    if (ChatInput.Text.Length<4)
+                        ChatInput.Text=ChatInput.Text+" ";
                     WriteMessage(new ChatMessage(MessageType.Message, CommandType.Me, Program.UserInfo, Name,Program.UserInfo.username + " " +  ChatInput.Text.Replace("/me","").Trim()));
                     Program.ChatServer.SendMessage(MessageType.PrivateMessage, CommandType.Me, Name, ChatInput.Text.Substring(4));
                 }

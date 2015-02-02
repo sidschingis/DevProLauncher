@@ -70,6 +70,8 @@ namespace DevProLauncher.Windows.MessageBoxs
             Ratio.Text = language.profileTRatio;
             TeamLevel.Text = language.profileLvl;
             TRank.Text = language.profileLblTRank;
+            teamWinLbl.Text = language.profileWin;
+            teamLossLbl.Text = language.profileLose;
 
             txtTWinLP0.Text = language.profileLblLP;
             txtTWinSurrendered.Text = language.profileLblSurrendered;

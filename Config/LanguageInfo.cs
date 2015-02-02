@@ -106,6 +106,11 @@ namespace DevProLauncher.Config
         public string GameWrongPassword = "Incorrect password";
 
         public string GameMatchCancel = "The Match was canceled, returning to queue. ";
+        public string GameJoin = "Join";
+        public string GameLeave = "Leave";
+        public string GameQuick = "Quick";
+        public string GameQueueLabel = "Queue Status: Not Searching";
+
 
         // Ranking_frm.cs
         public string RankingSingleGb = "Single Rankings";
@@ -231,8 +236,8 @@ namespace DevProLauncher.Config
         //Profile_frm.cs
         public string profileName = "Profile";
         public string profileLvl = "Lvl: ";
-        public string profileWin = "Win";
-        public string profileLose = "Lose";
+        public string profileWin = "Wins";
+        public string profileLose = "Losses";
         public string profileGb1 = "User Info";
         public string profileGb2 = "Stats";
         public string profileGb3 = "Condition";
@@ -254,7 +259,7 @@ namespace DevProLauncher.Config
         public string profileLblDestinyLeo = "Destiny Leo";
         public string profileLblUnknown = "Unknown";
         public string profileLblUsername = "Username: ";
-        public string profileLblwld = "Win/Lose/Draw";
+        public string profileLblwld = "Wins/Losses/Draws";
         public string profileLblTRank = "Rank: ";
         public string profileLblRank = "Rank (Match): ";
         public string profileLblSingleRank = "Rank (Single): ";

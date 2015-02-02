@@ -40,7 +40,7 @@ namespace DevProLauncher.Windows
             this.tableLayoutPanel11 = new System.Windows.Forms.TableLayoutPanel();
             this.unrankedLbl = new System.Windows.Forms.Label();
             this.rankedLayoutPnl = new System.Windows.Forms.TableLayoutPanel();
-            this.LeaveBtn = new System.Windows.Forms.Button();
+            this.leaveBtn = new System.Windows.Forms.Button();
             this.tableLayoutPanel12 = new System.Windows.Forms.TableLayoutPanel();
             this.joinBtn = new System.Windows.Forms.Button();
             this.qJoinBtn = new System.Windows.Forms.Button();
@@ -228,7 +228,7 @@ namespace DevProLauncher.Windows
             // 
             this.rankedLayoutPnl.ColumnCount = 1;
             this.rankedLayoutPnl.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.rankedLayoutPnl.Controls.Add(this.LeaveBtn, 0, 1);
+            this.rankedLayoutPnl.Controls.Add(this.leaveBtn, 0, 1);
             this.rankedLayoutPnl.Controls.Add(this.tableLayoutPanel12, 0, 0);
             this.rankedLayoutPnl.Location = new System.Drawing.Point(3, 15);
             this.rankedLayoutPnl.Name = "rankedLayoutPnl";
@@ -238,17 +238,17 @@ namespace DevProLauncher.Windows
             this.rankedLayoutPnl.Size = new System.Drawing.Size(137, 60);
             this.rankedLayoutPnl.TabIndex = 0;
             // 
-            // LeaveBtn
+            // leaveBtn
             // 
-            this.LeaveBtn.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.LeaveBtn.Enabled = false;
-            this.LeaveBtn.Location = new System.Drawing.Point(3, 35);
-            this.LeaveBtn.Name = "LeaveBtn";
-            this.LeaveBtn.Size = new System.Drawing.Size(131, 22);
-            this.LeaveBtn.TabIndex = 1;
-            this.LeaveBtn.Text = "Leave";
-            this.LeaveBtn.UseVisualStyleBackColor = true;
-            this.LeaveBtn.Click += new System.EventHandler(this.LeaveBtn_Click);
+            this.leaveBtn.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.leaveBtn.Enabled = false;
+            this.leaveBtn.Location = new System.Drawing.Point(3, 35);
+            this.leaveBtn.Name = "leaveBtn";
+            this.leaveBtn.Size = new System.Drawing.Size(131, 22);
+            this.leaveBtn.TabIndex = 1;
+            this.leaveBtn.Text = "Leave";
+            this.leaveBtn.UseVisualStyleBackColor = true;
+            this.leaveBtn.Click += new System.EventHandler(this.LeaveBtn_Click);
             // 
             // tableLayoutPanel12
             // 
@@ -858,7 +858,7 @@ namespace DevProLauncher.Windows
         private System.Windows.Forms.Label QueueLabel;
         private System.Windows.Forms.Timer QueueTimer;
         private System.Windows.Forms.Button joinBtn;
-        private System.Windows.Forms.Button LeaveBtn;
+        private System.Windows.Forms.Button leaveBtn;
         private System.Windows.Forms.Button SearchRequest_Btn;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel11;
         private System.Windows.Forms.Label unrankedLbl;

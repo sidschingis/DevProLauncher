@@ -126,6 +126,10 @@ namespace DevProLauncher.Windows
             TimeLimit.Items[0] = info.GameAll;
             TimeLimit.Items[1] = "2 "+info.GameMinutes;
             TimeLimit.Items[2] = "1 "+info.GameMinutes;
+
+            joinBtn.Text = info.GameJoin;
+            leaveBtn.Text = info.GameLeave;
+            qJoinBtn.Text = info.GameQuick;
         }
 
         public void RefreshDeckList()
@@ -368,7 +372,18 @@ namespace DevProLauncher.Windows
                 string[] players = parts[0].Split(',');
                 List<int> elos = new List<int>();
                 foreach (string elo in eloparts)
-                    elos.Add(int.Parse(elo));
+                {
+                    int value = 1200;
+                    try
+                    {
+                        value=int.Parse(elo);
+                    }
+                    catch
+                    {
+                        MessageBox.Show("Error in parsing Elo from:" + eloparts.ToString());
+                    }
+                    elos.Add(value);
+                }
 
                 Invoke(new Action<string, string[], int[]>(InternalRoomPlayersUpdate), data.Command, (object)players,(object)elos.ToArray());
             }
@@ -786,7 +801,7 @@ namespace DevProLauncher.Windows
                 QueueTimer.Enabled = true;
                 joinBtn.Enabled = false;
                 qJoinBtn.Enabled = false;
-                LeaveBtn.Enabled = true;
+                leaveBtn.Enabled = true;
             }
         }
 
@@ -805,10 +820,10 @@ namespace DevProLauncher.Windows
             }
             QueueTimer.Enabled = false;
             timer = 0;
-            QueueLabel.Text = "Queue Status: Not Searching";
+            QueueLabel.Text = Program.LanguageManager.Translation.GameQueueLabel;
             joinBtn.Enabled = true;
             qJoinBtn.Enabled = true;
-            LeaveBtn.Enabled = false;
+            leaveBtn.Enabled = false;
         }
         private void qJoinBtn_Click(object sender, EventArgs e)
         {
@@ -817,7 +832,7 @@ namespace DevProLauncher.Windows
                 QueueTimer.Enabled = true;
                 joinBtn.Enabled = false;
                 qJoinBtn.Enabled = false;
-                LeaveBtn.Enabled = true;
+                leaveBtn.Enabled = true;
             }
         }
     }

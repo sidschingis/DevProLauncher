@@ -224,7 +224,10 @@ namespace DevProLauncher.Windows
             else if (type == DevClientPackets.InvalidTemp)
             {
                 loginBtn.Enabled = true;
-                MessageBox.Show("Remember to validate your account.");
+                if (Program.LanguageManager.language=="German")
+                    MessageBox.Show("Bitte validiere deinen Account bis zum 14. Februar 2015 oder er wird gelöscht.");
+                else
+                    MessageBox.Show("Remember to validate your account until the 14th February 2015 or your account will be deleted.");
             }
             else
             {

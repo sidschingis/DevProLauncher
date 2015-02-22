@@ -161,7 +161,7 @@ namespace DevProLauncher.Config
         public string optionCurrentPW = "Current Password";
         public string optionNewPW = "New Password";
         public string optionConfirmPW = "Confirm Password";
-        public string optionUpdatePW = "Update Password";
+        public string optionUpdatePW = "Update";
         public string ChangeAccept = "Change Accepted";
         public string ChangeFailed = "Change Failed";
         public string optionEmptyMsg = "Must specify current password and new password or new email.";

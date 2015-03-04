@@ -39,6 +39,8 @@
         JoinQueue = 36,
         LeaveQueue = 37,
         AcceptMatch = 38,
-        RefuseMatch = 39
+        RefuseMatch = 39,
+        Recover = 40,
+        Reset = 41
     }
 }

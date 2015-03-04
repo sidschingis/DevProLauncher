@@ -321,5 +321,20 @@ namespace DevProLauncher.Windows
             var form = new Validate_frm();
             form.ShowDialog();
         }
+
+        private void recoverBtn_Click(object sender, EventArgs e)
+        {
+            if (!Program.ChatServer.Connected())
+            {
+                if (!Connect())
+                {
+                    MessageBox.Show(Program.LanguageManager.Translation.pMsbErrorToServer);
+                    return;
+                }
+            }
+
+            var form = new Recover_frm();
+            form.ShowDialog();
+        }
     }
 }

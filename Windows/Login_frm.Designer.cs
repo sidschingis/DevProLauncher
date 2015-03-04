@@ -39,8 +39,8 @@
             this.passwordInput = new System.Windows.Forms.TextBox();
             this.savePassCheckBox = new System.Windows.Forms.CheckBox();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.AdPanel = new System.Windows.Forms.TableLayoutPanel();
             this.label4 = new System.Windows.Forms.Label();
+            this.AdPanel = new System.Windows.Forms.TableLayoutPanel();
             this.LoadBtn = new System.Windows.Forms.Button();
             this.PatchNotes = new System.Windows.Forms.WebBrowser();
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
@@ -48,6 +48,7 @@
             this.registerBtn = new System.Windows.Forms.Button();
             this.validateBtn = new System.Windows.Forms.Button();
             this.CheckmateBtn = new System.Windows.Forms.Button();
+            this.recoverBtn = new System.Windows.Forms.Button();
             this.tableLayoutPanel1.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
             this.tableLayoutPanel3.SuspendLayout();
@@ -196,19 +197,6 @@
             this.panel1.Size = new System.Drawing.Size(875, 438);
             this.panel1.TabIndex = 1;
             // 
-            // AdPanel
-            // 
-            this.AdPanel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.AdPanel.ColumnCount = 1;
-            this.AdPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.AdPanel.Location = new System.Drawing.Point(272, 19);
-            this.AdPanel.Name = "AdPanel";
-            this.AdPanel.RowCount = 1;
-            this.AdPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 230F));
-            this.AdPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 156F));
-            this.AdPanel.Size = new System.Drawing.Size(366, 135);
-            this.AdPanel.TabIndex = 4;
-            // 
             // label4
             // 
             this.label4.AutoSize = true;
@@ -218,6 +206,19 @@
             this.label4.Size = new System.Drawing.Size(25, 13);
             this.label4.TabIndex = 3;
             this.label4.Text = "Ads";
+            // 
+            // AdPanel
+            // 
+            this.AdPanel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.AdPanel.ColumnCount = 1;
+            this.AdPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.AdPanel.Location = new System.Drawing.Point(272, 19);
+            this.AdPanel.Name = "AdPanel";
+            this.AdPanel.RowCount = 1;
+            this.AdPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 230F));
+            this.AdPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 230F));
+            this.AdPanel.Size = new System.Drawing.Size(366, 135);
+            this.AdPanel.TabIndex = 4;
             // 
             // LoadBtn
             // 
@@ -244,6 +245,7 @@
             this.flowLayoutPanel1.Controls.Add(this.loginBtn);
             this.flowLayoutPanel1.Controls.Add(this.registerBtn);
             this.flowLayoutPanel1.Controls.Add(this.validateBtn);
+            this.flowLayoutPanel1.Controls.Add(this.recoverBtn);
             this.flowLayoutPanel1.Controls.Add(this.CheckmateBtn);
             this.flowLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.flowLayoutPanel1.FlowDirection = System.Windows.Forms.FlowDirection.BottomUp;
@@ -284,13 +286,23 @@
             // 
             // CheckmateBtn
             // 
-            this.CheckmateBtn.Location = new System.Drawing.Point(3, 370);
+            this.CheckmateBtn.Location = new System.Drawing.Point(3, 341);
             this.CheckmateBtn.Name = "CheckmateBtn";
             this.CheckmateBtn.Size = new System.Drawing.Size(75, 23);
             this.CheckmateBtn.TabIndex = 2;
             this.CheckmateBtn.Text = "Checkmate";
             this.CheckmateBtn.UseVisualStyleBackColor = true;
             this.CheckmateBtn.Click += new System.EventHandler(this.CheckmateBtn_Click);
+            // 
+            // recoverBtn
+            // 
+            this.recoverBtn.Location = new System.Drawing.Point(3, 370);
+            this.recoverBtn.Name = "recoverBtn";
+            this.recoverBtn.Size = new System.Drawing.Size(75, 23);
+            this.recoverBtn.TabIndex = 4;
+            this.recoverBtn.Text = "Recover";
+            this.recoverBtn.UseVisualStyleBackColor = true;
+            this.recoverBtn.Click += new System.EventHandler(this.recoverBtn_Click);
             // 
             // LoginFrm
             // 
@@ -334,5 +346,6 @@
         private System.Windows.Forms.Button validateBtn;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.TableLayoutPanel AdPanel;
+        private System.Windows.Forms.Button recoverBtn;
     }
 }

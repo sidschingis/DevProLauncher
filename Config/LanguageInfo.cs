@@ -61,11 +61,26 @@ namespace DevProLauncher.Config
         public string ValidateBtnResend = "Resend";
         public string ValidateMsbUsername = "Please enter your username.";
         public string ValidateMsbEmail = "Please enter your email address.";
-        public string ValidateMsbCode = "Please enter your code";
-        public string ValidateMsbResendOK = "Email Sent";
-        public string ValidateMsbResendFail = "Resend failed (wrong Username/Email address)";
-        public string ValidateMsbAccept = "Account Validated!";
-        public string ValidateMsbFailed = "Validation failed (wrong Username/Code combination)!";
+        public string ValidateMsbCode = "Please enter your code.";
+        public string ValidateMsbResendOK = "Email Sent.";
+        public string ValidateMsbResendFail = "Resend failed (wrong Username/Email address).";
+        public string ValidateMsbAccept = "Account Validated.";
+        public string ValidateMsbFailed = "Validation failed (wrong Username/Code combination).";
+       
+        // Recover_frm.cs
+
+        public string RecoverLbUser = "Username";
+        public string RecoverLbCode = "Code";
+        public string RecoverBtnSubmit = "Submit";
+        public string RecoverBtnCancel = "Cancel";
+        public string RecoverBtnResend = "Request Code";
+        public string RecoverMsbUsername = "Please enter your username.";
+        public string RecoverMsbEmail = "Please enter your email address.";
+        public string RecoverMsbCode = "Please enter your code.";
+        public string RecoverMsbResendOK = "An email with the recovery code has been sent.";
+        public string RecoverMsbResendFail = "Request failed (wrong Username/Email address).";
+        public string RecoverMsbAccept = "An email with the new password has been sent.";
+        public string RecoverMsbFailed = "Recovery failed (wrong Username/Email/Code combination).";
 
         // HubGameList_frm
 

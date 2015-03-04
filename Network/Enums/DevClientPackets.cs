@@ -55,6 +55,10 @@
         QueueFail = 52,
         MatchFound = 53,
         MatchCanceled = 54,
-        MatchStart = 55
+        MatchStart = 55,
+        RecoverAccept = 56,
+        RecoverFailed = 57,
+        ResetAccept = 58,
+        ResetFailed = 59
     }
 }

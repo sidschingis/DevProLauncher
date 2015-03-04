@@ -51,6 +51,8 @@ namespace DevProLauncher.Network
         public ClientPacket RegisterReply;
         public ClientPacket ValidateReply;
         public ClientPacket ResendReply;
+        public ClientPacket RecoverReply;
+        public ClientPacket ResetReply;
         public ServerResponse OnFatalError;
         public ServerResponse RemoveRoom;
         public ServerResponse UserStats;
@@ -201,6 +203,10 @@ namespace DevProLauncher.Network
                 case DevClientPackets.QueueFail:
                 case DevClientPackets.Pong:
                 case DevClientPackets.RefuseDuelRequest:
+                case DevClientPackets.RecoverAccept:
+                case DevClientPackets.RecoverFailed:
+                case DevClientPackets.ResetAccept:
+                case DevClientPackets.ResetFailed:
                     return true;
                 default:
                     return false;
@@ -370,6 +376,22 @@ namespace DevProLauncher.Network
                 case DevClientPackets.ResendFailed:
                     if (ResendReply != null)
                         ResendReply(e.Packet);
+                    break;
+                case DevClientPackets.RecoverAccept:
+                    if (RecoverReply != null)
+                        RecoverReply(e.Packet);
+                    break;
+                case DevClientPackets.RecoverFailed:
+                    if (RecoverReply != null)
+                        RecoverReply(e.Packet);
+                    break;
+                case DevClientPackets.ResetAccept:
+                    if (ResetReply != null)
+                        ResetReply(e.Packet);
+                    break;
+                case DevClientPackets.ResetFailed:
+                    if (ResetReply != null)
+                        ResetReply(e.Packet);
                     break;
                 case DevClientPackets.UserStats:
                     if(UserStats != null)

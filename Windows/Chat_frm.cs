@@ -173,7 +173,6 @@ namespace DevProLauncher.Windows
             Level99ColorBtn.BackColor = Program.Config.Level99Color.ToColor();
             Level4ColorBtn.BackColor = Program.Config.Level4Color.ToColor();
             Level3ColorBtn.BackColor = Program.Config.Level3Color.ToColor();
-            Level2ColorBtn.BackColor = Program.Config.Level2Color.ToColor();
             Level1ColorBtn.BackColor = Program.Config.Level1Color.ToColor();
             NormalUserColorBtn.BackColor = Program.Config.Level0Color.ToColor();
             ServerColorBtn.BackColor = Program.Config.ServerMsgColor.ToColor();
@@ -220,7 +219,7 @@ namespace DevProLauncher.Windows
             label13.Text = lang.chatoptionsLblChatBackground;
             label12.Text = lang.chatoptionsLblNormalText;
             label11.Text = lang.chatoptionsLblLevel99;
-            label10.Text = lang.chatoptionsLblLevel2;
+            //label10.Text = lang.chatoptionsLblLevel2;
             label9.Text = lang.chatoptionsLblLevel1;
             label4.Text = lang.chatoptionsLblNormalUser;
             label7.Text = lang.chatoptionsLblServerMessages;
@@ -682,8 +681,8 @@ namespace DevProLauncher.Windows
                                             : new SolidBrush(Program.Config.NormalTextColor.ToColor())),
                                  list.GetItemRectangle(index).Location);
 
-                    if (user.rank == 1 || user.rank == 4)
-                        g.DrawString("Dev", e.Font,
+                    if (user.rank == 1 )
+                        g.DrawString("Helper", e.Font,
                                      (selected)
                                          ? Brushes.White
                                          : (Program.Config.ColorBlindMode
@@ -692,6 +691,17 @@ namespace DevProLauncher.Windows
                                      new Point(
                                          list.GetItemRectangle(index).Location.X +
                                          (int) g.MeasureString("[", e.Font).Width - 1,
+                                         list.GetItemRectangle(index).Location.Y)); 
+                    if (user.rank == 4)
+                        g.DrawString("SMod", e.Font,
+                                     (selected)
+                                         ? Brushes.White
+                                         : (Program.Config.ColorBlindMode
+                                                ? Brushes.Black
+                                                : ChatMessage.GetUserColor(user.rank)),
+                                     new Point(
+                                         list.GetItemRectangle(index).Location.X +
+                                         (int)g.MeasureString("[", e.Font).Width - 1,
                                          list.GetItemRectangle(index).Location.Y));
                     else if (user.rank == 2 || user.rank == 3)
                         g.DrawString("Mod", e.Font,

@@ -62,7 +62,7 @@ namespace DevProLauncher.Config
         public string ValidateMsbUsername = "Please enter your username.";
         public string ValidateMsbEmail = "Please enter your email address.";
         public string ValidateMsbCode = "Please enter your code.";
-        public string ValidateMsbResendOK = "Email Sent.";
+        public string ValidateMsbResendOK = "Request accepted, the email may take some hours to arrive.";
         public string ValidateMsbResendFail = "Resend failed (wrong Username/Email address).";
         public string ValidateMsbAccept = "Account Validated.";
         public string ValidateMsbFailed = "Validation failed (wrong Username/Code combination).";
@@ -77,7 +77,7 @@ namespace DevProLauncher.Config
         public string RecoverMsbUsername = "Please enter your username.";
         public string RecoverMsbEmail = "Please enter your email address.";
         public string RecoverMsbCode = "Please enter your code.";
-        public string RecoverMsbResendOK = "An email with the recovery code has been sent.";
+        public string RecoverMsbResendOK = "Request accepted, the email may take some hours to arrive.";
         public string RecoverMsbResendFail = "Request failed (wrong Username/Email address).";
         public string RecoverMsbAccept = "An email with the new password has been sent.";
         public string RecoverMsbFailed = "Recovery failed (wrong Username/Email/Code combination).";

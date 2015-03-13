@@ -82,7 +82,7 @@
             this.ConfirmEmailInput.Location = new System.Drawing.Point(174, 103);
             this.ConfirmEmailInput.Name = "ConfirmEmailInput";
             this.ConfirmEmailInput.Size = new System.Drawing.Size(226, 20);
-            this.ConfirmEmailInput.TabIndex = 15;
+            this.ConfirmEmailInput.TabIndex = 11;
             // 
             // UsernameLbl
             // 
@@ -160,7 +160,7 @@
             this.EmailInput.Location = new System.Drawing.Point(174, 78);
             this.EmailInput.Name = "EmailInput";
             this.EmailInput.Size = new System.Drawing.Size(226, 20);
-            this.EmailInput.TabIndex = 11;
+            this.EmailInput.TabIndex = 10;
             // 
             // flowLayoutPanel1
             // 
@@ -181,7 +181,7 @@
             this.RegisterBtn.Margin = new System.Windows.Forms.Padding(55, 3, 3, 3);
             this.RegisterBtn.Name = "RegisterBtn";
             this.RegisterBtn.Size = new System.Drawing.Size(72, 26);
-            this.RegisterBtn.TabIndex = 0;
+            this.RegisterBtn.TabIndex = 12;
             this.RegisterBtn.Text = "Register";
             this.RegisterBtn.UseVisualStyleBackColor = true;
             this.RegisterBtn.Click += new System.EventHandler(this.RegisterBtn_Click);

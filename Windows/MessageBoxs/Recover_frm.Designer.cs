@@ -74,7 +74,7 @@
             this.emailInput.Location = new System.Drawing.Point(186, 28);
             this.emailInput.Name = "emailInput";
             this.emailInput.Size = new System.Drawing.Size(178, 20);
-            this.emailInput.TabIndex = 5;
+            this.emailInput.TabIndex = 3;
             // 
             // emailLbl
             // 
@@ -93,7 +93,7 @@
             this.codeInput.Location = new System.Drawing.Point(186, 53);
             this.codeInput.Name = "codeInput";
             this.codeInput.Size = new System.Drawing.Size(178, 20);
-            this.codeInput.TabIndex = 3;
+            this.codeInput.TabIndex = 4;
             // 
             // usernameLbl
             // 
@@ -131,7 +131,7 @@
             this.submitBtn.Location = new System.Drawing.Point(23, 9);
             this.submitBtn.Name = "submitBtn";
             this.submitBtn.Size = new System.Drawing.Size(75, 25);
-            this.submitBtn.TabIndex = 4;
+            this.submitBtn.TabIndex = 5;
             this.submitBtn.Text = "Submit";
             this.submitBtn.UseVisualStyleBackColor = true;
             this.submitBtn.Click += new System.EventHandler(this.submitBtn_Click);
@@ -143,7 +143,7 @@
             this.cancelBtn.Location = new System.Drawing.Point(268, 9);
             this.cancelBtn.Name = "cancelBtn";
             this.cancelBtn.Size = new System.Drawing.Size(75, 25);
-            this.cancelBtn.TabIndex = 5;
+            this.cancelBtn.TabIndex = 7;
             this.cancelBtn.Text = "Cancel";
             this.cancelBtn.UseVisualStyleBackColor = true;
             // 

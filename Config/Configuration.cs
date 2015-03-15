@@ -50,6 +50,7 @@ namespace DevProLauncher.Config
         public bool EnableCustomSleeves = true;
         public bool MuteOpponent = false;
         public bool MuteSpectators = true;
+        public bool SaveReplay = false;
         public string IgnoreList = "";
         public string DefaultChannel = "";
 

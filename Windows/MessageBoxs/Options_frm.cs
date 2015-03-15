@@ -33,7 +33,8 @@ namespace DevProLauncher.Windows.MessageBoxs
             NoDelay.Checked = Program.Config.NoChainDelay;
             EnableSleeveLoading.Checked = Program.Config.EnableCustomSleeves;
             MuteOpp.Checked = Program.Config.MuteOpponent;
-            MuteSpec.Checked = Program.Config.MuteSpectators;
+            MuteSpectators.Checked = Program.Config.MuteSpectators;
+            SaveReplay.Checked = Program.Config.SaveReplay;
 
             MusicVolume.Enabled = EnableMusic.Checked;
             MusicVolume.Value = Program.Config.MusicVolume;
@@ -95,7 +96,8 @@ namespace DevProLauncher.Windows.MessageBoxs
                 NoDelay.Text = info.optionCbNoChainDelay;
                 EnableSleeveLoading.Text = info.optionCbEnableSleeves;
                 MuteOpp.Text = info.optionMuteOpp;
-                MuteSpec.Text = info.optionMuteSpec;
+                MuteSpectators.Text = info.optionMuteSpec;
+                SaveReplay.Text = info.optionSaveReplay;
 
                 accountTab.Text = info.optionAccountTab;
                 label7.Text = info.optionCurrentPW;
@@ -131,7 +133,8 @@ namespace DevProLauncher.Windows.MessageBoxs
             Program.Config.NoChainDelay = NoDelay.Checked;
             Program.Config.EnableCustomSleeves = EnableSleeveLoading.Checked;
             Program.Config.MuteOpponent = MuteOpp.Checked;
-            Program.Config.MuteSpectators = MuteSpec.Checked;
+            Program.Config.MuteSpectators = MuteSpectators.Checked;
+            Program.Config.SaveReplay = SaveReplay.Checked;
 
             Program.SaveConfig(Program.ConfigurationFilename,Program.Config);
             DialogResult = DialogResult.OK;

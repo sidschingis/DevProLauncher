@@ -45,7 +45,7 @@
             this.RandomPlacing = new System.Windows.Forms.CheckBox();
             this.AutoChain = new System.Windows.Forms.CheckBox();
             this.MuteOpp = new System.Windows.Forms.CheckBox();
-            this.MuteSpec = new System.Windows.Forms.CheckBox();
+            this.SaveReplay = new System.Windows.Forms.CheckBox();
             this.EnableSleeveLoading = new System.Windows.Forms.CheckBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
@@ -70,6 +70,12 @@
             this.label1 = new System.Windows.Forms.Label();
             this.DefualtDeck = new System.Windows.Forms.ComboBox();
             this.label5 = new System.Windows.Forms.Label();
+            this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.tableLayoutPanel6 = new System.Windows.Forms.TableLayoutPanel();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.FontSize = new System.Windows.Forms.NumericUpDown();
+            this.GameFont = new System.Windows.Forms.ComboBox();
             this.groupBox5 = new System.Windows.Forms.GroupBox();
             this.tableLayoutPanel11 = new System.Windows.Forms.TableLayoutPanel();
             this.confirmEmailInput = new System.Windows.Forms.TextBox();
@@ -84,12 +90,7 @@
             this.Update = new System.Windows.Forms.Button();
             this.emailLbl = new System.Windows.Forms.Label();
             this.confirmEmailLbl = new System.Windows.Forms.Label();
-            this.groupBox3 = new System.Windows.Forms.GroupBox();
-            this.tableLayoutPanel6 = new System.Windows.Forms.TableLayoutPanel();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.FontSize = new System.Windows.Forms.NumericUpDown();
-            this.GameFont = new System.Windows.Forms.ComboBox();
+            this.MuteSpectators = new System.Windows.Forms.CheckBox();
             this.tableLayoutPanel1.SuspendLayout();
             this.flowLayoutPanel1.SuspendLayout();
             this.OptionTabControl.SuspendLayout();
@@ -111,12 +112,12 @@
             this.tableLayoutPanel10.SuspendLayout();
             this.groupBox4.SuspendLayout();
             this.tableLayoutPanel9.SuspendLayout();
-            this.groupBox5.SuspendLayout();
-            this.tableLayoutPanel11.SuspendLayout();
-            this.flowLayoutPanel2.SuspendLayout();
             this.groupBox3.SuspendLayout();
             this.tableLayoutPanel6.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.FontSize)).BeginInit();
+            this.groupBox5.SuspendLayout();
+            this.tableLayoutPanel11.SuspendLayout();
+            this.flowLayoutPanel2.SuspendLayout();
             this.SuspendLayout();
             // 
             // tableLayoutPanel1
@@ -258,12 +259,13 @@
             this.tableLayoutPanel7.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 24.27184F));
             this.tableLayoutPanel7.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 27.18447F));
             this.tableLayoutPanel7.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 24.27184F));
+            this.tableLayoutPanel7.Controls.Add(this.MuteSpectators, 0, 1);
             this.tableLayoutPanel7.Controls.Add(this.AutoPlacing, 0, 0);
             this.tableLayoutPanel7.Controls.Add(this.NoDelay, 1, 1);
             this.tableLayoutPanel7.Controls.Add(this.RandomPlacing, 0, 1);
             this.tableLayoutPanel7.Controls.Add(this.AutoChain, 1, 0);
             this.tableLayoutPanel7.Controls.Add(this.MuteOpp, 3, 0);
-            this.tableLayoutPanel7.Controls.Add(this.MuteSpec, 2, 1);
+            this.tableLayoutPanel7.Controls.Add(this.SaveReplay, 2, 1);
             this.tableLayoutPanel7.Controls.Add(this.EnableSleeveLoading, 2, 0);
             this.tableLayoutPanel7.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel7.Location = new System.Drawing.Point(3, 3);
@@ -291,7 +293,7 @@
             this.NoDelay.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.NoDelay.AutoSize = true;
             this.NoDelay.CheckAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.NoDelay.Location = new System.Drawing.Point(254, 50);
+            this.NoDelay.Location = new System.Drawing.Point(463, 50);
             this.NoDelay.Name = "NoDelay";
             this.NoDelay.Size = new System.Drawing.Size(115, 17);
             this.NoDelay.TabIndex = 6;
@@ -303,7 +305,7 @@
             this.RandomPlacing.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.RandomPlacing.AutoSize = true;
             this.RandomPlacing.CheckAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.RandomPlacing.Location = new System.Drawing.Point(54, 50);
+            this.RandomPlacing.Location = new System.Drawing.Point(240, 50);
             this.RandomPlacing.Name = "RandomPlacing";
             this.RandomPlacing.Size = new System.Drawing.Size(129, 17);
             this.RandomPlacing.TabIndex = 4;
@@ -335,17 +337,17 @@
             this.MuteOpp.Text = "Mute Opponents";
             this.MuteOpp.UseVisualStyleBackColor = true;
             // 
-            // MuteSpec
+            // SaveReplay
             // 
-            this.MuteSpec.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            this.MuteSpec.AutoSize = true;
-            this.MuteSpec.CheckAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.MuteSpec.Location = new System.Drawing.Point(474, 50);
-            this.MuteSpec.Name = "MuteSpec";
-            this.MuteSpec.Size = new System.Drawing.Size(104, 17);
-            this.MuteSpec.TabIndex = 8;
-            this.MuteSpec.Text = "Mute Spectators";
-            this.MuteSpec.UseVisualStyleBackColor = true;
+            this.SaveReplay.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.SaveReplay.AutoSize = true;
+            this.SaveReplay.CheckAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.SaveReplay.Location = new System.Drawing.Point(662, 50);
+            this.SaveReplay.Name = "SaveReplay";
+            this.SaveReplay.Size = new System.Drawing.Size(104, 17);
+            this.SaveReplay.TabIndex = 8;
+            this.SaveReplay.Text = "SaveLastReplay";
+            this.SaveReplay.UseVisualStyleBackColor = true;
             // 
             // EnableSleeveLoading
             // 
@@ -375,7 +377,7 @@
             this.tableLayoutPanel3.ColumnCount = 3;
             this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 71.70732F));
             this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 28.29268F));
-            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 192F));
+            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 193F));
             this.tableLayoutPanel3.Controls.Add(this.Enabled3d, 1, 0);
             this.tableLayoutPanel3.Controls.Add(this.flowLayoutPanel3, 2, 0);
             this.tableLayoutPanel3.Controls.Add(this.flowLayoutPanel4, 2, 1);
@@ -395,7 +397,7 @@
             this.Enabled3d.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.Enabled3d.AutoSize = true;
             this.Enabled3d.CheckAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.Enabled3d.Location = new System.Drawing.Point(484, 8);
+            this.Enabled3d.Location = new System.Drawing.Point(483, 8);
             this.Enabled3d.Name = "Enabled3d";
             this.Enabled3d.Size = new System.Drawing.Size(95, 17);
             this.Enabled3d.TabIndex = 2;
@@ -407,7 +409,7 @@
             // 
             this.flowLayoutPanel3.Controls.Add(this.label4);
             this.flowLayoutPanel3.Controls.Add(this.SkinList);
-            this.flowLayoutPanel3.Location = new System.Drawing.Point(585, 3);
+            this.flowLayoutPanel3.Location = new System.Drawing.Point(584, 3);
             this.flowLayoutPanel3.Name = "flowLayoutPanel3";
             this.flowLayoutPanel3.Size = new System.Drawing.Size(179, 28);
             this.flowLayoutPanel3.TabIndex = 4;
@@ -439,9 +441,9 @@
             this.flowLayoutPanel4.Controls.Add(this.label6);
             this.flowLayoutPanel4.Controls.Add(this.Antialias);
             this.flowLayoutPanel4.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.flowLayoutPanel4.Location = new System.Drawing.Point(585, 37);
+            this.flowLayoutPanel4.Location = new System.Drawing.Point(584, 37);
             this.flowLayoutPanel4.Name = "flowLayoutPanel4";
-            this.flowLayoutPanel4.Size = new System.Drawing.Size(187, 53);
+            this.flowLayoutPanel4.Size = new System.Drawing.Size(188, 53);
             this.flowLayoutPanel4.TabIndex = 5;
             // 
             // label6
@@ -635,6 +637,83 @@
             this.label5.TabIndex = 4;
             this.label5.Text = "Default Deck";
             // 
+            // groupBox3
+            // 
+            this.groupBox3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.groupBox3.Controls.Add(this.tableLayoutPanel6);
+            this.groupBox3.Location = new System.Drawing.Point(3, 170);
+            this.groupBox3.Name = "groupBox3";
+            this.groupBox3.Size = new System.Drawing.Size(288, 78);
+            this.groupBox3.TabIndex = 10;
+            this.groupBox3.TabStop = false;
+            this.groupBox3.Text = "Font Settings";
+            // 
+            // tableLayoutPanel6
+            // 
+            this.tableLayoutPanel6.ColumnCount = 2;
+            this.tableLayoutPanel6.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel6.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel6.Controls.Add(this.label3, 0, 1);
+            this.tableLayoutPanel6.Controls.Add(this.label2, 0, 0);
+            this.tableLayoutPanel6.Controls.Add(this.FontSize, 1, 0);
+            this.tableLayoutPanel6.Controls.Add(this.GameFont, 1, 1);
+            this.tableLayoutPanel6.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tableLayoutPanel6.Location = new System.Drawing.Point(3, 16);
+            this.tableLayoutPanel6.Name = "tableLayoutPanel6";
+            this.tableLayoutPanel6.RowCount = 2;
+            this.tableLayoutPanel6.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 29F));
+            this.tableLayoutPanel6.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 21F));
+            this.tableLayoutPanel6.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tableLayoutPanel6.Size = new System.Drawing.Size(282, 59);
+            this.tableLayoutPanel6.TabIndex = 2;
+            // 
+            // label3
+            // 
+            this.label3.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(41, 37);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(59, 13);
+            this.label3.TabIndex = 6;
+            this.label3.Text = "Game Font";
+            // 
+            // label2
+            // 
+            this.label2.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(45, 8);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(51, 13);
+            this.label2.TabIndex = 4;
+            this.label2.Text = "Font Size";
+            // 
+            // FontSize
+            // 
+            this.FontSize.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.FontSize.Location = new System.Drawing.Point(144, 3);
+            this.FontSize.Maximum = new decimal(new int[] {
+            32,
+            0,
+            0,
+            0});
+            this.FontSize.Name = "FontSize";
+            this.FontSize.ReadOnly = true;
+            this.FontSize.Size = new System.Drawing.Size(135, 20);
+            this.FontSize.TabIndex = 5;
+            this.FontSize.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // GameFont
+            // 
+            this.GameFont.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.GameFont.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.GameFont.FormattingEnabled = true;
+            this.GameFont.Items.AddRange(new object[] {
+            "simhei.ttf"});
+            this.GameFont.Location = new System.Drawing.Point(144, 32);
+            this.GameFont.Name = "GameFont";
+            this.GameFont.Size = new System.Drawing.Size(135, 21);
+            this.GameFont.TabIndex = 7;
+            // 
             // groupBox5
             // 
             this.groupBox5.Controls.Add(this.tableLayoutPanel11);
@@ -798,82 +877,17 @@
             this.confirmEmailLbl.TabIndex = 8;
             this.confirmEmailLbl.Text = "Confirm Email";
             // 
-            // groupBox3
+            // MuteSpectators
             // 
-            this.groupBox3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.groupBox3.Controls.Add(this.tableLayoutPanel6);
-            this.groupBox3.Location = new System.Drawing.Point(3, 170);
-            this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(288, 78);
-            this.groupBox3.TabIndex = 10;
-            this.groupBox3.TabStop = false;
-            this.groupBox3.Text = "Font Settings";
-            // 
-            // tableLayoutPanel6
-            // 
-            this.tableLayoutPanel6.ColumnCount = 2;
-            this.tableLayoutPanel6.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel6.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel6.Controls.Add(this.label3, 0, 1);
-            this.tableLayoutPanel6.Controls.Add(this.label2, 0, 0);
-            this.tableLayoutPanel6.Controls.Add(this.FontSize, 1, 0);
-            this.tableLayoutPanel6.Controls.Add(this.GameFont, 1, 1);
-            this.tableLayoutPanel6.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel6.Location = new System.Drawing.Point(3, 16);
-            this.tableLayoutPanel6.Name = "tableLayoutPanel6";
-            this.tableLayoutPanel6.RowCount = 2;
-            this.tableLayoutPanel6.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 29F));
-            this.tableLayoutPanel6.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 21F));
-            this.tableLayoutPanel6.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutPanel6.Size = new System.Drawing.Size(282, 59);
-            this.tableLayoutPanel6.TabIndex = 2;
-            // 
-            // label3
-            // 
-            this.label3.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(41, 37);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(59, 13);
-            this.label3.TabIndex = 6;
-            this.label3.Text = "Game Font";
-            // 
-            // label2
-            // 
-            this.label2.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(45, 8);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(51, 13);
-            this.label2.TabIndex = 4;
-            this.label2.Text = "Font Size";
-            // 
-            // FontSize
-            // 
-            this.FontSize.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.FontSize.Location = new System.Drawing.Point(144, 3);
-            this.FontSize.Maximum = new decimal(new int[] {
-            32,
-            0,
-            0,
-            0});
-            this.FontSize.Name = "FontSize";
-            this.FontSize.ReadOnly = true;
-            this.FontSize.Size = new System.Drawing.Size(135, 20);
-            this.FontSize.TabIndex = 5;
-            this.FontSize.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // GameFont
-            // 
-            this.GameFont.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.GameFont.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.GameFont.FormattingEnabled = true;
-            this.GameFont.Items.AddRange(new object[] {
-            "simhei.ttf"});
-            this.GameFont.Location = new System.Drawing.Point(144, 32);
-            this.GameFont.Name = "GameFont";
-            this.GameFont.Size = new System.Drawing.Size(135, 21);
-            this.GameFont.TabIndex = 7;
+            this.MuteSpectators.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.MuteSpectators.AutoSize = true;
+            this.MuteSpectators.CheckAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.MuteSpectators.Location = new System.Drawing.Point(79, 50);
+            this.MuteSpectators.Name = "MuteSpectators";
+            this.MuteSpectators.Size = new System.Drawing.Size(104, 17);
+            this.MuteSpectators.TabIndex = 10;
+            this.MuteSpectators.Text = "Mute Spectators";
+            this.MuteSpectators.UseVisualStyleBackColor = true;
             // 
             // Settings
             // 
@@ -913,14 +927,14 @@
             this.groupBox4.ResumeLayout(false);
             this.tableLayoutPanel9.ResumeLayout(false);
             this.tableLayoutPanel9.PerformLayout();
-            this.groupBox5.ResumeLayout(false);
-            this.tableLayoutPanel11.ResumeLayout(false);
-            this.tableLayoutPanel11.PerformLayout();
-            this.flowLayoutPanel2.ResumeLayout(false);
             this.groupBox3.ResumeLayout(false);
             this.tableLayoutPanel6.ResumeLayout(false);
             this.tableLayoutPanel6.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.FontSize)).EndInit();
+            this.groupBox5.ResumeLayout(false);
+            this.tableLayoutPanel11.ResumeLayout(false);
+            this.tableLayoutPanel11.PerformLayout();
+            this.flowLayoutPanel2.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -984,11 +998,12 @@
         private System.Windows.Forms.TrackBar SoundVolume;
         private System.Windows.Forms.TrackBar MusicVolume;
         private System.Windows.Forms.CheckBox MuteOpp;
-        private System.Windows.Forms.CheckBox MuteSpec;
+        private System.Windows.Forms.CheckBox SaveReplay;
         private System.Windows.Forms.TextBox confirmEmailInput;
         private System.Windows.Forms.TextBox emailInput;
         private System.Windows.Forms.Label emailLbl;
         private System.Windows.Forms.Label confirmEmailLbl;
+        private System.Windows.Forms.CheckBox MuteSpectators;
 
 
     }

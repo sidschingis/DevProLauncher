@@ -173,6 +173,7 @@ namespace DevProLauncher.Config
         public string optionCbEnableSleeves = "Enable User Covers";
         public string optionMuteOpp = "Mute Opponents";
         public string optionMuteSpec = "Mute Spectators";
+        public string optionSaveReplay = "Save Last Replay";
         public string optionCurrentPW = "Current Password";
         public string optionNewPW = "New Password";
         public string optionConfirmPW = "Confirm Password";

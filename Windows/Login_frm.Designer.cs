@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(LoginFrm));
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
@@ -39,7 +40,8 @@
             this.passwordInput = new System.Windows.Forms.TextBox();
             this.savePassCheckBox = new System.Windows.Forms.CheckBox();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.label4 = new System.Windows.Forms.Label();
+            this.adBox = new System.Windows.Forms.GroupBox();
+            this.adFlash = new AxShockwaveFlashObjects.AxShockwaveFlash();
             this.AdPanel = new System.Windows.Forms.TableLayoutPanel();
             this.LoadBtn = new System.Windows.Forms.Button();
             this.PatchNotes = new System.Windows.Forms.WebBrowser();
@@ -47,12 +49,14 @@
             this.loginBtn = new System.Windows.Forms.Button();
             this.registerBtn = new System.Windows.Forms.Button();
             this.validateBtn = new System.Windows.Forms.Button();
-            this.CheckmateBtn = new System.Windows.Forms.Button();
             this.recoverBtn = new System.Windows.Forms.Button();
+            this.CheckmateBtn = new System.Windows.Forms.Button();
             this.tableLayoutPanel1.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
             this.tableLayoutPanel3.SuspendLayout();
             this.panel1.SuspendLayout();
+            this.adBox.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.adFlash)).BeginInit();
             this.flowLayoutPanel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -187,8 +191,7 @@
             // 
             // panel1
             // 
-            this.panel1.Controls.Add(this.label4);
-            this.panel1.Controls.Add(this.AdPanel);
+            this.panel1.Controls.Add(this.adBox);
             this.panel1.Controls.Add(this.LoadBtn);
             this.panel1.Controls.Add(this.PatchNotes);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -197,33 +200,44 @@
             this.panel1.Size = new System.Drawing.Size(875, 438);
             this.panel1.TabIndex = 1;
             // 
-            // label4
+            // adBox
             // 
-            this.label4.AutoSize = true;
-            this.label4.BackColor = System.Drawing.SystemColors.Window;
-            this.label4.Location = new System.Drawing.Point(269, 3);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(25, 13);
-            this.label4.TabIndex = 3;
-            this.label4.Text = "Ads";
+            this.adBox.Controls.Add(this.adFlash);
+            this.adBox.Controls.Add(this.AdPanel);
+            this.adBox.Location = new System.Drawing.Point(179, 50);
+            this.adBox.Name = "adBox";
+            this.adBox.Size = new System.Drawing.Size(425, 296);
+            this.adBox.TabIndex = 5;
+            this.adBox.TabStop = false;
+            this.adBox.Text = "Ads";
+            // 
+            // adFlash
+            // 
+            this.adFlash.Enabled = true;
+            this.adFlash.Location = new System.Drawing.Point(0, 160);
+            this.adFlash.Name = "adFlash";
+            this.adFlash.OcxState = ((System.Windows.Forms.AxHost.State)(resources.GetObject("adFlash.OcxState")));
+            this.adFlash.Size = new System.Drawing.Size(192, 192);
+            this.adFlash.TabIndex = 0;
+            this.adFlash.Enter += new System.EventHandler(this.adFlash_Enter);
             // 
             // AdPanel
             // 
-            this.AdPanel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.AdPanel.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.AdPanel.ColumnCount = 1;
             this.AdPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.AdPanel.Location = new System.Drawing.Point(272, 19);
+            this.AdPanel.Location = new System.Drawing.Point(-58, 19);
             this.AdPanel.Name = "AdPanel";
             this.AdPanel.RowCount = 1;
             this.AdPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 230F));
             this.AdPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 230F));
-            this.AdPanel.Size = new System.Drawing.Size(366, 135);
+            this.AdPanel.Size = new System.Drawing.Size(541, 135);
             this.AdPanel.TabIndex = 4;
             // 
             // LoadBtn
             // 
             this.LoadBtn.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.LoadBtn.Location = new System.Drawing.Point(373, 208);
+            this.LoadBtn.Location = new System.Drawing.Point(385, 379);
             this.LoadBtn.Name = "LoadBtn";
             this.LoadBtn.Size = new System.Drawing.Size(128, 23);
             this.LoadBtn.TabIndex = 2;
@@ -247,7 +261,6 @@
             this.flowLayoutPanel1.Controls.Add(this.validateBtn);
             this.flowLayoutPanel1.Controls.Add(this.recoverBtn);
             this.flowLayoutPanel1.Controls.Add(this.CheckmateBtn);
-            this.flowLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.flowLayoutPanel1.FlowDirection = System.Windows.Forms.FlowDirection.BottomUp;
             this.flowLayoutPanel1.Location = new System.Drawing.Point(890, 3);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
@@ -284,16 +297,6 @@
             this.validateBtn.UseVisualStyleBackColor = true;
             this.validateBtn.Click += new System.EventHandler(this.validateBtn_Click);
             // 
-            // CheckmateBtn
-            // 
-            this.CheckmateBtn.Location = new System.Drawing.Point(3, 341);
-            this.CheckmateBtn.Name = "CheckmateBtn";
-            this.CheckmateBtn.Size = new System.Drawing.Size(75, 23);
-            this.CheckmateBtn.TabIndex = 2;
-            this.CheckmateBtn.Text = "Checkmate";
-            this.CheckmateBtn.UseVisualStyleBackColor = true;
-            this.CheckmateBtn.Click += new System.EventHandler(this.CheckmateBtn_Click);
-            // 
             // recoverBtn
             // 
             this.recoverBtn.Location = new System.Drawing.Point(3, 370);
@@ -303,6 +306,16 @@
             this.recoverBtn.Text = "Recover";
             this.recoverBtn.UseVisualStyleBackColor = true;
             this.recoverBtn.Click += new System.EventHandler(this.recoverBtn_Click);
+            // 
+            // CheckmateBtn
+            // 
+            this.CheckmateBtn.Location = new System.Drawing.Point(3, 341);
+            this.CheckmateBtn.Name = "CheckmateBtn";
+            this.CheckmateBtn.Size = new System.Drawing.Size(75, 23);
+            this.CheckmateBtn.TabIndex = 2;
+            this.CheckmateBtn.Text = "Checkmate";
+            this.CheckmateBtn.UseVisualStyleBackColor = true;
+            this.CheckmateBtn.Click += new System.EventHandler(this.CheckmateBtn_Click);
             // 
             // LoginFrm
             // 
@@ -318,7 +331,8 @@
             this.tableLayoutPanel3.ResumeLayout(false);
             this.tableLayoutPanel3.PerformLayout();
             this.panel1.ResumeLayout(false);
-            this.panel1.PerformLayout();
+            this.adBox.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.adFlash)).EndInit();
             this.flowLayoutPanel1.ResumeLayout(false);
             this.ResumeLayout(false);
 
@@ -344,8 +358,9 @@
         private System.Windows.Forms.Button LoadBtn;
         private System.Windows.Forms.WebBrowser PatchNotes;
         private System.Windows.Forms.Button validateBtn;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.TableLayoutPanel AdPanel;
         private System.Windows.Forms.Button recoverBtn;
+        private System.Windows.Forms.GroupBox adBox;
+        private AxShockwaveFlashObjects.AxShockwaveFlash adFlash;
+        private System.Windows.Forms.TableLayoutPanel AdPanel;
     }
 }

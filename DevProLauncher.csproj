@@ -94,6 +94,11 @@
     <Compile Include="Network\MessageReceived.cs" />
     <Compile Include="Network\Data\ChatMessage.cs" />
     <Compile Include="Network\Data\RegisterRequest.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
     <Compile Include="SevenZip\Common\CommandLineParser.cs" />
     <Compile Include="SevenZip\Common\CRC.cs" />
     <Compile Include="SevenZip\Common\InBuffer.cs" />
@@ -312,14 +317,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
-      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <Compile Include="Properties\Resources.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DependentUpon>Resources.resx</DependentUpon>
-      <DesignTime>True</DesignTime>
-    </Compile>
     <EmbeddedResource Include="Windows\MessageBoxs\ChannelList_frm.resx">
       <DependentUpon>ChannelList_frm.cs</DependentUpon>
     </EmbeddedResource>
@@ -433,12 +433,34 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Favicon_DropShadow_64x64.ico" />
+    <Content Include="Resources\HEX_Banner_DE.jpg" />
+    <Content Include="Resources\HEX_Banner_EN.jpg" />
+    <Content Include="Resources\HEX_Banner_FR.jpg" />
     <Content Include="Resources\cardmarketDE.jpg" />
     <Content Include="Resources\cardmarketEN.jpg" />
     <Content Include="Resources\cardmarketES.jpg" />
     <Content Include="Resources\cardmarketFR.jpg" />
     <Content Include="Resources\cardmarketIT.jpg" />
     <None Include="Resources\swords.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <COMReference Include="AxShockwaveFlashObjects">
+      <Guid>{D27CDB6B-AE6D-11CF-96B8-444553540000}</Guid>
+      <VersionMajor>1</VersionMajor>
+      <VersionMinor>0</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>aximp</WrapperTool>
+      <Isolated>False</Isolated>
+    </COMReference>
+    <COMReference Include="ShockwaveFlashObjects">
+      <Guid>{D27CDB6B-AE6D-11CF-96B8-444553540000}</Guid>
+      <VersionMajor>1</VersionMajor>
+      <VersionMinor>0</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>tlbimp</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

@@ -92,28 +92,34 @@ namespace DevProLauncher.Windows
         {
             //PatchNotes.Navigate("http://ygopro.de/launcher/indexlauncher.php", false);
 
-            string loc = LauncherHelper.GetLocation();
+            //string loc = LauncherHelper.GetLocation();
 
             //if (!LauncherHelper.IsEuropeanLocation(loc))
             //    return;
-            Image image ;
+            Image image;
+            string flashpath = Application.StartupPath + @"\Assets\ads\"; ;
 
-            switch (loc)
+            switch (Program.Config.Language.ToLower())
             {
-                case "DE":
+                case "german":
                     image = Properties.Resources.cardmarketDE;
+                    flashpath += "HEX_DE.swf";
                     break;
-                case "ES":
+                case "spanish":
                     image = Properties.Resources.cardmarketES;
+                    flashpath += "HEX_EN.swf";
                     break;
-                case "FR":
+                case "french":
                     image = Properties.Resources.cardmarketFR;
+                    flashpath += "HEX_FR.swf";
                     break;
-                case "IT":
+                case "italian":
                     image = Properties.Resources.cardmarketIT;
+                    flashpath += "HEX_EN.swf";
                     break;
                 default:
                     image = Properties.Resources.cardmarketEN;
+                    flashpath += "HEX_EN.swf";
                     break;
             }      
             
@@ -121,6 +127,16 @@ namespace DevProLauncher.Windows
                 var item = new Banner("tcgmarket", "http://ygopro.de/launcher/werbung/linktrackercheck.php?tcgmarket=bannerheader" , image);
                 AdPanel.Controls.Add(item, 0, 0);
             }); 
+            this.BeginInvoke((MethodInvoker)delegate
+            {
+                adFlash.Movie = flashpath;
+                adFlash.Play();
+            }); 
+        }
+
+        private void adFlash_Enter(object sender, EventArgs e)
+        {
+            Process.Start("http://ygopro.de/launcher/werbung/Gameforge/tracker.php");
         }
         /*deprecated*/
         private void WebRedirect(object sender, CancelEventArgs e)
@@ -303,8 +319,8 @@ namespace DevProLauncher.Windows
                         ? "http://ygopro.de/en/category/"
                         : "http://ygopro.de/en/category/patch-notes/");
             //PatchNotes.Navigating += WebRedirect;
-            label4.Visible = false;
-            AdPanel.Visible = false;
+            adBox.Visible = false;
+            //AdPanel.Visible = false;
         }
 
         private void validateBtn_Click(object sender, EventArgs e)
@@ -336,5 +352,6 @@ namespace DevProLauncher.Windows
             var form = new Recover_frm();
             form.ShowDialog();
         }
+
     }
 }

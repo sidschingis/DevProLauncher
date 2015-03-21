@@ -51,6 +51,7 @@
             this.validateBtn = new System.Windows.Forms.Button();
             this.recoverBtn = new System.Windows.Forms.Button();
             this.CheckmateBtn = new System.Windows.Forms.Button();
+            this.tableLayoutPanel4 = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanel1.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
             this.tableLayoutPanel3.SuspendLayout();
@@ -203,6 +204,7 @@
             // adBox
             // 
             this.adBox.Controls.Add(this.adFlash);
+            this.adBox.Controls.Add(this.tableLayoutPanel4);
             this.adBox.Controls.Add(this.AdPanel);
             this.adBox.Location = new System.Drawing.Point(179, 50);
             this.adBox.Name = "adBox";
@@ -214,10 +216,10 @@
             // adFlash
             // 
             this.adFlash.Enabled = true;
-            this.adFlash.Location = new System.Drawing.Point(0, 160);
+            this.adFlash.Location = new System.Drawing.Point(6, 160);
             this.adFlash.Name = "adFlash";
             this.adFlash.OcxState = ((System.Windows.Forms.AxHost.State)(resources.GetObject("adFlash.OcxState")));
-            this.adFlash.Size = new System.Drawing.Size(192, 192);
+            this.adFlash.Size = new System.Drawing.Size(186, 130);
             this.adFlash.TabIndex = 0;
             this.adFlash.Enter += new System.EventHandler(this.adFlash_Enter);
             // 
@@ -226,12 +228,12 @@
             this.AdPanel.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.AdPanel.ColumnCount = 1;
             this.AdPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.AdPanel.Location = new System.Drawing.Point(-58, 19);
+            this.AdPanel.Location = new System.Drawing.Point(6, 19);
             this.AdPanel.Name = "AdPanel";
             this.AdPanel.RowCount = 1;
             this.AdPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 230F));
             this.AdPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 230F));
-            this.AdPanel.Size = new System.Drawing.Size(541, 135);
+            this.AdPanel.Size = new System.Drawing.Size(413, 135);
             this.AdPanel.TabIndex = 4;
             // 
             // LoadBtn
@@ -261,6 +263,7 @@
             this.flowLayoutPanel1.Controls.Add(this.validateBtn);
             this.flowLayoutPanel1.Controls.Add(this.recoverBtn);
             this.flowLayoutPanel1.Controls.Add(this.CheckmateBtn);
+            this.flowLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.flowLayoutPanel1.FlowDirection = System.Windows.Forms.FlowDirection.BottomUp;
             this.flowLayoutPanel1.Location = new System.Drawing.Point(890, 3);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
@@ -317,6 +320,19 @@
             this.CheckmateBtn.UseVisualStyleBackColor = true;
             this.CheckmateBtn.Click += new System.EventHandler(this.CheckmateBtn_Click);
             // 
+            // tableLayoutPanel4
+            // 
+            this.tableLayoutPanel4.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.tableLayoutPanel4.ColumnCount = 1;
+            this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel4.Location = new System.Drawing.Point(6, 155);
+            this.tableLayoutPanel4.Name = "tableLayoutPanel4";
+            this.tableLayoutPanel4.RowCount = 1;
+            this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 230F));
+            this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 230F));
+            this.tableLayoutPanel4.Size = new System.Drawing.Size(413, 135);
+            this.tableLayoutPanel4.TabIndex = 5;
+            // 
             // LoginFrm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -362,5 +378,6 @@
         private System.Windows.Forms.GroupBox adBox;
         private AxShockwaveFlashObjects.AxShockwaveFlash adFlash;
         private System.Windows.Forms.TableLayoutPanel AdPanel;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel4;
     }
 }

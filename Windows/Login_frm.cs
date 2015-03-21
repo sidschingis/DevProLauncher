@@ -313,6 +313,7 @@ namespace DevProLauncher.Windows
 
         private void LoadBtn_Click(object sender, EventArgs e)
         {
+            adFlash.Visible = false;
             LoadBtn.Visible = false;
             LoadBtn.Enabled = false;
             PatchNotes.Navigate(languageSelect.SelectedItem.ToString() == "German"

@@ -680,51 +680,34 @@ namespace DevProLauncher.Windows
                                             ? Brushes.Black
                                             : new SolidBrush(Program.Config.NormalTextColor.ToColor())),
                                  list.GetItemRectangle(index).Location);
-
-                    if (user.rank == 1 )
-                        g.DrawString("Helper", e.Font,
-                                     (selected)
-                                         ? Brushes.White
-                                         : (Program.Config.ColorBlindMode
-                                                ? Brushes.Black
-                                                : ChatMessage.GetUserColor(user.rank)),
-                                     new Point(
-                                         list.GetItemRectangle(index).Location.X +
-                                         (int) g.MeasureString("[", e.Font).Width - 1,
-                                         list.GetItemRectangle(index).Location.Y)); 
-                    if (user.rank == 4)
-                        g.DrawString("SMod", e.Font,
-                                     (selected)
-                                         ? Brushes.White
-                                         : (Program.Config.ColorBlindMode
-                                                ? Brushes.Black
-                                                : ChatMessage.GetUserColor(user.rank)),
-                                     new Point(
-                                         list.GetItemRectangle(index).Location.X +
-                                         (int)g.MeasureString("[", e.Font).Width - 1,
-                                         list.GetItemRectangle(index).Location.Y));
-                    else if (user.rank == 2 || user.rank == 3)
-                        g.DrawString("Mod", e.Font,
-                                     (selected)
-                                         ? Brushes.White
-                                         : (Program.Config.ColorBlindMode
-                                                ? Brushes.Black
-                                                : ChatMessage.GetUserColor(user.rank)),
-                                     new Point(
-                                         list.GetItemRectangle(index).Location.X +
-                                         (int) g.MeasureString("[", e.Font).Width - 1,
-                                         list.GetItemRectangle(index).Location.Y));
-                    else if (user.rank == 99)
-                        g.DrawString("Dev", e.Font,
-                                     (selected)
-                                         ? Brushes.White
-                                         : (Program.Config.ColorBlindMode
-                                                ? Brushes.Black
-                                                : ChatMessage.GetUserColor(user.rank)),
-                                     new Point(
-                                         list.GetItemRectangle(index).Location.X +
-                                         (int) g.MeasureString("[", e.Font).Width - 1,
-                                         list.GetItemRectangle(index).Location.Y));
+                    string title;
+                    switch (user.rank){
+                        case 1:
+                            title = "Helper";
+                            break;
+                        case 3:
+                            title = "Mod";
+                            break;
+                        case 4:
+                            title = "SMod";
+                            break;
+                        case 99:
+                            title = "Dev";
+                            break;
+                        default:
+                            title = "";
+                            break;
+                    }
+                    g.DrawString(title, e.Font,
+                                    (selected)
+                                        ? Brushes.White
+                                        : (Program.Config.ColorBlindMode
+                                            ? Brushes.Black
+                                            : ChatMessage.GetUserColor(user.rank)),
+                                    new Point(
+                                        list.GetItemRectangle(index).Location.X +
+                                        (int) g.MeasureString("[", e.Font).Width - 1,
+                                        list.GetItemRectangle(index).Location.Y));
                     g.DrawString("]", e.Font,
                                  (selected)
                                      ? Brushes.White
@@ -733,7 +716,7 @@ namespace DevProLauncher.Windows
                                             : new SolidBrush(Program.Config.NormalTextColor.ToColor())),
                                  new Point(
                                      list.GetItemRectangle(index).Location.X +
-                                     (int) g.MeasureString("[Dev", e.Font).Width,
+                                     (int)g.MeasureString("[" + title, e.Font).Width,
                                      list.GetItemRectangle(index).Location.Y));
                     if (user.getUserColor().ToArgb() == Color.Black.ToArgb())
                     {
@@ -745,7 +728,7 @@ namespace DevProLauncher.Windows
                                                 : new SolidBrush(Program.Config.NormalTextColor.ToColor())),
                                      new Point(
                                          list.GetItemRectangle(index).Location.X +
-                                         (int) g.MeasureString("[Dev]", e.Font).Width,
+                                         (int)g.MeasureString("[" + title + "]", e.Font).Width,
                                          list.GetItemRectangle(index).Location.Y));
                     }
                     else
@@ -758,7 +741,7 @@ namespace DevProLauncher.Windows
                                                 : new SolidBrush(user.getUserColor())),
                                      new Point(
                                          list.GetItemRectangle(index).Location.X +
-                                         (int) g.MeasureString("[Dev]", e.Font).Width,
+                                         (int)g.MeasureString("[" + title + "]", e.Font).Width,
                                          list.GetItemRectangle(index).Location.Y));
                     }
                 }

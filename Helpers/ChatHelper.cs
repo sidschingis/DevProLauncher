@@ -55,21 +55,30 @@ namespace DevProLauncher.Helpers
                 if (message.from.rank > 0)
                 {
                     WriteText(window, "[", (Program.Config.ColorBlindMode ? Color.Black : Program.Config.NormalTextColor.ToColor()));
-                    if (message.from.rank == 1 || message.from.rank == 4)
+
+                    LogText += "[";
+                    string text = "";
+                    switch (message.from.rank)
                     {
-                        WriteText(window, "Dev", (Program.Config.ColorBlindMode ? Color.Black : message.RankColor()));
-                        LogText += "[Dev]";
+                        case 1:
+                            text = "Helper";
+                            break;
+                        case 2:
+                        case 3:
+                            text = "Mod";
+                            break;
+                        case 4:
+                            text = "SMod";
+                            break;
+                        case 99:
+                            text = "Dev";
+                            break;
                     }
-                    else if (message.from.rank == 2 || message.from.rank == 3)
-                    {
-                        WriteText(window, "Mod", (Program.Config.ColorBlindMode ? Color.Black : message.RankColor()));
-                        LogText += "[Mod]";
-                    }
-                    else if (message.from.rank == 99)
-                    {
-                        LogText += "[Dev]";
-                        WriteText(window, "Dev", (Program.Config.ColorBlindMode ? Color.Black : message.RankColor()));
-                    }
+                    LogText += text;
+                    LogText += "]";
+
+                    WriteText(window, text, (Program.Config.ColorBlindMode ? Color.Black : message.RankColor()));
+                   
                     WriteText(window, "]", (Program.Config.ColorBlindMode ? Color.Black : Program.Config.NormalTextColor.ToColor()));
                 }
                 WriteText(window, message.message, Program.Config.MeMsgColor.ToColor());

@@ -201,7 +201,7 @@
             this.MaximizeBox = false;
             this.Name = "Recover_frm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Recover_frm";
+            this.Text = "Password Recovery";
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel1.PerformLayout();
             this.tableLayoutPanel2.ResumeLayout(false);

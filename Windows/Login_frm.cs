@@ -90,48 +90,56 @@ namespace DevProLauncher.Windows
         }
         private void ShowAd()
         {
-            //PatchNotes.Navigate("http://ygopro.de/launcher/indexlauncher.php", false);
-
-            //string loc = LauncherHelper.GetLocation();
-
-            //if (!LauncherHelper.IsEuropeanLocation(loc))
-            //    return;
-            Image image;
-            string flashpath = Application.StartupPath + @"\Assets\ads\"; ;
-
-            switch (Program.Config.Language.ToLower())
+            try
             {
-                case "german":
-                    image = Properties.Resources.cardmarketDE;
-                    flashpath += "HEX_DE.swf";
-                    break;
-                case "spanish":
-                    image = Properties.Resources.cardmarketES;
-                    flashpath += "HEX_EN.swf";
-                    break;
-                case "french":
-                    image = Properties.Resources.cardmarketFR;
-                    flashpath += "HEX_FR.swf";
-                    break;
-                case "italian":
-                    image = Properties.Resources.cardmarketIT;
-                    flashpath += "HEX_EN.swf";
-                    break;
-                default:
-                    image = Properties.Resources.cardmarketEN;
-                    flashpath += "HEX_EN.swf";
-                    break;
-            }      
+
+                //PatchNotes.Navigate("http://ygopro.de/launcher/indexlauncher.php", false);
+
+                //string loc = LauncherHelper.GetLocation();
+
+                //if (!LauncherHelper.IsEuropeanLocation(loc))
+                //    return;
+                Image image;
+                string flashpath = Application.StartupPath + @"\Assets\ads\"; ;
+
+                switch (Program.Config.Language.ToLower())
+                {
+                    case "german":
+                        image = Properties.Resources.cardmarketDE;
+                        flashpath += "HEX_DE.swf";
+                        break;
+                    case "spanish":
+                        image = Properties.Resources.cardmarketES;
+                        flashpath += "HEX_EN.swf";
+                        break;
+                    case "french":
+                        image = Properties.Resources.cardmarketFR;
+                        flashpath += "HEX_FR.swf";
+                        break;
+                    case "italian":
+                        image = Properties.Resources.cardmarketIT;
+                        flashpath += "HEX_EN.swf";
+                        break;
+                    default:
+                        image = Properties.Resources.cardmarketEN;
+                        flashpath += "HEX_EN.swf";
+                        break;
+                }      
             
-            this.BeginInvoke((MethodInvoker) delegate {
-                var item = new Banner("tcgmarket", "http://ygopro.de/launcher/werbung/linktrackercheck.php?tcgmarket=bannerheader" , image);
-                AdPanel.Controls.Add(item, 0, 0);
-            }); 
-            this.BeginInvoke((MethodInvoker)delegate
+                this.BeginInvoke((MethodInvoker) delegate {
+                    var item = new Banner("tcgmarket", "http://ygopro.de/launcher/werbung/linktrackercheck.php?tcgmarket=bannerheader" , image);
+                    AdPanel.Controls.Add(item, 0, 0);
+                }); 
+                this.BeginInvoke((MethodInvoker)delegate
+                {
+                    adFlash.Movie = flashpath;
+                    adFlash.Play();
+                });
+            }
+            catch 
             {
-                adFlash.Movie = flashpath;
-                adFlash.Play();
-            }); 
+
+            }
         }
 
         private void adFlash_Enter(object sender, EventArgs e)

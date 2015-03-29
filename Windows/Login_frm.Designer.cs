@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(LoginFrm));
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
@@ -41,9 +40,8 @@
             this.savePassCheckBox = new System.Windows.Forms.CheckBox();
             this.panel1 = new System.Windows.Forms.Panel();
             this.adBox = new System.Windows.Forms.GroupBox();
-            this.adFlash = new AxShockwaveFlashObjects.AxShockwaveFlash();
-            this.tableLayoutPanel4 = new System.Windows.Forms.TableLayoutPanel();
             this.AdPanel = new System.Windows.Forms.TableLayoutPanel();
+            this.AdPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.LoadBtn = new System.Windows.Forms.Button();
             this.PatchNotes = new System.Windows.Forms.WebBrowser();
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
@@ -57,7 +55,6 @@
             this.tableLayoutPanel3.SuspendLayout();
             this.panel1.SuspendLayout();
             this.adBox.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.adFlash)).BeginInit();
             this.flowLayoutPanel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -203,51 +200,40 @@
             // 
             // adBox
             // 
-            this.adBox.Controls.Add(this.adFlash);
-            this.adBox.Controls.Add(this.tableLayoutPanel4);
             this.adBox.Controls.Add(this.AdPanel);
-            this.adBox.Location = new System.Drawing.Point(102, 6);
+            this.adBox.Controls.Add(this.AdPanel1);
+            this.adBox.Location = new System.Drawing.Point(252, 34);
             this.adBox.Name = "adBox";
-            this.adBox.Size = new System.Drawing.Size(665, 355);
+            this.adBox.Size = new System.Drawing.Size(388, 327);
             this.adBox.TabIndex = 5;
             this.adBox.TabStop = false;
             this.adBox.Text = "Ads";
-            // 
-            // adFlash
-            // 
-            this.adFlash.Enabled = true;
-            this.adFlash.Location = new System.Drawing.Point(6, 160);
-            this.adFlash.Name = "adFlash";
-            this.adFlash.OcxState = ((System.Windows.Forms.AxHost.State)(resources.GetObject("adFlash.OcxState")));
-            this.adFlash.Size = new System.Drawing.Size(192, 192);
-            this.adFlash.TabIndex = 0;
-            this.adFlash.Enter += new System.EventHandler(this.adFlash_Enter);
-            // 
-            // tableLayoutPanel4
-            // 
-            this.tableLayoutPanel4.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.tableLayoutPanel4.ColumnCount = 1;
-            this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel4.Location = new System.Drawing.Point(6, 155);
-            this.tableLayoutPanel4.Name = "tableLayoutPanel4";
-            this.tableLayoutPanel4.RowCount = 1;
-            this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 230F));
-            this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 230F));
-            this.tableLayoutPanel4.Size = new System.Drawing.Size(659, 194);
-            this.tableLayoutPanel4.TabIndex = 5;
             // 
             // AdPanel
             // 
             this.AdPanel.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.AdPanel.ColumnCount = 1;
             this.AdPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.AdPanel.Location = new System.Drawing.Point(6, 19);
+            this.AdPanel.Location = new System.Drawing.Point(12, 19);
             this.AdPanel.Name = "AdPanel";
             this.AdPanel.RowCount = 1;
             this.AdPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 230F));
             this.AdPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 230F));
-            this.AdPanel.Size = new System.Drawing.Size(659, 135);
+            this.AdPanel.Size = new System.Drawing.Size(370, 140);
             this.AdPanel.TabIndex = 4;
+            // 
+            // AdPanel1
+            // 
+            this.AdPanel1.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.AdPanel1.ColumnCount = 1;
+            this.AdPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.AdPanel1.Location = new System.Drawing.Point(55, 176);
+            this.AdPanel1.Name = "AdPanel1";
+            this.AdPanel1.RowCount = 1;
+            this.AdPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 230F));
+            this.AdPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 230F));
+            this.AdPanel1.Size = new System.Drawing.Size(294, 145);
+            this.AdPanel1.TabIndex = 5;
             // 
             // LoadBtn
             // 
@@ -348,7 +334,6 @@
             this.tableLayoutPanel3.PerformLayout();
             this.panel1.ResumeLayout(false);
             this.adBox.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.adFlash)).EndInit();
             this.flowLayoutPanel1.ResumeLayout(false);
             this.ResumeLayout(false);
 
@@ -376,8 +361,7 @@
         private System.Windows.Forms.Button validateBtn;
         private System.Windows.Forms.Button recoverBtn;
         private System.Windows.Forms.GroupBox adBox;
-        private AxShockwaveFlashObjects.AxShockwaveFlash adFlash;
         private System.Windows.Forms.TableLayoutPanel AdPanel;
-        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel4;
+        private System.Windows.Forms.TableLayoutPanel AdPanel1;
     }
 }

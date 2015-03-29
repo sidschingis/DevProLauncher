@@ -100,41 +100,43 @@ namespace DevProLauncher.Windows
                 //if (!LauncherHelper.IsEuropeanLocation(loc))
                 //    return;
                 Image image;
-                string flashpath = Application.StartupPath + @"\Assets\ads\"; ;
+                Image image1;
 
                 switch (Program.Config.Language.ToLower())
                 {
                     case "german":
                         image = Properties.Resources.cardmarketDE;
-                        flashpath += "HEX_DE.swf";
+                        image1 = Properties.Resources.HEX_DE1;
                         break;
                     case "spanish":
                         image = Properties.Resources.cardmarketES;
-                        flashpath += "HEX_EN.swf";
+                        image1 = Properties.Resources.HEX_EN1;
                         break;
                     case "french":
                         image = Properties.Resources.cardmarketFR;
-                        flashpath += "HEX_FR.swf";
+                        image1 = Properties.Resources.HEX_FR1;
                         break;
                     case "italian":
                         image = Properties.Resources.cardmarketIT;
-                        flashpath += "HEX_EN.swf";
+                        image1 = Properties.Resources.HEX_EN1;
                         break;
                     default:
                         image = Properties.Resources.cardmarketEN;
-                        flashpath += "HEX_EN.swf";
+                        image1 = Properties.Resources.HEX_EN1;
                         break;
                 }      
             
                 this.BeginInvoke((MethodInvoker) delegate {
-                    var item = new Banner("tcgmarket", "http://ygopro.de/launcher/werbung/linktrackercheck.php?tcgmarket=bannerheader" , image);
-                    AdPanel.Controls.Add(item, 0, 0);
-                }); 
+                   var item = new Banner("tcgmarket", "http://ygopro.de/launcher/werbung/linktrackercheck.php?tcgmarket=bannerheader" , image);
+                   item.Dock = DockStyle.Right;
+                   AdPanel.Controls.Add(item, 0, 0);
+                });
                 this.BeginInvoke((MethodInvoker)delegate
                 {
-                    adFlash.Movie = flashpath;
-                    adFlash.Play();
-                });
+                   var item1 = new Banner("hex", "http://ygopro.de/launcher/werbung/Gameforge/tracker.php", image1); 
+                   item1.Dock = DockStyle.Right;
+                   AdPanel1.Controls.Add(item1, 0, 0);
+                }); 
             }
             catch 
             {
@@ -142,10 +144,6 @@ namespace DevProLauncher.Windows
             }
         }
 
-        private void adFlash_Enter(object sender, EventArgs e)
-        {
-            Process.Start("http://ygopro.de/launcher/werbung/Gameforge/tracker.php");
-        }
         /*deprecated*/
         private void WebRedirect(object sender, CancelEventArgs e)
         {
@@ -321,7 +319,6 @@ namespace DevProLauncher.Windows
 
         private void LoadBtn_Click(object sender, EventArgs e)
         {
-            adFlash.Visible = false;
             LoadBtn.Visible = false;
             LoadBtn.Enabled = false;
             PatchNotes.Navigate(languageSelect.SelectedItem.ToString() == "German"

@@ -17,8 +17,8 @@ namespace DevProLauncher.Windows.Components
         {
             InitializeComponent();
             TopLevel = false;
-            Dock = DockStyle.Fill;
-            Anchor = AnchorStyles.Top;
+            //Dock = DockStyle.Fill;
+            //Anchor = AnchorStyles.Top;
             Visible = true;
             linkurl = link;
             BannerImage.Image = image;

@@ -103,7 +103,7 @@ namespace DevProLauncher.Windows.MessageBoxs
                 label7.Text = info.optionCurrentPW;
                 label8.Text = info.optionNewPW;
                 label9.Text = info.optionConfirmPW;
-                Update.Text = info.optionUpdatePW;
+                UpdateBtn.Text = info.optionUpdatePW;
 
                 LanguageInfo lang = info;
 
@@ -232,7 +232,7 @@ namespace DevProLauncher.Windows.MessageBoxs
                         UID = LauncherHelper.GetUID()
                     }));
             }
-            Update.Enabled = false;
+            UpdateBtn.Enabled = false;
         }
         private void ChangeResponse(DevClientPackets packet)
         {
@@ -254,7 +254,7 @@ namespace DevProLauncher.Windows.MessageBoxs
                 {
                     MessageBox.Show(Program.LanguageManager.Translation.ChangeFailed);
                 }
-                Update.Enabled = true;
+                UpdateBtn.Enabled = true;
             }
         }
         private void ResetEvents(object sender, EventArgs e)

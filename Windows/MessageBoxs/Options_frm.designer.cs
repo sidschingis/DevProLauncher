@@ -87,7 +87,7 @@
             this.newPassword = new System.Windows.Forms.TextBox();
             this.confirmPassword = new System.Windows.Forms.TextBox();
             this.flowLayoutPanel2 = new System.Windows.Forms.FlowLayoutPanel();
-            this.Update = new System.Windows.Forms.Button();
+            this.UpdateBtn = new System.Windows.Forms.Button();
             this.emailLbl = new System.Windows.Forms.Label();
             this.confirmEmailLbl = new System.Windows.Forms.Label();
             this.MuteSpectators = new System.Windows.Forms.CheckBox();
@@ -837,7 +837,7 @@
             // flowLayoutPanel2
             // 
             this.tableLayoutPanel11.SetColumnSpan(this.flowLayoutPanel2, 2);
-            this.flowLayoutPanel2.Controls.Add(this.Update);
+            this.flowLayoutPanel2.Controls.Add(this.UpdateBtn);
             this.flowLayoutPanel2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.flowLayoutPanel2.FlowDirection = System.Windows.Forms.FlowDirection.RightToLeft;
             this.flowLayoutPanel2.Location = new System.Drawing.Point(3, 128);
@@ -847,15 +847,15 @@
             // 
             // Update
             // 
-            this.Update.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.Update.Location = new System.Drawing.Point(117, 3);
-            this.Update.Margin = new System.Windows.Forms.Padding(3, 3, 100, 3);
-            this.Update.Name = "Update";
-            this.Update.Size = new System.Drawing.Size(159, 26);
-            this.Update.TabIndex = 0;
-            this.Update.Text = "Update";
-            this.Update.UseVisualStyleBackColor = true;
-            this.Update.Click += new System.EventHandler(this.UpdatePassword_Click);
+            this.UpdateBtn.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.UpdateBtn.Location = new System.Drawing.Point(117, 3);
+            this.UpdateBtn.Margin = new System.Windows.Forms.Padding(3, 3, 100, 3);
+            this.UpdateBtn.Name = "Update";
+            this.UpdateBtn.Size = new System.Drawing.Size(159, 26);
+            this.UpdateBtn.TabIndex = 0;
+            this.UpdateBtn.Text = "Update";
+            this.UpdateBtn.UseVisualStyleBackColor = true;
+            this.UpdateBtn.Click += new System.EventHandler(this.UpdatePassword_Click);
             // 
             // emailLbl
             // 
@@ -973,7 +973,7 @@
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel2;
-        private System.Windows.Forms.Button Update;
+        private System.Windows.Forms.Button UpdateBtn;
         private System.Windows.Forms.TextBox currentPassword;
         private System.Windows.Forms.TextBox newPassword;
         private System.Windows.Forms.TextBox confirmPassword;

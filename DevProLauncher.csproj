@@ -433,9 +433,9 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Favicon_DropShadow_64x64.ico" />
-    <Content Include="Resources\HEX_Banner_DE.jpg" />
-    <Content Include="Resources\HEX_Banner_EN.jpg" />
-    <Content Include="Resources\HEX_Banner_FR.jpg" />
+    <None Include="Resources\2015-02-13_HEX_Bannerset_ShatteredDestiny_300x150_FR.jpg" />
+    <None Include="Resources\2015-02-13_HEX_Bannerset_ShatteredDestiny_300x150.jpg" />
+    <None Include="Resources\2015-02-13_HEX_Bannerset_ShatteredDestiny_300x150_EN.jpg" />
     <Content Include="Resources\cardmarketDE.jpg" />
     <Content Include="Resources\cardmarketEN.jpg" />
     <Content Include="Resources\cardmarketES.jpg" />

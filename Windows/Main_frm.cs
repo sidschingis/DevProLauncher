@@ -16,8 +16,6 @@ namespace DevProLauncher.Windows
         SupportFrm m_devpointWindow;
         FileManagerFrm m_filemanagerWindow;
         CustomizeFrm m_customizerWindow;
-        Browser_frm m_wcsBrowser;
-        Browser_frm m_faqBrowser;
         RankingFrm m_rankingWindow;
 
         public MainFrm()
@@ -33,17 +31,12 @@ namespace DevProLauncher.Windows
             m_loginWindow = new LoginFrm();
             loginTab.Controls.Add(m_loginWindow);
             mainTabs.TabPages.Add(loginTab);
-            
-            m_wcsBrowser = new Browser_frm();
-            m_wcsBrowser.FormBorderStyle = FormBorderStyle.None;
             m_chatWindow = new ChatFrm();
             GameWindow = new HubGameList_frm();
             m_rankingWindow = new RankingFrm();
             m_devpointWindow = new SupportFrm();
             m_filemanagerWindow = new FileManagerFrm();
             m_customizerWindow = new CustomizeFrm();
-            m_faqBrowser = new Browser_frm();
-            m_faqBrowser.FormBorderStyle = FormBorderStyle.None;
 
             Program.ChatServer.ServerMessage += ServerMessage;
 
@@ -105,11 +98,6 @@ namespace DevProLauncher.Windows
             rankingTab.Controls.Add(m_rankingWindow);
             mainTabs.TabPages.Add(rankingTab);
 
-            var wcsTab = new TabPage(info.MainEventTab);
-
-            wcsTab.Controls.Add(m_wcsBrowser);
-            mainTabs.TabPages.Add(wcsTab);
-
             var filemanagerTab = new TabPage(info.MainFileManagerTab);
             filemanagerTab.Controls.Add(m_filemanagerWindow);
             mainTabs.TabPages.Add(filemanagerTab);
@@ -121,10 +109,6 @@ namespace DevProLauncher.Windows
             var devpointTab = new TabPage(info.SupportTitle);
             devpointTab.Controls.Add(m_devpointWindow);
             mainTabs.TabPages.Add(devpointTab);
-
-            var faqTab = new TabPage(info.MainFaqTab);
-            faqTab.Controls.Add(m_faqBrowser);
-            mainTabs.TabPages.Add(faqTab);
                 
             ConnectionCheck.Enabled = true;
             ConnectionCheck.Tick += CheckConnection;
@@ -218,16 +202,8 @@ namespace DevProLauncher.Windows
 
         private void TabChange(object sender, EventArgs e)
         {
-            if (mainTabs.SelectedIndex == 2)
-                m_wcsBrowser.Navigate("http://ygopro.de/launcher/events.php", false);
-            else if (mainTabs.SelectedIndex == mainTabs.TabPages.Count - 1){
-                if (Program.LanguageManager.language.Equals("German"))
-                    m_faqBrowser.Navigate("http://ygopro.de/de/?page_id=446", false);
-                else
-                    m_faqBrowser.Navigate("http://ygopro.de/en/faq/", false);
-            }
-            else if (mainTabs.SelectedIndex == 1)
-                m_chatWindow.LoadDefualtChannel();
+           if (mainTabs.SelectedIndex == 1)
+                m_chatWindow.LoadDefaultChannel();
         }
     }
 }

@@ -47,10 +47,10 @@
             this.label1 = new System.Windows.Forms.Label();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
             this.DevPointCount = new System.Windows.Forms.Label();
-            this.refreshbtn = new System.Windows.Forms.Button();
-            this.refreshtimer = new System.Windows.Forms.Timer(this.components);
             this.tableLayoutPanel6 = new System.Windows.Forms.TableLayoutPanel();
+            this.refreshbtn = new System.Windows.Forms.Button();
             this.transferBtn = new System.Windows.Forms.Button();
+            this.refreshtimer = new System.Windows.Forms.Timer(this.components);
             this.tableLayoutPanel1.SuspendLayout();
             this.tableLayoutPanel5.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
@@ -156,6 +156,7 @@
             this.groupBox3.TabIndex = 3;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Donate!";
+            this.groupBox3.Visible = false;
             // 
             // tableLayoutPanel3
             // 
@@ -183,6 +184,7 @@
             this.DonateLink.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
             this.DonateLink.TabIndex = 0;
             this.DonateLink.TabStop = false;
+            this.DonateLink.Visible = false;
             // 
             // label2
             // 
@@ -192,6 +194,7 @@
             this.label2.Size = new System.Drawing.Size(154, 31);
             this.label2.TabIndex = 1;
             this.label2.Text = "Earn by donating (Paypal Only)";
+            this.label2.Visible = false;
             // 
             // groupBox1
             // 
@@ -203,6 +206,7 @@
             this.groupBox1.TabIndex = 2;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Earn DevPoints";
+            this.groupBox1.Visible = false;
             // 
             // tableLayoutPanel4
             // 
@@ -231,6 +235,7 @@
             this.OfferLink.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
             this.OfferLink.TabIndex = 1;
             this.OfferLink.TabStop = false;
+            this.OfferLink.Visible = false;
             // 
             // label3
             // 
@@ -241,6 +246,7 @@
             this.label3.Size = new System.Drawing.Size(154, 39);
             this.label3.TabIndex = 0;
             this.label3.Text = "Earn points by completing offers.";
+            this.label3.Visible = false;
             // 
             // groupBox2
             // 
@@ -252,6 +258,7 @@
             this.groupBox2.TabIndex = 1;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Support DevPro";
+            this.groupBox2.Visible = false;
             // 
             // label1
             // 
@@ -284,21 +291,6 @@
             this.DevPointCount.Text = "0";
             this.DevPointCount.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // refreshbtn
-            // 
-            this.refreshbtn.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.refreshbtn.Location = new System.Drawing.Point(85, 3);
-            this.refreshbtn.Name = "refreshbtn";
-            this.refreshbtn.Size = new System.Drawing.Size(78, 27);
-            this.refreshbtn.TabIndex = 1;
-            this.refreshbtn.Text = "Refresh";
-            this.refreshbtn.UseVisualStyleBackColor = true;
-            this.refreshbtn.Click += new System.EventHandler(this.refreshbtn_Click);
-            // 
-            // refreshtimer
-            // 
-            this.refreshtimer.Interval = 2000;
-            // 
             // tableLayoutPanel6
             // 
             this.tableLayoutPanel6.ColumnCount = 2;
@@ -313,6 +305,17 @@
             this.tableLayoutPanel6.Size = new System.Drawing.Size(166, 33);
             this.tableLayoutPanel6.TabIndex = 5;
             // 
+            // refreshbtn
+            // 
+            this.refreshbtn.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.refreshbtn.Location = new System.Drawing.Point(85, 3);
+            this.refreshbtn.Name = "refreshbtn";
+            this.refreshbtn.Size = new System.Drawing.Size(78, 27);
+            this.refreshbtn.TabIndex = 1;
+            this.refreshbtn.Text = "Refresh";
+            this.refreshbtn.UseVisualStyleBackColor = true;
+            this.refreshbtn.Click += new System.EventHandler(this.refreshbtn_Click);
+            // 
             // transferBtn
             // 
             this.transferBtn.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -323,6 +326,10 @@
             this.transferBtn.Text = "Transfer";
             this.transferBtn.UseVisualStyleBackColor = true;
             this.transferBtn.Click += new System.EventHandler(this.transferBtn_Click);
+            // 
+            // refreshtimer
+            // 
+            this.refreshtimer.Interval = 2000;
             // 
             // SupportFrm
             // 

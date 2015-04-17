@@ -388,7 +388,6 @@ namespace DevProLauncher.Config
         public string MainFormTitle = "YGOPro Launcher ";
         public string MainGameTab = "Game List";
         public string MainChatTab = "Chat";
-        public string MainEventTab = "Downloads";
         public string MainRankingTab = "Ranking";
         public string MainTornyTab = "Tournament Room";
         public string MainYoutubeTab = "Youtube";
@@ -397,7 +396,6 @@ namespace DevProLauncher.Config
         public string MainFileReplayTab = "Replays";
         public string MainCustomizeTab = "Customize";
         public string MainAboutTab = "About";
-        public string MainFaqTab = "FAQ";
 
         public string MainSyncBtn = "Dropbox Sync";
         public string MainForumBtn = "Forum";
@@ -435,7 +433,7 @@ namespace DevProLauncher.Config
 
         public string SupportBalance = "Balance";
         public string Supportgb2 = "Support DevPro";
-        public string Supportgb2text = "The DevPoint system is here to reward users who help out and support DevPro. While the 2 options below will earn you DevPoints you can also earn points for helping DevPro too!  || ||- Taking part in DevPro Events  - Fixing DevPro bugs Launcher or card scripts! || - Supporting the growth of DevPro";
+        public string Supportgb2text = "The DevPoint system is here to reward users who help out and support DevPro. You can earn points for helping DevPro!  || ||- Taking part in DevPro Events  - Fixing DevPro bugs Launcher or card scripts! || - Supporting the growth of DevPro";
         public string Supportgb3 = "Earn DevPoints";
         public string Supportgb3text = "Earn points by completing offfers.";
         public string Supportgb4 = "Donate!";

@@ -81,7 +81,7 @@ namespace DevProLauncher.Windows
             WriteSystemMessage(lang.chatMsg2);
         }
 
-        public void LoadDefualtChannel()
+        public void LoadDefaultChannel()
         {
             if (!string.IsNullOrEmpty(Program.Config.DefaultChannel) && !m_autoJoined)
             {
@@ -670,7 +670,7 @@ namespace DevProLauncher.Windows
 
             if (!m_onlineMode)
             {
-                if (user.rank > 0)
+                if (user.rank > 0 && user.rank < 99)
                 {
                     // Print text
                     g.DrawString("[", e.Font,
@@ -691,9 +691,11 @@ namespace DevProLauncher.Windows
                         case 4:
                             title = "SMod";
                             break;
+                        /*
                         case 99:
                             title = "Dev";
                             break;
+                        //*/
                         default:
                             title = "";
                             break;
@@ -942,8 +944,6 @@ namespace DevProLauncher.Windows
                         WriteMessage(new ChatMessage(MessageType.System, CommandType.None, null, "/unbanip ip - Unbans IP"));
                         WriteMessage(new ChatMessage(MessageType.System, CommandType.None, null, "/getbanlist - Gets ban list"));
                         WriteMessage(new ChatMessage(MessageType.System, CommandType.None, null, "/op username level - Sets a users level"));
-                        WriteMessage(new ChatMessage(MessageType.System, CommandType.None, null, "/addpoints username amount of DevPoints - Gives a user DevPoints"));
-                        WriteMessage(new ChatMessage(MessageType.System, CommandType.None, null, "/removepoints username amount of DevPoints - Removes DevPoints from a user"));
                         WriteMessage(new ChatMessage(MessageType.System, CommandType.None, null, "/mps number - Changes the messages per second"));
                     }
 

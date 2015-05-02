@@ -903,21 +903,15 @@ namespace DevProLauncher.Windows
                     if(Program.UserInfo.rank == 1)
                         WriteMessage(new ChatMessage(MessageType.System, CommandType.None, null, " -- Level 1 users are classed as helpers and don't need any extra commands"));
                         WriteMessage(new ChatMessage(MessageType.System, CommandType.None, null, "/msg - Sends a server message"));
-
-                    if (Program.UserInfo.rank > 1)
+                    if (Program.UserInfo.rank > 2)
                     {
-                        WriteMessage(new ChatMessage(MessageType.System, CommandType.None, null, "-- Level 2 Commands --"));
+                        WriteMessage(new ChatMessage(MessageType.System, CommandType.None, null, "-- Level 3 Commands --"));
                         WriteMessage(new ChatMessage(MessageType.System, CommandType.None, null, "/kick username reason - Kicks a user"));
                         WriteMessage(new ChatMessage(MessageType.System, CommandType.None, null, "/msg - Sends a server message"));
                         WriteMessage(new ChatMessage(MessageType.System, CommandType.None, null, "/smsg - Sends a server message that displays on the bottom of the launcher"));
                         WriteMessage(new ChatMessage(MessageType.System, CommandType.None, null, "/getaccounts username - Gets a list of accounts for the the inputted username"));
                         WriteMessage(new ChatMessage(MessageType.System, CommandType.None, null, "/cmute roomname - Mutes a room so that only admins can speak"));
-                        WriteMessage(new ChatMessage(MessageType.System, CommandType.None, null, "/cunmute roomname - Unmutes a room that was muted."));  
-                    }
-
-                    if (Program.UserInfo.rank > 2)
-                    {
-                        WriteMessage(new ChatMessage(MessageType.System, CommandType.None, null, "-- Level 3 Commands --"));
+                        WriteMessage(new ChatMessage(MessageType.System, CommandType.None, null, "/cunmute roomname - Unmutes a room that was muted."));
                         WriteMessage(new ChatMessage(MessageType.System, CommandType.None, null, "/roomowner roomname - Gets the creator of a channel"));
                         WriteMessage(new ChatMessage(MessageType.System, CommandType.None, null, "/killroom roomname - forces a chat channel to close"));
                         WriteMessage(new ChatMessage(MessageType.System, CommandType.None, null, "/getuid username - Gets the UID of a username")); 

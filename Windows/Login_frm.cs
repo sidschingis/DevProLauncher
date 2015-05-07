@@ -100,29 +100,23 @@ namespace DevProLauncher.Windows
                 //if (!LauncherHelper.IsEuropeanLocation(loc))
                 //    return;
                 Image image;
-                Image image1;
 
                 switch (Program.Config.Language.ToLower())
                 {
                     case "german":
                         image = Properties.Resources.cardmarketDE;
-                        image1 = Properties.Resources.HEX_DE1;
                         break;
                     case "spanish":
                         image = Properties.Resources.cardmarketES;
-                        image1 = Properties.Resources.HEX_EN1;
                         break;
                     case "french":
                         image = Properties.Resources.cardmarketFR;
-                        image1 = Properties.Resources.HEX_FR1;
                         break;
                     case "italian":
                         image = Properties.Resources.cardmarketIT;
-                        image1 = Properties.Resources.HEX_EN1;
                         break;
                     default:
                         image = Properties.Resources.cardmarketEN;
-                        image1 = Properties.Resources.HEX_EN1;
                         break;
                 }      
             
@@ -131,12 +125,7 @@ namespace DevProLauncher.Windows
                    item.Dock = DockStyle.Right;
                    AdPanel.Controls.Add(item, 0, 0);
                 });
-                this.BeginInvoke((MethodInvoker)delegate
-                {
-                   var item1 = new Banner("hex", "http://ygopro.de/launcher/werbung/Gameforge/tracker.php", image1); 
-                   item1.Dock = DockStyle.Right;
-                   AdPanel1.Controls.Add(item1, 0, 0);
-                }); 
+                
             }
             catch 
             {

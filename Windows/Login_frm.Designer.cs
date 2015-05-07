@@ -41,7 +41,6 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.adBox = new System.Windows.Forms.GroupBox();
             this.AdPanel = new System.Windows.Forms.TableLayoutPanel();
-            this.AdPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.LoadBtn = new System.Windows.Forms.Button();
             this.PatchNotes = new System.Windows.Forms.WebBrowser();
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
@@ -201,10 +200,9 @@
             // adBox
             // 
             this.adBox.Controls.Add(this.AdPanel);
-            this.adBox.Controls.Add(this.AdPanel1);
             this.adBox.Location = new System.Drawing.Point(252, 34);
             this.adBox.Name = "adBox";
-            this.adBox.Size = new System.Drawing.Size(388, 327);
+            this.adBox.Size = new System.Drawing.Size(388, 171);
             this.adBox.TabIndex = 5;
             this.adBox.TabStop = false;
             this.adBox.Text = "Ads";
@@ -221,19 +219,6 @@
             this.AdPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 230F));
             this.AdPanel.Size = new System.Drawing.Size(370, 140);
             this.AdPanel.TabIndex = 4;
-            // 
-            // AdPanel1
-            // 
-            this.AdPanel1.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.AdPanel1.ColumnCount = 1;
-            this.AdPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.AdPanel1.Location = new System.Drawing.Point(55, 176);
-            this.AdPanel1.Name = "AdPanel1";
-            this.AdPanel1.RowCount = 1;
-            this.AdPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 230F));
-            this.AdPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 230F));
-            this.AdPanel1.Size = new System.Drawing.Size(294, 145);
-            this.AdPanel1.TabIndex = 5;
             // 
             // LoadBtn
             // 
@@ -362,6 +347,5 @@
         private System.Windows.Forms.Button recoverBtn;
         private System.Windows.Forms.GroupBox adBox;
         private System.Windows.Forms.TableLayoutPanel AdPanel;
-        private System.Windows.Forms.TableLayoutPanel AdPanel1;
     }
 }

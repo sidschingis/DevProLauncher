@@ -1207,7 +1207,7 @@ namespace DevProLauncher.Windows
                     try
                     {
                         Program.ChatServer.SendPacket(DevServerPackets.ChatCommand, JsonSerializer.SerializeToString(
-                     new PacketCommand { Command = "BAN", Data = ((UserData)list.SelectedItem).username + " " + input.inputBox1.Text}));
+                     new PacketCommand { Command = "KICK", Data = ((UserData)list.SelectedItem).username + " " + input.inputBox1.Text}));
                     }
                     catch (Exception ex)
                     {

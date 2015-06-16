@@ -85,6 +85,7 @@ namespace DevProLauncher.Windows
                 loginBtn.Text = Program.LanguageManager.Translation.LoginLoginButton;
                 registerBtn.Text = Program.LanguageManager.Translation.LoginRegisterButton;
                 validateBtn.Text = Program.LanguageManager.Translation.LoginValidateButton;
+                recoverBtn.Text = Program.LanguageManager.Translation.LoginRecoverButton;
                 savePassCheckBox.Text = Program.LanguageManager.Translation.LoginSavePass;
             }
         }
@@ -217,11 +218,6 @@ namespace DevProLauncher.Windows
                 Invoke(new Action<DevClientPackets, LoginData>(LoginResponse), type, data);
                 return;
             }
-
-            if (type == DevClientPackets.Banned)
-            {
-                MessageBox.Show(Program.LanguageManager.Translation.LoginBanned);
-            }
             else if (type == DevClientPackets.LoginFailed)
             {
                 loginBtn.Enabled = true;
@@ -231,14 +227,6 @@ namespace DevProLauncher.Windows
             {
                 loginBtn.Enabled = true;
                 MessageBox.Show(Program.LanguageManager.Translation.LoginInvalid);
-            }
-            else if (type == DevClientPackets.InvalidTemp)
-            {
-                loginBtn.Enabled = true;
-                if (Program.LanguageManager.language=="German")
-                    MessageBox.Show("Bitte validiere deinen Account bis zum 14. Februar 2015 oder er wird gelöscht.");
-                else
-                    MessageBox.Show("Remember to validate your account until the 14th February 2015 or your account will be deleted.");
             }
             else
             {

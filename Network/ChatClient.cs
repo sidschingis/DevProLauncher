@@ -21,7 +21,7 @@ namespace DevProLauncher.Network
         private Thread m_clientThread;
         private Thread m_parseThread;
         private DateTime m_pingRequest;
-        private Queue<MessageReceived> m_recivedQueue;
+        private Queue<MessageReceived> m_receivedQueue;
         private Queue<byte[]>  m_sendQueue ;
 
         public delegate void ServerResponse(string message);
@@ -85,7 +85,7 @@ namespace DevProLauncher.Network
         public ChatClient()
         {
             m_client = new TcpClient();
-            m_recivedQueue = new Queue<MessageReceived>();
+            m_receivedQueue = new Queue<MessageReceived>();
             m_sendQueue = new Queue<byte[]>();
             m_clientThread = new Thread(HandleClient) { IsBackground = true };
             m_parseThread = new Thread(OnCommand) { IsBackground = true };
@@ -249,13 +249,13 @@ namespace DevProLauncher.Network
                             if (content != null)
                             {
                                 var reader = new BinaryReader(new MemoryStream(content));
-                                lock(m_recivedQueue)
-                                    m_recivedQueue.Enqueue(new MessageReceived(packet, content, reader));
+                                lock(m_receivedQueue)
+                                    m_receivedQueue.Enqueue(new MessageReceived(packet, content, reader));
                             }
                         }
                         else
-                            lock (m_recivedQueue)
-                                m_recivedQueue.Enqueue(new MessageReceived(packet, null, null));
+                            lock (m_receivedQueue)
+                                m_receivedQueue.Enqueue(new MessageReceived(packet, null, null));
                     }
                     //send packet
                     if (m_sendQueue.Count > 0)
@@ -283,11 +283,11 @@ namespace DevProLauncher.Network
         {
             while (m_isConnected)
             {
-                if (m_recivedQueue.Count > 0)
+                if (m_receivedQueue.Count > 0)
                 {
                     MessageReceived packet;
-                    lock (m_recivedQueue)
-                        packet = m_recivedQueue.Dequeue();
+                    lock (m_receivedQueue)
+                        packet = m_receivedQueue.Dequeue();
 
                     OnCommand(packet);
                 }
@@ -330,8 +330,9 @@ namespace DevProLauncher.Network
                     if (LoginReply != null)
                         LoginReply(e.Packet, null);
                     break;
-                case DevClientPackets.Banned:
-                    ServerKickBanMessage = Encoding.UTF8.GetString(e.Reader.ReadBytes(e.Raw.Length));
+                case DevClientPackets.Banned: 
+                    //ServerKickBanMessage = Encoding.UTF8.GetString(e.Reader.ReadBytes(e.Raw.Length));
+                    MessageBox.Show(Encoding.UTF8.GetString(e.Reader.ReadBytes(e.Raw.Length)), "Server", MessageBoxButtons.OK);
                     break;
                 case DevClientPackets.RegisterAccept:                
                     if (RegisterReply != null)

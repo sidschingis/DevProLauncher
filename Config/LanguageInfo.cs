@@ -22,6 +22,7 @@ namespace DevProLauncher.Config
         public string LoginLoginButton = "Login";
         public string LoginRegisterButton = "Register";
         public string LoginValidateButton = "Validate";
+        public string LoginRecoverButton = "Recover";
         public string LoginAutoLogin = "Log me in automatically next time";
         public string LoginMsb1 = "Not connected to the server.";
         public string LoginMsb2 = "Please enter username.";

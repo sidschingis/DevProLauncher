@@ -691,6 +691,9 @@ namespace DevProLauncher.Windows
                         case 4:
                             title = "SMod";
                             break;
+                        case 98:
+                            title = "Bot";
+                            break;
                         /*
                         case 99:
                             title = "Dev";

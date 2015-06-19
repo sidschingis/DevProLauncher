@@ -70,9 +70,14 @@ namespace DevProLauncher.Helpers
                         case 4:
                             text = "SMod";
                             break;
+                        case 98:
+                            text = "Bot";
+                            break;
+                        /*
                         case 99:
                             text = "Dev";
                             break;
+                            */
                     }
                     LogText += text;
                     LogText += "]";

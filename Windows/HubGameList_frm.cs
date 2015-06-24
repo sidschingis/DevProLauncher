@@ -774,6 +774,7 @@ namespace DevProLauncher.Windows
             else
             {
                Program.ChatServer.SendPacket(DevServerPackets.RefuseMatch,matchnumber);
+               ResetQueue();
             }
         }
         public void OnMatchCancel(string data)

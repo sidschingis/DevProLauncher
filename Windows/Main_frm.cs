@@ -136,7 +136,7 @@ namespace DevProLauncher.Windows
 
         private void CheckConnection(object sender, EventArgs e)
         {
-            if (!Program.banned)
+            if (!Program.ChatServer.IsUserBanned)
             {
                 if (!Program.ChatServer.Connected())
                 {

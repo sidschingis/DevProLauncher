@@ -81,7 +81,7 @@ namespace DevProLauncher.Network
         public UserDuelRequest MatchStart;
 
         public string ServerKickBanMessage;
-
+        public bool IsUserBanned = false;
 
         public ChatClient()
         {
@@ -332,7 +332,7 @@ namespace DevProLauncher.Network
                         LoginReply(e.Packet, null);
                     break;
                 case DevClientPackets.Banned:
-                    Program.banned = true;                   
+                    IsUserBanned = true;                   
                     ServerKickBanMessage = Encoding.UTF8.GetString(e.Raw);
                     MessageBox.Show(ServerKickBanMessage, "Server", MessageBoxButtons.OK);
                     Application.Exit();                  

@@ -31,9 +31,7 @@ namespace DevProLauncher
         public static MainFrm MainForm;
         public static ServerInfo Server;
         public static Dictionary<string,ServerInfo> CheckmateServerList = new Dictionary<string,ServerInfo>();
-        public static Random Rand = new Random();
-
-        public static bool banned = false;
+        public static Random Rand = new Random();        
 
         [STAThread]
         static void Main()

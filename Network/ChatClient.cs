@@ -332,15 +332,10 @@ namespace DevProLauncher.Network
                         LoginReply(e.Packet, null);
                     break;
                 case DevClientPackets.Banned:
+                    Program.banned = true;                   
                     ServerKickBanMessage = Encoding.UTF8.GetString(e.Raw);
-                    if (MessageBox.Show(ServerKickBanMessage, "Server", MessageBoxButtons.OK) == DialogResult.OK)
-                    {
-                        Application.Exit();
-                    }
-                    else
-                    {                        
-                        Application.Exit();
-                    }
+                    MessageBox.Show(ServerKickBanMessage, "Server", MessageBoxButtons.OK);
+                    Application.Exit();                  
                     break;
                 case DevClientPackets.RegisterAccept:                
                     if (RegisterReply != null)

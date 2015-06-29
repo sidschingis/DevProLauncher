@@ -33,6 +33,8 @@ namespace DevProLauncher
         public static Dictionary<string,ServerInfo> CheckmateServerList = new Dictionary<string,ServerInfo>();
         public static Random Rand = new Random();
 
+        public static bool banned = false;
+
         [STAThread]
         static void Main()
         {

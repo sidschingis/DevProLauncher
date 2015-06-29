@@ -141,13 +141,13 @@ namespace DevProLauncher.Windows
                 var connectionCheck = (Timer)sender;
                 Hide();
                 connectionCheck.Enabled = false;
-                if (MessageBox.Show(!string.IsNullOrEmpty(Program.ChatServer.ServerKickBanMessage) ? Program.ChatServer.ServerKickBanMessage: "Disconnected from server.", "Server", MessageBoxButtons.OK) == DialogResult.OK)
+                if (MessageBox.Show(!string.IsNullOrEmpty(Program.ChatServer.ServerKickBanMessage) ? Program.ChatServer.ServerKickBanMessage: "Disconnected from server.\n\r Do you want to restart DevPro ?", "Server", MessageBoxButtons.YesNo) == DialogResult.Yes)
                 {
                     var process = new Process();
                     var startInfos = new ProcessStartInfo(Application.ExecutablePath, "-r");
                     process.StartInfo = startInfos;
-                    process.Start();
-                    Application.Exit();
+                    process.Start(); 
+                    Application.Exit(); 
                 }
                 else
                 {

@@ -130,6 +130,9 @@ namespace DevProLauncher.Windows
             joinBtn.Text = info.GameJoin;
             leaveBtn.Text = info.GameLeave;
             qJoinBtn.Text = info.GameQuick;
+            rankedLbl.Text = info.Ranked;
+            unrankedLbl.Text = info.Unranked;
+            QueueLabel.Text = info.GameQueueLabel;
         }
 
         public void RefreshDeckList()

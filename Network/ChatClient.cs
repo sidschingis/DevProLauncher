@@ -10,6 +10,7 @@ using System.Windows.Forms;
 using DevProLauncher.Network.Data;
 using ServiceStack.Text;
 using DevProLauncher.Windows.Enums;
+using System.Diagnostics;
 
 namespace DevProLauncher.Network
 {
@@ -80,7 +81,7 @@ namespace DevProLauncher.Network
         public UserDuelRequest MatchStart;
 
         public string ServerKickBanMessage;
-
+        public bool IsUserBanned = false;
 
         public ChatClient()
         {
@@ -330,9 +331,11 @@ namespace DevProLauncher.Network
                     if (LoginReply != null)
                         LoginReply(e.Packet, null);
                     break;
-                case DevClientPackets.Banned: 
-                    //ServerKickBanMessage = Encoding.UTF8.GetString(e.Reader.ReadBytes(e.Raw.Length));
-                    MessageBox.Show(Encoding.UTF8.GetString(e.Reader.ReadBytes(e.Raw.Length)), "Server", MessageBoxButtons.OK);
+                case DevClientPackets.Banned:
+                    IsUserBanned = true;                   
+                    ServerKickBanMessage = Encoding.UTF8.GetString(e.Raw);
+                    MessageBox.Show(ServerKickBanMessage, "Server", MessageBoxButtons.OK);
+                    Application.Exit();                  
                     break;
                 case DevClientPackets.RegisterAccept:                
                     if (RegisterReply != null)
@@ -530,7 +533,7 @@ namespace DevProLauncher.Network
                         UpdateRoomStatus(Encoding.UTF8.GetString(e.Reader.ReadBytes(e.Raw.Length)));
                     break;
                 case DevClientPackets.Kicked:
-                    ServerKickBanMessage = Encoding.UTF8.GetString(e.Raw);
+                    ServerKickBanMessage = Encoding.UTF8.GetString(e.Raw) + "\n\r Do you want to restart DevPro ?";
                     break;
                 default:                
                     if (OnFatalError != null)

@@ -64,8 +64,8 @@ namespace DevProLauncher.Network.Data
                     return Program.Config.Level3Color.ToColor();
                 case 4:
                     return Program.Config.Level4Color.ToColor();
-                case 99:
-                    return Program.Config.Level99Color.ToColor();
+                case 98:
+                    return Program.Config.BotColor.ToColor();
             }
 
             return Program.Config.Level0Color.ToColor();
@@ -85,8 +85,8 @@ namespace DevProLauncher.Network.Data
                     return new SolidBrush(Program.Config.Level3Color.ToColor());
                 case 4:
                     return new SolidBrush(Program.Config.Level4Color.ToColor());
-                case 99:
-                    return new SolidBrush(Program.Config.Level99Color.ToColor());
+                case 98:
+                    return new SolidBrush(Program.Config.BotColor.ToColor());
             }
 
             return new SolidBrush(Program.Config.Level0Color.ToColor());

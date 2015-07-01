@@ -170,7 +170,7 @@ namespace DevProLauncher.Windows
 
             BackgroundColorBtn.BackColor = Program.Config.ChatBGColor.ToColor();
             NormalTextColorBtn.BackColor = Program.Config.NormalTextColor.ToColor();
-            Level99ColorBtn.BackColor = Program.Config.Level99Color.ToColor();
+            BotColorBtn.BackColor = Program.Config.BotColor.ToColor();
             Level4ColorBtn.BackColor = Program.Config.Level4Color.ToColor();
             Level3ColorBtn.BackColor = Program.Config.Level3Color.ToColor();
             Level1ColorBtn.BackColor = Program.Config.Level1Color.ToColor();
@@ -218,7 +218,7 @@ namespace DevProLauncher.Windows
 
             label13.Text = lang.chatoptionsLblChatBackground;
             label12.Text = lang.chatoptionsLblNormalText;
-            label11.Text = lang.chatoptionsLblLevel99;
+            label11.Text = lang.chatoptionsLblLevel98;
             //label10.Text = lang.chatoptionsLblLevel2;
             label9.Text = lang.chatoptionsLblLevel1;
             label4.Text = lang.chatoptionsLblNormalUser;
@@ -834,8 +834,8 @@ namespace DevProLauncher.Windows
                     case "Level4ColorBtn":
                         Program.Config.Level4Color = new SerializableColor(selectcolor.Color);
                         break;
-                    case "Level99ColorBtn":
-                        Program.Config.Level99Color = new SerializableColor(selectcolor.Color);
+                    case "BotColorBtn":
+                        Program.Config.BotColor = new SerializableColor(selectcolor.Color);
                         break;
                     case "NormalTextColorBtn":
                         Program.Config.NormalTextColor = new SerializableColor(selectcolor.Color);

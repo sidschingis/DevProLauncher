@@ -136,24 +136,27 @@ namespace DevProLauncher.Windows
 
         private void CheckConnection(object sender, EventArgs e)
         {
-            if (!Program.ChatServer.Connected())
+            if (!Program.ChatServer.IsUserBanned)
             {
-                var connectionCheck = (Timer)sender;
-                Hide();
-                connectionCheck.Enabled = false;
-                if (MessageBox.Show(!string.IsNullOrEmpty(Program.ChatServer.ServerKickBanMessage) ? Program.ChatServer.ServerKickBanMessage: "Disconnected from server.", "Server", MessageBoxButtons.OK) == DialogResult.OK)
+                if (!Program.ChatServer.Connected())
                 {
-                    var process = new Process();
-                    var startInfos = new ProcessStartInfo(Application.ExecutablePath, "-r");
-                    process.StartInfo = startInfos;
-                    process.Start();
-                    Application.Exit();
-                }
-                else
-                {
-                    Application.Exit();
-                }
+                    var connectionCheck = (Timer)sender;
+                    Hide();
+                    connectionCheck.Enabled = false;
+                    if (MessageBox.Show(!string.IsNullOrEmpty(Program.ChatServer.ServerKickBanMessage) ? Program.ChatServer.ServerKickBanMessage : "Disconnected from server.\n\r Do you want to restart DevPro ?", "Server", MessageBoxButtons.YesNo) == DialogResult.Yes)
+                    {
+                        var process = new Process();
+                        var startInfos = new ProcessStartInfo(Application.ExecutablePath, "-r");
+                        process.StartInfo = startInfos;
+                        process.Start();
+                        Application.Exit();
+                    }
+                    else
+                    {
+                        Application.Exit();
+                    }
 
+                }
             }
         }
 

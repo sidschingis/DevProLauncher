@@ -215,6 +215,8 @@ namespace DevProLauncher.Helpers
         {
             window.Select(window.TextLength, 0);
             window.SelectionColor = color;
+            if (text == null)
+                text = "";
             window.AppendText(text);
         }
 

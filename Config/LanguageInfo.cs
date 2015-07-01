@@ -305,9 +305,9 @@ namespace DevProLauncher.Config
 
         public string chatoptionsLblChatBackground = "Chat Background";
         public string chatoptionsLblNormalText = "Normal Text";
-        public string chatoptionsLblLevel99 = "Level 99";
+        public string chatoptionsLblLevel98 = "Bot";
         public string chatoptionsLblLevel2 = "Level 2";
-        public string chatoptionsLblLevel1 = "Level 1";
+        public string chatoptionsLblLevel1 = "Helper";
         public string chatoptionsLblNormalUser = "Normal Username";
         public string chatoptionsLblServerMessages = "Server Message";
         public string chatoptionsLblMeMessage = "/Me Message";

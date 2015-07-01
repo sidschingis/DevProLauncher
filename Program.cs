@@ -31,7 +31,7 @@ namespace DevProLauncher
         public static MainFrm MainForm;
         public static ServerInfo Server;
         public static Dictionary<string,ServerInfo> CheckmateServerList = new Dictionary<string,ServerInfo>();
-        public static Random Rand = new Random();
+        public static Random Rand = new Random();        
 
         [STAThread]
         static void Main()
@@ -68,13 +68,11 @@ namespace DevProLauncher
 #endif
             }
             else MessageBox.Show("An internet connection is required to play online.");
-/*
 #if DEBUG
             Config.ServerAddress = "127.0.0.1";
             Config.ChatPort = 8933;
             Server = new ServerInfo("DevPro", "127.0.0.1", 3333);
 #endif
-*/
             MainForm = new MainFrm();
             Application.Run(MainForm);
         }

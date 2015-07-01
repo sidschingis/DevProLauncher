@@ -90,7 +90,7 @@ namespace DevProLauncher.Config
 
         public SerializableColor ChatBGColor = new SerializableColor(Color.White);
         public SerializableColor NormalTextColor = new SerializableColor(Color.Black);
-        public SerializableColor Level99Color = new SerializableColor(Color.Green);
+        public SerializableColor BotColor = new SerializableColor(Color.Green);
         public SerializableColor Level4Color = new SerializableColor(Color.Red);
         public SerializableColor Level3Color = new SerializableColor(Color.Blue);
         public SerializableColor Level2Color = new SerializableColor(Color.IndianRed);

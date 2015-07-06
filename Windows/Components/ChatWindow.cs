@@ -50,7 +50,14 @@ namespace DevProLauncher.Windows.Components
 
         private void ChatLog_LinkClicked(object sender, LinkClickedEventArgs e)
         {
-            Process.Start(e.LinkText);
+            try
+            {
+                Process.Start(e.LinkText);
+            }
+            catch (Exception)
+            {
+                // ignored
+            }
         }
 
         public void ApplyNewSettings()

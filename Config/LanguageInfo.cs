@@ -127,6 +127,9 @@ namespace DevProLauncher.Config
         public string GameQuick = "Quick";
         public string GameQueueLabel = "Queue Status: Not Searching";
 
+        public string Ranked = "Ranked";
+        public string Unranked = "Unranked";
+
 
         // Ranking_frm.cs
         public string RankingSingleGb = "Single Rankings";

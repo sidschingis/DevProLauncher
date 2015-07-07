@@ -24,6 +24,7 @@ namespace DevProLauncher.Windows.MessageBoxs
             Antialias.Text = Program.Config.Antialias.ToString(CultureInfo.InvariantCulture);
             EnableMusic.Checked = Program.Config.EnableMusic;
             EnableSound.Checked = Program.Config.EnableSound;
+            EnableLauncherSound.Checked = Program.Config.Enabled3D;
             Enabled3d.Checked = Program.Config.Enabled3D;
             GameFont.Text = Program.Config.GameFont;
             FontSize.Value = Program.Config.FontSize;
@@ -84,6 +85,7 @@ namespace DevProLauncher.Windows.MessageBoxs
                 label6.Text = info.optionAntialias;
                 EnableSound.Text = info.optionCbSound;
                 EnableMusic.Text = info.optionCbMusic;
+                EnableLauncherSound.Text = info.optionCbLauncherSound;
                 Enabled3d.Text = info.optionCbDirect;
                 label2.Text = info.optionTexts;
                 label3.Text = info.optionTextf;
@@ -120,6 +122,7 @@ namespace DevProLauncher.Windows.MessageBoxs
             Program.Config.DefaultUsername = Username.Text;
             Program.Config.Antialias = Convert.ToInt32(Antialias.Text);
             Program.Config.EnableSound = EnableSound.Checked;
+            Program.Config.EnableLauncherSound = EnableLauncherSound.Checked;
             Program.Config.SoundVolume = SoundVolume.Value;
             Program.Config.EnableMusic = EnableMusic.Checked;
             Program.Config.MusicVolume = MusicVolume.Value;

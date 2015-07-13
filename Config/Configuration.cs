@@ -124,5 +124,8 @@ namespace DevProLauncher.Config
         // DropBox Settings
         public string AppKey = "xxvyeb0w8ndl3kz";
         public string AppSecret = "sn6ggwgxk3zdsc6";
+
+        // MatchMaking Settings
+        public bool EnableLauncherSound = true;
     }
 }

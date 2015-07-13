@@ -163,6 +163,7 @@ namespace DevProLauncher.Config
         public string optionCbSound = "Enable Sound";
         public string optionCbMusic = "Enable Music";
         public string optionCbDirect = "Enable Directx";
+        public string optionCbLauncherSound = "Enable Launcher Sound";
         public string optionCbFull = "Fullscreen";
         public string optionTexts = "Font Size";
         public string optionTextf = "Game Font";

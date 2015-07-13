@@ -770,6 +770,19 @@ namespace DevProLauncher.Windows
             var form = new DuelRequestFrm(
             "Found a Match, are you ready?",true);
 
+            if (Program.Config.EnableLauncherSound)
+            {
+                try
+                {
+                    System.Media.SoundPlayer simpleSound = new System.Media.SoundPlayer(@"Sound\matchfound.wav");
+                    simpleSound.Play();
+                }
+                catch
+                {
+                    //ignore
+                }
+            }
+
             if (form.ShowDialog() == DialogResult.Yes)
             {
                Program.ChatServer.SendPacket(DevServerPackets.AcceptMatch,matchnumber);

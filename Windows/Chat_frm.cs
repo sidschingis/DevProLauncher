@@ -920,6 +920,7 @@ namespace DevProLauncher.Windows
                         WriteMessage(new ChatMessage(MessageType.System, CommandType.None, null, "/getuid username - Gets the UID of a username")); 
                         WriteMessage(new ChatMessage(MessageType.System, CommandType.None, null, "/gmute username - Globally mutes a user."));
                         WriteMessage(new ChatMessage(MessageType.System, CommandType.None, null, "/gunmute username - Unmutes a user that was muted globally"));
+                        WriteMessage(new ChatMessage(MessageType.System, CommandType.None, null, "/info username - Gives info of an user."));
                     }
                     if (Program.UserInfo.rank > 3)
                     {

@@ -980,6 +980,9 @@ namespace DevProLauncher.Windows
                 case "unmute":
                     Program.ChatServer.SendPacket(DevServerPackets.ChatCommand, JsonSerializer.SerializeToString(new PacketCommand { Command = cmd.ToUpper(), Data = ChatInput.Text.Substring(part.Length).Trim() + "|" + ChannelTabs.SelectedTab.Text }));
                     break;
+                case "info":
+                    Program.ChatServer.SendPacket(DevServerPackets.ChatCommand, JsonSerializer.SerializeToString(new PacketCommand { Command = cmd.ToUpper(), Data = ChatInput.Text.Substring(part.Length).Trim() + "|" + ChannelTabs.SelectedTab.Text }));
+                    break;
                 default:
                     Program.ChatServer.SendPacket(DevServerPackets.ChatCommand, JsonSerializer.SerializeToString(new PacketCommand { Command = cmd.ToUpper(), Data = ChatInput.Text.Substring(part.Length).Trim() }));
                     break;

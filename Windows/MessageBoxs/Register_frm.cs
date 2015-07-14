@@ -123,6 +123,10 @@ namespace DevProLauncher.Windows.MessageBoxs
                 {
                     MessageBox.Show(Program.LanguageManager.Translation.RegistMailBlacklist);
                 }
+                else if (packet == DevClientPackets.BlacklistName)
+                {
+                    MessageBox.Show(Program.LanguageManager.Translation.RegistNameBlackList);
+                }
                 else if (packet == DevClientPackets.MailFormat)
                 {
                     MessageBox.Show(Program.LanguageManager.Translation.RegistMailFormat);

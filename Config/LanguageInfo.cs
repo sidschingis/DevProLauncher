@@ -51,6 +51,7 @@ namespace DevProLauncher.Config
         public string RegistMailError = "Email addresses do not match";
         public string RegistMailExists = "Email address already exists";
         public string RegistMailBlacklist = "Email is blacklisted";
+        public string RegistNameBlackList = "Your name is illegal";
         public string RegistMailFormat = "Invalid Email format";
 
         // Validate_frm.cs

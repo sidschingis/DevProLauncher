@@ -59,6 +59,7 @@
         RecoverAccept = 56,
         RecoverFailed = 57,
         ResetAccept = 58,
-        ResetFailed = 59
+        ResetFailed = 59,
+        BlacklistName = 60
     }
 }

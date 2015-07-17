@@ -918,8 +918,9 @@ namespace DevProLauncher.Windows
                         WriteMessage(new ChatMessage(MessageType.System, CommandType.None, null, "/roomowner roomname - Gets the creator of a channel"));
                         WriteMessage(new ChatMessage(MessageType.System, CommandType.None, null, "/killroom roomname - forces a chat channel to close"));
                         WriteMessage(new ChatMessage(MessageType.System, CommandType.None, null, "/getuid username - Gets the UID of a username")); 
-                        WriteMessage(new ChatMessage(MessageType.System, CommandType.None, null, "/gmute username - Globally mutes a user."));
+                        WriteMessage(new ChatMessage(MessageType.System, CommandType.None, null, "/gmute username hours - Globally mutes a user for X hours. ( if hours is empty, it's 24hours )"));
                         WriteMessage(new ChatMessage(MessageType.System, CommandType.None, null, "/gunmute username - Unmutes a user that was muted globally"));
+                        WriteMessage(new ChatMessage(MessageType.System, CommandType.None, null, "/info username - Gives info of an user."));
                     }
                     if (Program.UserInfo.rank > 3)
                     {
@@ -941,7 +942,7 @@ namespace DevProLauncher.Windows
                         WriteMessage(new ChatMessage(MessageType.System, CommandType.None, null, "/unbanip ip - Unbans IP"));
                         WriteMessage(new ChatMessage(MessageType.System, CommandType.None, null, "/getbanlist - Gets ban list"));
                         WriteMessage(new ChatMessage(MessageType.System, CommandType.None, null, "/op username level - Sets a users level"));
-                        WriteMessage(new ChatMessage(MessageType.System, CommandType.None, null, "/mps number - Changes the messages per second"));
+                        WriteMessage(new ChatMessage(MessageType.System, CommandType.None, null, "/setmps number - Changes the messages per second"));
                     }
 
                     if (Program.UserInfo.teamRank >= 0 && Program.UserInfo.team != string.Empty)
@@ -978,6 +979,9 @@ namespace DevProLauncher.Windows
                     break;
                 case "mute":
                 case "unmute":
+                    Program.ChatServer.SendPacket(DevServerPackets.ChatCommand, JsonSerializer.SerializeToString(new PacketCommand { Command = cmd.ToUpper(), Data = ChatInput.Text.Substring(part.Length).Trim() + "|" + ChannelTabs.SelectedTab.Text }));
+                    break;
+                case "info":
                     Program.ChatServer.SendPacket(DevServerPackets.ChatCommand, JsonSerializer.SerializeToString(new PacketCommand { Command = cmd.ToUpper(), Data = ChatInput.Text.Substring(part.Length).Trim() + "|" + ChannelTabs.SelectedTab.Text }));
                     break;
                 default:

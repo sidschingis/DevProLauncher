@@ -200,6 +200,7 @@ namespace DevProLauncher.Network
                 case DevClientPackets.RegisterFailed:
                 case DevClientPackets.DuplicateMail:
                 case DevClientPackets.BlacklistMail:
+                case DevClientPackets.BlacklistName:
                 case DevClientPackets.MailFormat:
                 case DevClientPackets.QueueFail:
                 case DevClientPackets.Pong:
@@ -350,6 +351,10 @@ namespace DevProLauncher.Network
                         RegisterReply(e.Packet);
                     break;
                 case DevClientPackets.BlacklistMail:
+                    if (RegisterReply != null)
+                        RegisterReply(e.Packet);
+                    break;
+                case DevClientPackets.BlacklistName:
                     if (RegisterReply != null)
                         RegisterReply(e.Packet);
                     break;

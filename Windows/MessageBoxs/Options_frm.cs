@@ -24,7 +24,7 @@ namespace DevProLauncher.Windows.MessageBoxs
             Antialias.Text = Program.Config.Antialias.ToString(CultureInfo.InvariantCulture);
             EnableMusic.Checked = Program.Config.EnableMusic;
             EnableSound.Checked = Program.Config.EnableSound;
-            EnableLauncherSound.Checked = Program.Config.Enabled3D;
+            EnableLauncherSound.Checked = Program.Config.EnableLauncherSound;
             Enabled3d.Checked = Program.Config.Enabled3D;
             GameFont.Text = Program.Config.GameFont;
             FontSize.Value = Program.Config.FontSize;

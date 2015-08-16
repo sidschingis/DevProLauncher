@@ -16,7 +16,7 @@ namespace DevProLauncher
 {
     static class Program
     {
-        public const string Version = "210070";
+        public const string Version = "210072";
         public static Configuration Config;
         public static LanguageManager LanguageManager;
         public static ChatClient ChatServer;
@@ -69,8 +69,8 @@ namespace DevProLauncher
             }
             else MessageBox.Show("An internet connection is required to play online.");
 #if DEBUG
-            Config.ServerAddress = "127.0.0.1";
-            Config.ChatPort = 8933;
+            Config.ServerAddress = "91.250.87.52";
+            Config.ChatPort = 9933;
             Server = new ServerInfo("DevPro", "127.0.0.1", 3333);
 #endif
             MainForm = new MainFrm();

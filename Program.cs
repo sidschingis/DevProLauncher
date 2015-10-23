@@ -16,7 +16,7 @@ namespace DevProLauncher
 {
     static class Program
     {
-        public const string Version = "210080";
+        public const string Version = "210082";
         public static Configuration Config;
         public static LanguageManager LanguageManager;
         public static ChatClient ChatServer;
@@ -61,15 +61,17 @@ namespace DevProLauncher
             if (LauncherHelper.TestConnection())
             {
 #if !DEBUG
+                
                 if (NewUpdateCheck())
                     return;
-                if (!CheckServerInfo("http://91.250.87.52"))
+                if (!CheckServerInfo("http://158.69.116.140"))
                     CheckServerInfo("http://ygopro.de");
+                 
 #endif
             }
             else MessageBox.Show("An internet connection is required to play online.");
 #if DEBUG
-            Config.ServerAddress = "91.250.87.52";
+            Config.ServerAddress = "158.69.116.140";
             Config.ChatPort = 9933;
             Server = new ServerInfo("DevPro", "127.0.0.1", 3333);
 #endif
@@ -117,10 +119,10 @@ namespace DevProLauncher
 
         public static bool NewUpdateCheck()
         {
-            switch(CheckUpdates("http://91.250.87.52"))
+            switch(CheckUpdates(Program.Config.ServerAddress))
             {
                 case 0:
-                    return (CheckUpdates("http://ygopro.de") == 2);
+                    return (CheckUpdates(Program.Config.ServerAddress) == 2);
                 case 2:
                     return true;
                 default:

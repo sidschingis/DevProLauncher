@@ -172,11 +172,11 @@ namespace DevProLauncher.Windows
         private void siteBtn_Click(object sender, EventArgs e)
         {
             if (Program.LanguageManager.language.Equals("German"))
-                Process.Start("http://ygopro.de/");
+                Process.Start("http://en.ygodevpro.com/");
             else if (Program.LanguageManager.language.Equals("French"))
-                Process.Start("http://ygopro.de/fr/");
+                Process.Start("http://en.ygodevpro.com/fr/");
             else
-                Process.Start("http://ygopro.de/en/");
+                Process.Start("http://en.ygodevpro.com/en/");
         }
 
         private void DeckBtn_Click(object sender, EventArgs e)

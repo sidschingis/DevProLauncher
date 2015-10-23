@@ -65,7 +65,7 @@ namespace DevProLauncher
                 if (NewUpdateCheck())
                     return;
                 if (!CheckServerInfo("http://158.69.116.140"))
-                    CheckServerInfo("http://ygopro.de");
+                    CheckServerInfo("http://en.ygodevpro.com/");
                  
 #endif
             }

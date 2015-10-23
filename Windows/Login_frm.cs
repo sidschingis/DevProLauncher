@@ -55,8 +55,8 @@ namespace DevProLauncher.Windows
             PatchNotes.ScriptErrorsSuppressed = true;
             //PatchNotes.Dock = DockStyle.Fill;
 
-            Thread adthread = new Thread(ShowAd) { IsBackground = true };
-            adthread.Start();
+            //Thread adthread = new Thread(ShowAd) { IsBackground = true };
+            //adthread.Start();
 
             ApplyTranslation();
 
@@ -122,7 +122,7 @@ namespace DevProLauncher.Windows
                 }      
             
                 this.BeginInvoke((MethodInvoker) delegate {
-                   var item = new Banner("tcgmarket", "http://ygopro.de/launcher/werbung/linktrackercheck.php?tcgmarket=bannerheader" , image);
+                    var item = new Banner("tcgmarket", "http://en.ygodevpro.com/launcher/werbung/linktrackercheck.php?tcgmarket=bannerheader", image);
                    item.Dock = DockStyle.Right;
                    AdPanel.Controls.Add(item, 0, 0);
                 });
@@ -140,7 +140,7 @@ namespace DevProLauncher.Windows
             try
             {
                 var webbrowser = (WebBrowser) sender;
-                if (!webbrowser.StatusText.StartsWith("http://ygopro.de"))
+                if(!webbrowser.StatusText.StartsWith("http://en.ygodevpro.com/"))
                 {
                     e.Cancel = true;
                     Process.Start(webbrowser.StatusText);

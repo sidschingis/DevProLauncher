@@ -159,7 +159,7 @@ namespace DevProLauncher.Windows
             {
                 if (servercommand == "NULL")
                 {
-                    Process.Start("http://ygopro.de/web-devpro/");
+                    Process.Start("http://en.ygodevpro.com/web-devpro/");
                     return;
                 }
 
@@ -203,7 +203,7 @@ namespace DevProLauncher.Windows
 
         private void transferBtn_Click(object sender, EventArgs e)
         {
-            Process.Start("http://ygopro.de/web-devpro/index.php?sites=dpTransfer");
+            Process.Start("http://en.ygodevpro.com/web-devpro/index.php?sites=dpTransfer");
         }
     }
 }

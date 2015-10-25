@@ -32,9 +32,8 @@ namespace DevProLauncher.Windows
 
             int vertScrollWidth = SystemInformation.VerticalScrollBarWidth;
             RightItems.Padding = new Padding(0, 0, vertScrollWidth, 0);
+            donateBrowser.Navigate("158.69.116.140/paypal/PayPal.html", false);
 
-            OfferLink.Click += OfferLink_Click;
-            DonateLink.Click += DonateLink_Click;
             refreshtimer.Tick += refreshtimer_Tick;
         }
         public void ApplyTranslation()
@@ -57,14 +56,11 @@ namespace DevProLauncher.Windows
             this.Text = lang.SupportTitle;
             groupBox4.Text = lang.SupportBalance;
             groupBox2.Text = lang.Supportgb2;
-            label1.Text = FormatString(lang.Supportgb2text);
-            groupBox1.Text = lang.Supportgb3;
-            label3.Text = lang.Supportgb3text;
-            groupBox3.Text = lang.Supportgb4;
-            label2.Text = lang.Supportgb4text;
 
             refreshbtn.Text = lang.SupportRefreshBtn;
             transferBtn.Text = lang.SupportTransferBtn;
+
+            supportTxt.Text = FormatString(lang.SupportLbl);
         }
         private string FormatString(string text)
         {
@@ -179,14 +175,6 @@ namespace DevProLauncher.Windows
         {
             if (e.KeyCode == Keys.Space)
                 e.SuppressKeyPress = true;
-        }
-        private void OfferLink_Click(object sender, EventArgs e)
-        {
-            Process.Start("http://iframe.sponsorpay.com/?appid=11433&uid=" + Program.UserInfo.username + "&pup0=eu");
-        }
-        private void DonateLink_Click(object sender, EventArgs e)
-        {
-            Process.Start("https://wallapi.com/api/?key=5a7ef592b505f1e3c5cdb9d4e8614790&uid=" + Program.UserInfo.username + "&widget=w1_1");
         }
 
         private void refreshbtn_Click(object sender, EventArgs e)

@@ -281,6 +281,7 @@ namespace DevProLauncher.Config
         public string profileLblDestinyLeo = "Destiny Leo";
         public string profileLblUnknown = "Unknown";
         public string profileLblUsername = "Username: ";
+        public string profileLblSecret = "Profile Key: ";
         public string profileLblwld = "Wins/Losses/Draws";
         public string profileLblTRank = "Rank: ";
         public string profileLblRank = "Rank (Match): ";
@@ -439,11 +440,7 @@ namespace DevProLauncher.Config
 
         public string SupportBalance = "Balance";
         public string Supportgb2 = "Support DevPro";
-        public string Supportgb2text = "The DevPoint system is here to reward users who help out and support DevPro. You can earn points for helping DevPro!  || ||- Taking part in DevPro Events  - Fixing DevPro bugs Launcher or card scripts! || - Supporting the growth of DevPro";
-        public string Supportgb3 = "Earn DevPoints";
-        public string Supportgb3text = "Earn points by completing offfers.";
-        public string Supportgb4 = "Donate!";
-        public string Supportgb4text = "Earn by donating (Paypal, PaySafe, SMS and more)";
+        public string SupportLbl = "All donations are used to pay the server costs.";
 
         public string SupportRenameInput = "Enter New Username";
         public string SupportUnbanInput = "Enter Username";

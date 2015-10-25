@@ -94,7 +94,7 @@ namespace DevProLauncher.Windows
             try
             {
 
-                //PatchNotes.Navigate("http://ygopro.de/launcher/indexlauncher.php", false);
+                //PatchNotes.Navigate("http://en.ygodevpro.com/launcher/indexlauncher.php", false);
 
                 //string loc = LauncherHelper.GetLocation();
 
@@ -165,8 +165,8 @@ namespace DevProLauncher.Windows
             if (!LoadBtn.Enabled)
             {
                 PatchNotes.Navigate(languageSelect.SelectedItem.ToString() == "German"
-                                        ? "http://ygopro.de/en/category/"
-                                        : "http://ygopro.de/en/category/patch-notes/");
+                                        ? "http://en.ygodevpro.com/en/category/"
+                                        : "http://en.ygodevpro.com/en/category/patch-notes/");
             }
             ApplyTranslation();
             Program.MainForm.ReLoadLanguage();
@@ -299,8 +299,8 @@ namespace DevProLauncher.Windows
             LoadBtn.Visible = false;
             LoadBtn.Enabled = false;
             PatchNotes.Navigate(languageSelect.SelectedItem.ToString() == "German"
-                        ? "http://ygopro.de/en/category/"
-                        : "http://ygopro.de/en/category/patch-notes/");
+                        ? "http://en.ygodevpro.com/en/category/"
+                        : "http://en.ygodevpro.com/en/category/patch-notes/");
             //PatchNotes.Navigating += WebRedirect;
             adBox.Visible = false;
             //AdPanel.Visible = false;

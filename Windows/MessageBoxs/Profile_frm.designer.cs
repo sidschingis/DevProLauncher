@@ -197,6 +197,7 @@
             this.label51 = new System.Windows.Forms.Label();
             this.label52 = new System.Windows.Forms.Label();
             this.TSingleWLD = new System.Windows.Forms.Label();
+            this.SecretLbl = new System.Windows.Forms.Label();
             this.tableLayoutPanel1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
@@ -1224,6 +1225,7 @@
             this.tableLayoutPanel65.Controls.Add(this.singleelo, 0, 3);
             this.tableLayoutPanel65.Controls.Add(this.elo, 1, 3);
             this.tableLayoutPanel65.Controls.Add(this.rank, 1, 2);
+            this.tableLayoutPanel65.Controls.Add(this.SecretLbl, 0, 1);
             this.tableLayoutPanel65.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel65.Location = new System.Drawing.Point(3, 16);
             this.tableLayoutPanel65.Name = "tableLayoutPanel65";
@@ -2215,6 +2217,16 @@
             this.TSingleWLD.Text = "0/0/0";
             this.TSingleWLD.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
+            // SecretLbl
+            // 
+            this.SecretLbl.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.SecretLbl.AutoSize = true;
+            this.SecretLbl.Location = new System.Drawing.Point(66, 22);
+            this.SecretLbl.Name = "SecretLbl";
+            this.SecretLbl.Size = new System.Drawing.Size(63, 13);
+            this.SecretLbl.TabIndex = 8;
+            this.SecretLbl.Text = "AppSecret: ";
+            // 
             // ProfileFrm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -2436,5 +2448,6 @@
         private System.Windows.Forms.Label ulose;
         private System.Windows.Forms.Label UWinLP0;
         private System.Windows.Forms.Label singlerank;
+        private System.Windows.Forms.Label SecretLbl;
     }
 }

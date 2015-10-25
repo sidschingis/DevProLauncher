@@ -30,6 +30,7 @@ namespace DevProLauncher.Windows.MessageBoxs
 
             Text = language.profileName;
             Username.Text = language.profileLblUsername;
+            SecretLbl.Text = language.profileLblSecret;
             rank.Text = language.profileLblRank;
             UserLevel.Text = language.profileLvl; 
             singlerank.Text = language.profileLblSingleRank;
@@ -105,7 +106,9 @@ namespace DevProLauncher.Windows.MessageBoxs
                     singlerank.Text += sections[1];
                     UserLevel.Text +=  sections[6];
                     elo.Text += sections[7];
-                    singleelo.Text += sections[8]; 
+                    singleelo.Text += sections[8];
+                    SecretLbl.Text += sections[9];
+
                     if (sections[2] == "not found")
                         MatchWLD.Text = "0/0/0";
                     else
@@ -125,7 +128,7 @@ namespace DevProLauncher.Windows.MessageBoxs
                     }
                     else
                     {
-                        TeamName.Text = "Team: " + teamName;
+                        TeamName.Text += teamName;
                         Program.ChatServer.TeamStats += UpdateTeamProfile;
                         Program.ChatServer.SendPacket(DevServerPackets.TeamStats, teamName);
                     }

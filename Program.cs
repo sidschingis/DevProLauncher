@@ -139,7 +139,8 @@ namespace DevProLauncher
             string result;
             try
             {
-                result = client.DownloadString(url + updateLink + "?v=" + Version);
+                string downloadlink ="http://"+ url + updateLink + "?v=" + Version;
+                result = client.DownloadString(downloadlink);
             }
             catch
             {

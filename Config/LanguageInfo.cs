@@ -440,7 +440,7 @@ namespace DevProLauncher.Config
 
         public string SupportBalance = "Balance";
         public string Supportgb2 = "Support DevPro";
-        public string SupportLbl = "All donations are used to pay the server costs.";
+        public string SupportLbl = "All donations are used to pay the server costs. (Opens in your web browser.)";
 
         public string SupportRenameInput = "Enter New Username";
         public string SupportUnbanInput = "Enter Username";

@@ -35,14 +35,14 @@
             this.RightItems = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.supportTxt = new System.Windows.Forms.TextBox();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
             this.DevPointCount = new System.Windows.Forms.Label();
             this.tableLayoutPanel6 = new System.Windows.Forms.TableLayoutPanel();
             this.refreshbtn = new System.Windows.Forms.Button();
             this.transferBtn = new System.Windows.Forms.Button();
+            this.DonateBtn = new System.Windows.Forms.Button();
             this.refreshtimer = new System.Windows.Forms.Timer(this.components);
-            this.donateBrowser = new System.Windows.Forms.WebBrowser();
-            this.supportTxt = new System.Windows.Forms.TextBox();
             this.tableLayoutPanel1.SuspendLayout();
             this.tableLayoutPanel5.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
@@ -118,16 +118,16 @@
             this.tableLayoutPanel2.Controls.Add(this.groupBox2, 0, 2);
             this.tableLayoutPanel2.Controls.Add(this.groupBox4, 0, 0);
             this.tableLayoutPanel2.Controls.Add(this.tableLayoutPanel6, 0, 1);
-            this.tableLayoutPanel2.Controls.Add(this.donateBrowser, 0, 3);
+            this.tableLayoutPanel2.Controls.Add(this.DonateBtn, 0, 3);
             this.tableLayoutPanel2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel2.Location = new System.Drawing.Point(763, 3);
             this.tableLayoutPanel2.Name = "tableLayoutPanel2";
             this.tableLayoutPanel2.RowCount = 5;
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 56F));
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 61F));
-            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 78F));
-            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 254F));
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 83F));
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 42F));
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 268F));
             this.tableLayoutPanel2.Size = new System.Drawing.Size(172, 488);
             this.tableLayoutPanel2.TabIndex = 0;
             // 
@@ -137,10 +137,21 @@
             this.groupBox2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupBox2.Location = new System.Drawing.Point(3, 98);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(166, 55);
+            this.groupBox2.Size = new System.Drawing.Size(166, 77);
             this.groupBox2.TabIndex = 1;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Support DevPro";
+            // 
+            // supportTxt
+            // 
+            this.supportTxt.BackColor = System.Drawing.SystemColors.Control;
+            this.supportTxt.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.supportTxt.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.supportTxt.Location = new System.Drawing.Point(3, 16);
+            this.supportTxt.Multiline = true;
+            this.supportTxt.Name = "supportTxt";
+            this.supportTxt.Size = new System.Drawing.Size(160, 58);
+            this.supportTxt.TabIndex = 0;
             // 
             // groupBox4
             // 
@@ -200,34 +211,23 @@
             this.transferBtn.UseVisualStyleBackColor = true;
             this.transferBtn.Click += new System.EventHandler(this.transferBtn_Click);
             // 
+            // DonateBtn
+            // 
+            this.DonateBtn.BackColor = System.Drawing.SystemColors.Control;
+            this.DonateBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.DonateBtn.ForeColor = System.Drawing.SystemColors.Control;
+            this.DonateBtn.Image = global::DevProLauncher.Properties.Resources.btn_donate_LG;
+            this.DonateBtn.ImageAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.DonateBtn.Location = new System.Drawing.Point(3, 181);
+            this.DonateBtn.Name = "DonateBtn";
+            this.DonateBtn.Size = new System.Drawing.Size(166, 36);
+            this.DonateBtn.TabIndex = 6;
+            this.DonateBtn.UseVisualStyleBackColor = false;
+            this.DonateBtn.Click += new System.EventHandler(this.DonateBtn_Click);
+            // 
             // refreshtimer
             // 
             this.refreshtimer.Interval = 2000;
-            // 
-            // donateBrowser
-            // 
-            this.donateBrowser.AllowNavigation = false;
-            this.donateBrowser.AllowWebBrowserDrop = false;
-            this.donateBrowser.IsWebBrowserContextMenuEnabled = false;
-            this.donateBrowser.Location = new System.Drawing.Point(3, 159);
-            this.donateBrowser.MinimumSize = new System.Drawing.Size(20, 20);
-            this.donateBrowser.Name = "donateBrowser";
-            this.donateBrowser.ScriptErrorsSuppressed = true;
-            this.donateBrowser.ScrollBarsEnabled = false;
-            this.donateBrowser.Size = new System.Drawing.Size(166, 72);
-            this.donateBrowser.TabIndex = 0;
-            this.donateBrowser.WebBrowserShortcutsEnabled = false;
-            // 
-            // supportTxt
-            // 
-            this.supportTxt.BackColor = System.Drawing.SystemColors.Control;
-            this.supportTxt.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.supportTxt.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.supportTxt.Location = new System.Drawing.Point(3, 16);
-            this.supportTxt.Multiline = true;
-            this.supportTxt.Name = "supportTxt";
-            this.supportTxt.Size = new System.Drawing.Size(160, 36);
-            this.supportTxt.TabIndex = 0;
             // 
             // SupportFrm
             // 
@@ -263,7 +263,7 @@
         private System.Windows.Forms.TableLayoutPanel RightItems;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel6;
         private System.Windows.Forms.Button transferBtn;
-        private System.Windows.Forms.WebBrowser donateBrowser;
         private System.Windows.Forms.TextBox supportTxt;
+        private System.Windows.Forms.Button DonateBtn;
     }
 }

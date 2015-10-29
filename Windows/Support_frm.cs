@@ -32,7 +32,6 @@ namespace DevProLauncher.Windows
 
             int vertScrollWidth = SystemInformation.VerticalScrollBarWidth;
             RightItems.Padding = new Padding(0, 0, vertScrollWidth, 0);
-            donateBrowser.Navigate("158.69.116.140/paypal/PayPal.html", false);
 
             refreshtimer.Tick += refreshtimer_Tick;
         }
@@ -192,6 +191,13 @@ namespace DevProLauncher.Windows
         private void transferBtn_Click(object sender, EventArgs e)
         {
             Process.Start("http://en.ygodevpro.com/web-devpro/index.php?sites=dpTransfer");
+        }
+
+        private void DonateBtn_Click(object sender, EventArgs e)
+        {
+            string url = "http://158.69.116.140/paypal/PayPal.html";
+
+            System.Diagnostics.Process.Start(url);
         }
     }
 }

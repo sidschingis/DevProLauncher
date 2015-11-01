@@ -165,8 +165,8 @@ namespace DevProLauncher.Windows
             if (!LoadBtn.Enabled)
             {
                 PatchNotes.Navigate(languageSelect.SelectedItem.ToString() == "German"
-                                        ? "http://en.ygodevpro.com/en/category/"
-                                        : "http://en.ygodevpro.com/en/category/patch-notes/");
+                                        ? "http://de.ygodevpro.com/category/patch-notes/"
+                                        : "http://en.ygodevpro.com/category/patch-notes/");
             }
             ApplyTranslation();
             Program.MainForm.ReLoadLanguage();
@@ -299,7 +299,7 @@ namespace DevProLauncher.Windows
             LoadBtn.Visible = false;
             LoadBtn.Enabled = false;
             PatchNotes.Navigate(languageSelect.SelectedItem.ToString() == "German"
-                        ? "http://en.ygodevpro.com/category/"
+                        ? "http://de.ygodevpro.com/category/patch-notes/"
                         : "http://en.ygodevpro.com/category/patch-notes/");
             //PatchNotes.Navigating += WebRedirect;
             adBox.Visible = false;

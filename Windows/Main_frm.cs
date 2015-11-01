@@ -22,8 +22,7 @@ namespace DevProLauncher.Windows
         {
             InitializeComponent();
 
-            var version = Program.Version.ToCharArray();
-            Text = "DevPro" + " v" + version[0] + "." + version[1] + "." + version[2] + "." + Program.Version[3] + "." + Program.Version[4];
+            Text = GetVersionString();
 
             LauncherHelper.LoadBanlist();
 
@@ -44,6 +43,12 @@ namespace DevProLauncher.Windows
 
             ApplyTranslation();
 
+        }
+
+        public string GetVersionString()
+        {
+            char[] version = Program.Version.ToCharArray();
+            return "DevPro" + " v" + version[0] + "." + version[1] + "." + version[2] + " R" + (Program.Version[3].Equals('0') ? "" : Program.Version[3] + ".") + Program.Version[4] + "." + Program.Version[5];
         }
 
         public void ApplyTranslation()
@@ -122,7 +127,7 @@ namespace DevProLauncher.Windows
 
         public void UpdateUsername()
         {
-            Text = "DevPro" + " v" + Program.Version[0] + "." + Program.Version[1] + "." + Program.Version[2] + "." + Program.Version[3] + "." + Program.Version[4] + " - " + Program.UserInfo.username;
+            Text = GetVersionString() + " - " + Program.UserInfo.username;
         }
 
         public void ReLoadLanguage()

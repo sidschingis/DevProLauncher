@@ -383,7 +383,7 @@ namespace DevProLauncher.Windows
                     }
                     catch
                     {
-                        MessageBox.Show("Error in parsing Elo from:" + eloparts.ToString());
+                        //MessageBox.Show("Error in parsing Elo from:" + eloparts.ToString());
                     }
                     elos.Add(value);
                 }

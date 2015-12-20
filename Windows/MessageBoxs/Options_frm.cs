@@ -163,6 +163,7 @@ namespace DevProLauncher.Windows.MessageBoxs
                 Program.Config.Lifepoints = form.LifePoints.Text;
                 Program.Config.BanList = form.BanList.Text;
                 Program.Config.TimeLimit = form.TimeLimit.Text;
+                Program.Config.EnablePrerelease = form.Prerelease.Checked;
             }
 
         }
@@ -180,15 +181,18 @@ namespace DevProLauncher.Windows.MessageBoxs
                 };
             form.Mode.Items.Remove("Tag");
 
-            if (form.ShowDialog() != DialogResult.OK) return;
-            Program.Config.chtCardRules = form.CardRules.Text;
-            Program.Config.chtMode = form.Mode.Text;
-            Program.Config.chtEnablePrority = form.Priority.Checked;
-            Program.Config.chtDisableCheckDeck = form.CheckDeck.Checked;
-            Program.Config.chtDisableShuffleDeck = form.ShuffleDeck.Checked;
-            Program.Config.chtLifepoints = form.LifePoints.Text;
-            Program.Config.chtBanList = form.BanList.Text;
-            Program.Config.chtTimeLimit = form.TimeLimit.Text;
+            if(form.ShowDialog() == DialogResult.OK)
+            {
+                Program.Config.chtCardRules = form.CardRules.Text;
+                Program.Config.chtMode = form.Mode.Text;
+                Program.Config.chtEnablePrority = form.Priority.Checked;
+                Program.Config.chtDisableCheckDeck = form.CheckDeck.Checked;
+                Program.Config.chtDisableShuffleDeck = form.ShuffleDeck.Checked;
+                Program.Config.chtLifepoints = form.LifePoints.Text;
+                Program.Config.chtBanList = form.BanList.Text;
+                Program.Config.chtTimeLimit = form.TimeLimit.Text;
+                Program.Config.EnablePrerelease = form.Prerelease.Checked;
+            }
         }
 
         private void UpdatePassword_Click(object sender, EventArgs e)

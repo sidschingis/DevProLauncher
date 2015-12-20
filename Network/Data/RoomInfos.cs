@@ -15,7 +15,7 @@ namespace DevProLauncher.Network.Data
         public bool isNoShuffleDeck { get; set; }
         public bool isLocked { get; set; }
         public bool isRanked { get; set; }
-        public bool isAnimemode { get; set; }
+        public bool isPreReleaseMode { get; set; }
         public bool isIllegal { get; set; }
         public bool hasStarted { get; set; }
 
@@ -63,12 +63,16 @@ namespace DevProLauncher.Network.Data
             else
                 infos.isRanked = false;
 
-            if (infos.isRanked)
+            if(infos.isRanked)
+            {
+                //dont allow prerelease cards in ranked
+                infos.rule %= 4;
                 infos.banListType = infos.rule == 0 ? 1 : 0;
+            }
 
             infos.roomName = (list[5] == "" ? GenerateroomName() : list[5]);
 
-            if (infos.rule >= 4) infos.isAnimemode = true;
+            if (infos.rule >= 4) infos.isPreReleaseMode = true;
 
             if (infos.enablePriority || infos.isNoCheckDeck || infos.isNoShuffleDeck ||
                 (infos.mode == 2) ? infos.startLp != 16000 : infos.startLp != 8000 || infos.startHand != 5 || infos.drawCount != 1)
@@ -112,7 +116,7 @@ namespace DevProLauncher.Network.Data
 
         public static string GameRule(int rule)
         {
-            switch (rule)
+            switch (rule%4)
             {
                 case 0:
                     return "OCG";
@@ -120,10 +124,6 @@ namespace DevProLauncher.Network.Data
                     return "TCG";
                 case 2:
                     return "OCG/TCG";
-                case 4:
-                    return "Anime";
-                case 5:
-                    return "Turbo";
             }
 
             return "Unkown";

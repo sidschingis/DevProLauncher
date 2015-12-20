@@ -72,6 +72,7 @@ namespace DevProLauncher.Config
         public string TimeLimit = "3 minutes";
         public string CardRules = "OCG/TCG";
         public string Mode = "Single";
+        public bool EnablePrerelease = true;
         public bool EnablePrority = false;
         public bool DisableCheckDeck = false;
         public bool DisableShuffleDeck = false;

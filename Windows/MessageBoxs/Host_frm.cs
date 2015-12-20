@@ -20,6 +20,7 @@ namespace DevProLauncher.Windows.MessageBoxs
                 Mode.SelectedItem = Program.Config.Mode;
                 GameName = LauncherHelper.GenerateString().Substring(0, 5);
                 CardRules.SelectedItem = Program.Config.CardRules;
+                Prerelease.Checked = Program.Config.EnablePrerelease;
                 Priority.Checked = Program.Config.EnablePrority;
                 ShuffleDeck.Checked = Program.Config.DisableShuffleDeck;
                 CheckDeck.Checked = Program.Config.DisableCheckDeck;
@@ -142,14 +143,16 @@ namespace DevProLauncher.Windows.MessageBoxs
         public string GenerateURI(bool isranked)
         {
             string gamestring;
-            if (CardRules.Text == "OCG")
-                gamestring = "0";
-            else if (CardRules.Text == "TCG")
-                gamestring = "1";
-            else if (CardRules.Text == "OCG/TCG")
-                gamestring = "2";
-            else
-                gamestring = "3";
+            int rules = 0;
+            if(CardRules.Text == "OCG")
+                rules = 0;
+            else if(CardRules.Text == "TCG")
+                rules = 1;
+            else if(CardRules.Text == "OCG/TCG")
+                rules = 2;
+            if(Prerelease.Checked)
+                rules += 4;
+            gamestring = rules.ToString();
             if (Mode.Text == "Single")
                 gamestring = gamestring + "0";
             else if (Mode.Text == "Match")
@@ -182,14 +185,16 @@ namespace DevProLauncher.Windows.MessageBoxs
         public string GenerateGameString(bool isranked)
         {
             string gamestring;
+            int rules=0;
             if (CardRules.Text == "OCG")
-                gamestring = "0";
+                rules = 0;
             else if (CardRules.Text == "TCG")
-                gamestring = "1";
+                rules = 1;
             else if (CardRules.Text == "OCG/TCG")
-                gamestring = "2";
-            else
-                gamestring = "3";
+                rules = 2;
+            if(Prerelease.Checked)
+                rules += 4;
+            gamestring = rules.ToString();
             if (Mode.Text == "Single")
                 gamestring = gamestring + "0";
             else if (Mode.Text == "Match")

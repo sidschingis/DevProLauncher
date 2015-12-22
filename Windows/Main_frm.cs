@@ -178,8 +178,6 @@ namespace DevProLauncher.Windows
         {
             if (Program.LanguageManager.language.Equals("German"))
                 Process.Start("http://de.ygodevpro.com/");
-            else if (Program.LanguageManager.language.Equals("French"))
-                Process.Start("http://fr.ygodevpro.com/");
             else
                 Process.Start("http://en.ygodevpro.com/");
         }

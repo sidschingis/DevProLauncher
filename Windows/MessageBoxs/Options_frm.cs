@@ -147,7 +147,7 @@ namespace DevProLauncher.Windows.MessageBoxs
         private void QuickSettingsBtn_Click(object sender, EventArgs e)
         {
 
-            var form = new Host(true, false)
+            var form = new Host(false)
                 {
                     Text = Program.LanguageManager.Translation.QuickHostSetting,
                     HostBtn = {Text = Program.LanguageManager.Translation.QuickHostBtn}

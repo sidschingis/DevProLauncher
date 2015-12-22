@@ -444,7 +444,7 @@ namespace DevProLauncher.Windows
 
         private void HostGame()
         {
-            var form = new Host(false, false);
+            var form = new Host(false);
 
             if (form.ShowDialog() == DialogResult.OK)
             {
@@ -496,7 +496,7 @@ namespace DevProLauncher.Windows
         private void QuickHost(string mode, bool isranked)
         {
             var ran = new Random();
-            var form = new Host(false, false)
+            var form = new Host(false)
             {
                 CardRules = { Text = Program.Config.CardRules },
                 Mode = { Text = mode },
@@ -735,7 +735,7 @@ namespace DevProLauncher.Windows
         private bool JoinQueue(bool isQuick=false)
         {
             
-            var form = new Host(false, false);
+            var form = new Host(false);
 
             form.Mode.Items.Clear();
             form.HostBtn.Text = "Join Queue";

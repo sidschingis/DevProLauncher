@@ -9,38 +9,25 @@ namespace DevProLauncher.Windows.MessageBoxs
     {
         public string GameName;
 
-        public Host(bool options, bool isranked)
+        public Host(bool isranked)
         {
             InitializeComponent();
             ApplyTranslation();
-            if (options)
-            {
-                TimeLimit.SelectedItem = Program.Config.TimeLimit;
-                BanList.SelectedItem = Program.Config.BanList;
-                Mode.SelectedItem = Program.Config.Mode;
-                GameName = LauncherHelper.GenerateString().Substring(0, 5);
-                CardRules.SelectedItem = Program.Config.CardRules;
-                Prerelease.Checked = Program.Config.EnablePrerelease;
-                Priority.Checked = Program.Config.EnablePrority;
-                ShuffleDeck.Checked = Program.Config.DisableShuffleDeck;
-                CheckDeck.Checked = Program.Config.DisableCheckDeck;
-                BanList.Items.AddRange(LauncherHelper.GetBanListArray());
-                BanList.SelectedItem = Program.Config.BanList;
-                if (BanList.SelectedItem == null && BanList.Items.Count > 0)
-                    BanList.SelectedIndex = 0;
-            }
-            else
-            {
-                TimeLimit.SelectedIndex = 0;
-                CardRules.SelectedIndex = 0;
-                Mode.SelectedIndex = 0;
-                GameName = LauncherHelper.GenerateString().Substring(0, 5);
-                BanList.Items.AddRange(LauncherHelper.GetBanListArray());
-                if (BanList.Items.Count > 0)
-                    BanList.SelectedIndex = 0;
-                
 
-            }
+            TimeLimit.SelectedItem = Program.Config.TimeLimit;
+            BanList.SelectedItem = Program.Config.BanList;
+            Mode.SelectedItem = Program.Config.Mode;
+            GameName = LauncherHelper.GenerateString().Substring(0, 5);
+            CardRules.SelectedItem = Program.Config.CardRules;
+            Prerelease.Checked = Program.Config.EnablePrerelease;
+            Priority.Checked = Program.Config.EnablePrority;
+            ShuffleDeck.Checked = Program.Config.DisableShuffleDeck;
+            CheckDeck.Checked = Program.Config.DisableCheckDeck;
+            BanList.Items.AddRange(LauncherHelper.GetBanListArray());
+            BanList.SelectedItem = Program.Config.BanList;
+            if (BanList.SelectedItem == null && BanList.Items.Count > 0)
+                BanList.SelectedIndex = 0;
+         
             Mode.SelectedIndexChanged += DuelModeChanged;
             //if(!isranked)
                 //CardRules.SelectedIndexChanged += CardRulesChanged;
@@ -52,6 +39,7 @@ namespace DevProLauncher.Windows.MessageBoxs
             ApplyTranslation();
 
             TimeLimit.SelectedItem = Program.Config.chtTimeLimit;
+            Prerelease.Checked = Program.Config.EnablePrerelease;
             BanList.SelectedItem = Program.Config.chtBanList;
             Mode.SelectedItem = Program.Config.chtMode;
             GameName = LauncherHelper.GenerateString().Substring(0,5);

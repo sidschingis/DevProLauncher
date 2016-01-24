@@ -55,8 +55,8 @@ namespace DevProLauncher.Windows
             PatchNotes.ScriptErrorsSuppressed = true;
             //PatchNotes.Dock = DockStyle.Fill;
 
-            //Thread adthread = new Thread(ShowAd) { IsBackground = true };
-            //adthread.Start();
+            Thread adthread = new Thread(ShowAd) { IsBackground = true };
+            adthread.Start();
 
             ApplyTranslation();
 
@@ -101,30 +101,35 @@ namespace DevProLauncher.Windows
                 //if (!LauncherHelper.IsEuropeanLocation(loc))
                 //    return;
                 Image image;
-
+                string lang;
                 switch (Program.Config.Language.ToLower())
                 {
                     case "german":
                         image = Properties.Resources.cardmarketDE;
+                        lang = "de";
                         break;
                     case "spanish":
                         image = Properties.Resources.cardmarketES;
+                        lang = "es";
                         break;
                     case "french":
                         image = Properties.Resources.cardmarketFR;
+                        lang = "fr";
                         break;
                     case "italian":
                         image = Properties.Resources.cardmarketIT;
+                        lang = "it";
                         break;
                     default:
                         image = Properties.Resources.cardmarketEN;
+                        lang = "en";
                         break;
                 }      
             
                 this.BeginInvoke((MethodInvoker) delegate {
-                    var item = new Banner("tcgmarket", "http://en.ygodevpro.com/launcher/werbung/linktrackercheck.php?tcgmarket=bannerheader", image);
-                   item.Dock = DockStyle.Right;
-                   AdPanel.Controls.Add(item, 0, 0);
+                    var item = new Banner("tcgmarket", "http://158.69.116.140/web-devpro/linktracker.php?lang="+lang, image);
+                    item.Dock = DockStyle.Right;
+                    AdPanel.Controls.Add(item, 0, 0);
                 });
                 
             }

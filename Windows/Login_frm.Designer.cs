@@ -200,14 +200,14 @@
             // adBox
             // 
             this.adBox.Controls.Add(this.AdPanel);
-            this.adBox.Enabled = false;
+            this.adBox.Enabled = true;
             this.adBox.Location = new System.Drawing.Point(252, 34);
             this.adBox.Name = "adBox";
             this.adBox.Size = new System.Drawing.Size(388, 171);
             this.adBox.TabIndex = 5;
             this.adBox.TabStop = false;
             this.adBox.Text = "Ads";
-            this.adBox.Visible = false;
+            this.adBox.Visible = true;
             // 
             // AdPanel
             // 

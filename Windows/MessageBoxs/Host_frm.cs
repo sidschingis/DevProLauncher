@@ -29,6 +29,8 @@ namespace DevProLauncher.Windows.MessageBoxs
                 BanList.SelectedIndex = 0;
          
             Mode.SelectedIndexChanged += DuelModeChanged;
+
+            LifePoints.Text = (Mode.SelectedItem.ToString() == "Tag") ? "16000" : "8000";
             //if(!isranked)
                 //CardRules.SelectedIndexChanged += CardRulesChanged;
         }

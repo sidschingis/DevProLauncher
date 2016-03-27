@@ -514,6 +514,7 @@ namespace DevProLauncher.Windows
             if (isranked)
             {
                 form.BanList.SelectedIndex = 0;
+                form.Prerelease.Checked = false;
                 form.CheckDeck.Checked = false;
                 form.ShuffleDeck.Checked = false;
                 form.Priority.Checked = false;
@@ -735,7 +736,7 @@ namespace DevProLauncher.Windows
         private bool JoinQueue(bool isQuick=false)
         {
             
-            var form = new Host(false);
+            var form = new Host(true);
 
             form.Mode.Items.Clear();
             form.HostBtn.Text = "Join Queue";
@@ -744,13 +745,7 @@ namespace DevProLauncher.Windows
             if (form.BanList.Items.Count > 0)
                 form.BanList.SelectedIndex = 0;
             form.CardRules.SelectedIndexChanged += form.FormatChanged;
-            form.BanList.Enabled = false;
-            form.Priority.Enabled = false;
-            form.ShuffleDeck.Enabled = false;
-            form.CheckDeck.Enabled = false;
-            form.LifePoints.Enabled = false;
-            form.TimeLimit.Enabled = false;
-            form.PasswordInput.Enabled = false;
+           
             form.CardRules.Items.Clear();
             form.CardRules.Items.AddRange(new object[] { "TCG", "OCG" });
             form.CardRules.SelectedItem = form.CardRules.Items.Contains(Program.Config.CardRules) ? Program.Config.CardRules : "TCG";      

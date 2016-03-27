@@ -31,7 +31,17 @@ namespace DevProLauncher.Windows.MessageBoxs
             Mode.SelectedIndexChanged += DuelModeChanged;
 
             LifePoints.Text = (Mode.SelectedItem.ToString() == "Tag") ? "16000" : "8000";
-            //if(!isranked)
+            if(isranked)
+            {
+                Prerelease.Enabled = false;
+                BanList.Enabled = false;
+                Priority.Enabled = false;
+                ShuffleDeck.Enabled = false;
+                CheckDeck.Enabled = false;
+                LifePoints.Enabled = false;
+                TimeLimit.Enabled = false;
+                PasswordInput.Enabled = false;
+            }
                 //CardRules.SelectedIndexChanged += CardRulesChanged;
         }
 

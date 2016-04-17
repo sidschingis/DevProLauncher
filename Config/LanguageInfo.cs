@@ -328,7 +328,7 @@ namespace DevProLauncher.Config
 
         //Chat_frm.cs
 
-        public string chatTitle ="Chat (Beta v4.2)";
+        public string chatTitle ="Chat";
         public string chatMsg1 = "Welcome to the DevPro chat system!";
         public string chatMsg2 = "To join a channel please click the channel list button.";
         public string chatBtnoptions = "Settings";

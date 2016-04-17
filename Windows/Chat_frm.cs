@@ -920,6 +920,7 @@ namespace DevProLauncher.Windows
                         WriteMessage(new ChatMessage(MessageType.System, CommandType.None, null, "/getuid username - Gets the UID of a username")); 
                         WriteMessage(new ChatMessage(MessageType.System, CommandType.None, null, "/gmute username hours - Globally mutes a user for X hours. ( if hours is empty, it's 24hours )"));
                         WriteMessage(new ChatMessage(MessageType.System, CommandType.None, null, "/gunmute username - Unmutes a user that was muted globally"));
+                        WriteMessage(new ChatMessage(MessageType.System, CommandType.None, null, "/gumuteall - Clears all GMutes"));
                         WriteMessage(new ChatMessage(MessageType.System, CommandType.None, null, "/info username - Gives info of an user."));
                     }
                     if (Program.UserInfo.rank > 3)
@@ -928,14 +929,14 @@ namespace DevProLauncher.Windows
                         WriteMessage(new ChatMessage(MessageType.System, CommandType.None, null, "/shutdown [forced]- instructs the duel server to shutdown. If 'forced' is added: Does not wait for games to finish."));
                         WriteMessage(new ChatMessage(MessageType.System, CommandType.None, null, "/restart [forced]- instructs the duel server to restart. If 'forced' is added: Does not wait for games to finish."));
                         WriteMessage(new ChatMessage(MessageType.System, CommandType.None, null, "/kill [forced]- Kills all crashed cores. If 'forced' is added: Kills all cores (including running games)."));
-                        WriteMessage(new ChatMessage(MessageType.System, CommandType.None, null, "/ban username time reason - Bans a user, time format has to be in hours (max 1 hour), also you must give a reason."));
+                        WriteMessage(new ChatMessage(MessageType.System, CommandType.None, null, "/ban username time reason - Bans a user, time format has to be in hours (max 730 hours), also you must give a reason."));
                         WriteMessage(new ChatMessage(MessageType.System, CommandType.None, null, "/banusername username - Bans a user's username"));
 
                     }
 
                     if (Program.UserInfo.rank == 99)
                     {
-                        WriteMessage(new ChatMessage(MessageType.System, CommandType.None, null, "-- Dev Commands --"));
+                        WriteMessage(new ChatMessage(MessageType.System, CommandType.None, null, "-- Team Leader Commands --"));
                         WriteMessage(new ChatMessage(MessageType.System, CommandType.None, null, "/ban username time reason - Bans a user, time format has to be in hours, also you must give a reason."));              
                         WriteMessage(new ChatMessage(MessageType.System, CommandType.None, null, "/unban username - Unbans a user"));
                         WriteMessage(new ChatMessage(MessageType.System, CommandType.None, null, "/ip username - Gets a users IP"));
@@ -944,6 +945,8 @@ namespace DevProLauncher.Windows
                         WriteMessage(new ChatMessage(MessageType.System, CommandType.None, null, "/getbanlist - Gets ban list"));
                         WriteMessage(new ChatMessage(MessageType.System, CommandType.None, null, "/op username level - Sets a users level"));
                         WriteMessage(new ChatMessage(MessageType.System, CommandType.None, null, "/setmps number - Changes the messages per second"));
+                        WriteMessage(new ChatMessage(MessageType.System, CommandType.None, null, "/addpoints username ammount - Adds DevPoints to the given username"));
+                        WriteMessage(new ChatMessage(MessageType.System, CommandType.None, null, "/removepoints username ammount - Removes DevPoints to the given username"));
                     }
 
                     if (Program.UserInfo.teamRank >= 0 && Program.UserInfo.team != string.Empty)

@@ -18,7 +18,6 @@ namespace DevProLauncher.Windows
     {
 
         private readonly Dictionary<string, RoomInfos> m_rooms = new Dictionary<string, RoomInfos>();
-        private List<string> ServerList = new List<string>();
         private int timer;
 
         public HubGameList_frm()
@@ -40,8 +39,6 @@ namespace DevProLauncher.Windows
             Program.ChatServer.RemoveRoom += OnRoomRemoved;
             Program.ChatServer.UpdateRoomStatus += OnRoomStarted;
             Program.ChatServer.UpdateRoomPlayers += OnRoomPlayersUpdate;
-            Program.ChatServer.AddGameServer += AddServer;
-            Program.ChatServer.RemoveGameServer += RemoveServer;
             Program.ChatServer.MatchFound += OnMatchFound;
             Program.ChatServer.MatchCanceled += OnMatchCancel;
             Program.ChatServer.MatchStart += OnMatchStart;
@@ -234,33 +231,6 @@ namespace DevProLauncher.Windows
             {
                 int value = Int32.Parse(SpectateBtn.Text);
                 SpectateBtn.Text = (value - 1).ToString(CultureInfo.InvariantCulture);
-            }
-        }
-
-        private void AddServer(string server)
-        {
-            if (InvokeRequired)
-            {
-                Invoke(new Action<string>(AddServer), server);
-                return;
-            }
-            if (!ServerList.Contains(server))
-                ServerList.Add(server);
-
-        }
-
-        private void RemoveServer(string server)
-        {
-            if (InvokeRequired)
-            {
-                Invoke(new Action<string>(RemoveServer), server);
-                return;
-            }
-
-            if (ServerList.Contains(server))
-            {
-                ServerList.Remove(server);
-                RemoveServerRooms(server);
             }
         }
 
@@ -459,7 +429,9 @@ namespace DevProLauncher.Windows
                     return;
                 }
 
-                LauncherHelper.GenerateConfig(GetServer(), form.GenerateURI(false));
+                ServerInfo server = form.CardRules.Text == "2099" ? GetServer(Program.Config.Server2099) : GetServer();
+
+                LauncherHelper.GenerateConfig(server, form.GenerateURI(false));
                 LauncherHelper.RunGame("-j");
                 Program.ChatServer.SendPacket(DevServerPackets.HostDuel);
             }
@@ -544,17 +516,22 @@ namespace DevProLauncher.Windows
                 server = matchedRooms[selectroom].server;
             }
 
-            if (string.IsNullOrEmpty(server))
+            // ygo 2099 specific format
+            if(form.CardRules.SelectedIndex == 3)
+            {
+                server = Program.Config.Server2099;
+            }
+
+            if(string.IsNullOrEmpty(server))
             {
                 LauncherHelper.GenerateConfig(GetServer(), form.GenerateURI(isranked));
-                LauncherHelper.RunGame("-j");
             }
             else
             {
                 LauncherHelper.GenerateConfig(Program.ServerList[server], form.GenerateURI(isranked));
-                LauncherHelper.RunGame("-j");
             }
 
+            LauncherHelper.RunGame("-j");
         }
 
         public void LoadRoom(object sender, EventArgs e)
@@ -601,22 +578,40 @@ namespace DevProLauncher.Windows
             }
         }
 
-        public ServerInfo GetServer()
+        public ServerInfo GetServer(bool official = true)
         {
-            if (Program.ServerList.Count == 0)
-                return null;
+            Dictionary<string, ServerInfo> serverList;
 
-            ServerInfo server;
-            int serverselect = Program.Rand.Next(0, ServerList.Count);
-
-            if (Program.ServerList.ContainsKey(ServerList[serverselect]))
-                server = Program.ServerList[ServerList[serverselect]];
+            if (official)
+            {
+                serverList = Program.ServerList;
+            }
             else
             {
-                MessageBox.Show(Program.LanguageManager.Translation.GameNoServers);
-                return null;
+                serverList = Program.ServerList3P;
             }
 
+            int serverselect = Program.Rand.Next(0, serverList.Count);
+            return serverList.ElementAt(serverselect).Value;
+        }
+
+        public ServerInfo GetServer(string serverName)
+        {
+            ServerInfo server = null;
+
+            if (serverName.Contains("DevServer") && Program.ServerList.ContainsKey(serverName))
+            {
+                server = Program.ServerList[serverName];
+            }
+            else if(Program.ServerList3P.ContainsKey(serverName))
+            {
+                server = Program.ServerList3P[serverName];
+            }
+
+            if (server == null)
+            {
+                MessageBox.Show(Program.LanguageManager.Translation.GameNoServers);
+            }
 
             return server;
         }

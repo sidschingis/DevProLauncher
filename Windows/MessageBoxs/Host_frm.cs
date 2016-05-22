@@ -2,6 +2,7 @@
 using System.Globalization;
 using System.Windows.Forms;
 using DevProLauncher.Helpers;
+using System.Collections.Generic;
 
 namespace DevProLauncher.Windows.MessageBoxs
 {
@@ -144,14 +145,18 @@ namespace DevProLauncher.Windows.MessageBoxs
         {
             string gamestring;
             int rules = 0;
-            if(CardRules.Text == "OCG")
-                rules = 0;
-            else if(CardRules.Text == "TCG")
-                rules = 1;
-            else if(CardRules.Text == "OCG/TCG")
-                rules = 2;
+
+            Dictionary<string, int> rulesDict = new Dictionary<string, int>() { 
+               {"OCG" , 0}
+               ,{"TCG" , 1}
+               ,{"OCG/TCG" , 2}
+               ,{"2099" , 8}
+            };
+
+            rules = rulesDict[CardRules.Text];
+
             if(Prerelease.Checked)
-                rules += 4;
+                rules  |= 0x4;
             gamestring = rules.ToString();
             if (Mode.Text == "Single")
                 gamestring = gamestring + "0";
@@ -178,48 +183,6 @@ namespace DevProLauncher.Windows.MessageBoxs
             int banlistvalue = BanList.SelectedItem == null ? 0 : LauncherHelper.GetBanListValue(BanList.SelectedItem.ToString());
 
             gamestring = gamestring + LifePoints.Text + "," + banlistvalue + ",5,1," + (isranked ? "R" : "U") + (PasswordInput.Text == "" ? "" : "L") + "," + (PasswordInput.Text == "" ? GameName : PasswordInput.Text);
-
-            return gamestring;
-        }
-
-        public string GenerateGameString(bool isranked)
-        {
-            string gamestring;
-            int rules=0;
-            if (CardRules.Text == "OCG")
-                rules = 0;
-            else if (CardRules.Text == "TCG")
-                rules = 1;
-            else if (CardRules.Text == "OCG/TCG")
-                rules = 2;
-            if(Prerelease.Checked)
-                rules += 4;
-            gamestring = rules.ToString();
-            if (Mode.Text == "Single")
-                gamestring = gamestring + "0";
-            else if (Mode.Text == "Match")
-                gamestring = gamestring + "1";
-            else
-                gamestring = gamestring + "2";
-
-            gamestring += (TimeLimit.SelectedIndex == -1 ? "0":TimeLimit.SelectedIndex.ToString(CultureInfo.InvariantCulture));
-
-            if ((Priority.Checked))
-                gamestring = gamestring + "T";
-            else
-                gamestring = gamestring + "O";
-            if ((CheckDeck.Checked))
-                gamestring = gamestring + "T";
-            else
-                gamestring = gamestring + "O";
-            if ((ShuffleDeck.Checked))
-                gamestring = gamestring + "T";
-            else
-                gamestring = gamestring + "O";
-
-            int banlistvalue = BanList.SelectedItem == null ? 0 : LauncherHelper.GetBanListValue(BanList.SelectedItem.ToString());
-
-            gamestring = gamestring + LifePoints.Text + "," + banlistvalue + ",5,1,"  + (isranked ? "R" : "U")+"L" + "," + GameName;
 
             return gamestring;
         }

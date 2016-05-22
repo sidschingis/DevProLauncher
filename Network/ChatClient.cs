@@ -74,8 +74,6 @@ namespace DevProLauncher.Network
         public Command TeamRequest;
         public UserList TeamList;
         public ChannelList ChannelRequest;
-        public ServerResponse AddGameServer;
-        public ServerResponse RemoveGameServer;
         public ServerResponse MatchFound;
         public ServerResponse MatchCanceled;
         public UserDuelRequest MatchStart;
@@ -447,29 +445,38 @@ namespace DevProLauncher.Network
                     break;
                 case DevClientPackets.GameServers:                
                     var servers = JsonSerializer.DeserializeFromString<ServerInfo[]>(Encoding.UTF8.GetString(e.Reader.ReadBytes(e.Raw.Length)));
-                    foreach (ServerInfo server in servers.Where(server => !Program.ServerList.ContainsKey(server.serverName)))
+                    foreach (ServerInfo server in servers)
                     {
-                        Program.ServerList.Add(server.serverName, server);
-                        if (AddGameServer != null)
-                            AddGameServer(server.serverName);
+                        if (server.serverName.Contains("DevServer") && !Program.ServerList.ContainsKey(server.serverName))
+                        {
+                            Program.ServerList.Add(server.serverName, server);
+                        }
+                        else if(!Program.ServerList3P.ContainsKey(server.serverName))
+                        {
+                            Program.ServerList3P.Add(server.serverName, server);
+                        }
                     }
                     break;
                 case DevClientPackets.AddServer:                
                     var serverinfo = JsonSerializer.DeserializeFromString<ServerInfo>(Encoding.UTF8.GetString(e.Reader.ReadBytes(e.Raw.Length)));
-                    if (!Program.ServerList.ContainsKey(serverinfo.serverName))
+                    if(serverinfo.serverName.Contains("DevServer") && !Program.ServerList.ContainsKey(serverinfo.serverName))
                     {
                         Program.ServerList.Add(serverinfo.serverName, serverinfo);
-                        if (AddGameServer != null)
-                            AddGameServer(serverinfo.serverName);
+                    }
+                    else if(!Program.ServerList3P.ContainsKey(serverinfo.serverName))
+                    {
+                        Program.ServerList3P.Add(serverinfo.serverName, serverinfo);
                     }
                     break;
                 case DevClientPackets.RemoveServer:                
                     string removeserver = Encoding.UTF8.GetString(e.Reader.ReadBytes(e.Raw.Length));
-                    if (Program.ServerList.ContainsKey(removeserver))
+                    if(removeserver.Contains("DevServer") && Program.ServerList.ContainsKey(removeserver))
                     {
                         Program.ServerList.Remove(removeserver);
-                        if (RemoveGameServer != null)
-                            RemoveGameServer(removeserver);
+                    }
+                    else if(Program.ServerList3P.ContainsKey(removeserver))
+                    {
+                        Program.ServerList3P.Remove(removeserver);
                     }
                     break;
                 case DevClientPackets.JoinChannelAccept:                

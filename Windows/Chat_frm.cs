@@ -1330,8 +1330,8 @@ namespace DevProLauncher.Windows
                     JsonSerializer.SerializeToString(
                     new DuelRequest
                         {
-                            username = list.SelectedItem is string ? list.SelectedItem.ToString() : ((UserData)list.SelectedItem).username, 
-                            duelformatstring = form.GenerateGameString(false),
+                            username = list.SelectedItem is string ? list.SelectedItem.ToString() : ((UserData)list.SelectedItem).username,
+                            duelformatstring = form.GenerateURI(false),
                             server = server.serverName
                         }));
                 WriteMessage(new ChatMessage(MessageType.System, CommandType.None, null, "Duel request sent to " + (list.SelectedItem is string ? list.SelectedItem.ToString() : ((UserData)list.SelectedItem).username) + "."));

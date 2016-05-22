@@ -27,7 +27,10 @@ namespace DevProLauncher
 #else
         public const string ConfigurationFilename = "launcher.conf";
 #endif
+        // official servers
         public static Dictionary<string, ServerInfo> ServerList = new Dictionary<string, ServerInfo>();
+        // 3rd party servers
+        public static Dictionary<string, ServerInfo> ServerList3P = new Dictionary<string, ServerInfo>();
         public static MainFrm MainForm;
         public static ServerInfo Server;
         public static Dictionary<string,ServerInfo> CheckmateServerList = new Dictionary<string,ServerInfo>();

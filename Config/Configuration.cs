@@ -13,7 +13,7 @@ namespace DevProLauncher.Config
         public string UpdaterAddress = "http://en.ygodevpro.com/launcher/version.php";
         public string ServerInfoAddress = "http://en.ygodevpro.com/launcher/server.php";
         public int ServerPort = 6922;
-        public string DefaultServer = "";
+        public string Server2099 = "DevServer2099";
         
 #if DEBUG
         public int GamePort = 9911;

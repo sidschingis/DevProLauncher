@@ -423,17 +423,20 @@ namespace DevProLauncher.Windows
                     MessageBox.Show(Program.LanguageManager.Translation.GamePasswordExsists);
                     return;
                 }
-                if (Program.ServerList.Count == 0)
+
+                ServerInfo server = form.CardRules.Text == "2099" ? GetServer(Program.Config.Server2099) : GetServer();
+
+                if (server != null)
+                {
+                    LauncherHelper.GenerateConfig(server, form.GenerateURI(false));
+                    LauncherHelper.RunGame("-j");
+                    Program.ChatServer.SendPacket(DevServerPackets.HostDuel);
+                }
+                else
                 {
                     MessageBox.Show(Program.LanguageManager.Translation.GameNoServers);
                     return;
                 }
-
-                ServerInfo server = form.CardRules.Text == "2099" ? GetServer(Program.Config.Server2099) : GetServer();
-
-                LauncherHelper.GenerateConfig(server, form.GenerateURI(false));
-                LauncherHelper.RunGame("-j");
-                Program.ChatServer.SendPacket(DevServerPackets.HostDuel);
             }
         }
 
@@ -508,29 +511,33 @@ namespace DevProLauncher.Windows
             RoomInfos userinfo = RoomInfos.FromName(form.GenerateURI(isranked));
 
             var matchedRooms = (from object room in list.Items where m_rooms.ContainsKey(room.ToString()) select m_rooms[room.ToString()] into info where RoomInfos.CompareRoomInfo(userinfo, info) select info).ToList();
-            string server = string.Empty;
+            string serverName = string.Empty;
             if (matchedRooms.Count > 0)
             {
                 var selectroom = ran.Next(matchedRooms.Count);
                 form.GameName = matchedRooms[selectroom].roomName;
-                server = matchedRooms[selectroom].server;
+                serverName = matchedRooms[selectroom].server;
             }
 
             // ygo 2099 specific format
             if(form.CardRules.SelectedIndex == 3)
             {
-                server = Program.Config.Server2099;
+                serverName = Program.Config.Server2099;
             }
 
-            if(string.IsNullOrEmpty(server))
-            {
-                LauncherHelper.GenerateConfig(GetServer(), form.GenerateURI(isranked));
-            }
+            ServerInfo server;
+            if(string.IsNullOrEmpty(serverName))
+                server = GetServer();
             else
+                server = GetServer(serverName);
+
+            if (server == null)
             {
-                LauncherHelper.GenerateConfig(Program.ServerList[server], form.GenerateURI(isranked));
+                MessageBox.Show(Program.LanguageManager.Translation.GameNoServers);
+                return;
             }
 
+            LauncherHelper.GenerateConfig(server, form.GenerateURI(isranked));
             LauncherHelper.RunGame("-j");
         }
 
@@ -590,6 +597,9 @@ namespace DevProLauncher.Windows
             {
                 serverList = Program.ServerList3P;
             }
+
+            if (serverList.Count == 0)
+                return null;
 
             int serverselect = Program.Rand.Next(0, serverList.Count);
             return serverList.ElementAt(serverselect).Value;

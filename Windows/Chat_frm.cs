@@ -926,8 +926,8 @@ namespace DevProLauncher.Windows
                     if (Program.UserInfo.rank > 3)
                     {
                         WriteMessage(new ChatMessage(MessageType.System, CommandType.None, null, "-- SMod Commands --"));
-                        WriteMessage(new ChatMessage(MessageType.System, CommandType.None, null, "/shutdown [forced]- instructs the duel server to shutdown. If 'forced' is added: Does not wait for games to finish."));
-                        WriteMessage(new ChatMessage(MessageType.System, CommandType.None, null, "/restart [forced]- instructs the duel server to restart. If 'forced' is added: Does not wait for games to finish."));
+                        WriteMessage(new ChatMessage(MessageType.System, CommandType.None, null, "/shutdown [forced] servername - instructs the duel server to shutdown. If 'forced' is added: Does not wait for games to finish."));
+                        WriteMessage(new ChatMessage(MessageType.System, CommandType.None, null, "/restart [forced] servername - instructs the duel server to restart. If 'forced' is added: Does not wait for games to finish."));
                         WriteMessage(new ChatMessage(MessageType.System, CommandType.None, null, "/kill [forced]- Kills all crashed cores. If 'forced' is added: Kills all cores (including running games)."));
                         WriteMessage(new ChatMessage(MessageType.System, CommandType.None, null, "/ban username time reason - Bans a user, time format has to be in hours (max 730 hours), also you must give a reason."));
                         WriteMessage(new ChatMessage(MessageType.System, CommandType.None, null, "/banusername username - Bans a user's username"));
@@ -945,8 +945,9 @@ namespace DevProLauncher.Windows
                         WriteMessage(new ChatMessage(MessageType.System, CommandType.None, null, "/getbanlist - Gets ban list"));
                         WriteMessage(new ChatMessage(MessageType.System, CommandType.None, null, "/op username level - Sets a users level"));
                         WriteMessage(new ChatMessage(MessageType.System, CommandType.None, null, "/setmps number - Changes the messages per second"));
-                        WriteMessage(new ChatMessage(MessageType.System, CommandType.None, null, "/addpoints username ammount - Adds DevPoints to the given username"));
-                        WriteMessage(new ChatMessage(MessageType.System, CommandType.None, null, "/removepoints username ammount - Removes DevPoints to the given username"));
+                        WriteMessage(new ChatMessage(MessageType.System, CommandType.None, null, "/addpoints username amount - Adds DevPoints to the given username"));
+                        WriteMessage(new ChatMessage(MessageType.System, CommandType.None, null, "/removepoints username amount - Removes DevPoints to the given username"));
+                        WriteMessage(new ChatMessage(MessageType.System, CommandType.None, null, "/getservers - Gives duel servers listed"));
                     }
 
                     if (Program.UserInfo.teamRank >= 0 && Program.UserInfo.team != string.Empty)

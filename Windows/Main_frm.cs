@@ -172,8 +172,9 @@ namespace DevProLauncher.Windows
 
         private void forumBtn_Click(object sender, EventArgs e)
         {
-            Process.Start("http://forum.ygodevpro.com/");
+            Process.Start("https://ygodevpro.com/forum");
         }
+
         private void siteBtn_Click(object sender, EventArgs e)
         {
             if (Program.LanguageManager.language.Equals("German"))

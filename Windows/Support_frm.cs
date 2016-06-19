@@ -190,7 +190,7 @@ namespace DevProLauncher.Windows
 
         private void transferBtn_Click(object sender, EventArgs e)
         {
-            Process.Start("http://en.ygodevpro.com/web-devpro/index.php?sites=dpTransfer");
+            Process.Start("http://158.69.116.140/web-devpro/index.php?sites=dpTransfer");
         }
 
         private void DonateBtn_Click(object sender, EventArgs e)

@@ -209,7 +209,7 @@
             this.transferBtn.TabIndex = 2;
             this.transferBtn.Text = "Transfer";
             this.transferBtn.UseVisualStyleBackColor = true;
-            this.transferBtn.Visible = false;
+            this.transferBtn.Visible = true;
             this.transferBtn.Click += new System.EventHandler(this.transferBtn_Click);
             // 
             // DonateBtn

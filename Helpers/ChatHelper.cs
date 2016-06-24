@@ -34,23 +34,23 @@ namespace DevProLauncher.Helpers
                 if ((MessageType)message.type == MessageType.Message)
                 {
                     LogFile = message.channel + DateTime.Now.ToString(".dd") + ".txt";
-                    LogText += DateTime.Now.ToString("[HH:mm] ");
+                    LogText += "[" + DateTime.Now.ToLongTimeString() + "] ";
                     LogDir += @"Channel\" + DateTime.Now.ToString("MMMM_yyyy") + @"\";
                 }
                 else if ((MessageType)message.type == MessageType.PrivateMessage)
                 {
                     LogFile = message.channel + ".txt";
-                    LogText += DateTime.Now.ToString("[dd/MM/yy | HH:mm] ");
+                    LogText += "[" + DateTime.Now + "] ";
                     LogDir += @"PMs\";
                 }
                 else if ((MessageType)message.type == MessageType.Team)
                 {
                     LogFile = "Team.txt";
-                    LogText += DateTime.Now.ToString("[HH:mm] ");
+                    LogText += "[" + DateTime.Now.ToLongTimeString() + "] ";
                 }
                 if (Program.Config.ShowTimeStamp)
                 {
-                    WriteText(window, DateTime.Now.ToString("[HH:mm] "), (Program.Config.ColorBlindMode ? Color.Black : Program.Config.NormalTextColor.ToColor()));
+                    WriteText(window, "[" + DateTime.Now.ToLongTimeString() + "] ", (Program.Config.ColorBlindMode ? Color.Black : Program.Config.NormalTextColor.ToColor()));
                 }
                 if (message.from.rank > 0 && message.from.rank <99)
                 {
@@ -95,14 +95,14 @@ namespace DevProLauncher.Helpers
             }
             else if ((MessageType)message.type == MessageType.Team && (CommandType)message.command == CommandType.TeamServerMessage)
             {
-                WriteText(window, DateTime.Now.ToString("[HH:mm]") + "[TeamMessage] " + message.message,(Program.Config.ColorBlindMode ? Color.Black : Program.Config.ServerMsgColor.ToColor()));
+                WriteText(window, "[" + DateTime.Now.ToLongTimeString() + "] " + "[TeamMessage] " + message.message,(Program.Config.ColorBlindMode ? Color.Black : Program.Config.ServerMsgColor.ToColor()));
             }
             else if ((MessageType)message.type == MessageType.Message || (MessageType)message.type == MessageType.PrivateMessage || (MessageType)message.type == MessageType.Team)
             {
                 string LogText = "";
                 if (Program.Config.ShowTimeStamp)
                 {
-                    WriteText(window, DateTime.Now.ToString("[HH:mm] "), (Program.Config.ColorBlindMode ? Color.Black : Program.Config.NormalTextColor.ToColor()));
+                    WriteText(window, "[" + DateTime.Now.ToLongTimeString() + "] ", (Program.Config.ColorBlindMode ? Color.Black : Program.Config.NormalTextColor.ToColor()));
                 }
                 if (message.from.rank > 0 && message.from.rank < 99)
                 {
@@ -166,13 +166,13 @@ namespace DevProLauncher.Helpers
                 if ((MessageType)message.type == MessageType.Message)
                 {
                     LogDirectory += @"Channel\" + DateTime.Now.ToString("MMMM_yyyy") + @"\";
-                    LogText = DateTime.Now.ToString("[HH:mm] ") + LogText;
+                    LogText = "[" + DateTime.Now.ToLongTimeString() + "] " + LogText;
                     LogFile = message.channel + DateTime.Now.ToString(".dd") + ".txt";
                 }
                 else if ((MessageType)message.type == MessageType.PrivateMessage) 
                 {
                     LogDirectory += @"PMs\"; ;
-                    LogText = DateTime.Now.ToString("[dd/MM/yy | HH:mm] ") + LogText;
+                    LogText = "[" + DateTime.Now + "] " + LogText;
                     LogFile = message.channel + ".txt";
                 }
                 else if ((MessageType)message.type == MessageType.Team)
@@ -188,7 +188,7 @@ namespace DevProLauncher.Helpers
             {
                 if (Program.Config.ShowTimeStamp)
                 {
-                    WriteText(window, DateTime.Now.ToString("[HH:mm] "), (Program.Config.ColorBlindMode ? Color.Black : Program.Config.NormalTextColor.ToColor()));
+                    WriteText(window, "[" + DateTime.Now.ToLongTimeString() + "] ", (Program.Config.ColorBlindMode ? Color.Black : Program.Config.NormalTextColor.ToColor()));
                 }
                 WriteText(window,"[", (Program.Config.ColorBlindMode ? Color.Black : Program.Config.NormalTextColor.ToColor()));
                 WriteText(window, ((MessageType)message.type).ToString() ,(Program.Config.ColorBlindMode ? Color.Black : message.MessageColor()));

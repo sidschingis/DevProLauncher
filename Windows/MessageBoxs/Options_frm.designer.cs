@@ -49,6 +49,7 @@
             this.MuteOpp = new System.Windows.Forms.CheckBox();
             this.SaveReplay = new System.Windows.Forms.CheckBox();
             this.EnableSleeveLoading = new System.Windows.Forms.CheckBox();
+            this.HideSetname = new System.Windows.Forms.CheckBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
             this.Enabled3d = new System.Windows.Forms.CheckBox();
@@ -93,7 +94,7 @@
             this.UpdateBtn = new System.Windows.Forms.Button();
             this.emailLbl = new System.Windows.Forms.Label();
             this.confirmEmailLbl = new System.Windows.Forms.Label();
-            this.HideSetname = new System.Windows.Forms.CheckBox();
+            this.ChainButtons = new System.Windows.Forms.CheckBox();
             this.tableLayoutPanel1.SuspendLayout();
             this.flowLayoutPanel1.SuspendLayout();
             this.OptionTabControl.SuspendLayout();
@@ -272,6 +273,7 @@
             this.tableLayoutPanel7.Controls.Add(this.SaveReplay, 2, 1);
             this.tableLayoutPanel7.Controls.Add(this.EnableSleeveLoading, 2, 0);
             this.tableLayoutPanel7.Controls.Add(this.HideSetname, 1, 2);
+            this.tableLayoutPanel7.Controls.Add(this.ChainButtons, 2, 2);
             this.tableLayoutPanel7.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel7.Location = new System.Drawing.Point(3, 3);
             this.tableLayoutPanel7.Name = "tableLayoutPanel7";
@@ -299,7 +301,7 @@
             this.MuteSpectators.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.MuteSpectators.AutoSize = true;
             this.MuteSpectators.CheckAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.MuteSpectators.Location = new System.Drawing.Point(291, 41);
+            this.MuteSpectators.Location = new System.Drawing.Point(92, 41);
             this.MuteSpectators.Name = "MuteSpectators";
             this.MuteSpectators.Size = new System.Drawing.Size(104, 17);
             this.MuteSpectators.TabIndex = 10;
@@ -335,7 +337,7 @@
             this.RandomPlacing.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.RandomPlacing.AutoSize = true;
             this.RandomPlacing.CheckAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.RandomPlacing.Location = new System.Drawing.Point(67, 41);
+            this.RandomPlacing.Location = new System.Drawing.Point(266, 41);
             this.RandomPlacing.Name = "RandomPlacing";
             this.RandomPlacing.Size = new System.Drawing.Size(129, 17);
             this.RandomPlacing.TabIndex = 4;
@@ -391,6 +393,18 @@
             this.EnableSleeveLoading.Text = "Enable User Covers";
             this.EnableSleeveLoading.UseVisualStyleBackColor = true;
             // 
+            // HideSetname
+            // 
+            this.HideSetname.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.HideSetname.AutoSize = true;
+            this.HideSetname.CheckAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.HideSetname.Location = new System.Drawing.Point(302, 74);
+            this.HideSetname.Name = "HideSetname";
+            this.HideSetname.Size = new System.Drawing.Size(93, 17);
+            this.HideSetname.TabIndex = 12;
+            this.HideSetname.Text = "Hide Setname";
+            this.HideSetname.UseVisualStyleBackColor = true;
+            // 
             // groupBox1
             // 
             this.groupBox1.Controls.Add(this.tableLayoutPanel3);
@@ -407,7 +421,7 @@
             this.tableLayoutPanel3.ColumnCount = 3;
             this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 71.70732F));
             this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 28.29268F));
-            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 196F));
+            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 197F));
             this.tableLayoutPanel3.Controls.Add(this.Enabled3d, 1, 0);
             this.tableLayoutPanel3.Controls.Add(this.flowLayoutPanel3, 2, 0);
             this.tableLayoutPanel3.Controls.Add(this.flowLayoutPanel4, 2, 1);
@@ -428,7 +442,7 @@
             this.Enabled3d.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.Enabled3d.AutoSize = true;
             this.Enabled3d.CheckAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.Enabled3d.Location = new System.Drawing.Point(535, 8);
+            this.Enabled3d.Location = new System.Drawing.Point(534, 8);
             this.Enabled3d.Name = "Enabled3d";
             this.Enabled3d.Size = new System.Drawing.Size(95, 17);
             this.Enabled3d.TabIndex = 2;
@@ -440,7 +454,7 @@
             // 
             this.flowLayoutPanel3.Controls.Add(this.label4);
             this.flowLayoutPanel3.Controls.Add(this.SkinList);
-            this.flowLayoutPanel3.Location = new System.Drawing.Point(636, 3);
+            this.flowLayoutPanel3.Location = new System.Drawing.Point(635, 3);
             this.flowLayoutPanel3.Name = "flowLayoutPanel3";
             this.flowLayoutPanel3.Size = new System.Drawing.Size(179, 28);
             this.flowLayoutPanel3.TabIndex = 4;
@@ -472,9 +486,9 @@
             this.flowLayoutPanel4.Controls.Add(this.label6);
             this.flowLayoutPanel4.Controls.Add(this.Antialias);
             this.flowLayoutPanel4.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.flowLayoutPanel4.Location = new System.Drawing.Point(636, 37);
+            this.flowLayoutPanel4.Location = new System.Drawing.Point(635, 37);
             this.flowLayoutPanel4.Name = "flowLayoutPanel4";
-            this.flowLayoutPanel4.Size = new System.Drawing.Size(191, 66);
+            this.flowLayoutPanel4.Size = new System.Drawing.Size(192, 66);
             this.flowLayoutPanel4.TabIndex = 5;
             // 
             // label6
@@ -576,7 +590,7 @@
             this.EnableLauncherSound.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.EnableLauncherSound.AutoSize = true;
             this.EnableLauncherSound.CheckAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.EnableLauncherSound.Location = new System.Drawing.Point(489, 39);
+            this.EnableLauncherSound.Location = new System.Drawing.Point(488, 39);
             this.EnableLauncherSound.Margin = new System.Windows.Forms.Padding(3, 5, 3, 3);
             this.EnableLauncherSound.Name = "EnableLauncherSound";
             this.EnableLauncherSound.Size = new System.Drawing.Size(141, 17);
@@ -921,17 +935,17 @@
             this.confirmEmailLbl.TabIndex = 8;
             this.confirmEmailLbl.Text = "Confirm Email";
             // 
-            // checkBox1
+            // ChainButtons
             // 
-            this.HideSetname.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.HideSetname.AutoSize = true;
-            this.HideSetname.CheckAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.HideSetname.Location = new System.Drawing.Point(302, 69);
-            this.HideSetname.Name = "HideSetname";
-            this.HideSetname.Size = new System.Drawing.Size(93, 17);
-            this.HideSetname.TabIndex = 12;
-            this.HideSetname.Text = "Hide Setname";
-            this.HideSetname.UseVisualStyleBackColor = true;
+            this.ChainButtons.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.ChainButtons.AutoSize = true;
+            this.ChainButtons.CheckAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.ChainButtons.Location = new System.Drawing.Point(502, 74);
+            this.ChainButtons.Name = "ChainButtons";
+            this.ChainButtons.Size = new System.Drawing.Size(117, 17);
+            this.ChainButtons.TabIndex = 13;
+            this.ChainButtons.Text = "Hide Chain Buttons";
+            this.ChainButtons.UseVisualStyleBackColor = true;
             // 
             // Settings
             // 
@@ -1051,6 +1065,7 @@
         private System.Windows.Forms.CheckBox EnableLauncherSound;
         private System.Windows.Forms.CheckBox MouseMode;
         private System.Windows.Forms.CheckBox HideSetname;
+        private System.Windows.Forms.CheckBox ChainButtons;
 
     }
 }

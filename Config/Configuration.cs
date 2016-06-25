@@ -86,7 +86,7 @@ namespace DevProLauncher.Config
         //chat settings
         public bool HideJoinLeave = true;
         public bool ColorBlindMode = false;
-        public bool ShowTimeStamp = false;
+        public bool ShowTimeStamp = true;
         public bool RefuseDuelRequests = false;
         public bool PmWindows = true;
         public bool UsernameColors = true;

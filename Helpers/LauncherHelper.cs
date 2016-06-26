@@ -298,7 +298,7 @@ namespace DevProLauncher.Helpers
             writer.WriteLine("control_mode = " + Convert.ToInt32(Program.Config.MouseMode));
             writer.Close();
         }
-        public static void GenerateConfig(bool isreplay, string file = "")
+        public static void GenerateConfig(int fileType, string file = "")
         {
             if ((File.Exists(Program.Config.LauncherDir + "system.CONF")))
                 File.Delete(Program.Config.LauncherDir + "system.CONF");
@@ -312,7 +312,6 @@ namespace DevProLauncher.Helpers
             writer.WriteLine("errorlog = 1");
             writer.WriteLine(("nickname = " + Program.UserInfo.username + "$" + Program.LoginKey));
             writer.WriteLine(("roompass ="));
-            writer.WriteLine(("lastdeck = " + Program.Config.DefaultDeck));
             writer.WriteLine("textfont = fonts/" + Program.Config.GameFont + " " + Program.Config.FontSize);
             writer.WriteLine("numfont = fonts/arialbd.ttf");
             writer.WriteLine(("enable_sound = " + Convert.ToInt32(Program.Config.EnableSound)));
@@ -329,10 +328,19 @@ namespace DevProLauncher.Helpers
             writer.WriteLine("mute_spectators = " + Convert.ToInt32(Program.Config.MuteSpectators));
             writer.WriteLine("control_mode = " + Convert.ToInt32(Program.Config.MouseMode));
 
-            if (isreplay)
-                writer.WriteLine("lastreplay = " + file);
-            else
-                writer.WriteLine("lastpuzzle = " + file);
+            switch (fileType)
+            {
+                case 0:
+                    writer.WriteLine("lastreplay = " + file);
+                    break;
+                case 1:
+                    writer.WriteLine("lastpuzzle = " + file);
+                    break;
+                case 2:
+                    writer.WriteLine("lastdeck = " + file);
+                    break;
+            }
+                
             writer.Close();
         }
 

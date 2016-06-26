@@ -69,7 +69,7 @@ namespace DevProLauncher.Windows.Components
         {
             if (Name == "Decks")
             {
-                LauncherHelper.GenerateConfig();
+                LauncherHelper.GenerateConfig(2, FileList.SelectedItem.ToString());
                 LauncherHelper.RunGame("-d");    
             } else
             {
@@ -90,7 +90,7 @@ namespace DevProLauncher.Windows.Components
                     MessageBox.Show("Selected file does not exist!");
                     return;
                 }
-                LauncherHelper.GenerateConfig(true, FileList.SelectedItem + ".yrp");
+                LauncherHelper.GenerateConfig(0, FileList.SelectedItem + ".yrp");
                 LauncherHelper.RunGame("-r");
             }
             

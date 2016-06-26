@@ -267,6 +267,7 @@ namespace DevProLauncher.Helpers
             writer.WriteLine("save_last_replay = " + Convert.ToInt32(Program.Config.SaveReplay));
             writer.WriteLine("control_mode = " + Convert.ToInt32(Program.Config.MouseMode));
             writer.WriteLine("hide_setname = " + Convert.ToInt32(Program.Config.HideSetname));
+            writer.WriteLine("hide_chain_button = " + Convert.ToInt32(Program.Config.ChainButtons));
             writer.Close();
         }
         public static void GenerateConfig()
@@ -298,6 +299,7 @@ namespace DevProLauncher.Helpers
             writer.WriteLine("enable_sleeve_loading = " + Convert.ToInt32(Program.Config.EnableCustomSleeves));
             writer.WriteLine("control_mode = " + Convert.ToInt32(Program.Config.MouseMode));
             writer.WriteLine("hide_setname = " + Convert.ToInt32(Program.Config.HideSetname));
+            writer.WriteLine("hide_chain_button = " + Convert.ToInt32(Program.Config.ChainButtons));
             writer.Close();
         }
         public static void GenerateConfig(int fileType, string file = "")
@@ -330,6 +332,7 @@ namespace DevProLauncher.Helpers
             writer.WriteLine("mute_spectators = " + Convert.ToInt32(Program.Config.MuteSpectators));
             writer.WriteLine("control_mode = " + Convert.ToInt32(Program.Config.MouseMode));
             writer.WriteLine("hide_setname = " + Convert.ToInt32(Program.Config.HideSetname));
+            writer.WriteLine("hide_chain_button = " + Convert.ToInt32(Program.Config.ChainButtons));
 			
             switch (fileType)
             {
@@ -343,7 +346,7 @@ namespace DevProLauncher.Helpers
                     writer.WriteLine("lastdeck = " + file);
                     break;
             }
-                
+     
             writer.Close();
         }
 
@@ -383,6 +386,7 @@ namespace DevProLauncher.Helpers
             writer.WriteLine("save_last_replay = " + Convert.ToInt32(Program.Config.SaveReplay));
             writer.WriteLine("control_mode = " + Convert.ToInt32(Program.Config.MouseMode));
             writer.WriteLine("hide_setname = " + Convert.ToInt32(Program.Config.HideSetname));
+            writer.WriteLine("hide_chain_button = " + Convert.ToInt32(Program.Config.ChainButtons));
             writer.Close();
         }
 

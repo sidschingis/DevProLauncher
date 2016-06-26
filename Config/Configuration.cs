@@ -53,6 +53,7 @@ namespace DevProLauncher.Config
         public bool SaveReplay = false;
         public bool MouseMode = false;
         public bool HideSetname = false;
+        public bool ChainButtons = false;
         public string IgnoreList = "";
         public string DefaultChannel = "";
 
@@ -85,7 +86,7 @@ namespace DevProLauncher.Config
         //chat settings
         public bool HideJoinLeave = true;
         public bool ColorBlindMode = false;
-        public bool ShowTimeStamp = false;
+        public bool ShowTimeStamp = true;
         public bool RefuseDuelRequests = false;
         public bool PmWindows = true;
         public bool UsernameColors = true;

@@ -52,6 +52,7 @@ namespace DevProLauncher.Config
         public bool MuteSpectators = true;
         public bool SaveReplay = false;
         public bool MouseMode = false;
+        public bool HideSetname = false;
         public string IgnoreList = "";
         public string DefaultChannel = "";
 

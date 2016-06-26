@@ -266,6 +266,7 @@ namespace DevProLauncher.Helpers
             writer.WriteLine("forced = " + forced);
             writer.WriteLine("save_last_replay = " + Convert.ToInt32(Program.Config.SaveReplay));
             writer.WriteLine("control_mode = " + Convert.ToInt32(Program.Config.MouseMode));
+            writer.WriteLine("hide_setname = " + Convert.ToInt32(Program.Config.HideSetname));
             writer.Close();
         }
         public static void GenerateConfig()
@@ -296,6 +297,7 @@ namespace DevProLauncher.Helpers
             writer.WriteLine("no_delay_for_chain = " + Convert.ToInt32(Program.Config.NoChainDelay));
             writer.WriteLine("enable_sleeve_loading = " + Convert.ToInt32(Program.Config.EnableCustomSleeves));
             writer.WriteLine("control_mode = " + Convert.ToInt32(Program.Config.MouseMode));
+            writer.WriteLine("hide_setname = " + Convert.ToInt32(Program.Config.HideSetname));
             writer.Close();
         }
         public static void GenerateConfig(int fileType, string file = "")
@@ -327,7 +329,8 @@ namespace DevProLauncher.Helpers
             writer.WriteLine("mute_opponent = " + Convert.ToInt32(Program.Config.MuteOpponent));
             writer.WriteLine("mute_spectators = " + Convert.ToInt32(Program.Config.MuteSpectators));
             writer.WriteLine("control_mode = " + Convert.ToInt32(Program.Config.MouseMode));
-
+            writer.WriteLine("hide_setname = " + Convert.ToInt32(Program.Config.HideSetname));
+			
             switch (fileType)
             {
                 case 0:
@@ -379,7 +382,7 @@ namespace DevProLauncher.Helpers
             writer.WriteLine("mute_spectators = " + Convert.ToInt32(Program.Config.MuteSpectators));
             writer.WriteLine("save_last_replay = " + Convert.ToInt32(Program.Config.SaveReplay));
             writer.WriteLine("control_mode = " + Convert.ToInt32(Program.Config.MouseMode));
-            
+            writer.WriteLine("hide_setname = " + Convert.ToInt32(Program.Config.HideSetname));
             writer.Close();
         }
 

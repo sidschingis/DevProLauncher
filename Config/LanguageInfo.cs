@@ -181,6 +181,7 @@ namespace DevProLauncher.Config
         public string optionMuteSpec = "Mute Spectators";
         public string optionSaveReplay = "Save Last Replay";
         public string optionMouseMode = "Mouse Mode";
+        public string optionHideSetname = "Hide Setname";
         public string optionCurrentPW = "Current Password";
         public string optionNewPW = "New Password";
         public string optionConfirmPW = "Confirm Password";

@@ -37,6 +37,7 @@ namespace DevProLauncher.Windows.MessageBoxs
             MuteSpectators.Checked = Program.Config.MuteSpectators;
             SaveReplay.Checked = Program.Config.SaveReplay;
             MouseMode.Checked = Program.Config.MouseMode;
+            HideSetname.Checked = Program.Config.HideSetname;
 
             MusicVolume.Enabled = EnableMusic.Checked;
             MusicVolume.Value = Program.Config.MusicVolume;
@@ -102,6 +103,7 @@ namespace DevProLauncher.Windows.MessageBoxs
                 MuteSpectators.Text = info.optionMuteSpec;
                 SaveReplay.Text = info.optionSaveReplay;
                 MouseMode.Text = info.optionMouseMode;
+                HideSetname.Text = info.optionHideSetname;
 
                 accountTab.Text = info.optionAccountTab;
                 label7.Text = info.optionCurrentPW;
@@ -141,6 +143,7 @@ namespace DevProLauncher.Windows.MessageBoxs
             Program.Config.MuteSpectators = MuteSpectators.Checked;
             Program.Config.SaveReplay = SaveReplay.Checked;
             Program.Config.MouseMode = MouseMode.Checked;
+            Program.Config.HideSetname = HideSetname.Checked;
 
             Program.SaveConfig(Program.ConfigurationFilename,Program.Config);
             DialogResult = DialogResult.OK;

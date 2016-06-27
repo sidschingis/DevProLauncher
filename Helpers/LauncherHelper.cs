@@ -183,7 +183,7 @@ namespace DevProLauncher.Helpers
             try
             {
                 Process process = new Process();
-                ProcessStartInfo startInfos = new ProcessStartInfo(Program.Config.LauncherDir + Program.Config.GameExe, arg);
+                ProcessStartInfo startInfos = new ProcessStartInfo(Program.Config.LauncherDir + "ygopro.exe", arg);
 
                 process.StartInfo = startInfos;
                 process.StartInfo.UseShellExecute = false;

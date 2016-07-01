@@ -12,7 +12,7 @@ namespace DevProLauncher.Config
         public string pmsbProgRun = "Program already running";
         public string pMsbErrorToServer = "Error Connecting to server";
         public string pMsbBadLog = "Bad Login";
-        public string pMsbOldVers = "You have a too old version of the launcher. Please reinstall it.";
+        public string pMsbOldVers = "You have a very old version of the launcher. Do you want to reinstall?";
         public string pMsbException = "Oooops! Something bad happened! Software will now exit!";
 
         // Login_frm.cs

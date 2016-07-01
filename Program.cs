@@ -156,8 +156,9 @@ namespace DevProLauncher
 
             if (result.Equals("KO"))
             {
-                MessageBox.Show(LanguageManager.Translation.pMsbOldVers,
-                    "DevPro - Update", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                if(MessageBox.Show(LanguageManager.Translation.pMsbOldVers,
+"Update DevPro", MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation) == DialogResult.Yes)
+                { Process.Start("https://en.ygodevpro.com/"); };
             }
 
             if (!result.StartsWith("KO"))

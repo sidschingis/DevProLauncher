@@ -294,10 +294,6 @@ namespace DevProLauncher.Windows
                     MessageBox.Show("Not connected to server.");
         }
 
-        private void CheckmateBtn_Click(object sender, EventArgs e)
-        {
-            LauncherHelper.chkmate_btn_Click(sender, e);
-        }
 
         private void LoadBtn_Click(object sender, EventArgs e)
         {

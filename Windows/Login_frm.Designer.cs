@@ -48,7 +48,6 @@
             this.registerBtn = new System.Windows.Forms.Button();
             this.validateBtn = new System.Windows.Forms.Button();
             this.recoverBtn = new System.Windows.Forms.Button();
-            this.CheckmateBtn = new System.Windows.Forms.Button();
             this.tableLayoutPanel1.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
             this.tableLayoutPanel3.SuspendLayout();
@@ -200,14 +199,12 @@
             // adBox
             // 
             this.adBox.Controls.Add(this.AdPanel);
-            this.adBox.Enabled = true;
             this.adBox.Location = new System.Drawing.Point(252, 34);
             this.adBox.Name = "adBox";
             this.adBox.Size = new System.Drawing.Size(388, 171);
             this.adBox.TabIndex = 5;
             this.adBox.TabStop = false;
             this.adBox.Text = "Ads";
-            this.adBox.Visible = true;
             // 
             // AdPanel
             // 
@@ -248,7 +245,6 @@
             this.flowLayoutPanel1.Controls.Add(this.registerBtn);
             this.flowLayoutPanel1.Controls.Add(this.validateBtn);
             this.flowLayoutPanel1.Controls.Add(this.recoverBtn);
-            this.flowLayoutPanel1.Controls.Add(this.CheckmateBtn);
             this.flowLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.flowLayoutPanel1.FlowDirection = System.Windows.Forms.FlowDirection.BottomUp;
             this.flowLayoutPanel1.Location = new System.Drawing.Point(890, 3);
@@ -296,16 +292,6 @@
             this.recoverBtn.UseVisualStyleBackColor = true;
             this.recoverBtn.Click += new System.EventHandler(this.recoverBtn_Click);
             // 
-            // CheckmateBtn
-            // 
-            this.CheckmateBtn.Location = new System.Drawing.Point(3, 341);
-            this.CheckmateBtn.Name = "CheckmateBtn";
-            this.CheckmateBtn.Size = new System.Drawing.Size(75, 23);
-            this.CheckmateBtn.TabIndex = 2;
-            this.CheckmateBtn.Text = "Checkmate";
-            this.CheckmateBtn.UseVisualStyleBackColor = true;
-            this.CheckmateBtn.Click += new System.EventHandler(this.CheckmateBtn_Click);
-            // 
             // LoginFrm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -341,7 +327,6 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.ComboBox languageSelect;
         private System.Windows.Forms.CheckBox savePassCheckBox;
-        private System.Windows.Forms.Button CheckmateBtn;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Button LoadBtn;
         private System.Windows.Forms.WebBrowser PatchNotes;

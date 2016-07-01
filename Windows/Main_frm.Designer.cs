@@ -185,7 +185,7 @@
             this.MessageLabel.Name = "MessageLabel";
             this.MessageLabel.Size = new System.Drawing.Size(468, 34);
             this.MessageLabel.TabIndex = 0;
-            this.MessageLabel.Text = "Server messages will spawn here.";
+            this.MessageLabel.Text = "Launcher messages will spawn here.";
             this.MessageLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // MainFrm

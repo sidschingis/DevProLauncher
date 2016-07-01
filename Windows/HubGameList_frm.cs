@@ -725,11 +725,6 @@ namespace DevProLauncher.Windows
             QuickBtn_MouseUp(sender, new MouseEventArgs(MouseButtons.Right, 1, 1, 1, 1));
         }
 
-        private void chkmate_btn_Click(object sender, EventArgs e)
-        {
-            LauncherHelper.chkmate_btn_Click(sender,e);
-        }
-
         private void SpectateBtn_Click(object sender, EventArgs e)
         {
             Program.ChatServer.SendPacket(DevServerPackets.RandomSpectate);

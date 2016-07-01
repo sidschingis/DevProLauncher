@@ -191,19 +191,6 @@ namespace DevProLauncher.Config
         public string ChangeFailed = "Change Failed";
         public string optionEmptyMsg = "Must specify current password and new password or new email.";
 
-        // DropboxSynch_frm.cs
-        public string DropboxTitle = "Synchronize with the Cloud";
-        public string DropboxDescription = "synchronize your decks and replays with every\r\nclient connected with your  DropBo" +
-                "x account";
-        public string DropboxSubmit = "Sync";
-        public string DropboxOptions = "Options";
-        public string DropboxDeck = "sync decks";
-        public string DropboxReplay = "sync replays";
-        public string DropboxSkin = "sync skins";
-        public string DropboxSound = "sync sounds";
-        public string DropboxTexture = "sync textures";
-        public string DropboxAll = "sync all";
-
         // Host_frm.cs
         public string hostGb1 = "Settings";
         public string hostGb2 = "Additional Options";
@@ -377,14 +364,6 @@ namespace DevProLauncher.Config
         public string kickConfirm = "Confirm";
         public string kickCancel = "Cancel";
 
-        // Checkmate_frm.cs
-
-        public string checkmateInfo = "- To register an account simply type a username and password! \n" +
-                                      "- To play without registering you can simply leave the password field blank. \n";
-        public string checkmateUser = "Username";
-        public string checkmatePw = "Password";
-        public string checkmateBtn = "Play";
-
         // ChannelList_frm.cs
 
         public string channelCreate = "Create";
@@ -414,7 +393,7 @@ namespace DevProLauncher.Config
         public string MainReplaysBtn = "Replays";
         public string MainOfflineBtn = "Offline";
         public string MainProfileBtn = "Profile";
-        public string MainServerMessage = "Server messages will spawn here.";
+        public string MainServerMessage = "Launcher messages will spawn here.";
 
         //DuelRequest_frm
         public string DuelReqestMessage = " has challenged you to an unranked duel! Do you accept?";

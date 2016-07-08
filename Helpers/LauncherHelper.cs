@@ -40,21 +40,6 @@ namespace DevProLauncher.Helpers
             return false;
         }
 
-        private static string m_checkmateusr, m_checkmatepass;
-
-        public static void chkmate_btn_Click(object sender, EventArgs e)
-        {
-            Checkmate_frm form = new Checkmate_frm(string.IsNullOrEmpty(m_checkmateusr) ? string.Empty : m_checkmateusr,
-                string.IsNullOrEmpty(m_checkmatepass) ? "" : m_checkmatepass);
-            if (form.ShowDialog() == DialogResult.OK)
-            {
-                m_checkmateusr = form.Username.Text;
-                m_checkmatepass = form.Password.Text;
-                GenerateCheckmateConfig(Program.CheckmateServerList[form.ServerSelect.SelectedItem.ToString()], m_checkmateusr, m_checkmatepass);
-                RunGame("-j");
-            }
-        }
-
         public static void LoadBanlist()
         {
             if (!File.Exists(Program.Config.LauncherDir + "lflist.conf"))
@@ -183,7 +168,7 @@ namespace DevProLauncher.Helpers
             try
             {
                 Process process = new Process();
-                ProcessStartInfo startInfos = new ProcessStartInfo(Program.Config.LauncherDir + Program.Config.GameExe, arg);
+                ProcessStartInfo startInfos = new ProcessStartInfo(Program.Config.LauncherDir + "ygopro.exe", arg);
 
                 process.StartInfo = startInfos;
                 process.StartInfo.UseShellExecute = false;

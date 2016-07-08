@@ -170,8 +170,8 @@ namespace DevProLauncher.Windows
             if (!LoadBtn.Enabled)
             {
                 PatchNotes.Navigate(languageSelect.SelectedItem.ToString() == "German"
-                                        ? "http://de.ygodevpro.com/category/patch-notes/"
-                                        : "http://en.ygodevpro.com/category/patch-notes/");
+                                        ? "https://ygodevpro.com/index.php/NewsList/10-Patchnotes/"
+                                        : "https://ygodevpro.com/index.php/NewsList/10-Patchnotes/");
             }
             ApplyTranslation();
             Program.MainForm.ReLoadLanguage();
@@ -294,18 +294,14 @@ namespace DevProLauncher.Windows
                     MessageBox.Show("Not connected to server.");
         }
 
-        private void CheckmateBtn_Click(object sender, EventArgs e)
-        {
-            LauncherHelper.chkmate_btn_Click(sender, e);
-        }
 
         private void LoadBtn_Click(object sender, EventArgs e)
         {
             LoadBtn.Visible = false;
             LoadBtn.Enabled = false;
             PatchNotes.Navigate(languageSelect.SelectedItem.ToString() == "German"
-                        ? "http://de.ygodevpro.com/category/patch-notes/"
-                        : "http://en.ygodevpro.com/category/patch-notes/");
+                        ? "https://ygodevpro.com/index.php/NewsList/10-Patchnotes/"
+                        : "https://ygodevpro.com/index.php/NewsList/10-Patchnotes/");
             //PatchNotes.Navigating += WebRedirect;
             adBox.Visible = false;
             //AdPanel.Visible = false;

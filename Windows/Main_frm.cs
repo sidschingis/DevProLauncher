@@ -172,15 +172,15 @@ namespace DevProLauncher.Windows
 
         private void forumBtn_Click(object sender, EventArgs e)
         {
-            Process.Start("https://ygodevpro.com/forum");
+            Process.Start("https://ygodevpro.com/forum/index.php/BoardList/");
         }
 
         private void siteBtn_Click(object sender, EventArgs e)
         {
             if (Program.LanguageManager.language.Equals("German"))
-                Process.Start("http://de.ygodevpro.com/");
+                Process.Start("https://ygodevpro.com");
             else
-                Process.Start("http://en.ygodevpro.com/");
+                Process.Start("https://ygodevpro.com");
         }
 
         private void DeckBtn_Click(object sender, EventArgs e)

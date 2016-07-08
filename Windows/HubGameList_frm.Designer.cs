@@ -75,7 +75,6 @@ namespace DevProLauncher.Windows
             this.tableLayoutPanel9 = new System.Windows.Forms.TableLayoutPanel();
             this.label6 = new System.Windows.Forms.Label();
             this.DeckSelect = new System.Windows.Forms.ComboBox();
-            this.chkmate_btn = new System.Windows.Forms.Button();
             this.UpdateLabel = new System.Windows.Forms.Label();
             this.QueueLabel = new System.Windows.Forms.Label();
             this.tableLayoutPanel7 = new System.Windows.Forms.TableLayoutPanel();
@@ -87,6 +86,7 @@ namespace DevProLauncher.Windows
             this.GameListUpdateTimer = new System.Windows.Forms.Timer(this.components);
             this.SpectateTimer = new System.Windows.Forms.Timer(this.components);
             this.QueueTimer = new System.Windows.Forms.Timer(this.components);
+            this.Duel_DevBot = new System.Windows.Forms.Button();
             this.tableLayoutPanel1.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -624,7 +624,7 @@ namespace DevProLauncher.Windows
             this.tableLayoutPanel3.ColumnCount = 1;
             this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel3.Controls.Add(this.tableLayoutPanel9, 0, 0);
-            this.tableLayoutPanel3.Controls.Add(this.chkmate_btn, 0, 1);
+            this.tableLayoutPanel3.Controls.Add(this.Duel_DevBot, 0, 1);
             this.tableLayoutPanel3.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel3.Location = new System.Drawing.Point(3, 3);
             this.tableLayoutPanel3.Name = "tableLayoutPanel3";
@@ -669,17 +669,6 @@ namespace DevProLauncher.Windows
             this.DeckSelect.Name = "DeckSelect";
             this.DeckSelect.Size = new System.Drawing.Size(134, 21);
             this.DeckSelect.TabIndex = 1;
-            // 
-            // chkmate_btn
-            // 
-            this.chkmate_btn.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.chkmate_btn.Location = new System.Drawing.Point(3, 38);
-            this.chkmate_btn.Name = "chkmate_btn";
-            this.chkmate_btn.Size = new System.Drawing.Size(232, 26);
-            this.chkmate_btn.TabIndex = 5;
-            this.chkmate_btn.Text = "Checkmate Server";
-            this.chkmate_btn.UseVisualStyleBackColor = true;
-            this.chkmate_btn.Click += new System.EventHandler(this.chkmate_btn_Click);
             // 
             // UpdateLabel
             // 
@@ -778,6 +767,16 @@ namespace DevProLauncher.Windows
             // 
             this.QueueTimer.Interval = 1000;
             // 
+            // Duel_DevBot
+            // 
+            this.Duel_DevBot.Location = new System.Drawing.Point(3, 38);
+            this.Duel_DevBot.Name = "Duel_DevBot";
+            this.Duel_DevBot.Size = new System.Drawing.Size(226, 23);
+            this.Duel_DevBot.TabIndex = 5;
+            this.Duel_DevBot.Text = "Duel DevBot";
+            this.Duel_DevBot.UseVisualStyleBackColor = true;
+            this.Duel_DevBot.Click += new System.EventHandler(this.Duel_DevBot_Click);
+            // 
             // HubGameList_frm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -838,7 +837,6 @@ namespace DevProLauncher.Windows
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel9;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.ComboBox DeckSelect;
-        private System.Windows.Forms.Button chkmate_btn;
         private System.Windows.Forms.Timer SpectateTimer;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel6;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel8;
@@ -875,5 +873,6 @@ namespace DevProLauncher.Windows
         private System.Windows.Forms.TextBox minEloTxtBox;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel13;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel14;
+        private System.Windows.Forms.Button Duel_DevBot;
     }
 }

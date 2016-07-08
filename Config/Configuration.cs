@@ -23,7 +23,7 @@ namespace DevProLauncher.Config
         public int ChatPort = 8933;
 #endif
 
-        public string GameExe = "devpro.dll";
+        public string GameExe = "ygopro.exe";
         public string LauncherDir =  "";
         public string DefaultUsername = "";
         public string DefaultDeck = "";

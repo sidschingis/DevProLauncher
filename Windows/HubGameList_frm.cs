@@ -76,15 +76,15 @@ namespace DevProLauncher.Windows
         }
         public void LoadSettings()
         {
-            Format.SelectedIndex    = Program.Config.SearchFormat;
-            GameType.SelectedIndex  = Program.Config.SearchMode;
-            BanList.SelectedIndex   = Program.Config.SearchBanList;
+            Format.SelectedIndex = Program.Config.SearchFormat;
+            GameType.SelectedIndex = Program.Config.SearchMode;
+            BanList.SelectedIndex = Program.Config.SearchBanList;
             TimeLimit.SelectedIndex = Program.Config.SearchTimeLimit;
-            ActiveGames.Checked     = Program.Config.SearchActive;
-            IllegalGames.Checked    = Program.Config.SearchIllegal;
-            lockedChk.Checked       = Program.Config.SearchLocked;
-            minEloTxtBox.Text       = Program.Config.SearchMinElo;
-            maxEloTxtBox.Text       = Program.Config.SearchMaxElo;
+            ActiveGames.Checked = Program.Config.SearchActive;
+            IllegalGames.Checked = Program.Config.SearchIllegal;
+            lockedChk.Checked = Program.Config.SearchLocked;
+            minEloTxtBox.Text = Program.Config.SearchMinElo;
+            maxEloTxtBox.Text = Program.Config.SearchMaxElo;
         }
 
         public void ApplyTranslation()
@@ -121,8 +121,8 @@ namespace DevProLauncher.Windows
             BanList.Items[0] = info.GameAll;
 
             TimeLimit.Items[0] = info.GameAll;
-            TimeLimit.Items[1] = "2 "+info.GameMinutes;
-            TimeLimit.Items[2] = "1 "+info.GameMinutes;
+            TimeLimit.Items[1] = "2 " + info.GameMinutes;
+            TimeLimit.Items[2] = "1 " + info.GameMinutes;
 
             joinBtn.Text = info.GameJoin;
             leaveBtn.Text = info.GameLeave;
@@ -169,7 +169,7 @@ namespace DevProLauncher.Windows
             }
 
             string[] parts = UpdateLabel.Text.Split(' ');
-            int value = Int32.Parse(parts[parts.Length -2]);
+            int value = Int32.Parse(parts[parts.Length - 2]);
 
             if (value == 0)
             {
@@ -180,7 +180,7 @@ namespace DevProLauncher.Windows
             }
             else
             {
-                UpdateLabel.Text = Program.LanguageManager.Translation.GameUpdating1 + (value -1) + Program.LanguageManager.Translation.GameUpdating2;
+                UpdateLabel.Text = Program.LanguageManager.Translation.GameUpdating1 + (value - 1) + Program.LanguageManager.Translation.GameUpdating2;
             }
         }
 
@@ -204,7 +204,8 @@ namespace DevProLauncher.Windows
                 SearchRequest_Btn.Text = (value - 1).ToString(CultureInfo.InvariantCulture);
             }
         }
-        private void Timer(object sender, EventArgs e){
+        private void Timer(object sender, EventArgs e)
+        {
             if (InvokeRequired)
             {
                 Invoke(new Action<object, EventArgs>(Timer), sender, e);
@@ -287,7 +288,7 @@ namespace DevProLauncher.Windows
                 return;
             m_rooms.Add(roomname, room);
             ListBox rooms = (room.isRanked ? RankedList : UnrankedList);
-            
+
             rooms.Items.Add(roomname);
         }
 
@@ -308,7 +309,7 @@ namespace DevProLauncher.Windows
             RoomInfos item = m_rooms[roomname];
             ListBox rooms = (item.isRanked ? RankedList : UnrankedList);
             item.hasStarted = true;
-            if(!ActiveGames.Checked)
+            if (!ActiveGames.Checked)
                 rooms.Items.Remove(roomname);
         }
 
@@ -349,7 +350,7 @@ namespace DevProLauncher.Windows
                     int value = 1200;
                     try
                     {
-                        value=int.Parse(elo);
+                        value = int.Parse(elo);
                     }
                     catch
                     {
@@ -358,7 +359,7 @@ namespace DevProLauncher.Windows
                     elos.Add(value);
                 }
 
-                Invoke(new Action<string, string[], int[]>(InternalRoomPlayersUpdate), data.Command, (object)players,(object)elos.ToArray());
+                Invoke(new Action<string, string[], int[]>(InternalRoomPlayersUpdate), data.Command, (object)players, (object)elos.ToArray());
             }
         }
 
@@ -379,7 +380,7 @@ namespace DevProLauncher.Windows
 
         private void SearchRequest_Btn_Click(object sender, EventArgs e)
         {
-            uint min=0, max=9999;
+            uint min = 0, max = 9999;
             try
             {
                 min = uint.Parse(minEloTxtBox.Text);
@@ -387,15 +388,15 @@ namespace DevProLauncher.Windows
             }
             catch (Exception exc)
             {
-               // safe to ignore as it switches to default values
-               // MessageBox.Show("Not a valid Elo Number (0-9999)." +min.ToString());
+                // safe to ignore as it switches to default values
+                // MessageBox.Show("Not a valid Elo Number (0-9999)." +min.ToString());
             }
             Program.ChatServer.SendPacket(DevServerPackets.GameList, JsonSerializer.SerializeToString(
                 new SearchRequest(
-                    (Format.SelectedIndex == -1 ? Format.SelectedIndex : Format.SelectedIndex-1),
-                    (GameType.SelectedIndex == -1 ? GameType.SelectedIndex : GameType.SelectedIndex-1),
-                    (BanList.SelectedIndex == -1 ? BanList.SelectedIndex : BanList.SelectedIndex-1),
-                    (TimeLimit.SelectedIndex == -1 ? TimeLimit.SelectedIndex : TimeLimit.SelectedIndex-1),
+                    (Format.SelectedIndex == -1 ? Format.SelectedIndex : Format.SelectedIndex - 1),
+                    (GameType.SelectedIndex == -1 ? GameType.SelectedIndex : GameType.SelectedIndex - 1),
+                    (BanList.SelectedIndex == -1 ? BanList.SelectedIndex : BanList.SelectedIndex - 1),
+                    (TimeLimit.SelectedIndex == -1 ? TimeLimit.SelectedIndex : TimeLimit.SelectedIndex - 1),
                     ActiveGames.Checked, IllegalGames.Checked, lockedChk.Checked, UserFilter.Text,
                     min, max
                     )));
@@ -446,7 +447,7 @@ namespace DevProLauncher.Windows
             {
                 LanguageInfo info = Program.LanguageManager.Translation;
                 var mnu = new ContextMenuStrip();
-               
+
                 var mnuSingle = new ToolStripMenuItem("Single") { Name = "Single" };
                 var mnuMatch = new ToolStripMenuItem("Match") { Name = "Match" };
                 var mnuTag = new ToolStripMenuItem("Tag") { Name = "Tag" };
@@ -520,13 +521,13 @@ namespace DevProLauncher.Windows
             }
 
             // ygo 2099 specific format
-            if(form.CardRules.SelectedIndex == 3)
+            if (form.CardRules.SelectedIndex == 3)
             {
                 serverName = Program.Config.Server2099;
             }
 
             ServerInfo server;
-            if(string.IsNullOrEmpty(serverName))
+            if (string.IsNullOrEmpty(serverName))
                 server = GetServer();
             else
                 server = GetServer(serverName);
@@ -613,7 +614,7 @@ namespace DevProLauncher.Windows
             {
                 server = Program.ServerList[serverName];
             }
-            else if(Program.ServerList3P.ContainsKey(serverName))
+            else if (Program.ServerList3P.ContainsKey(serverName))
             {
                 server = Program.ServerList3P[serverName];
             }
@@ -662,7 +663,7 @@ namespace DevProLauncher.Windows
                 {
                     if (istag)
                     {
-                        string player1 = players[0].Trim() +" (" + info.eloList[0].ToString() + ")";
+                        string player1 = players[0].Trim() + " (" + info.eloList[0].ToString() + ")";
                         string player2 = (players.Length > 1) ? players[1].Trim() + " (" + info.eloList[1].ToString() + ")" : "???";
                         string player3 = (players.Length > 2) ? players[2].Trim() + " (" + info.eloList[2].ToString() + ")" : "???";
                         string player4 = (players.Length > 3) ? players[3].Trim() + " (" + info.eloList[3].ToString() + ")" : "???";
@@ -670,7 +671,7 @@ namespace DevProLauncher.Windows
                     }
                     else
                     {
-                        string player1 = players[0].Trim() + " (" +info.eloList[0].ToString()+ ")" ;
+                        string player1 = players[0].Trim() + " (" + info.eloList[0].ToString() + ")";
                         string player2 = (players.Length > 1) ? players[1].Trim() + " (" + info.eloList[1].ToString() + ")" : "???";
                         playerstring = player1 + " vs " + player2;
                     }
@@ -705,7 +706,7 @@ namespace DevProLauncher.Windows
             g.DrawLines((selected) ? new Pen(Brushes.Purple, 5) : new Pen(Brushes.Black, 5),
                 new[] { new Point(bounds.X, bounds.Y), new Point(bounds.X + bounds.Width, bounds.Y), new Point(bounds.X + bounds.Width, bounds.Y + bounds.Height), new Point(bounds.X, bounds.Y + bounds.Height), new Point(bounds.X, bounds.Y) });
             //toplet
-            g.DrawString((info == null) ? "???/???/???" : RoomInfos.GameMode(info.mode) + " / " + LauncherHelper.GetBanListFromInt(info.banListType) + " / " + (info.timer == 0 ? "3 mins" : "5 mins") + (info.rule >=4 ? "/Prerelease":""), e.Font, Brushes.Black,
+            g.DrawString((info == null) ? "???/???/???" : RoomInfos.GameMode(info.mode) + " / " + LauncherHelper.GetBanListFromInt(info.banListType) + " / " + (info.timer == 0 ? "3 mins" : "5 mins") + (info.rule >= 4 ? "/Prerelease" : ""), e.Font, Brushes.Black,
                 list.GetItemRectangle(index).Location + offset);
             //topright
             g.DrawString((info == null) ? "???" : RoomInfos.GameRule(info.rule), e.Font, Brushes.Black,
@@ -725,11 +726,6 @@ namespace DevProLauncher.Windows
             QuickBtn_MouseUp(sender, new MouseEventArgs(MouseButtons.Right, 1, 1, 1, 1));
         }
 
-        private void chkmate_btn_Click(object sender, EventArgs e)
-        {
-            LauncherHelper.chkmate_btn_Click(sender,e);
-        }
-
         private void SpectateBtn_Click(object sender, EventArgs e)
         {
             Program.ChatServer.SendPacket(DevServerPackets.RandomSpectate);
@@ -738,24 +734,24 @@ namespace DevProLauncher.Windows
             SpectateTimer.Enabled = true;
         }
 
-        private bool JoinQueue(bool isQuick=false)
+        private bool JoinQueue(bool isQuick = false)
         {
-            
+
             var form = new Host(true);
 
             form.Mode.Items.Clear();
             form.HostBtn.Text = "Join Queue";
-            form.Mode.Items.AddRange(new object[] { "Single", "Match"});
-            form.Mode.SelectedItem = form.Mode.Items.Contains(Program.Config.Mode) ? Program.Config.Mode : "Match";               
+            form.Mode.Items.AddRange(new object[] { "Single", "Match" });
+            form.Mode.SelectedItem = form.Mode.Items.Contains(Program.Config.Mode) ? Program.Config.Mode : "Match";
             if (form.BanList.Items.Count > 0)
                 form.BanList.SelectedIndex = 0;
             form.CardRules.SelectedIndexChanged += form.FormatChanged;
-           
+
             form.CardRules.Items.Clear();
             form.CardRules.Items.AddRange(new object[] { "TCG", "OCG" });
-            form.CardRules.SelectedItem = form.CardRules.Items.Contains(Program.Config.CardRules) ? Program.Config.CardRules : "TCG";      
+            form.CardRules.SelectedItem = form.CardRules.Items.Contains(Program.Config.CardRules) ? Program.Config.CardRules : "TCG";
 
-            if (isQuick || form.ShowDialog() == DialogResult.OK) 
+            if (isQuick || form.ShowDialog() == DialogResult.OK)
             {
                 QueueRequest request = new QueueRequest(form.CardRules.SelectedItem.ToString(), form.Mode.SelectedItem.ToString());
 
@@ -768,7 +764,7 @@ namespace DevProLauncher.Windows
         public void OnMatchFound(string matchnumber)
         {
             var form = new DuelRequestFrm(
-            "Found a Match, are you ready?",true);
+            "Found a Match, are you ready?", true);
 
             if (Program.Config.EnableLauncherSound)
             {
@@ -785,17 +781,17 @@ namespace DevProLauncher.Windows
 
             if (form.ShowDialog() == DialogResult.Yes)
             {
-               Program.ChatServer.SendPacket(DevServerPackets.AcceptMatch,matchnumber);
+                Program.ChatServer.SendPacket(DevServerPackets.AcceptMatch, matchnumber);
             }
             else
             {
-               Program.ChatServer.SendPacket(DevServerPackets.RefuseMatch,matchnumber);
-               ResetQueue();
+                Program.ChatServer.SendPacket(DevServerPackets.RefuseMatch, matchnumber);
+                ResetQueue();
             }
         }
         public void OnMatchCancel(string data)
         {
-            MessageBox.Show(Program.LanguageManager.Translation.GameMatchCancel +"("+data+")");
+            MessageBox.Show(Program.LanguageManager.Translation.GameMatchCancel + "(" + data + ")");
             ResetQueue();
         }
         public void OnMatchStart(DuelRequest request)
@@ -805,7 +801,7 @@ namespace DevProLauncher.Windows
                 server = Program.ServerList[request.server];
             if (server != null)
             {
-                LauncherHelper.GenerateConfig(server, request.duelformatstring,1);
+                LauncherHelper.GenerateConfig(server, request.duelformatstring, 1);
                 LauncherHelper.RunGame("-f");
             }
             ResetQueue();
@@ -851,6 +847,24 @@ namespace DevProLauncher.Windows
                 qJoinBtn.Enabled = false;
                 leaveBtn.Enabled = true;
             }
+        }
+
+        private void Duel_DevBot_Click(object sender, EventArgs e)
+        {
+            ServerInfo server = Program.MainForm.GameWindow.GetServer();
+            if (server == null)
+            {
+                MessageBox.Show("No Server Available.");
+                return;
+            }
+            Program.ChatServer.SendPacket(DevServerPackets.RequestDuel,
+            JsonSerializer.SerializeToString(
+             new DuelRequest
+             {
+                 username = "DevBot",
+                 duelformatstring = "600OOO8000,0,5,1,U," + LauncherHelper.GenerateString().Substring(0, 5),
+                 server = server.serverName
+             }));
         }
     }
 }

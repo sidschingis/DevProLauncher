@@ -75,6 +75,7 @@ namespace DevProLauncher.Windows
             this.tableLayoutPanel9 = new System.Windows.Forms.TableLayoutPanel();
             this.label6 = new System.Windows.Forms.Label();
             this.DeckSelect = new System.Windows.Forms.ComboBox();
+            this.Duel_DevBot = new System.Windows.Forms.Button();
             this.UpdateLabel = new System.Windows.Forms.Label();
             this.QueueLabel = new System.Windows.Forms.Label();
             this.tableLayoutPanel7 = new System.Windows.Forms.TableLayoutPanel();
@@ -86,7 +87,6 @@ namespace DevProLauncher.Windows
             this.GameListUpdateTimer = new System.Windows.Forms.Timer(this.components);
             this.SpectateTimer = new System.Windows.Forms.Timer(this.components);
             this.QueueTimer = new System.Windows.Forms.Timer(this.components);
-            this.Duel_DevBot = new System.Windows.Forms.Button();
             this.tableLayoutPanel1.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -670,6 +670,17 @@ namespace DevProLauncher.Windows
             this.DeckSelect.Size = new System.Drawing.Size(134, 21);
             this.DeckSelect.TabIndex = 1;
             // 
+            // Duel_DevBot
+            // 
+            this.Duel_DevBot.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.Duel_DevBot.Location = new System.Drawing.Point(3, 38);
+            this.Duel_DevBot.Name = "Duel_DevBot";
+            this.Duel_DevBot.Size = new System.Drawing.Size(232, 26);
+            this.Duel_DevBot.TabIndex = 5;
+            this.Duel_DevBot.Text = "Duel DevBot";
+            this.Duel_DevBot.UseVisualStyleBackColor = true;
+            this.Duel_DevBot.Click += new System.EventHandler(this.Duel_DevBot_Click);
+            // 
             // UpdateLabel
             // 
             this.UpdateLabel.Anchor = System.Windows.Forms.AnchorStyles.None;
@@ -766,16 +777,6 @@ namespace DevProLauncher.Windows
             // QueueTimer
             // 
             this.QueueTimer.Interval = 1000;
-            // 
-            // Duel_DevBot
-            // 
-            this.Duel_DevBot.Location = new System.Drawing.Point(3, 38);
-            this.Duel_DevBot.Name = "Duel_DevBot";
-            this.Duel_DevBot.Size = new System.Drawing.Size(226, 23);
-            this.Duel_DevBot.TabIndex = 5;
-            this.Duel_DevBot.Text = "Duel DevBot";
-            this.Duel_DevBot.UseVisualStyleBackColor = true;
-            this.Duel_DevBot.Click += new System.EventHandler(this.Duel_DevBot_Click);
             // 
             // HubGameList_frm
             // 

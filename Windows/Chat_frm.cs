@@ -922,6 +922,8 @@ namespace DevProLauncher.Windows
                         WriteMessage(new ChatMessage(MessageType.System, CommandType.None, null, "/gunmute username - Unmutes a user that was muted globally"));
                         WriteMessage(new ChatMessage(MessageType.System, CommandType.None, null, "/gumuteall - Clears all GMutes"));
                         WriteMessage(new ChatMessage(MessageType.System, CommandType.None, null, "/info username - Gives info of an user."));
+                        WriteMessage(new ChatMessage(MessageType.System, CommandType.None, null, "/mute username hours - Locally mutes a users for a certain amount of time."));
+                        WriteMessage(new ChatMessage(MessageType.System, CommandType.None, null, "/unmute username - Unmutes a user that was muted locally."));
                     }
                     if (Program.UserInfo.rank > 3)
                     {

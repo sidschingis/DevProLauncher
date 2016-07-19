@@ -170,17 +170,14 @@ namespace DevProLauncher.Windows
             LauncherHelper.RunGame("");
         }
 
-        private void forumBtn_Click(object sender, EventArgs e)
+        private void ForumBtn_Click(object sender, EventArgs e)
         {
             Process.Start("https://ygodevpro.com/forum/index.php/BoardList/");
         }
 
-        private void siteBtn_Click(object sender, EventArgs e)
+        private void Bugtracker_Click(object sender, EventArgs e)
         {
-            if (Program.LanguageManager.language.Equals("German"))
-                Process.Start("https://ygodevpro.com");
-            else
-                Process.Start("https://ygodevpro.com");
+            Process.Start("https://ygodevpro.com");
         }
 
         private void DeckBtn_Click(object sender, EventArgs e)

@@ -386,9 +386,8 @@ namespace DevProLauncher.Config
         public string MainCustomizeTab = "Customize";
         public string MainAboutTab = "About";
 
-        public string MainSyncBtn = "Dropbox Sync";
-        public string MainForumBtn = "Forum";
-        public string MainSiteBtn = "Site";
+        public string MainForumBtn = "Bugtracker";
+        public string MainSiteBtn = "Forum";
         public string MainDeckBtn = "Deck Edit";
         public string MainReplaysBtn = "Replays";
         public string MainOfflineBtn = "Offline";

@@ -163,9 +163,9 @@
             this.siteBtn.Name = "siteBtn";
             this.siteBtn.Size = new System.Drawing.Size(75, 23);
             this.siteBtn.TabIndex = 11;
-            this.siteBtn.Text = "Site";
+            this.siteBtn.Text = "Forum";
             this.siteBtn.UseVisualStyleBackColor = true;
-            this.siteBtn.Click += new System.EventHandler(this.siteBtn_Click);
+            this.siteBtn.Click += new System.EventHandler(this.ForumBtn_Click);
             // 
             // forumBtn
             // 
@@ -173,9 +173,9 @@
             this.forumBtn.Name = "forumBtn";
             this.forumBtn.Size = new System.Drawing.Size(75, 23);
             this.forumBtn.TabIndex = 12;
-            this.forumBtn.Text = "Forum";
+            this.forumBtn.Text = "Bugtracker";
             this.forumBtn.UseVisualStyleBackColor = true;
-            this.forumBtn.Click += new System.EventHandler(this.forumBtn_Click);
+            this.forumBtn.Click += new System.EventHandler(this.Bugtracker_Click);
             // 
             // MessageLabel
             // 

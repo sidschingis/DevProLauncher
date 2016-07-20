@@ -64,6 +64,8 @@ namespace DevProLauncher.Helpers
                             text = "Helper";
                             break;
                         case 2:
+                            text = "TD";
+                            break;
                         case 3:
                             text = "Mod";
                             break;
@@ -116,6 +118,8 @@ namespace DevProLauncher.Helpers
                             text = "Helper";
                             break;
                         case 2:
+                            text = "TD";
+                            break;
                         case 3:
                             text = "Mod";
                             break;

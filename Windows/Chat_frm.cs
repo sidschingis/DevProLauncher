@@ -17,9 +17,9 @@ namespace DevProLauncher.Windows
 {
     public sealed partial class ChatFrm : Form
     {
-        private Dictionary<string,List<UserData>> m_channelData = new Dictionary<string, List<UserData>>(); 
+        private Dictionary<string, List<UserData>> m_channelData = new Dictionary<string, List<UserData>>();
         private readonly Dictionary<string, PmWindowFrm> m_pmWindows = new Dictionary<string, PmWindowFrm>();
-        private List<UserData> m_filterUsers; 
+        private List<UserData> m_filterUsers;
         public bool Autoscroll = true;
         public bool Joinchannel = false;
         private bool m_onlineMode;
@@ -34,7 +34,7 @@ namespace DevProLauncher.Windows
             TopLevel = false;
             Dock = DockStyle.Fill;
             Visible = true;
-            m_searchReset = new Timer {Interval = 1000};
+            m_searchReset = new Timer { Interval = 1000 };
             m_filterUsers = new List<UserData>();
             //chat packets
             Program.ChatServer.UserListUpdate += UpdateUserList;
@@ -72,7 +72,7 @@ namespace DevProLauncher.Windows
             UserList.DrawItem += UserList_DrawItem;
 
             ChatHelper.LoadChatTags();
-            
+
             LoadIgnoreList();
             ApplyTranslations();
             ApplyChatSettings();
@@ -95,7 +95,7 @@ namespace DevProLauncher.Windows
             }
         }
 
-        private void SearchTick(object sender,EventArgs e)
+        private void SearchTick(object sender, EventArgs e)
         {
             if (InvokeRequired)
             {
@@ -230,7 +230,7 @@ namespace DevProLauncher.Windows
 
             userSearchBtn.Text = lang.chatBtnUser;
             adminSearchBtn.Text = lang.chatBtnAdmin;
-            teamSearchBtn.Text =  lang.chatBtnTeam;
+            teamSearchBtn.Text = lang.chatBtnTeam;
             friendSearchBtn.Text = lang.chatBtnFriend;
             ChannelListBtn.Text = lang.chatBtnChannel;
             LeaveBtn.Text = lang.chatBtnLeave;
@@ -294,7 +294,7 @@ namespace DevProLauncher.Windows
             }
 
             WriteMessage(new ChatMessage(MessageType.Server, CommandType.None, Program.UserInfo, "Server", "Join request for " + channel + " accepted."));
-            
+
             if (!Joinchannel)
             {
                 Joinchannel = true;
@@ -313,7 +313,7 @@ namespace DevProLauncher.Windows
                 return;
             }
 
-            if(message.from != null && IgnoreUser(message.from))
+            if (message.from != null && IgnoreUser(message.from))
             {
                 return;
             }
@@ -428,7 +428,7 @@ namespace DevProLauncher.Windows
         {
             if (UserListTabs.SelectedTab.Name == ChannelTab.Name)
             {
-                ChatWindow window = (ChatWindow) ChannelTabs.SelectedTab;
+                ChatWindow window = (ChatWindow)ChannelTabs.SelectedTab;
 
                 if (window != null)
                 {
@@ -476,10 +476,10 @@ namespace DevProLauncher.Windows
         {
             if (InvokeRequired)
             {
-                Invoke(new Action<object,EventArgs>(UpdateChannelList),sender,e);
+                Invoke(new Action<object, EventArgs>(UpdateChannelList), sender, e);
                 return;
             }
-            ChatWindow window = (ChatWindow) ChannelTabs.SelectedTab;
+            ChatWindow window = (ChatWindow)ChannelTabs.SelectedTab;
             if (window != null)
             {
                 if (m_channelData.ContainsKey(window.Name))
@@ -500,8 +500,8 @@ namespace DevProLauncher.Windows
             if (m_channelData.ContainsKey(users.Name))
                 m_channelData[users.Name] = new List<UserData>(users.Users);
             else
-                m_channelData.Add(users.Name,new List<UserData>(users.Users));
-            UpdateChannelList(this,EventArgs.Empty);
+                m_channelData.Add(users.Name, new List<UserData>(users.Users));
+            UpdateChannelList(this, EventArgs.Empty);
         }
 
         private void AddOrRemoveChannelUser(UserData channelUser, bool remove)
@@ -518,7 +518,7 @@ namespace DevProLauncher.Windows
                 if (user.username == channelUser.username)
                     toRemove = user;
             }
-            if(toRemove != null)
+            if (toRemove != null)
                 ChannelList.Items.Remove(toRemove);
             if (!remove)
             {
@@ -554,8 +554,8 @@ namespace DevProLauncher.Windows
             ChatWindow window = (ChatWindow)ChannelTabs.SelectedTab;
             if (window != null)
             {
-                if(user.Name == window.Name)
-                    AddOrRemoveChannelUser(user.Users[0],false);
+                if (user.Name == window.Name)
+                    AddOrRemoveChannelUser(user.Users[0], false);
             }
         }
 
@@ -648,7 +648,7 @@ namespace DevProLauncher.Windows
 
         private void UserList_DrawItem(object sender, DrawItemEventArgs e)
         {
-            ListBox list = (ListBox) sender;
+            ListBox list = (ListBox)sender;
             e.DrawBackground();
 
             bool selected = ((e.State & DrawItemState.Selected) == DrawItemState.Selected);
@@ -681,9 +681,12 @@ namespace DevProLauncher.Windows
                                             : new SolidBrush(Program.Config.NormalTextColor.ToColor())),
                                  list.GetItemRectangle(index).Location);
                     string title;
-                    switch (user.rank){
+                    switch (user.rank) {
                         case 1:
                             title = "Helper";
+                            break;
+                        case 2:
+                            title = "TD";
                             break;
                         case 3:
                             title = "Mod";
@@ -711,7 +714,7 @@ namespace DevProLauncher.Windows
                                             : ChatMessage.GetUserColor(user.rank)),
                                     new Point(
                                         list.GetItemRectangle(index).Location.X +
-                                        (int) g.MeasureString("[", e.Font).Width - 1,
+                                        (int)g.MeasureString("[", e.Font).Width - 1,
                                         list.GetItemRectangle(index).Location.Y));
                     g.DrawString("]", e.Font,
                                  (selected)
@@ -792,10 +795,10 @@ namespace DevProLauncher.Windows
         {
             var button = (Button)sender;
             var selectcolor = new ColorDialog
-                {
-                    Color = button.BackColor,
-                    AllowFullOpen = true
-                };
+            {
+                Color = button.BackColor,
+                AllowFullOpen = true
+            };
 
             if (selectcolor.ShowDialog() == DialogResult.OK)
             {
@@ -847,11 +850,11 @@ namespace DevProLauncher.Windows
                 ApplyChatSettings();
             }
         }
-        
+
         private bool HandleCommand(string part, ChatWindow selectedTab)
         {
             var cmd = part.Substring(1).ToLower();
-            switch(cmd)
+            switch (cmd)
             {
                 case "me":
                     if (selectedTab == null)
@@ -859,7 +862,7 @@ namespace DevProLauncher.Windows
                         WriteMessage(new ChatMessage(MessageType.System, CommandType.None, null, "No channel Selected."));
                         return false;
                     }
-                    
+
                     var isTeam = selectedTab.Name == MessageType.Team.ToString();
                     Program.ChatServer.SendMessage(isTeam ? MessageType.Team : MessageType.Message, CommandType.Me, selectedTab.Name, ChatInput.Text.Substring(part.Length).Trim());
                     break;
@@ -871,7 +874,7 @@ namespace DevProLauncher.Windows
                     {
                         return false;
                     }
-                    
+
                     if (selectedTab.IsPrivate)
                     {
                         ChannelTabs.TabPages.Remove(selectedTab);
@@ -880,7 +883,7 @@ namespace DevProLauncher.Windows
                     {
                         LeaveChannel(selectedTab.Name);
                     }
-                    
+
                     break;
                 case "ping":
                     Program.ChatServer.SendPacket(DevServerPackets.Ping);
@@ -903,27 +906,29 @@ namespace DevProLauncher.Windows
                     WriteMessage(new ChatMessage(MessageType.System, CommandType.None, null, "/unmute username - (Channel Owners/Admins) Allows a muted user to send messages again"));
                     WriteMessage(new ChatMessage(MessageType.System, CommandType.None, null, "/setmotd message - (Channel Owners/Admins) Sets a message of the day that is sent to users when they join the channel."));
 
-                    if(Program.UserInfo.rank == 1)
+                    if (Program.UserInfo.rank == 1)
                         WriteMessage(new ChatMessage(MessageType.System, CommandType.None, null, " -- Level 1 users are classed as helpers and don't need any extra commands"));
                         WriteMessage(new ChatMessage(MessageType.System, CommandType.None, null, "/msg - Sends a server message"));
-                    if (Program.UserInfo.rank > 2)
+                    if (Program.UserInfo.rank > 1)
                     {
-                        WriteMessage(new ChatMessage(MessageType.System, CommandType.None, null, "-- Mod Commands --"));
+                        WriteMessage(new ChatMessage(MessageType.System, CommandType.None, null, "-- TD Commands --"));
                         WriteMessage(new ChatMessage(MessageType.System, CommandType.None, null, "/kick username reason - Kicks a user"));
                         WriteMessage(new ChatMessage(MessageType.System, CommandType.None, null, "/msg - Sends a server message"));
-                        WriteMessage(new ChatMessage(MessageType.System, CommandType.None, null, "/smsg - Sends a server message that displays on the bottom of the launcher"));
+                        WriteMessage(new ChatMessage(MessageType.System, CommandType.None, null, "/smsg - Sends a launcher message which is displayed on the bottom of the launcher"));
                         WriteMessage(new ChatMessage(MessageType.System, CommandType.None, null, "/getaccounts username - Gets a list of accounts for the the inputted username"));
                         WriteMessage(new ChatMessage(MessageType.System, CommandType.None, null, "/cmute roomname - Mutes a room so that only admins can speak"));
                         WriteMessage(new ChatMessage(MessageType.System, CommandType.None, null, "/cunmute roomname - Unmutes a room that was muted."));
                         WriteMessage(new ChatMessage(MessageType.System, CommandType.None, null, "/roomowner roomname - Gets the creator of a channel"));
                         WriteMessage(new ChatMessage(MessageType.System, CommandType.None, null, "/killroom roomname - forces a chat channel to close"));
-                        WriteMessage(new ChatMessage(MessageType.System, CommandType.None, null, "/getuid username - Gets the UID of a username")); 
+                    }
+                    if (Program.UserInfo.rank > 2)
+                    {
+                        WriteMessage(new ChatMessage(MessageType.System, CommandType.None, null, "-- Mod Commands --"));
+                        WriteMessage(new ChatMessage(MessageType.System, CommandType.None, null, "/getuid username - Gets the UID of a username"));
                         WriteMessage(new ChatMessage(MessageType.System, CommandType.None, null, "/gmute username hours - Globally mutes a user for X hours. ( if hours is empty, it's 24hours )"));
                         WriteMessage(new ChatMessage(MessageType.System, CommandType.None, null, "/gunmute username - Unmutes a user that was muted globally"));
                         WriteMessage(new ChatMessage(MessageType.System, CommandType.None, null, "/gumuteall - Clears all GMutes"));
                         WriteMessage(new ChatMessage(MessageType.System, CommandType.None, null, "/info username - Gives info of an user."));
-                        WriteMessage(new ChatMessage(MessageType.System, CommandType.None, null, "/mute username hours - Locally mutes a users for a certain amount of time."));
-                        WriteMessage(new ChatMessage(MessageType.System, CommandType.None, null, "/unmute username - Unmutes a user that was muted locally."));
                     }
                     if (Program.UserInfo.rank > 3)
                     {
@@ -939,7 +944,7 @@ namespace DevProLauncher.Windows
                     if (Program.UserInfo.rank == 99)
                     {
                         WriteMessage(new ChatMessage(MessageType.System, CommandType.None, null, "-- Team Leader Commands --"));
-                        WriteMessage(new ChatMessage(MessageType.System, CommandType.None, null, "/ban username time reason - Bans a user, time format has to be in hours, also you must give a reason."));              
+                        WriteMessage(new ChatMessage(MessageType.System, CommandType.None, null, "/ban username time reason - Bans a user, time format has to be in hours, also you must give a reason."));
                         WriteMessage(new ChatMessage(MessageType.System, CommandType.None, null, "/unban username - Unbans a user"));
                         WriteMessage(new ChatMessage(MessageType.System, CommandType.None, null, "/ip username - Gets a users IP"));
                         WriteMessage(new ChatMessage(MessageType.System, CommandType.None, null, "/banip ip - Bans an IP"));
@@ -972,7 +977,6 @@ namespace DevProLauncher.Windows
                         WriteMessage(new ChatMessage(MessageType.System, CommandType.None, null, "/teamop username level - promotes a user in the team"));
                         WriteMessage(new ChatMessage(MessageType.System, CommandType.None, null, "/teamchangeleader username - changes the leader of a team"));
                     }
-                    
                     break;
                 case "teamdisband":
                     if (MessageBox.Show("Are you sure?", "Confirm team disband", MessageBoxButtons.YesNo) == DialogResult.Yes)

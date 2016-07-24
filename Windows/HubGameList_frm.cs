@@ -635,6 +635,7 @@ namespace DevProLauncher.Windows
             if (e.Index == -1)
                 return;
             var index = e.Index;
+       
             var room = list.Items[index].ToString();
             var selected = ((e.State & DrawItemState.Selected) == DrawItemState.Selected);
             var g = e.Graphics;
@@ -673,13 +674,17 @@ namespace DevProLauncher.Windows
                     {
                         string player1 = players[0].Trim() + " (" + info.eloList[0].ToString() + ")";
                         string player2 = (players.Length > 1) ? players[1].Trim() + " (" + info.eloList[1].ToString() + ")" : "???";
-                        playerstring = player1 + " vs " + player2;
+                        string devbotCheck = players[0].Trim();
+                        if (devbotCheck.ToLower().Equals("devbot"))
+                        {
+                            playerstring = string.Empty;
+                            return;
+                        }
+                            playerstring = player1 + " vs " + player2;
                     }
                 }
 
             }
-
-
             var bounds = list.GetItemRectangle(index);
             var rulesize = e.Graphics.MeasureString((info == null) ? "???" : RoomInfos.GameRule(info.rule), e.Font);
             var playersSize = e.Graphics.MeasureString(playerstring, e.Font);
@@ -700,7 +705,6 @@ namespace DevProLauncher.Windows
                 (info.mode == 1 ? Color.BlanchedAlmond :
                 Color.LightBlue))));
             }
-
             //draw item
             g.FillRectangle(backgroundcolor, e.Bounds);
             g.DrawLines((selected) ? new Pen(Brushes.Purple, 5) : new Pen(Brushes.Black, 5),

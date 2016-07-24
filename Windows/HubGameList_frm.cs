@@ -284,12 +284,16 @@ namespace DevProLauncher.Windows
         private void InternalRoomCreated(RoomInfos room)
         {
             string roomname = room.GetRoomName();
-            if (m_rooms.ContainsKey(roomname))
+            if(m_rooms.ContainsKey(roomname))
                 return;
             m_rooms.Add(roomname, room);
             ListBox rooms = (room.isRanked ? RankedList : UnrankedList);
 
-            rooms.Items.Add(roomname);
+            //add DevBot games to the end, other games to the beginning of list
+            if(room.playerList[0].Trim().ToLower().Equals("devbot"))
+                rooms.Items.Add(roomname);
+            else
+                rooms.Items.Insert(0, roomname);
         }
 
         public List<object> ObjectKeys()

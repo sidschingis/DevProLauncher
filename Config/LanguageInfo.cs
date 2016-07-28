@@ -198,9 +198,10 @@ namespace DevProLauncher.Config
         public string hostTimeLimit = "Time Limit";
         public string hostRules = "Card Rules";
         public string hostMode = "Duel Mode";
-        public string hostPrio = "Enable Priority";
+        public string hostPrio = "Obsolete Rulings";
         public string hostCheckDeck = "Disable Check Deck";
         public string hostShuffle = "Disable Shuffle Deck";
+        public string hostPrerelease = "Enable Prerelease Cards";
         public string hostLifep = "Lifepoints";
         public string hostGameN = "Game Name";
         public string hostBtnHost = "Host";

@@ -64,6 +64,7 @@
   <optionCbSound>Enable Sound</optionCbSound>
   <optionCbMusic>Enable Music</optionCbMusic>
   <optionCbDirect>Enable Directx</optionCbDirect>
+  <optionCbLauncherSound>Enable Launcher Sound</optionCbLauncherSound>
   <optionCbFull>Fullscreen</optionCbFull>
   <optionTexts>Font Size</optionTexts>
   <optionTextf>Game Font</optionTextf>
@@ -85,6 +86,7 @@
   <hostPrio>Obsolete Rulings</hostPrio>
   <hostCheckDeck>Disable Check Deck</hostCheckDeck>
   <hostShuffle>Disable Shuffle Deck</hostShuffle>
+  <hostPrerelease>Enable Prerelease Cards</hostPrerelease>
   <hostLifep>Life Points</hostLifep>
   <hostGameN>Game Name</hostGameN>
   <hostBtnHost>Host</hostBtnHost>

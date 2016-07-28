@@ -74,6 +74,7 @@ namespace DevProLauncher.Windows
             this.ServerColorBtn = new System.Windows.Forms.Button();
             this.NormalUserColorBtn = new System.Windows.Forms.Button();
             this.Level1ColorBtn = new System.Windows.Forms.Button();
+            this.Level2ColorBtn = new System.Windows.Forms.Button();
             this.Level3ColorBtn = new System.Windows.Forms.Button();
             this.Level4ColorBtn = new System.Windows.Forms.Button();
             this.BotColorBtn = new System.Windows.Forms.Button();
@@ -91,6 +92,7 @@ namespace DevProLauncher.Windows
             this.BackgroundColorBtn = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.tableLayoutPanel7 = new System.Windows.Forms.TableLayoutPanel();
             this.label1 = new System.Windows.Forms.Label();
@@ -603,6 +605,7 @@ namespace DevProLauncher.Windows
             this.tableLayoutPanel11.Controls.Add(this.ServerColorBtn, 1, 7);
             this.tableLayoutPanel11.Controls.Add(this.NormalUserColorBtn, 1, 6);
             this.tableLayoutPanel11.Controls.Add(this.Level1ColorBtn, 1, 5);
+            this.tableLayoutPanel11.Controls.Add(this.Level2ColorBtn, 1, 12);
             this.tableLayoutPanel11.Controls.Add(this.Level3ColorBtn, 1, 4);
             this.tableLayoutPanel11.Controls.Add(this.Level4ColorBtn, 1, 3);
             this.tableLayoutPanel11.Controls.Add(this.BotColorBtn, 1, 2);
@@ -620,6 +623,7 @@ namespace DevProLauncher.Windows
             this.tableLayoutPanel11.Controls.Add(this.BackgroundColorBtn, 1, 0);
             this.tableLayoutPanel11.Controls.Add(this.label3, 0, 4);
             this.tableLayoutPanel11.Controls.Add(this.label5, 0, 3);
+            this.tableLayoutPanel11.Controls.Add(this.label6, 0, 12);
             this.tableLayoutPanel11.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel11.Location = new System.Drawing.Point(3, 16);
             this.tableLayoutPanel11.Name = "tableLayoutPanel11";
@@ -711,6 +715,15 @@ namespace DevProLauncher.Windows
             this.Level1ColorBtn.TabIndex = 32;
             this.Level1ColorBtn.UseVisualStyleBackColor = true;
             this.Level1ColorBtn.Click += new System.EventHandler(this.ApplyNewColor);
+            // 
+            // Level2ColorBtn
+            // 
+            this.Level2ColorBtn.Location = new System.Drawing.Point(129, 303);
+            this.Level2ColorBtn.Name = "Level2ColorBtn";
+            this.Level2ColorBtn.Size = new System.Drawing.Size(24, 19);
+            this.Level2ColorBtn.TabIndex = 50;
+            this.Level2ColorBtn.UseVisualStyleBackColor = true;
+            this.Level2ColorBtn.Click += new System.EventHandler(this.ApplyNewColor);
             // 
             // Level3ColorBtn
             // 
@@ -881,6 +894,17 @@ namespace DevProLauncher.Windows
             this.label5.TabIndex = 42;
             this.label5.Text = "SMod";
             this.label5.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.label6.Location = new System.Drawing.Point(3, 300);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(120, 25);
+            this.label6.TabIndex = 43;
+            this.label6.Text = "TD";
+            this.label6.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // groupBox1
             // 
@@ -1076,6 +1100,7 @@ namespace DevProLauncher.Windows
         private System.Windows.Forms.Button NormalUserColorBtn;
         private System.Windows.Forms.Button Level1ColorBtn;
         private System.Windows.Forms.Button Level3ColorBtn;
+        private System.Windows.Forms.Button Level2ColorBtn;
         private System.Windows.Forms.Button Level4ColorBtn;
         private System.Windows.Forms.Button BotColorBtn;
         private System.Windows.Forms.Button NormalTextColorBtn;
@@ -1115,5 +1140,6 @@ namespace DevProLauncher.Windows
         private System.Windows.Forms.Button friendSearchBtn;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label label6;
     }
 }

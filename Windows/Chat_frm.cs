@@ -173,6 +173,7 @@ namespace DevProLauncher.Windows
             BotColorBtn.BackColor = Program.Config.BotColor.ToColor();
             Level4ColorBtn.BackColor = Program.Config.Level4Color.ToColor();
             Level3ColorBtn.BackColor = Program.Config.Level3Color.ToColor();
+            Level2ColorBtn.BackColor = Program.Config.Level2Color.ToColor();
             Level1ColorBtn.BackColor = Program.Config.Level1Color.ToColor();
             NormalUserColorBtn.BackColor = Program.Config.Level0Color.ToColor();
             ServerColorBtn.BackColor = Program.Config.ServerMsgColor.ToColor();

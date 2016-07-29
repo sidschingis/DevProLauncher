@@ -97,6 +97,7 @@ namespace DevProLauncher.Windows.MessageBoxs
                 });
 
                 Priority.Text = Program.LanguageManager.Translation.hostPrio;
+                Prerelease.Text = Program.LanguageManager.Translation.hostPrerelease;
                 CheckDeck.Text = Program.LanguageManager.Translation.hostCheckDeck;
                 ShuffleDeck.Text = Program.LanguageManager.Translation.hostShuffle;
                 label1.Text = Program.LanguageManager.Translation.hostLifep;

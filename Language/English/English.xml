@@ -5,7 +5,7 @@
   <pmsbProgRun>Program already running</pmsbProgRun>
   <pMsbErrorToServer>Error Connecting to server</pMsbErrorToServer>
   <pMsbBadLog>Bad Login</pMsbBadLog>
-  <pMsbOldVers>You have a too old version of the launcher. Please reinstall it.</pMsbOldVers>
+  <pMsbOldVers>You have a very old version of the launcher. Do you want to reinstall?</pMsbOldVers>
   <pMsbException>Oooops! Something bad happened! Software will now exit!</pMsbException>
   <LoginUserName>Username</LoginUserName>
   <LoginPassWord>Password</LoginPassWord>
@@ -64,6 +64,7 @@
   <optionCbSound>Enable Sound</optionCbSound>
   <optionCbMusic>Enable Music</optionCbMusic>
   <optionCbDirect>Enable Directx</optionCbDirect>
+  <optionCbLauncherSound>Enable Launcher Sound</optionCbLauncherSound>
   <optionCbFull>Fullscreen</optionCbFull>
   <optionTexts>Font Size</optionTexts>
   <optionTextf>Game Font</optionTextf>
@@ -82,9 +83,10 @@
   <hostTimeLimit>Time Limit</hostTimeLimit>
   <hostRules>Card Rules</hostRules>
   <hostMode>Duel Mode</hostMode>
-  <hostPrio>TCG Rulings</hostPrio>
+  <hostPrio>Obsolete Rulings</hostPrio>
   <hostCheckDeck>Disable Check Deck</hostCheckDeck>
   <hostShuffle>Disable Shuffle Deck</hostShuffle>
+  <hostPrerelease>Enable Prerelease Cards</hostPrerelease>
   <hostLifep>Life Points</hostLifep>
   <hostGameN>Game Name</hostGameN>
   <hostBtnHost>Host</hostBtnHost>
@@ -136,7 +138,7 @@
   <profileLblUnknown>Unknown</profileLblUnknown>
   <profileLblUsername>Username: </profileLblUsername>
   <profileLblwld>Win/Lose/Draw</profileLblwld>
-  <profileLblRank>Rank: </profileLblRank>
+  <profileLblRank>Rank (Match): </profileLblRank>
   <profileLblTeam>Team: </profileLblTeam>
   <chatoptionsFormName>Chat Options</chatoptionsFormName>
   <chatoptionsGb1>Chat Settings</chatoptionsGb1>
@@ -173,7 +175,7 @@
   <chatRequestDuel>Request Duel</chatRequestDuel>
   <chatIgnoreUser>Ignore User</chatIgnoreUser>
   <chatViewProfile>View Profile</chatViewProfile>
-  <chatBtnAdmin> Staff</chatBtnAdmin>
+  <chatBtnAdmin> Admins</chatBtnAdmin>
  <chatBtnTeam> Team</chatBtnTeam>
  <chatBtnFriend> Friends</chatBtnFriend>
   <chatBtnUser> User Search</chatBtnUser>
@@ -181,7 +183,7 @@
   <chatRemoveIgnore>Remove</chatRemoveIgnore>
   <chatAutoScroll>Auto-Scroll</chatAutoScroll>
   <MainFormTitle>YGOPro Launcher </MainFormTitle>
-  <MainChatTab>Chat</MainChatTab>
+  <MainChatTab>Chat (Beta)</MainChatTab>
   <MainRankingTab>Ranking</MainRankingTab>
   <MainTornyTab>Tournament Room</MainTornyTab>
   <MainYoutubeTab>YouTube</MainYoutubeTab>
@@ -190,19 +192,18 @@
   <MainFileReplayTab>Replays</MainFileReplayTab>
   <MainCustomizeTab>Customize</MainCustomizeTab>
   <MainAboutTab>About</MainAboutTab>
-  <MainSyncBtn>Dropbox Sync</MainSyncBtn>
-  <MainSiteBtn>Site</MainSiteBtn>
+  <MainSiteBtn>Forum</MainSiteBtn>
   <MainDeckBtn>Deck Edit</MainDeckBtn>
   <MainReplaysBtn>Replays</MainReplaysBtn>
   <MainOfflineBtn>Offline</MainOfflineBtn>
   <MainProfileBtn>Profile</MainProfileBtn>
-  <MainServerMessage>Server messages will spawn here.</MainServerMessage>
-  <DuelReqestMessage> has challenged you to a ranked duel! Do you accept?</DuelReqestMessage>
+  <MainServerMessage>Launcher messages will spawn here.</MainServerMessage>
+  <DuelReqestMessage> has challenged you to a duel! Do you accept?</DuelReqestMessage>
   <DuelRequestBanlist> Banlist: </DuelRequestBanlist>
   <DuelRequestRules> Rules: </DuelRequestRules>
   <DuelRequestMode> Type: </DuelRequestMode>
   <SupportItem1Name>Donator Status</SupportItem1Name>
-  <SupportItem1Des>Unlocks Donator status in chat, Orange username and additional chat commands.</SupportItem1Des>
+  <SupportItem1Des>Does nothing at the moment</SupportItem1Des>
   <SupportItem2Name>Change Username</SupportItem2Name>
   <SupportItem2Des>Change your account name while retaining all your ranked stats.</SupportItem2Des>
   <SupportItem3Name>Reset Ranking Stats</SupportItem3Name>
@@ -228,4 +229,32 @@
   <SupportUnbanInput>Enter Username</SupportUnbanInput>
   <SupportTeamNameInput>Enter Team Name</SupportTeamNameInput>
   <SupportMSGInput>Enter Message</SupportMSGInput>
+  <GameMinElo>MinElo</GameMinElo>
+  <GameMaxElo>MaxElo</GameMaxElo>
+  <RankingRank>Rank</RankingRank>
+  <RankingUsername>Username</RankingUsername>
+  <RankingElo>Elo</RankingElo>
+  <RankingWin>W</RankingWin>
+  <RankingLoss>L</RankingLoss>
+  <RankingDraw>D</RankingDraw>
+  <RankingTeam>Team</RankingTeam>
+  <RankingLoadBtn>Load rankings</RankingLoadBtn>
+  <optionMuteOpp>Mute Opponents</optionMuteOpp>
+  <optionMuteSpec>Mute Spectators</optionMuteSpec>
+  <optionSaveReplay>Save Last Replay</optionSaveReplay>
+  <optionMouseMode>Mouse Mode</optionMouseMode>
+  <optionHideSetname>Hide Setname</optionHideSetname>
+  <optionChainButtons>Hide Chain Buttons</optionChainButtons>
+  <optionCurrentPW>Current Password</optionCurrentPW>
+  <optionNewPW>New Password</optionNewPW>
+  <optionConfirmPW>Confirm Password</optionConfirmPW>
+  <profileLblSingleRank>Rank (Single): </profileLblSingleRank>
+  <profileLblElo>Elo (Match):</profileLblElo>
+  <profileLblSingleElo>Elo (Single): </profileLblSingleElo>
+  <MainForumBtn>Bugtracker</MainForumBtn>
+  <RankingSingleGb>Single Rankings</RankingSingleGb>
+  <RankingMatchGb>Match Rankings</RankingMatchGb>
+  <profileLvl>Lvl: </profileLvl>
+  <profileTRatio>W/L Ratio: </profileTRatio>
+  <profileLblTRank>Rank: </profileLblTRank>
 </LanguageInfo>

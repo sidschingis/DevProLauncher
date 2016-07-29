@@ -198,9 +198,10 @@ namespace DevProLauncher.Config
         public string hostTimeLimit = "Time Limit";
         public string hostRules = "Card Rules";
         public string hostMode = "Duel Mode";
-        public string hostPrio = "Enable Priority";
+        public string hostPrio = "Obsolete Rulings";
         public string hostCheckDeck = "Disable Check Deck";
         public string hostShuffle = "Disable Shuffle Deck";
+        public string hostPrerelease = "Enable Prerelease Cards";
         public string hostLifep = "Lifepoints";
         public string hostGameN = "Game Name";
         public string hostBtnHost = "Host";
@@ -302,7 +303,7 @@ namespace DevProLauncher.Config
         public string chatoptionsLblChatBackground = "Chat Background";
         public string chatoptionsLblNormalText = "Normal Text";
         public string chatoptionsLblLevel98 = "Bot";
-        public string chatoptionsLblLevel2 = "Level 2";
+        public string chatoptionsLblLevel2 = "TD";
         public string chatoptionsLblLevel1 = "Helper";
         public string chatoptionsLblNormalUser = "Normal Username";
         public string chatoptionsLblServerMessages = "Server Message";

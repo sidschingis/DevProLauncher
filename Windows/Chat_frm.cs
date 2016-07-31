@@ -934,8 +934,8 @@ namespace DevProLauncher.Windows
                     if (Program.UserInfo.rank > 3)
                     {
                         WriteMessage(new ChatMessage(MessageType.System, CommandType.None, null, "-- SMod Commands --"));
-                        WriteMessage(new ChatMessage(MessageType.System, CommandType.None, null, "/shutdown [forced] servername - instructs the duel server to shutdown. If 'forced' is added: Does not wait for games to finish."));
-                        WriteMessage(new ChatMessage(MessageType.System, CommandType.None, null, "/restart [forced] servername - instructs the duel server to restart. If 'forced' is added: Does not wait for games to finish."));
+                        WriteMessage(new ChatMessage(MessageType.System, CommandType.None, null, "/shutdown [false]/[forced] servername - instructs the duel server to shutdown. If 'forced' is added: Does not wait for games to finish. Do not use false if you use Forced."));
+                        WriteMessage(new ChatMessage(MessageType.System, CommandType.None, null, "/restart [false]/[forced] servername - instructs the duel server to restart. If 'forced' is added: Does not wait for games to finish. Do not use false if you use Forced."));
                         WriteMessage(new ChatMessage(MessageType.System, CommandType.None, null, "/kill [forced]- Kills all crashed cores. If 'forced' is added: Kills all cores (including running games)."));
                         WriteMessage(new ChatMessage(MessageType.System, CommandType.None, null, "/ban username time reason - Bans a user, time format has to be in hours (max 730 hours), also you must give a reason."));
                         WriteMessage(new ChatMessage(MessageType.System, CommandType.None, null, "/banusername username - Bans a user's username"));

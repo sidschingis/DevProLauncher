@@ -332,6 +332,7 @@ namespace DevProLauncher.Config
         public string chatTabFriends = "Friends";
         public string chatTabIgnore = "Ignore";
         public string chatKick = "Kick";
+        public string chatMute = "Local Mute";
         public string chatBan = "Ban";
         public string chatTeamRemove = "Remove from Team";
         public string chatUserCount = "User Count: ";
@@ -364,6 +365,13 @@ namespace DevProLauncher.Config
         public string kickReasonLbl = "Reason for kick";
         public string kickConfirm = "Confirm";
         public string kickCancel = "Cancel";
+
+        public string muteTitle = "Mute User";
+        public string muteMessageLbl = "Please fill out the form";
+        public string muteTimeLbl = "Time to mute (in hours)";
+        public string muteReasonLbl = "Reason for mute";
+        public string muteConfirm = "Confirm";
+        public string muteCancel = "Cancel";
 
         // ChannelList_frm.cs
 

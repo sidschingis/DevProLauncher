@@ -113,14 +113,6 @@
             this.ulose = new System.Windows.Forms.Label();
             this.UWinLP0 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.tableLayoutPanel65 = new System.Windows.Forms.TableLayoutPanel();
-            this.singlerank = new System.Windows.Forms.Label();
-            this.Username = new System.Windows.Forms.Label();
-            this.UserLevel = new System.Windows.Forms.Label();
-            this.team = new System.Windows.Forms.Label();
-            this.singleelo = new System.Windows.Forms.Label();
-            this.elo = new System.Windows.Forms.Label();
-            this.rank = new System.Windows.Forms.Label();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
             this.tableLayoutPanel6 = new System.Windows.Forms.TableLayoutPanel();
             this.TagWLD = new System.Windows.Forms.Label();
@@ -197,7 +189,14 @@
             this.label51 = new System.Windows.Forms.Label();
             this.label52 = new System.Windows.Forms.Label();
             this.TSingleWLD = new System.Windows.Forms.Label();
-            this.SecretLbl = new System.Windows.Forms.Label();
+            this.rank = new System.Windows.Forms.Label();
+            this.elo = new System.Windows.Forms.Label();
+            this.singleelo = new System.Windows.Forms.Label();
+            this.team = new System.Windows.Forms.Label();
+            this.UserLevel = new System.Windows.Forms.Label();
+            this.Username = new System.Windows.Forms.Label();
+            this.singlerank = new System.Windows.Forms.Label();
+            this.tableLayoutPanel65 = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanel1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
@@ -208,7 +207,6 @@
             this.groupBox6.SuspendLayout();
             this.tableLayoutPanel4.SuspendLayout();
             this.groupBox1.SuspendLayout();
-            this.tableLayoutPanel65.SuspendLayout();
             this.groupBox4.SuspendLayout();
             this.tableLayoutPanel6.SuspendLayout();
             this.tabControl1.SuspendLayout();
@@ -225,6 +223,7 @@
             this.tableLayoutPanel11.SuspendLayout();
             this.groupBox11.SuspendLayout();
             this.tableLayoutPanel12.SuspendLayout();
+            this.tableLayoutPanel65.SuspendLayout();
             this.SuspendLayout();
             // 
             // tableLayoutPanel1
@@ -1213,101 +1212,6 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "User Info";
             // 
-            // tableLayoutPanel65
-            // 
-            this.tableLayoutPanel65.ColumnCount = 2;
-            this.tableLayoutPanel65.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel65.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel65.Controls.Add(this.singlerank, 0, 2);
-            this.tableLayoutPanel65.Controls.Add(this.Username, 0, 0);
-            this.tableLayoutPanel65.Controls.Add(this.UserLevel, 1, 1);
-            this.tableLayoutPanel65.Controls.Add(this.team, 1, 0);
-            this.tableLayoutPanel65.Controls.Add(this.singleelo, 0, 3);
-            this.tableLayoutPanel65.Controls.Add(this.elo, 1, 3);
-            this.tableLayoutPanel65.Controls.Add(this.rank, 1, 2);
-            this.tableLayoutPanel65.Controls.Add(this.SecretLbl, 0, 1);
-            this.tableLayoutPanel65.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel65.Location = new System.Drawing.Point(3, 16);
-            this.tableLayoutPanel65.Name = "tableLayoutPanel65";
-            this.tableLayoutPanel65.RowCount = 4;
-            this.tableLayoutPanel65.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel65.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel65.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutPanel65.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutPanel65.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutPanel65.Size = new System.Drawing.Size(391, 79);
-            this.tableLayoutPanel65.TabIndex = 0;
-            // 
-            // singlerank
-            // 
-            this.singlerank.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.singlerank.AutoSize = true;
-            this.singlerank.Location = new System.Drawing.Point(59, 41);
-            this.singlerank.Name = "singlerank";
-            this.singlerank.Size = new System.Drawing.Size(77, 13);
-            this.singlerank.TabIndex = 7;
-            this.singlerank.Text = "Rank (Single): ";
-            // 
-            // Username
-            // 
-            this.Username.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.Username.AutoSize = true;
-            this.Username.Location = new System.Drawing.Point(67, 3);
-            this.Username.Name = "Username";
-            this.Username.Size = new System.Drawing.Size(61, 13);
-            this.Username.TabIndex = 0;
-            this.Username.Text = "Username: ";
-            // 
-            // UserLevel
-            // 
-            this.UserLevel.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.UserLevel.Location = new System.Drawing.Point(198, 19);
-            this.UserLevel.Name = "UserLevel";
-            this.UserLevel.Size = new System.Drawing.Size(190, 19);
-            this.UserLevel.TabIndex = 4;
-            this.UserLevel.Text = "Lvl: 1";
-            this.UserLevel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // team
-            // 
-            this.team.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.team.AutoSize = true;
-            this.team.Location = new System.Drawing.Point(273, 3);
-            this.team.Name = "team";
-            this.team.Size = new System.Drawing.Size(40, 13);
-            this.team.TabIndex = 3;
-            this.team.Text = "Team: ";
-            // 
-            // singleelo
-            // 
-            this.singleelo.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.singleelo.AutoSize = true;
-            this.singleelo.Location = new System.Drawing.Point(66, 62);
-            this.singleelo.Name = "singleelo";
-            this.singleelo.Size = new System.Drawing.Size(63, 13);
-            this.singleelo.TabIndex = 6;
-            this.singleelo.Text = "Elo (Single):";
-            // 
-            // elo
-            // 
-            this.elo.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.elo.AutoSize = true;
-            this.elo.Location = new System.Drawing.Point(261, 62);
-            this.elo.Name = "elo";
-            this.elo.Size = new System.Drawing.Size(64, 13);
-            this.elo.TabIndex = 5;
-            this.elo.Text = "Elo (Match):";
-            // 
-            // rank
-            // 
-            this.rank.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.rank.AutoSize = true;
-            this.rank.Location = new System.Drawing.Point(254, 41);
-            this.rank.Name = "rank";
-            this.rank.Size = new System.Drawing.Size(78, 13);
-            this.rank.TabIndex = 2;
-            this.rank.Text = "Rank (Match): ";
-            // 
             // groupBox4
             // 
             this.groupBox4.Controls.Add(this.tableLayoutPanel6);
@@ -2217,15 +2121,99 @@
             this.TSingleWLD.Text = "0/0/0";
             this.TSingleWLD.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // SecretLbl
+            // rank
             // 
-            this.SecretLbl.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.SecretLbl.AutoSize = true;
-            this.SecretLbl.Location = new System.Drawing.Point(66, 22);
-            this.SecretLbl.Name = "SecretLbl";
-            this.SecretLbl.Size = new System.Drawing.Size(63, 13);
-            this.SecretLbl.TabIndex = 8;
-            this.SecretLbl.Text = "AppSecret: ";
+            this.rank.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.rank.AutoSize = true;
+            this.rank.Location = new System.Drawing.Point(254, 41);
+            this.rank.Name = "rank";
+            this.rank.Size = new System.Drawing.Size(78, 13);
+            this.rank.TabIndex = 2;
+            this.rank.Text = "Rank (Match): ";
+            // 
+            // elo
+            // 
+            this.elo.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.elo.AutoSize = true;
+            this.elo.Location = new System.Drawing.Point(261, 62);
+            this.elo.Name = "elo";
+            this.elo.Size = new System.Drawing.Size(64, 13);
+            this.elo.TabIndex = 5;
+            this.elo.Text = "Elo (Match):";
+            // 
+            // singleelo
+            // 
+            this.singleelo.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.singleelo.AutoSize = true;
+            this.singleelo.Location = new System.Drawing.Point(66, 62);
+            this.singleelo.Name = "singleelo";
+            this.singleelo.Size = new System.Drawing.Size(63, 13);
+            this.singleelo.TabIndex = 6;
+            this.singleelo.Text = "Elo (Single):";
+            // 
+            // team
+            // 
+            this.team.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.team.AutoSize = true;
+            this.team.Location = new System.Drawing.Point(273, 3);
+            this.team.Name = "team";
+            this.team.Size = new System.Drawing.Size(40, 13);
+            this.team.TabIndex = 3;
+            this.team.Text = "Team: ";
+            // 
+            // UserLevel
+            // 
+            this.UserLevel.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.UserLevel.Location = new System.Drawing.Point(198, 19);
+            this.UserLevel.Name = "UserLevel";
+            this.UserLevel.Size = new System.Drawing.Size(190, 19);
+            this.UserLevel.TabIndex = 4;
+            this.UserLevel.Text = "Lvl: 1";
+            this.UserLevel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // Username
+            // 
+            this.Username.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.Username.AutoSize = true;
+            this.Username.Location = new System.Drawing.Point(67, 3);
+            this.Username.Name = "Username";
+            this.Username.Size = new System.Drawing.Size(61, 13);
+            this.Username.TabIndex = 0;
+            this.Username.Text = "Username: ";
+            // 
+            // singlerank
+            // 
+            this.singlerank.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.singlerank.AutoSize = true;
+            this.singlerank.Location = new System.Drawing.Point(59, 41);
+            this.singlerank.Name = "singlerank";
+            this.singlerank.Size = new System.Drawing.Size(77, 13);
+            this.singlerank.TabIndex = 7;
+            this.singlerank.Text = "Rank (Single): ";
+            // 
+            // tableLayoutPanel65
+            // 
+            this.tableLayoutPanel65.ColumnCount = 2;
+            this.tableLayoutPanel65.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel65.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel65.Controls.Add(this.singlerank, 0, 2);
+            this.tableLayoutPanel65.Controls.Add(this.Username, 0, 0);
+            this.tableLayoutPanel65.Controls.Add(this.UserLevel, 1, 1);
+            this.tableLayoutPanel65.Controls.Add(this.team, 1, 0);
+            this.tableLayoutPanel65.Controls.Add(this.singleelo, 0, 3);
+            this.tableLayoutPanel65.Controls.Add(this.elo, 1, 3);
+            this.tableLayoutPanel65.Controls.Add(this.rank, 1, 2);
+            this.tableLayoutPanel65.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tableLayoutPanel65.Location = new System.Drawing.Point(3, 16);
+            this.tableLayoutPanel65.Name = "tableLayoutPanel65";
+            this.tableLayoutPanel65.RowCount = 4;
+            this.tableLayoutPanel65.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel65.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel65.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tableLayoutPanel65.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tableLayoutPanel65.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tableLayoutPanel65.Size = new System.Drawing.Size(391, 79);
+            this.tableLayoutPanel65.TabIndex = 0;
             // 
             // ProfileFrm
             // 
@@ -2253,8 +2241,6 @@
             this.tableLayoutPanel4.ResumeLayout(false);
             this.tableLayoutPanel4.PerformLayout();
             this.groupBox1.ResumeLayout(false);
-            this.tableLayoutPanel65.ResumeLayout(false);
-            this.tableLayoutPanel65.PerformLayout();
             this.groupBox4.ResumeLayout(false);
             this.tableLayoutPanel6.ResumeLayout(false);
             this.tableLayoutPanel6.PerformLayout();
@@ -2274,6 +2260,8 @@
             this.groupBox11.ResumeLayout(false);
             this.tableLayoutPanel12.ResumeLayout(false);
             this.tableLayoutPanel12.PerformLayout();
+            this.tableLayoutPanel65.ResumeLayout(false);
+            this.tableLayoutPanel65.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -2282,10 +2270,6 @@
 
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
         private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel65;
-        private System.Windows.Forms.Label Username;
-        private System.Windows.Forms.Label rank;
-        private System.Windows.Forms.Label team;
         private System.Windows.Forms.GroupBox groupBox4;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel6;
         private System.Windows.Forms.Label TagWLD;
@@ -2294,7 +2278,6 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label Single;
         private System.Windows.Forms.Label SingleWLD;
-        private System.Windows.Forms.Label UserLevel;
         private System.Windows.Forms.TabControl tabControl1;
         private System.Windows.Forms.TabPage userTab;
         private System.Windows.Forms.TabPage teamTab;
@@ -2363,8 +2346,6 @@
         private System.Windows.Forms.Label label51;
         private System.Windows.Forms.Label label52;
         private System.Windows.Forms.Label TSingleWLD;
-        private System.Windows.Forms.Label elo;
-        private System.Windows.Forms.Label singleelo;
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel2;
         private System.Windows.Forms.GroupBox groupBox3;
@@ -2447,7 +2428,13 @@
         private System.Windows.Forms.Label uwin;
         private System.Windows.Forms.Label ulose;
         private System.Windows.Forms.Label UWinLP0;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel65;
         private System.Windows.Forms.Label singlerank;
-        private System.Windows.Forms.Label SecretLbl;
+        private System.Windows.Forms.Label Username;
+        private System.Windows.Forms.Label UserLevel;
+        private System.Windows.Forms.Label team;
+        private System.Windows.Forms.Label singleelo;
+        private System.Windows.Forms.Label elo;
+        private System.Windows.Forms.Label rank;
     }
 }

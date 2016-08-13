@@ -195,7 +195,7 @@ namespace DevProLauncher.Windows
 
         private void DonateBtn_Click(object sender, EventArgs e)
         {
-            string url = "http://158.69.116.140/paypal/PayPal.php?username=" + Program.UserInfo.username;
+            string url = "http://www.ygodev.pro/paypal/PayPal.php?username=" + Program.UserInfo.username;
 
             System.Diagnostics.Process.Start(url);
         }

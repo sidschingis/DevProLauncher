@@ -429,7 +429,7 @@ namespace DevProLauncher.Windows
                     return;
                 }
 
-                ServerInfo server = form.CardRules.Text == "2099" ? GetServer(Program.Config.Server2099) : GetServer();
+                ServerInfo server = form.CardRules.Text == "2099" ? GetServer(Program.Config.Server2099) : GetServer(false);
 
                 if (server != null)
                 {
@@ -601,6 +601,10 @@ namespace DevProLauncher.Windows
             else
             {
                 serverList = Program.ServerList3P;
+                if (serverList.Count == 0)
+                {
+                    serverList = Program.ServerList;
+                }
             }
 
             if (serverList.Count == 0)

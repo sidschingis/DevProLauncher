@@ -75,18 +75,19 @@ namespace DevProLauncher.Windows
             this.tableLayoutPanel9 = new System.Windows.Forms.TableLayoutPanel();
             this.label6 = new System.Windows.Forms.Label();
             this.DeckSelect = new System.Windows.Forms.ComboBox();
-            this.Duel_DevBot = new System.Windows.Forms.Button();
+            this.DevBotBtn = new System.Windows.Forms.Button();
             this.UpdateLabel = new System.Windows.Forms.Label();
             this.QueueLabel = new System.Windows.Forms.Label();
             this.tableLayoutPanel7 = new System.Windows.Forms.TableLayoutPanel();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
-            this.RankedList = new DevProLauncher.Windows.Components.DoubleBufferedListBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.UnrankedList = new DevProLauncher.Windows.Components.DoubleBufferedListBox();
             this.SearchReset = new System.Windows.Forms.Timer(this.components);
             this.GameListUpdateTimer = new System.Windows.Forms.Timer(this.components);
             this.SpectateTimer = new System.Windows.Forms.Timer(this.components);
             this.QueueTimer = new System.Windows.Forms.Timer(this.components);
+            this.DevBotTimer = new System.Windows.Forms.Timer(this.components);
+            this.RankedList = new DevProLauncher.Windows.Components.DoubleBufferedListBox();
+            this.UnrankedList = new DevProLauncher.Windows.Components.DoubleBufferedListBox();
             this.tableLayoutPanel1.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -624,7 +625,7 @@ namespace DevProLauncher.Windows
             this.tableLayoutPanel3.ColumnCount = 1;
             this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel3.Controls.Add(this.tableLayoutPanel9, 0, 0);
-            this.tableLayoutPanel3.Controls.Add(this.Duel_DevBot, 0, 1);
+            this.tableLayoutPanel3.Controls.Add(this.DevBotBtn, 0, 1);
             this.tableLayoutPanel3.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel3.Location = new System.Drawing.Point(3, 3);
             this.tableLayoutPanel3.Name = "tableLayoutPanel3";
@@ -670,16 +671,16 @@ namespace DevProLauncher.Windows
             this.DeckSelect.Size = new System.Drawing.Size(134, 21);
             this.DeckSelect.TabIndex = 1;
             // 
-            // Duel_DevBot
+            // DevBotBtn
             // 
-            this.Duel_DevBot.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.Duel_DevBot.Location = new System.Drawing.Point(3, 38);
-            this.Duel_DevBot.Name = "Duel_DevBot";
-            this.Duel_DevBot.Size = new System.Drawing.Size(232, 26);
-            this.Duel_DevBot.TabIndex = 5;
-            this.Duel_DevBot.Text = "Duel DevBot";
-            this.Duel_DevBot.UseVisualStyleBackColor = true;
-            this.Duel_DevBot.Click += new System.EventHandler(this.Duel_DevBot_Click);
+            this.DevBotBtn.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.DevBotBtn.Location = new System.Drawing.Point(3, 38);
+            this.DevBotBtn.Name = "DevBotBtn";
+            this.DevBotBtn.Size = new System.Drawing.Size(232, 26);
+            this.DevBotBtn.TabIndex = 5;
+            this.DevBotBtn.Text = "Duel DevBot";
+            this.DevBotBtn.UseVisualStyleBackColor = true;
+            this.DevBotBtn.Click += new System.EventHandler(this.Duel_DevBot_Click);
             // 
             // UpdateLabel
             // 
@@ -727,18 +728,6 @@ namespace DevProLauncher.Windows
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Ranked";
             // 
-            // RankedList
-            // 
-            this.RankedList.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.RankedList.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
-            this.RankedList.FormattingEnabled = true;
-            this.RankedList.IntegralHeight = false;
-            this.RankedList.ItemHeight = 50;
-            this.RankedList.Location = new System.Drawing.Point(3, 16);
-            this.RankedList.Name = "RankedList";
-            this.RankedList.Size = new System.Drawing.Size(318, 499);
-            this.RankedList.TabIndex = 0;
-            // 
             // groupBox1
             // 
             this.groupBox1.Controls.Add(this.UnrankedList);
@@ -749,18 +738,6 @@ namespace DevProLauncher.Windows
             this.groupBox1.TabIndex = 1;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Unranked";
-            // 
-            // UnrankedList
-            // 
-            this.UnrankedList.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.UnrankedList.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
-            this.UnrankedList.FormattingEnabled = true;
-            this.UnrankedList.IntegralHeight = false;
-            this.UnrankedList.ItemHeight = 50;
-            this.UnrankedList.Location = new System.Drawing.Point(3, 16);
-            this.UnrankedList.Name = "UnrankedList";
-            this.UnrankedList.Size = new System.Drawing.Size(317, 499);
-            this.UnrankedList.TabIndex = 0;
             // 
             // SearchReset
             // 
@@ -777,6 +754,34 @@ namespace DevProLauncher.Windows
             // QueueTimer
             // 
             this.QueueTimer.Interval = 1000;
+            // 
+            // DevBotTimer
+            // 
+            this.DevBotTimer.Interval = 1000;
+            // 
+            // RankedList
+            // 
+            this.RankedList.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.RankedList.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.RankedList.FormattingEnabled = true;
+            this.RankedList.IntegralHeight = false;
+            this.RankedList.ItemHeight = 50;
+            this.RankedList.Location = new System.Drawing.Point(3, 16);
+            this.RankedList.Name = "RankedList";
+            this.RankedList.Size = new System.Drawing.Size(318, 499);
+            this.RankedList.TabIndex = 0;
+            // 
+            // UnrankedList
+            // 
+            this.UnrankedList.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.UnrankedList.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.UnrankedList.FormattingEnabled = true;
+            this.UnrankedList.IntegralHeight = false;
+            this.UnrankedList.ItemHeight = 50;
+            this.UnrankedList.Location = new System.Drawing.Point(3, 16);
+            this.UnrankedList.Name = "UnrankedList";
+            this.UnrankedList.Size = new System.Drawing.Size(317, 499);
+            this.UnrankedList.TabIndex = 0;
             // 
             // HubGameList_frm
             // 
@@ -874,6 +879,7 @@ namespace DevProLauncher.Windows
         private System.Windows.Forms.TextBox minEloTxtBox;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel13;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel14;
-        private System.Windows.Forms.Button Duel_DevBot;
+        private System.Windows.Forms.Button DevBotBtn;
+        private System.Windows.Forms.Timer DevBotTimer;
     }
 }

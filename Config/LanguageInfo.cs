@@ -106,7 +106,7 @@ namespace DevProLauncher.Config
         public string GameUpdating1 = "Status: Updating for ";
         public string GameUpdating2 = " seconds.";
         public string GameSpectate = "Random Spectate";
-        public string GameDuelDevBot = "Duel Devbot";
+        public string GameDuelDevBot = "Duel DevBot";
 
         public string GameAll = "All";
         public string GameSingle = "Single";

@@ -51,6 +51,7 @@ namespace DevProLauncher.Windows
             QueueTimer.Tick += Timer;
             SpectateTimer.Tick += ResetSpectate;
             GameListUpdateTimer.Tick += UpdateGameListTimer;
+            DevBotTimer.Tick += ResetDevBot;
             timer = 0;
 
             RefreshDeckList();
@@ -94,7 +95,7 @@ namespace DevProLauncher.Windows
             groupBox1.Text = info.GameUnranked;
             groupBox3.Text = info.GameRanked;
             groupBox2.Text = info.GameSearch;
-            label6.Text = info.GameDefualtDeck;
+            label6.Text = info.GameDefaultDeck;
             label4.Text = info.GameFormat;
             label3.Text = info.GameType;
             label2.Text = info.GameBanList;
@@ -232,6 +233,26 @@ namespace DevProLauncher.Windows
             {
                 int value = Int32.Parse(SpectateBtn.Text);
                 SpectateBtn.Text = (value - 1).ToString(CultureInfo.InvariantCulture);
+            }
+        }
+        private void ResetDevBot(object sender, EventArgs e)
+        {
+            if (InvokeRequired)
+            {
+                Invoke(new Action<object, EventArgs>(ResetSpectate), sender, e);
+                return;
+            }
+
+            if (DevBotBtn.Text == "1")
+            {
+                DevBotBtn.Enabled = true;
+                DevBotBtn.Text = Program.LanguageManager.Translation.GameDuelDevBot;
+                DevBotTimer.Enabled = false;
+            }
+            else
+            {
+                int value = Int32.Parse(DevBotBtn.Text);
+                DevBotBtn.Text = (value - 1).ToString(CultureInfo.InvariantCulture);
             }
         }
 
@@ -869,6 +890,7 @@ namespace DevProLauncher.Windows
                 MessageBox.Show("No Server Available.");
                 return;
             }
+
             Program.ChatServer.SendPacket(DevServerPackets.RequestDuel,
             JsonSerializer.SerializeToString(
              new DuelRequest
@@ -877,6 +899,10 @@ namespace DevProLauncher.Windows
                  duelformatstring = "600OOO8000,0,5,1,U," + LauncherHelper.GenerateString().Substring(0, 5),
                  server = server.serverName
              }));
+            DevBotBtn.Enabled = false;
+            DevBotBtn.Text = "120";
+            DevBotTimer.Enabled = true;
+
         }
     }
 }

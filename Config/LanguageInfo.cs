@@ -88,7 +88,7 @@ namespace DevProLauncher.Config
 
         public string GameRanked = "Ranked";
         public string GameUnranked = "Unranked";
-        public string GameDefualtDeck = "Default Deck";
+        public string GameDefaultDeck = "Default Deck";
         public string GameSearch = "Search";
         public string GameFormat = "Format";
         public string GameType = "Game Type";
@@ -106,6 +106,7 @@ namespace DevProLauncher.Config
         public string GameUpdating1 = "Status: Updating for ";
         public string GameUpdating2 = " seconds.";
         public string GameSpectate = "Random Spectate";
+        public string GameDuelDevBot = "Duel Devbot";
 
         public string GameAll = "All";
         public string GameSingle = "Single";

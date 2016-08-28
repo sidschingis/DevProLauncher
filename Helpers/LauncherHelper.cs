@@ -253,6 +253,7 @@ namespace DevProLauncher.Helpers
             writer.WriteLine("control_mode = " + Convert.ToInt32(Program.Config.MouseMode));
             writer.WriteLine("hide_setname = " + Convert.ToInt32(Program.Config.HideSetname));
             writer.WriteLine("hide_chain_button = " + Convert.ToInt32(Program.Config.ChainButtons));
+            writer.WriteLine("old_replay_mode =" + Convert.ToInt32(Program.Config.old_replay_mode));
             writer.Close();
         }
         public static void GenerateConfig()
@@ -285,6 +286,7 @@ namespace DevProLauncher.Helpers
             writer.WriteLine("control_mode = " + Convert.ToInt32(Program.Config.MouseMode));
             writer.WriteLine("hide_setname = " + Convert.ToInt32(Program.Config.HideSetname));
             writer.WriteLine("hide_chain_button = " + Convert.ToInt32(Program.Config.ChainButtons));
+            writer.WriteLine("old_replay_mode =" + Convert.ToInt32(Program.Config.old_replay_mode));
             writer.Close();
         }
         public static void GenerateConfig(int fileType, string file = "")
@@ -318,7 +320,8 @@ namespace DevProLauncher.Helpers
             writer.WriteLine("control_mode = " + Convert.ToInt32(Program.Config.MouseMode));
             writer.WriteLine("hide_setname = " + Convert.ToInt32(Program.Config.HideSetname));
             writer.WriteLine("hide_chain_button = " + Convert.ToInt32(Program.Config.ChainButtons));
-			
+            writer.WriteLine("old_replay_mode =" + Convert.ToInt32(Program.Config.old_replay_mode));
+
             switch (fileType)
             {
                 case 0:
@@ -372,6 +375,7 @@ namespace DevProLauncher.Helpers
             writer.WriteLine("control_mode = " + Convert.ToInt32(Program.Config.MouseMode));
             writer.WriteLine("hide_setname = " + Convert.ToInt32(Program.Config.HideSetname));
             writer.WriteLine("hide_chain_button = " + Convert.ToInt32(Program.Config.ChainButtons));
+            writer.WriteLine("old_replay_mode =" + Convert.ToInt32(Program.Config.old_replay_mode));
             writer.Close();
         }
 

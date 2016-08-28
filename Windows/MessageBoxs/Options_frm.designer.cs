@@ -95,6 +95,7 @@
             this.UpdateBtn = new System.Windows.Forms.Button();
             this.emailLbl = new System.Windows.Forms.Label();
             this.confirmEmailLbl = new System.Windows.Forms.Label();
+            this.old_replay_mode = new System.Windows.Forms.CheckBox();
             this.tableLayoutPanel1.SuspendLayout();
             this.flowLayoutPanel1.SuspendLayout();
             this.OptionTabControl.SuspendLayout();
@@ -274,6 +275,7 @@
             this.tableLayoutPanel7.Controls.Add(this.EnableSleeveLoading, 2, 0);
             this.tableLayoutPanel7.Controls.Add(this.HideSetname, 1, 2);
             this.tableLayoutPanel7.Controls.Add(this.ChainButtons, 2, 2);
+            this.tableLayoutPanel7.Controls.Add(this.old_replay_mode, 3, 2);
             this.tableLayoutPanel7.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel7.Location = new System.Drawing.Point(3, 3);
             this.tableLayoutPanel7.Name = "tableLayoutPanel7";
@@ -374,11 +376,11 @@
             this.SaveReplay.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.SaveReplay.AutoSize = true;
             this.SaveReplay.CheckAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.SaveReplay.Location = new System.Drawing.Point(717, 41);
+            this.SaveReplay.Location = new System.Drawing.Point(711, 41);
             this.SaveReplay.Name = "SaveReplay";
-            this.SaveReplay.Size = new System.Drawing.Size(104, 17);
+            this.SaveReplay.Size = new System.Drawing.Size(110, 17);
             this.SaveReplay.TabIndex = 8;
-            this.SaveReplay.Text = "SaveLastReplay";
+            this.SaveReplay.Text = "Save Last Replay";
             this.SaveReplay.UseVisualStyleBackColor = true;
             // 
             // EnableSleeveLoading
@@ -433,7 +435,7 @@
             this.tableLayoutPanel3.ColumnCount = 3;
             this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 71.70732F));
             this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 28.29268F));
-            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 198F));
+            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 199F));
             this.tableLayoutPanel3.Controls.Add(this.Enabled3d, 1, 0);
             this.tableLayoutPanel3.Controls.Add(this.flowLayoutPanel3, 2, 0);
             this.tableLayoutPanel3.Controls.Add(this.flowLayoutPanel4, 2, 1);
@@ -454,7 +456,7 @@
             this.Enabled3d.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.Enabled3d.AutoSize = true;
             this.Enabled3d.CheckAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.Enabled3d.Location = new System.Drawing.Point(533, 8);
+            this.Enabled3d.Location = new System.Drawing.Point(532, 8);
             this.Enabled3d.Name = "Enabled3d";
             this.Enabled3d.Size = new System.Drawing.Size(95, 17);
             this.Enabled3d.TabIndex = 2;
@@ -466,7 +468,7 @@
             // 
             this.flowLayoutPanel3.Controls.Add(this.label4);
             this.flowLayoutPanel3.Controls.Add(this.SkinList);
-            this.flowLayoutPanel3.Location = new System.Drawing.Point(634, 3);
+            this.flowLayoutPanel3.Location = new System.Drawing.Point(633, 3);
             this.flowLayoutPanel3.Name = "flowLayoutPanel3";
             this.flowLayoutPanel3.Size = new System.Drawing.Size(179, 28);
             this.flowLayoutPanel3.TabIndex = 4;
@@ -498,9 +500,9 @@
             this.flowLayoutPanel4.Controls.Add(this.label6);
             this.flowLayoutPanel4.Controls.Add(this.Antialias);
             this.flowLayoutPanel4.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.flowLayoutPanel4.Location = new System.Drawing.Point(634, 37);
+            this.flowLayoutPanel4.Location = new System.Drawing.Point(633, 37);
             this.flowLayoutPanel4.Name = "flowLayoutPanel4";
-            this.flowLayoutPanel4.Size = new System.Drawing.Size(193, 66);
+            this.flowLayoutPanel4.Size = new System.Drawing.Size(194, 66);
             this.flowLayoutPanel4.TabIndex = 5;
             // 
             // label6
@@ -602,7 +604,7 @@
             this.EnableLauncherSound.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.EnableLauncherSound.AutoSize = true;
             this.EnableLauncherSound.CheckAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.EnableLauncherSound.Location = new System.Drawing.Point(487, 39);
+            this.EnableLauncherSound.Location = new System.Drawing.Point(486, 39);
             this.EnableLauncherSound.Margin = new System.Windows.Forms.Padding(3, 5, 3, 3);
             this.EnableLauncherSound.Name = "EnableLauncherSound";
             this.EnableLauncherSound.Size = new System.Drawing.Size(141, 17);
@@ -947,6 +949,18 @@
             this.confirmEmailLbl.TabIndex = 8;
             this.confirmEmailLbl.Text = "Confirm Email";
             // 
+            // old_replay_mode
+            // 
+            this.old_replay_mode.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.old_replay_mode.AutoSize = true;
+            this.old_replay_mode.CheckAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.old_replay_mode.Location = new System.Drawing.Point(713, 74);
+            this.old_replay_mode.Name = "old_replay_mode";
+            this.old_replay_mode.Size = new System.Drawing.Size(108, 17);
+            this.old_replay_mode.TabIndex = 14;
+            this.old_replay_mode.Text = "Old Replay Mode";
+            this.old_replay_mode.UseVisualStyleBackColor = true;
+            // 
             // Settings
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(96F, 96F);
@@ -1066,6 +1080,6 @@
         private System.Windows.Forms.CheckBox MouseMode;
         private System.Windows.Forms.CheckBox HideSetname;
         private System.Windows.Forms.CheckBox ChainButtons;
-
+        private System.Windows.Forms.CheckBox old_replay_mode;
     }
 }

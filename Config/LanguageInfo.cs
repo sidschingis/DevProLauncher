@@ -184,6 +184,7 @@ namespace DevProLauncher.Config
         public string optionMouseMode = "Mouse Mode";
         public string optionHideSetname = "Hide Setname";
         public string optionChainButtons = "Hide Chain Buttons";
+        public string optionOldReplay = "Old Replay Mode";
         public string optionCurrentPW = "Current Password";
         public string optionNewPW = "New Password";
         public string optionConfirmPW = "Confirm Password";

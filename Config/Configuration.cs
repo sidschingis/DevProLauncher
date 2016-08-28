@@ -54,6 +54,7 @@ namespace DevProLauncher.Config
         public bool MouseMode = false;
         public bool HideSetname = false;
         public bool ChainButtons = false;
+        public bool old_replay_mode = false;
         public string IgnoreList = "";
         public string DefaultChannel = "";
 

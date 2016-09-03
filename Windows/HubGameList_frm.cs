@@ -876,24 +876,7 @@ namespace DevProLauncher.Windows
 
         private void Duel_DevBot_Click(object sender, EventArgs e)
         {
-            ServerInfo server = Program.MainForm.GameWindow.GetServer();
-            if (server == null)
-            {
-                MessageBox.Show("No Server Available.");
-                return;
-            }
-
-            Program.ChatServer.SendPacket(DevServerPackets.RequestDuel,
-            JsonSerializer.SerializeToString(
-             new DuelRequest
-             {
-                 username = "DevBot",
-                 duelformatstring = "600OOO8000,0,5,1,U," + LauncherHelper.GenerateString().Substring(0, 5),
-                 server = server.serverName
-             }));
-            DevBotBtn.Enabled = false;
-            DevBotBtn.Text = "120";
-            DevBotTimer.Enabled = true;
+            LauncherHelper.RunGame("-ai");
 
         }
     }

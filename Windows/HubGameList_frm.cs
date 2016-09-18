@@ -1,22 +1,21 @@
-﻿using System;
+﻿using DevProLauncher.Config;
+using DevProLauncher.Helpers;
+using DevProLauncher.Network.Data;
+using DevProLauncher.Network.Enums;
+using DevProLauncher.Windows.MessageBoxs;
+using ServiceStack.Text;
+using System;
 using System.Collections.Generic;
 using System.Drawing;
 using System.Globalization;
 using System.IO;
 using System.Linq;
 using System.Windows.Forms;
-using DevProLauncher.Config;
-using DevProLauncher.Helpers;
-using DevProLauncher.Network.Data;
-using DevProLauncher.Network.Enums;
-using DevProLauncher.Windows.MessageBoxs;
-using ServiceStack.Text;
 
 namespace DevProLauncher.Windows
 {
     public sealed partial class HubGameList_frm : Form
     {
-
         private readonly Dictionary<string, RoomInfos> m_rooms = new Dictionary<string, RoomInfos>();
         private int timer;
 
@@ -61,6 +60,7 @@ namespace DevProLauncher.Windows
             ApplyTranslation();
             LoadSettings();
         }
+
         public void SaveSettings()
         {
             Program.Config.SearchFormat = Format.SelectedIndex;
@@ -75,6 +75,7 @@ namespace DevProLauncher.Windows
 
             Program.SaveConfig(Program.ConfigurationFilename, Program.Config);
         }
+
         public void LoadSettings()
         {
             Format.SelectedIndex = Program.Config.SearchFormat;
@@ -111,6 +112,7 @@ namespace DevProLauncher.Windows
             Quick_Btn.Text = info.GameBtnQuick;
             UpdateLabel.Text = info.GameNotUpdating;
             SpectateBtn.Text = info.GameSpectate;
+            CheckmateBtn.Text = info.GameCheckmate;
 
             Format.Items[0] = info.GameAll;
 
@@ -135,7 +137,6 @@ namespace DevProLauncher.Windows
 
         public void RefreshDeckList()
         {
-
             if (InvokeRequired)
             {
                 Invoke(new Action(RefreshDeckList));
@@ -205,6 +206,7 @@ namespace DevProLauncher.Windows
                 SearchRequest_Btn.Text = (value - 1).ToString(CultureInfo.InvariantCulture);
             }
         }
+
         private void Timer(object sender, EventArgs e)
         {
             if (InvokeRequired)
@@ -215,6 +217,7 @@ namespace DevProLauncher.Windows
             timer++;
             QueueLabel.Text = "Queue Status: Searching for " + timer + " seconds";
         }
+
         private void ResetSpectate(object sender, EventArgs e)
         {
             if (InvokeRequired)
@@ -235,6 +238,7 @@ namespace DevProLauncher.Windows
                 SpectateBtn.Text = (value - 1).ToString(CultureInfo.InvariantCulture);
             }
         }
+
         private void ResetDevBot(object sender, EventArgs e)
         {
             if (InvokeRequired)
@@ -276,7 +280,6 @@ namespace DevProLauncher.Windows
             }
 
             OnRoomsList(m_rooms.Values.ToArray());
-
         }
 
         public void OnRoomsList(RoomInfos[] rooms)
@@ -305,13 +308,13 @@ namespace DevProLauncher.Windows
         private void InternalRoomCreated(RoomInfos room)
         {
             string roomname = room.GetRoomName();
-            if(m_rooms.ContainsKey(roomname))
+            if (m_rooms.ContainsKey(roomname))
                 return;
             m_rooms.Add(roomname, room);
             ListBox rooms = (room.isRanked ? RankedList : UnrankedList);
 
             //Remove DevBot games
-            if(!room.playerList[0].Trim().ToLower().Equals("devbot"))
+            if (!room.playerList[0].Trim().ToLower().Equals("devbot"))
                 rooms.Items.Add(roomname);
         }
 
@@ -527,7 +530,6 @@ namespace DevProLauncher.Windows
                     if (MessageBox.Show(Program.LanguageManager.Translation.GameLPChange, Program.LanguageManager.Translation.hostLifep, MessageBoxButtons.YesNo) == DialogResult.Yes)
                     {
                         form.LifePoints.Text = mode == "Tag" ? "16000" : "8000";
-
                     }
                 }
             }
@@ -662,7 +664,7 @@ namespace DevProLauncher.Windows
             if (e.Index == -1)
                 return;
             var index = e.Index;
-       
+
             var room = list.Items[index].ToString();
             var selected = ((e.State & DrawItemState.Selected) == DrawItemState.Selected);
             var g = e.Graphics;
@@ -701,10 +703,9 @@ namespace DevProLauncher.Windows
                     {
                         string player1 = players[0].Trim() + " (" + info.eloList[0].ToString() + ")";
                         string player2 = (players.Length > 1) ? players[1].Trim() + " (" + info.eloList[1].ToString() + ")" : "???";
-                            playerstring = player1 + " vs " + player2;
+                        playerstring = player1 + " vs " + player2;
                     }
                 }
-
             }
             var bounds = list.GetItemRectangle(index);
             var rulesize = e.Graphics.MeasureString((info == null) ? "???" : RoomInfos.GameRule(info.rule), e.Font);
@@ -761,7 +762,6 @@ namespace DevProLauncher.Windows
 
         private bool JoinQueue(bool isQuick = false)
         {
-
             var form = new Host(true);
 
             form.Mode.Items.Clear();
@@ -786,6 +786,7 @@ namespace DevProLauncher.Windows
             }
             return false;
         }
+
         public void OnMatchFound(string matchnumber)
         {
             var form = new DuelRequestFrm(
@@ -814,11 +815,13 @@ namespace DevProLauncher.Windows
                 ResetQueue();
             }
         }
+
         public void OnMatchCancel(string data)
         {
             MessageBox.Show(Program.LanguageManager.Translation.GameMatchCancel + "(" + data + ")");
             ResetQueue();
         }
+
         public void OnMatchStart(DuelRequest request)
         {
             ServerInfo server = null;
@@ -848,6 +851,7 @@ namespace DevProLauncher.Windows
             Program.ChatServer.SendPacket(DevServerPackets.LeaveQueue);
             ResetQueue();
         }
+
         private void ResetQueue(/*object sender, EventArgs e*/)
         {
             //stub
@@ -863,6 +867,7 @@ namespace DevProLauncher.Windows
             qJoinBtn.Enabled = true;
             leaveBtn.Enabled = false;
         }
+
         private void qJoinBtn_Click(object sender, EventArgs e)
         {
             if (JoinQueue(true))
@@ -877,7 +882,13 @@ namespace DevProLauncher.Windows
         private void Duel_DevBot_Click(object sender, EventArgs e)
         {
             LauncherHelper.RunGame("-ai");
+        }
 
+        private void CheckmateBtn_Click(object sender, EventArgs e)
+        {
+            ServerInfo server = new ServerInfo("Checkmate", "45.33.106.116", 21001);
+            LauncherHelper.GenerateConfig(server, "");
+            LauncherHelper.RunGame("-j");
         }
     }
 }

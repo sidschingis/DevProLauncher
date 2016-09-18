@@ -1,4 +1,5 @@
 ﻿using System;
+
 namespace DevProLauncher.Config
 {
     [Serializable]
@@ -6,10 +7,12 @@ namespace DevProLauncher.Config
     {
         // Quickhost frm
         public string QuickHostSetting = "Quick Host Settings";
+
         public string QuickHostBtn = "Confirm";
 
         // Program.cs
         public string pmsbProgRun = "Program already running";
+
         public string pMsbErrorToServer = "Error Connecting to server";
         public string pMsbBadLog = "Bad Login";
         public string pMsbOldVers = "You have a very old version of the launcher. Do you want to reinstall?";
@@ -17,6 +20,7 @@ namespace DevProLauncher.Config
 
         // Login_frm.cs
         public string LoginUserName = "Username";
+
         public string LoginPassWord = "Password";
         public string LoginLanguage = "Language";
         public string LoginLoginButton = "Login";
@@ -31,8 +35,10 @@ namespace DevProLauncher.Config
         public string LoginInvalid = "You need to validate your account.";
         public string LoginFailed = "Incorrect Password or Username.";
         public string LoginBanned = "You are banned.";
+
         // Register_frm.cs
         public string RegistLbUser = "Username";
+
         public string RegistLbPw = "Password";
         public string RegistLbPw2 = "Confirm Password";
         public string RegistLbMail = "Email";
@@ -68,7 +74,7 @@ namespace DevProLauncher.Config
         public string ValidateMsbResendFail = "Resend failed (wrong Username/Email address).";
         public string ValidateMsbAccept = "Account Validated.";
         public string ValidateMsbFailed = "Validation failed (wrong Username/Code combination).";
-       
+
         // Recover_frm.cs
 
         public string RecoverLbUser = "Username";
@@ -107,6 +113,7 @@ namespace DevProLauncher.Config
         public string GameUpdating2 = " seconds.";
         public string GameSpectate = "Random Spectate";
         public string GameDuelDevBot = "Duel DevBot";
+        public string GameCheckmate = "Checkmate";
 
         public string GameAll = "All";
         public string GameSingle = "Single";
@@ -132,9 +139,9 @@ namespace DevProLauncher.Config
         public string Ranked = "Ranked";
         public string Unranked = "Unranked";
 
-
         // Ranking_frm.cs
         public string RankingSingleGb = "Single Rankings";
+
         public string RankingMatchGb = "Match Rankings";
         public string RankingRank = "Rank";
         public string RankingUsername = "Username";
@@ -150,6 +157,7 @@ namespace DevProLauncher.Config
 
         // Option_frm.cs
         public string optionTitle = "Options";
+
         public string optionGameTab = "Game Settings";
         public string optionAccountTab = "Account Settings";
         public string optionGb1 = "User Settings";
@@ -197,6 +205,7 @@ namespace DevProLauncher.Config
 
         // Host_frm.cs
         public string hostGb1 = "Settings";
+
         public string hostGb2 = "Additional Options";
         public string hostBanlist = "Ban List";
         public string hostTimeLimit = "Time Limit";
@@ -225,12 +234,13 @@ namespace DevProLauncher.Config
         public string fileAskDelete = "Are you sure you want to delete the following item(s) ";
         public string fileNewName = "Enter new name";
         public string fileInputConfirm = "Rename";
-        public string fileInputCancel= "Cancel";
+        public string fileInputCancel = "Cancel";
         public string fileBtnRefresh = "Refresh";
         public string fileBtnImport = "Import";
 
         // ReplayInfoControl..cs
         public string replayError = "Error opening replay.";
+
         public string replayType = "Replay Type: ";
         public string replayLP = "Starting Lifepoints: ";
         public string replayHand = "Starting Handcards: ";
@@ -238,11 +248,13 @@ namespace DevProLauncher.Config
 
         // About_frm.cs
         public string aboutLabel1 = "About DevPro";
+
         public string aAboutText = "The YGOPro Online Development Group is a rag tag team of programmers, philanthropist, and generally knowledgeable people in the YGOPro community that seek to better and progress the Yu-Gi-Oh! Online community as a whole by providing services and software to allow duelist to grow by dueling and forming lasting friendships.";
         public string aboutLabel5 = "DevPro Contributors";
 
         // Customize_frm.cs
         public string cusRemoveBtn = "Remove";
+
         public string cusAddThemeBtn = "Add";
         public string cusAddContentBtn = "Add";
         public string cusPreview = "Preview";
@@ -252,6 +264,7 @@ namespace DevProLauncher.Config
 
         //Profile_frm.cs
         public string profileName = "Profile";
+
         public string profileLvl = "Lvl: ";
         public string profileWin = "Wins";
         public string profileLose = "Losses";
@@ -284,7 +297,7 @@ namespace DevProLauncher.Config
         public string profileLblTeam = "Team: ";
         public string profileLblElo = "Elo (Match): ";
         public string profileLblSingleElo = "Elo (Single): ";
-        
+
         //ChatOptions_frm.cs
 
         public string chatoptionsFormName = "Chat Options";
@@ -322,7 +335,7 @@ namespace DevProLauncher.Config
 
         //Chat_frm.cs
 
-        public string chatTitle ="Chat";
+        public string chatTitle = "Chat";
         public string chatMsg1 = "Welcome to the DevPro chat system!";
         public string chatMsg2 = "To join a channel please click the channel list button.";
         public string chatBtnoptions = "Settings";
@@ -361,7 +374,7 @@ namespace DevProLauncher.Config
         public string banMessageLbl = "Please fill out the form";
         public string banTimeLbl = "Time to ban (in hours)";
         public string banReasonLbl = "Reason for ban";
-        public string banConfirm   = "Confirm";
+        public string banConfirm = "Confirm";
         public string banCancel = "Cancel";
 
         public string kickTitle = "Kick User";
@@ -409,12 +422,14 @@ namespace DevProLauncher.Config
 
         //DuelRequest_frm
         public string DuelReqestMessage = " has challenged you to an unranked duel! Do you accept?";
+
         public string DuelRequestBanlist = " Banlist: ";
         public string DuelRequestRules = " Rules: ";
         public string DuelRequestMode = " Type: ";
 
         //DevPro SupportTab
         public string SupportTitle = "Support DevPro";
+
         public string SupportItem1Name = "Donator Status";
         public string SupportItem1Des = "Unlocks Donator status in chat, Orange username and additional chat commands.";
         public string SupportItem2Name = "Change Username";
@@ -441,7 +456,7 @@ namespace DevProLauncher.Config
         public string SupportTeamNameInput = "Enter Team Name";
         public string SupportMSGInput = "Enter Message";
 
-        public string SupportRefreshBtn = "Refresh"; 
+        public string SupportRefreshBtn = "Refresh";
         public string SupportTransferBtn = "Transfer";
         public string SupportGetBtn = "Get";
     }

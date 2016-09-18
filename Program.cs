@@ -1,22 +1,22 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Windows.Forms;
-using DevProLauncher.Windows;
+﻿using DevProLauncher.Config;
+using DevProLauncher.Helpers;
 using DevProLauncher.Network;
 using DevProLauncher.Network.Data;
-using DevProLauncher.Config;
-using System.IO;
-using System.Xml.Serialization;
-using System.Net;
-using System.Diagnostics;
+using DevProLauncher.Windows;
 using DevProLauncher.Windows.MessageBoxs;
-using DevProLauncher.Helpers;
+using System;
+using System.Collections.Generic;
+using System.Diagnostics;
+using System.IO;
+using System.Net;
+using System.Windows.Forms;
+using System.Xml.Serialization;
 
 namespace DevProLauncher
 {
-    static class Program
+    internal static class Program
     {
-        public const string Version = "210481";
+        public const string Version = "210490";
         public static Configuration Config;
         public static LanguageManager LanguageManager;
         public static ChatClient ChatServer;
@@ -27,17 +27,20 @@ namespace DevProLauncher
 #else
         public const string ConfigurationFilename = "launcher.conf";
 #endif
+
         // official servers
         public static Dictionary<string, ServerInfo> ServerList = new Dictionary<string, ServerInfo>();
+
         // 3rd party servers
         public static Dictionary<string, ServerInfo> ServerList3P = new Dictionary<string, ServerInfo>();
+
         public static MainFrm MainForm;
         public static ServerInfo Server;
-        public static Dictionary<string,ServerInfo> CheckmateServerList = new Dictionary<string,ServerInfo>();
-        public static Random Rand = new Random();        
+        public static Dictionary<string, ServerInfo> CheckmateServerList = new Dictionary<string, ServerInfo>();
+        public static Random Rand = new Random();
 
         [STAThread]
-        static void Main()
+        private static void Main()
         {
             LoadConfig(ConfigurationFilename);
 #if !DEBUG
@@ -47,7 +50,7 @@ namespace DevProLauncher
             Config.UpdaterAddress = "/launcher/version.php";
             Config.ServerInfoAddress = "/launcher/server.php";
 
-            LanguageManager = new LanguageManager();  
+            LanguageManager = new LanguageManager();
             LanguageManager.Load(Config.Language);
 #if !DEBUG
             if (LauncherHelper.CheckInstance())
@@ -59,17 +62,17 @@ namespace DevProLauncher
             Application.SetCompatibleTextRenderingDefault(false);
 
             CheckmateServerList.Add("Checkmate USA+CN", new ServerInfo("Checkmate USA+CN", "173.224.211.158", 21001));
-            CheckmateServerList.Add("Checkmate EU",new ServerInfo("Checkmate EU", "94.247.40.146", 7980));
+            CheckmateServerList.Add("Checkmate EU", new ServerInfo("Checkmate EU", "94.247.40.146", 7980));
 
             if (LauncherHelper.TestConnection())
             {
 #if !DEBUG
-                
+
                 if (NewUpdateCheck())
                     return;
                 if (!CheckServerInfo("http://158.69.116.140"))
                     CheckServerInfo("http://en.ygodevpro.com/");
-                 
+
 #endif
             }
             else MessageBox.Show("An internet connection is required to play online.");
@@ -122,12 +125,14 @@ namespace DevProLauncher
 
         public static bool NewUpdateCheck()
         {
-            switch(CheckUpdates(Program.Config.ServerAddress))
+            switch (CheckUpdates(Program.Config.ServerAddress))
             {
                 case 0:
                     return (CheckUpdates(Program.Config.ServerAddress) == 2);
+
                 case 2:
                     return true;
+
                 default:
                     return false;
             }
@@ -142,7 +147,7 @@ namespace DevProLauncher
             string result;
             try
             {
-                string downloadlink ="http://"+ url + updateLink + "?v=" + Version;
+                string downloadlink = "http://" + url + updateLink + "?v=" + Version;
                 result = client.DownloadString(downloadlink);
             }
             catch
@@ -150,13 +155,12 @@ namespace DevProLauncher
                 return 0;
             }
 
-
             if (result.Equals("OK"))
                 return 1;
 
             if (result.Equals("KO"))
             {
-                if(MessageBox.Show(LanguageManager.Translation.pMsbOldVers,
+                if (MessageBox.Show(LanguageManager.Translation.pMsbOldVers,
 "Update DevPro", MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation) == DialogResult.Yes)
                 { Process.Start("https://en.ygodevpro.com/"); };
             }
@@ -172,21 +176,21 @@ namespace DevProLauncher
                 Config.NewUpdate = true;
                 SaveConfig(ConfigurationFilename, Config);
 
-                string[] data = result.Split(new [] { "|" }, StringSplitOptions.RemoveEmptyEntries);
+                string[] data = result.Split(new[] { "|" }, StringSplitOptions.RemoveEmptyEntries);
 
                 File.WriteAllBytes(Path.Combine(updaterPath, updaterName), Properties.Resources.YgoUpdater);
                 File.WriteAllBytes(Path.Combine(updaterPath, dllName), Properties.Resources.ICSharpCode_SharpZipLib);
 
                 var updateProcess = new Process
-                    {
-                        StartInfo =
+                {
+                    StartInfo =
                             {
                                 FileName = Path.Combine(updaterPath, updaterName),
                                 Arguments =
                                     data[1] + " " +
                                     System.Reflection.Assembly.GetExecutingAssembly().Location
                             }
-                    };
+                };
                 updateProcess.Start();
             }
 
@@ -214,12 +218,11 @@ namespace DevProLauncher
 
             try
             {
-                
-                string[] serverinfo = result.Split(new [] { "|" }, StringSplitOptions.RemoveEmptyEntries);
+                string[] serverinfo = result.Split(new[] { "|" }, StringSplitOptions.RemoveEmptyEntries);
                 Config.ServerAddress = serverinfo[1];
                 Config.ChatPort = int.Parse(serverinfo[2]);
                 Config.GamePort = int.Parse(serverinfo[3]);
-                Server = new ServerInfo("DevPro",serverinfo[1],int.Parse(serverinfo[4]));
+                Server = new ServerInfo("DevPro", serverinfo[1], int.Parse(serverinfo[4]));
                 //CheckmateServerList.Clear();
                 //if(!CheckmateServerList.ContainsKey("Checkmate"))
                 //    CheckmateServerList.Add("Checkmate",new ServerInfo("Checkmate", serverinfo[5], int.Parse(serverinfo[6])));
@@ -251,6 +254,5 @@ namespace DevProLauncher
             Console.WriteLine(exception.ToString());
             Process.GetCurrentProcess().Kill();
         }
-
     }
 }

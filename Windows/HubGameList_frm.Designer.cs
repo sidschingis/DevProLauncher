@@ -88,6 +88,8 @@ namespace DevProLauncher.Windows
             this.SpectateTimer = new System.Windows.Forms.Timer(this.components);
             this.QueueTimer = new System.Windows.Forms.Timer(this.components);
             this.DevBotTimer = new System.Windows.Forms.Timer(this.components);
+            this.tableLayoutPanel15 = new System.Windows.Forms.TableLayoutPanel();
+            this.CheckmateBtn = new System.Windows.Forms.Button();
             this.tableLayoutPanel1.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -107,22 +109,22 @@ namespace DevProLauncher.Windows
             this.tableLayoutPanel7.SuspendLayout();
             this.groupBox3.SuspendLayout();
             this.groupBox1.SuspendLayout();
+            this.tableLayoutPanel15.SuspendLayout();
             this.SuspendLayout();
             // 
             // tableLayoutPanel1
             // 
             this.tableLayoutPanel1.ColumnCount = 2;
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 333F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 250F));
             this.tableLayoutPanel1.Controls.Add(this.tableLayoutPanel2, 1, 0);
             this.tableLayoutPanel1.Controls.Add(this.tableLayoutPanel7, 0, 0);
             this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 0);
-            this.tableLayoutPanel1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 1;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(1220, 652);
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(915, 530);
             this.tableLayoutPanel1.TabIndex = 0;
             // 
             // tableLayoutPanel2
@@ -134,26 +136,23 @@ namespace DevProLauncher.Windows
             this.tableLayoutPanel2.Controls.Add(this.UpdateLabel, 0, 1);
             this.tableLayoutPanel2.Controls.Add(this.QueueLabel, 0, 3);
             this.tableLayoutPanel2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel2.Location = new System.Drawing.Point(891, 4);
-            this.tableLayoutPanel2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tableLayoutPanel2.Location = new System.Drawing.Point(668, 3);
             this.tableLayoutPanel2.Name = "tableLayoutPanel2";
             this.tableLayoutPanel2.RowCount = 4;
-            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 90F));
-            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 25F));
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 73F));
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 25F));
-            this.tableLayoutPanel2.Size = new System.Drawing.Size(325, 644);
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tableLayoutPanel2.Size = new System.Drawing.Size(244, 524);
             this.tableLayoutPanel2.TabIndex = 1;
             // 
             // groupBox2
             // 
             this.groupBox2.Controls.Add(this.tableLayoutPanel4);
             this.groupBox2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.groupBox2.Location = new System.Drawing.Point(4, 119);
-            this.groupBox2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBox2.Location = new System.Drawing.Point(3, 96);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.groupBox2.Size = new System.Drawing.Size(317, 496);
+            this.groupBox2.Size = new System.Drawing.Size(238, 405);
             this.groupBox2.TabIndex = 4;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Search";
@@ -166,14 +165,13 @@ namespace DevProLauncher.Windows
             this.tableLayoutPanel4.Controls.Add(this.tableLayoutPanel6, 0, 0);
             this.tableLayoutPanel4.Controls.Add(this.SpectateBtn, 0, 2);
             this.tableLayoutPanel4.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel4.Location = new System.Drawing.Point(4, 19);
-            this.tableLayoutPanel4.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tableLayoutPanel4.Location = new System.Drawing.Point(3, 16);
             this.tableLayoutPanel4.Name = "tableLayoutPanel4";
             this.tableLayoutPanel4.RowCount = 3;
             this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 142F));
-            this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 37F));
-            this.tableLayoutPanel4.Size = new System.Drawing.Size(309, 473);
+            this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 115F));
+            this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 30F));
+            this.tableLayoutPanel4.Size = new System.Drawing.Size(232, 386);
             this.tableLayoutPanel4.TabIndex = 1;
             // 
             // tableLayoutPanel5
@@ -183,22 +181,20 @@ namespace DevProLauncher.Windows
             this.tableLayoutPanel5.Controls.Add(this.SearchRequest_Btn, 0, 1);
             this.tableLayoutPanel5.Controls.Add(this.tableLayoutPanel11, 0, 0);
             this.tableLayoutPanel5.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel5.Location = new System.Drawing.Point(4, 298);
-            this.tableLayoutPanel5.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tableLayoutPanel5.Location = new System.Drawing.Point(3, 244);
             this.tableLayoutPanel5.Name = "tableLayoutPanel5";
             this.tableLayoutPanel5.RowCount = 2;
             this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 31F));
-            this.tableLayoutPanel5.Size = new System.Drawing.Size(301, 134);
+            this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 25F));
+            this.tableLayoutPanel5.Size = new System.Drawing.Size(226, 109);
             this.tableLayoutPanel5.TabIndex = 0;
             // 
             // SearchRequest_Btn
             // 
             this.SearchRequest_Btn.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.SearchRequest_Btn.Location = new System.Drawing.Point(4, 107);
-            this.SearchRequest_Btn.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.SearchRequest_Btn.Location = new System.Drawing.Point(3, 87);
             this.SearchRequest_Btn.Name = "SearchRequest_Btn";
-            this.SearchRequest_Btn.Size = new System.Drawing.Size(293, 23);
+            this.SearchRequest_Btn.Size = new System.Drawing.Size(220, 19);
             this.SearchRequest_Btn.TabIndex = 1;
             this.SearchRequest_Btn.Text = "Search";
             this.SearchRequest_Btn.UseVisualStyleBackColor = true;
@@ -214,23 +210,21 @@ namespace DevProLauncher.Windows
             this.tableLayoutPanel11.Controls.Add(this.unrankedLayoutPnl, 1, 1);
             this.tableLayoutPanel11.Controls.Add(this.rankedLbl, 0, 0);
             this.tableLayoutPanel11.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel11.Location = new System.Drawing.Point(4, 4);
-            this.tableLayoutPanel11.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tableLayoutPanel11.Location = new System.Drawing.Point(3, 3);
             this.tableLayoutPanel11.Name = "tableLayoutPanel11";
             this.tableLayoutPanel11.RowCount = 2;
             this.tableLayoutPanel11.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel11.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 81F));
-            this.tableLayoutPanel11.Size = new System.Drawing.Size(293, 95);
+            this.tableLayoutPanel11.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 66F));
+            this.tableLayoutPanel11.Size = new System.Drawing.Size(220, 78);
             this.tableLayoutPanel11.TabIndex = 2;
             // 
             // unrankedLbl
             // 
             this.unrankedLbl.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.unrankedLbl.AutoSize = true;
-            this.unrankedLbl.Location = new System.Drawing.Point(206, 0);
-            this.unrankedLbl.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.unrankedLbl.Location = new System.Drawing.Point(154, 0);
             this.unrankedLbl.Name = "unrankedLbl";
-            this.unrankedLbl.Size = new System.Drawing.Size(70, 14);
+            this.unrankedLbl.Size = new System.Drawing.Size(54, 12);
             this.unrankedLbl.TabIndex = 3;
             this.unrankedLbl.Text = "Unranked";
             // 
@@ -240,23 +234,21 @@ namespace DevProLauncher.Windows
             this.rankedLayoutPnl.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.rankedLayoutPnl.Controls.Add(this.leaveBtn, 0, 1);
             this.rankedLayoutPnl.Controls.Add(this.tableLayoutPanel12, 0, 0);
-            this.rankedLayoutPnl.Location = new System.Drawing.Point(4, 18);
-            this.rankedLayoutPnl.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.rankedLayoutPnl.Location = new System.Drawing.Point(3, 15);
             this.rankedLayoutPnl.Name = "rankedLayoutPnl";
             this.rankedLayoutPnl.RowCount = 2;
             this.rankedLayoutPnl.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.rankedLayoutPnl.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.rankedLayoutPnl.Size = new System.Drawing.Size(182, 73);
+            this.rankedLayoutPnl.Size = new System.Drawing.Size(136, 59);
             this.rankedLayoutPnl.TabIndex = 0;
             // 
             // leaveBtn
             // 
             this.leaveBtn.Dock = System.Windows.Forms.DockStyle.Fill;
             this.leaveBtn.Enabled = false;
-            this.leaveBtn.Location = new System.Drawing.Point(4, 42);
-            this.leaveBtn.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.leaveBtn.Location = new System.Drawing.Point(3, 34);
             this.leaveBtn.Name = "leaveBtn";
-            this.leaveBtn.Size = new System.Drawing.Size(174, 27);
+            this.leaveBtn.Size = new System.Drawing.Size(130, 22);
             this.leaveBtn.TabIndex = 1;
             this.leaveBtn.Text = "Leave";
             this.leaveBtn.UseVisualStyleBackColor = true;
@@ -269,21 +261,19 @@ namespace DevProLauncher.Windows
             this.tableLayoutPanel12.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel12.Controls.Add(this.joinBtn, 0, 0);
             this.tableLayoutPanel12.Controls.Add(this.qJoinBtn, 1, 0);
-            this.tableLayoutPanel12.Location = new System.Drawing.Point(4, 4);
-            this.tableLayoutPanel12.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tableLayoutPanel12.Location = new System.Drawing.Point(3, 3);
             this.tableLayoutPanel12.Name = "tableLayoutPanel12";
             this.tableLayoutPanel12.RowCount = 1;
             this.tableLayoutPanel12.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel12.Size = new System.Drawing.Size(174, 30);
+            this.tableLayoutPanel12.Size = new System.Drawing.Size(130, 24);
             this.tableLayoutPanel12.TabIndex = 0;
             // 
             // joinBtn
             // 
             this.joinBtn.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.joinBtn.Location = new System.Drawing.Point(4, 4);
-            this.joinBtn.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.joinBtn.Location = new System.Drawing.Point(3, 3);
             this.joinBtn.Name = "joinBtn";
-            this.joinBtn.Size = new System.Drawing.Size(79, 22);
+            this.joinBtn.Size = new System.Drawing.Size(59, 18);
             this.joinBtn.TabIndex = 0;
             this.joinBtn.Text = "Join";
             this.joinBtn.UseVisualStyleBackColor = true;
@@ -292,10 +282,9 @@ namespace DevProLauncher.Windows
             // qJoinBtn
             // 
             this.qJoinBtn.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.qJoinBtn.Location = new System.Drawing.Point(91, 4);
-            this.qJoinBtn.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.qJoinBtn.Location = new System.Drawing.Point(68, 3);
             this.qJoinBtn.Name = "qJoinBtn";
-            this.qJoinBtn.Size = new System.Drawing.Size(79, 22);
+            this.qJoinBtn.Size = new System.Drawing.Size(59, 18);
             this.qJoinBtn.TabIndex = 2;
             this.qJoinBtn.Text = "Quick";
             this.qJoinBtn.UseVisualStyleBackColor = true;
@@ -307,22 +296,20 @@ namespace DevProLauncher.Windows
             this.unrankedLayoutPnl.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.unrankedLayoutPnl.Controls.Add(this.Quick_Btn, 0, 1);
             this.unrankedLayoutPnl.Controls.Add(this.Host_btn, 0, 0);
-            this.unrankedLayoutPnl.Location = new System.Drawing.Point(194, 18);
-            this.unrankedLayoutPnl.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.unrankedLayoutPnl.Location = new System.Drawing.Point(146, 15);
             this.unrankedLayoutPnl.Name = "unrankedLayoutPnl";
             this.unrankedLayoutPnl.RowCount = 2;
             this.unrankedLayoutPnl.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.unrankedLayoutPnl.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.unrankedLayoutPnl.Size = new System.Drawing.Size(95, 73);
+            this.unrankedLayoutPnl.Size = new System.Drawing.Size(71, 59);
             this.unrankedLayoutPnl.TabIndex = 1;
             // 
             // Quick_Btn
             // 
             this.Quick_Btn.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.Quick_Btn.Location = new System.Drawing.Point(4, 40);
-            this.Quick_Btn.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Quick_Btn.Location = new System.Drawing.Point(3, 32);
             this.Quick_Btn.Name = "Quick_Btn";
-            this.Quick_Btn.Size = new System.Drawing.Size(87, 29);
+            this.Quick_Btn.Size = new System.Drawing.Size(65, 24);
             this.Quick_Btn.TabIndex = 1;
             this.Quick_Btn.Text = "Quick";
             this.Quick_Btn.UseVisualStyleBackColor = true;
@@ -331,10 +318,9 @@ namespace DevProLauncher.Windows
             // Host_btn
             // 
             this.Host_btn.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.Host_btn.Location = new System.Drawing.Point(4, 4);
-            this.Host_btn.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Host_btn.Location = new System.Drawing.Point(3, 3);
             this.Host_btn.Name = "Host_btn";
-            this.Host_btn.Size = new System.Drawing.Size(87, 28);
+            this.Host_btn.Size = new System.Drawing.Size(65, 23);
             this.Host_btn.TabIndex = 0;
             this.Host_btn.Text = "Host";
             this.Host_btn.UseVisualStyleBackColor = true;
@@ -344,10 +330,9 @@ namespace DevProLauncher.Windows
             // 
             this.rankedLbl.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.rankedLbl.AutoSize = true;
-            this.rankedLbl.Location = new System.Drawing.Point(66, 0);
-            this.rankedLbl.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.rankedLbl.Location = new System.Drawing.Point(49, 0);
             this.rankedLbl.Name = "rankedLbl";
-            this.rankedLbl.Size = new System.Drawing.Size(57, 14);
+            this.rankedLbl.Size = new System.Drawing.Size(45, 12);
             this.rankedLbl.TabIndex = 2;
             this.rankedLbl.Text = "Ranked";
             // 
@@ -360,35 +345,32 @@ namespace DevProLauncher.Windows
             this.tableLayoutPanel6.Controls.Add(this.tableLayoutPanel10, 0, 3);
             this.tableLayoutPanel6.Controls.Add(this.tableLayoutPanel13, 0, 0);
             this.tableLayoutPanel6.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel6.Location = new System.Drawing.Point(4, 4);
-            this.tableLayoutPanel6.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tableLayoutPanel6.Location = new System.Drawing.Point(3, 3);
             this.tableLayoutPanel6.Name = "tableLayoutPanel6";
             this.tableLayoutPanel6.RowCount = 4;
             this.tableLayoutPanel6.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 61.2F));
             this.tableLayoutPanel6.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 8.4F));
             this.tableLayoutPanel6.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 9.774436F));
             this.tableLayoutPanel6.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 21.05263F));
-            this.tableLayoutPanel6.Size = new System.Drawing.Size(301, 286);
+            this.tableLayoutPanel6.Size = new System.Drawing.Size(226, 235);
             this.tableLayoutPanel6.TabIndex = 1;
             // 
             // label1
             // 
             this.label1.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(4, 177);
-            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label1.Location = new System.Drawing.Point(3, 146);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(73, 17);
+            this.label1.Size = new System.Drawing.Size(54, 13);
             this.label1.TabIndex = 1;
             this.label1.Text = "User Filter";
             // 
             // UserFilter
             // 
             this.UserFilter.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.UserFilter.Location = new System.Drawing.Point(4, 201);
-            this.UserFilter.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.UserFilter.Location = new System.Drawing.Point(3, 165);
             this.UserFilter.Name = "UserFilter";
-            this.UserFilter.Size = new System.Drawing.Size(293, 22);
+            this.UserFilter.Size = new System.Drawing.Size(220, 20);
             this.UserFilter.TabIndex = 3;
             this.UserFilter.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
@@ -402,31 +384,29 @@ namespace DevProLauncher.Windows
             this.tableLayoutPanel10.Controls.Add(this.minEloLbl, 0, 0);
             this.tableLayoutPanel10.Controls.Add(this.minEloTxtBox, 0, 1);
             this.tableLayoutPanel10.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel10.Location = new System.Drawing.Point(4, 228);
-            this.tableLayoutPanel10.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tableLayoutPanel10.Location = new System.Drawing.Point(3, 187);
             this.tableLayoutPanel10.Name = "tableLayoutPanel10";
             this.tableLayoutPanel10.RowCount = 2;
             this.tableLayoutPanel10.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 42.5F));
             this.tableLayoutPanel10.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 57.5F));
-            this.tableLayoutPanel10.Size = new System.Drawing.Size(293, 54);
+            this.tableLayoutPanel10.Size = new System.Drawing.Size(220, 45);
             this.tableLayoutPanel10.TabIndex = 4;
             // 
             // maxEloTxtBox
             // 
-            this.maxEloTxtBox.Location = new System.Drawing.Point(146, 26);
-            this.maxEloTxtBox.Margin = new System.Windows.Forms.Padding(1, 4, 0, 4);
+            this.maxEloTxtBox.Location = new System.Drawing.Point(110, 22);
+            this.maxEloTxtBox.Margin = new System.Windows.Forms.Padding(1, 3, 0, 3);
             this.maxEloTxtBox.Name = "maxEloTxtBox";
-            this.maxEloTxtBox.Size = new System.Drawing.Size(140, 22);
+            this.maxEloTxtBox.Size = new System.Drawing.Size(106, 20);
             this.maxEloTxtBox.TabIndex = 3;
             // 
             // maxEloLbl
             // 
             this.maxEloLbl.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.maxEloLbl.AutoSize = true;
-            this.maxEloLbl.Location = new System.Drawing.Point(149, 2);
-            this.maxEloLbl.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.maxEloLbl.Location = new System.Drawing.Point(112, 3);
             this.maxEloLbl.Name = "maxEloLbl";
-            this.maxEloLbl.Size = new System.Drawing.Size(53, 17);
+            this.maxEloLbl.Size = new System.Drawing.Size(41, 13);
             this.maxEloLbl.TabIndex = 1;
             this.maxEloLbl.Text = "maxElo";
             // 
@@ -434,19 +414,18 @@ namespace DevProLauncher.Windows
             // 
             this.minEloLbl.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.minEloLbl.AutoSize = true;
-            this.minEloLbl.Location = new System.Drawing.Point(4, 2);
-            this.minEloLbl.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.minEloLbl.Location = new System.Drawing.Point(3, 3);
             this.minEloLbl.Name = "minEloLbl";
-            this.minEloLbl.Size = new System.Drawing.Size(50, 17);
+            this.minEloLbl.Size = new System.Drawing.Size(38, 13);
             this.minEloLbl.TabIndex = 0;
             this.minEloLbl.Text = "minElo";
             // 
             // minEloTxtBox
             // 
-            this.minEloTxtBox.Location = new System.Drawing.Point(0, 26);
-            this.minEloTxtBox.Margin = new System.Windows.Forms.Padding(0, 4, 1, 4);
+            this.minEloTxtBox.Location = new System.Drawing.Point(0, 22);
+            this.minEloTxtBox.Margin = new System.Windows.Forms.Padding(0, 3, 1, 3);
             this.minEloTxtBox.Name = "minEloTxtBox";
-            this.minEloTxtBox.Size = new System.Drawing.Size(143, 22);
+            this.minEloTxtBox.Size = new System.Drawing.Size(108, 20);
             this.minEloTxtBox.TabIndex = 2;
             // 
             // tableLayoutPanel13
@@ -456,13 +435,12 @@ namespace DevProLauncher.Windows
             this.tableLayoutPanel13.Controls.Add(this.tableLayoutPanel8, 0, 0);
             this.tableLayoutPanel13.Controls.Add(this.tableLayoutPanel14, 0, 1);
             this.tableLayoutPanel13.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel13.Location = new System.Drawing.Point(4, 4);
-            this.tableLayoutPanel13.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tableLayoutPanel13.Location = new System.Drawing.Point(3, 3);
             this.tableLayoutPanel13.Name = "tableLayoutPanel13";
             this.tableLayoutPanel13.RowCount = 2;
             this.tableLayoutPanel13.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel13.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 37F));
-            this.tableLayoutPanel13.Size = new System.Drawing.Size(293, 166);
+            this.tableLayoutPanel13.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 30F));
+            this.tableLayoutPanel13.Size = new System.Drawing.Size(220, 137);
             this.tableLayoutPanel13.TabIndex = 5;
             // 
             // tableLayoutPanel8
@@ -479,26 +457,24 @@ namespace DevProLauncher.Windows
             this.tableLayoutPanel8.Controls.Add(this.label5, 0, 4);
             this.tableLayoutPanel8.Controls.Add(this.TimeLimit, 1, 4);
             this.tableLayoutPanel8.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel8.Location = new System.Drawing.Point(4, 4);
-            this.tableLayoutPanel8.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tableLayoutPanel8.Location = new System.Drawing.Point(3, 3);
             this.tableLayoutPanel8.Name = "tableLayoutPanel8";
             this.tableLayoutPanel8.RowCount = 5;
             this.tableLayoutPanel8.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tableLayoutPanel8.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 31F));
-            this.tableLayoutPanel8.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 31F));
-            this.tableLayoutPanel8.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 31F));
-            this.tableLayoutPanel8.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 31F));
-            this.tableLayoutPanel8.Size = new System.Drawing.Size(285, 121);
+            this.tableLayoutPanel8.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 25F));
+            this.tableLayoutPanel8.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 25F));
+            this.tableLayoutPanel8.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 25F));
+            this.tableLayoutPanel8.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 25F));
+            this.tableLayoutPanel8.Size = new System.Drawing.Size(214, 101);
             this.tableLayoutPanel8.TabIndex = 2;
             // 
             // label4
             // 
             this.label4.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(45, 7);
-            this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label4.Location = new System.Drawing.Point(34, 6);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(52, 17);
+            this.label4.Size = new System.Drawing.Size(39, 13);
             this.label4.TabIndex = 7;
             this.label4.Text = "Format";
             // 
@@ -511,20 +487,18 @@ namespace DevProLauncher.Windows
             "OCG",
             "TCG",
             "OCG/TCG"});
-            this.Format.Location = new System.Drawing.Point(146, 4);
-            this.Format.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Format.Location = new System.Drawing.Point(110, 3);
             this.Format.Name = "Format";
-            this.Format.Size = new System.Drawing.Size(133, 24);
+            this.Format.Size = new System.Drawing.Size(101, 21);
             this.Format.TabIndex = 6;
             // 
             // label3
             // 
             this.label3.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(30, 38);
-            this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label3.Location = new System.Drawing.Point(22, 31);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(82, 17);
+            this.label3.Size = new System.Drawing.Size(62, 13);
             this.label3.TabIndex = 5;
             this.label3.Text = "Game Type";
             // 
@@ -537,20 +511,18 @@ namespace DevProLauncher.Windows
             "Single",
             "Match",
             "Tag"});
-            this.GameType.Location = new System.Drawing.Point(146, 35);
-            this.GameType.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.GameType.Location = new System.Drawing.Point(110, 28);
             this.GameType.Name = "GameType";
-            this.GameType.Size = new System.Drawing.Size(133, 24);
+            this.GameType.Size = new System.Drawing.Size(101, 21);
             this.GameType.TabIndex = 4;
             // 
             // label2
             // 
             this.label2.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(46, 69);
-            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label2.Location = new System.Drawing.Point(34, 56);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(50, 17);
+            this.label2.Size = new System.Drawing.Size(38, 13);
             this.label2.TabIndex = 3;
             this.label2.Text = "Banlist";
             // 
@@ -560,20 +532,18 @@ namespace DevProLauncher.Windows
             this.BanList.FormattingEnabled = true;
             this.BanList.Items.AddRange(new object[] {
             "All"});
-            this.BanList.Location = new System.Drawing.Point(146, 66);
-            this.BanList.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.BanList.Location = new System.Drawing.Point(110, 53);
             this.BanList.Name = "BanList";
-            this.BanList.Size = new System.Drawing.Size(133, 24);
+            this.BanList.Size = new System.Drawing.Size(101, 21);
             this.BanList.TabIndex = 2;
             // 
             // label5
             // 
             this.label5.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(35, 100);
-            this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label5.Location = new System.Drawing.Point(26, 81);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(72, 17);
+            this.label5.Size = new System.Drawing.Size(54, 13);
             this.label5.TabIndex = 8;
             this.label5.Text = "Time Limit";
             // 
@@ -585,10 +555,9 @@ namespace DevProLauncher.Windows
             "All",
             "3 minutes",
             "5 minutes"});
-            this.TimeLimit.Location = new System.Drawing.Point(146, 97);
-            this.TimeLimit.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.TimeLimit.Location = new System.Drawing.Point(110, 78);
             this.TimeLimit.Name = "TimeLimit";
-            this.TimeLimit.Size = new System.Drawing.Size(133, 24);
+            this.TimeLimit.Size = new System.Drawing.Size(101, 21);
             this.TimeLimit.TabIndex = 9;
             // 
             // tableLayoutPanel14
@@ -601,22 +570,20 @@ namespace DevProLauncher.Windows
             this.tableLayoutPanel14.Controls.Add(this.lockedChk, 2, 0);
             this.tableLayoutPanel14.Controls.Add(this.IllegalGames, 0, 0);
             this.tableLayoutPanel14.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel14.Location = new System.Drawing.Point(4, 133);
-            this.tableLayoutPanel14.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tableLayoutPanel14.Location = new System.Drawing.Point(3, 110);
             this.tableLayoutPanel14.Name = "tableLayoutPanel14";
             this.tableLayoutPanel14.RowCount = 1;
             this.tableLayoutPanel14.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel14.Size = new System.Drawing.Size(285, 29);
+            this.tableLayoutPanel14.Size = new System.Drawing.Size(214, 24);
             this.tableLayoutPanel14.TabIndex = 3;
             // 
             // ActiveGames
             // 
             this.ActiveGames.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.ActiveGames.AutoSize = true;
-            this.ActiveGames.Location = new System.Drawing.Point(105, 4);
-            this.ActiveGames.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.ActiveGames.Location = new System.Drawing.Point(77, 3);
             this.ActiveGames.Name = "ActiveGames";
-            this.ActiveGames.Size = new System.Drawing.Size(75, 21);
+            this.ActiveGames.Size = new System.Drawing.Size(59, 18);
             this.ActiveGames.TabIndex = 0;
             this.ActiveGames.Text = "Active\r\nGames";
             this.ActiveGames.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -626,10 +593,9 @@ namespace DevProLauncher.Windows
             // 
             this.lockedChk.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.lockedChk.AutoSize = true;
-            this.lockedChk.Location = new System.Drawing.Point(199, 4);
-            this.lockedChk.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.lockedChk.Location = new System.Drawing.Point(147, 3);
             this.lockedChk.Name = "lockedChk";
-            this.lockedChk.Size = new System.Drawing.Size(76, 21);
+            this.lockedChk.Size = new System.Drawing.Size(62, 18);
             this.lockedChk.TabIndex = 10;
             this.lockedChk.Text = "Locked\r\nGames";
             this.lockedChk.UseVisualStyleBackColor = true;
@@ -638,10 +604,9 @@ namespace DevProLauncher.Windows
             // 
             this.IllegalGames.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.IllegalGames.AutoSize = true;
-            this.IllegalGames.Location = new System.Drawing.Point(10, 4);
-            this.IllegalGames.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.IllegalGames.Location = new System.Drawing.Point(6, 3);
             this.IllegalGames.Name = "IllegalGames";
-            this.IllegalGames.Size = new System.Drawing.Size(75, 21);
+            this.IllegalGames.Size = new System.Drawing.Size(59, 18);
             this.IllegalGames.TabIndex = 1;
             this.IllegalGames.Text = "Illegal \r\nGames";
             this.IllegalGames.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -650,10 +615,9 @@ namespace DevProLauncher.Windows
             // SpectateBtn
             // 
             this.SpectateBtn.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.SpectateBtn.Location = new System.Drawing.Point(4, 440);
-            this.SpectateBtn.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.SpectateBtn.Location = new System.Drawing.Point(3, 359);
             this.SpectateBtn.Name = "SpectateBtn";
-            this.SpectateBtn.Size = new System.Drawing.Size(301, 29);
+            this.SpectateBtn.Size = new System.Drawing.Size(226, 24);
             this.SpectateBtn.TabIndex = 2;
             this.SpectateBtn.Text = "Random Spectate";
             this.SpectateBtn.UseVisualStyleBackColor = true;
@@ -664,15 +628,14 @@ namespace DevProLauncher.Windows
             this.tableLayoutPanel3.ColumnCount = 1;
             this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel3.Controls.Add(this.tableLayoutPanel9, 0, 0);
-            this.tableLayoutPanel3.Controls.Add(this.DevBotBtn, 0, 1);
+            this.tableLayoutPanel3.Controls.Add(this.tableLayoutPanel15, 0, 1);
             this.tableLayoutPanel3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel3.Location = new System.Drawing.Point(4, 4);
-            this.tableLayoutPanel3.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tableLayoutPanel3.Location = new System.Drawing.Point(3, 3);
             this.tableLayoutPanel3.Name = "tableLayoutPanel3";
             this.tableLayoutPanel3.RowCount = 2;
             this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 52.77778F));
             this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 47.22222F));
-            this.tableLayoutPanel3.Size = new System.Drawing.Size(317, 82);
+            this.tableLayoutPanel3.Size = new System.Drawing.Size(238, 67);
             this.tableLayoutPanel3.TabIndex = 5;
             // 
             // tableLayoutPanel9
@@ -683,22 +646,20 @@ namespace DevProLauncher.Windows
             this.tableLayoutPanel9.Controls.Add(this.label6, 0, 0);
             this.tableLayoutPanel9.Controls.Add(this.DeckSelect, 1, 0);
             this.tableLayoutPanel9.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel9.Location = new System.Drawing.Point(4, 4);
-            this.tableLayoutPanel9.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tableLayoutPanel9.Location = new System.Drawing.Point(3, 3);
             this.tableLayoutPanel9.Name = "tableLayoutPanel9";
             this.tableLayoutPanel9.RowCount = 1;
             this.tableLayoutPanel9.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel9.Size = new System.Drawing.Size(309, 35);
+            this.tableLayoutPanel9.Size = new System.Drawing.Size(232, 29);
             this.tableLayoutPanel9.TabIndex = 4;
             // 
             // label6
             // 
             this.label6.AutoSize = true;
             this.label6.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label6.Location = new System.Drawing.Point(4, 0);
-            this.label6.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label6.Location = new System.Drawing.Point(3, 0);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(115, 35);
+            this.label6.Size = new System.Drawing.Size(86, 29);
             this.label6.TabIndex = 0;
             this.label6.Text = "Default Deck";
             this.label6.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -708,19 +669,17 @@ namespace DevProLauncher.Windows
             this.DeckSelect.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.DeckSelect.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.DeckSelect.FormattingEnabled = true;
-            this.DeckSelect.Location = new System.Drawing.Point(127, 5);
-            this.DeckSelect.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.DeckSelect.Location = new System.Drawing.Point(95, 4);
             this.DeckSelect.Name = "DeckSelect";
-            this.DeckSelect.Size = new System.Drawing.Size(178, 24);
+            this.DeckSelect.Size = new System.Drawing.Size(134, 21);
             this.DeckSelect.TabIndex = 1;
             // 
             // DevBotBtn
             // 
             this.DevBotBtn.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.DevBotBtn.Location = new System.Drawing.Point(4, 47);
-            this.DevBotBtn.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.DevBotBtn.Location = new System.Drawing.Point(3, 3);
             this.DevBotBtn.Name = "DevBotBtn";
-            this.DevBotBtn.Size = new System.Drawing.Size(309, 31);
+            this.DevBotBtn.Size = new System.Drawing.Size(110, 20);
             this.DevBotBtn.TabIndex = 5;
             this.DevBotBtn.Text = "Duel DevBot";
             this.DevBotBtn.UseVisualStyleBackColor = true;
@@ -730,10 +689,9 @@ namespace DevProLauncher.Windows
             // 
             this.UpdateLabel.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.UpdateLabel.AutoSize = true;
-            this.UpdateLabel.Location = new System.Drawing.Point(93, 94);
-            this.UpdateLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.UpdateLabel.Location = new System.Drawing.Point(69, 76);
             this.UpdateLabel.Name = "UpdateLabel";
-            this.UpdateLabel.Size = new System.Drawing.Size(139, 17);
+            this.UpdateLabel.Size = new System.Drawing.Size(106, 13);
             this.UpdateLabel.TabIndex = 2;
             this.UpdateLabel.Text = "Status: Not Updating";
             // 
@@ -741,10 +699,9 @@ namespace DevProLauncher.Windows
             // 
             this.QueueLabel.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.QueueLabel.AutoSize = true;
-            this.QueueLabel.Location = new System.Drawing.Point(66, 623);
-            this.QueueLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.QueueLabel.Location = new System.Drawing.Point(49, 507);
             this.QueueLabel.Name = "QueueLabel";
-            this.QueueLabel.Size = new System.Drawing.Size(193, 17);
+            this.QueueLabel.Size = new System.Drawing.Size(146, 13);
             this.QueueLabel.TabIndex = 6;
             this.QueueLabel.Text = "Queue Status: Not Searching";
             // 
@@ -756,23 +713,20 @@ namespace DevProLauncher.Windows
             this.tableLayoutPanel7.Controls.Add(this.groupBox3, 0, 0);
             this.tableLayoutPanel7.Controls.Add(this.groupBox1, 0, 0);
             this.tableLayoutPanel7.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel7.Location = new System.Drawing.Point(4, 4);
-            this.tableLayoutPanel7.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tableLayoutPanel7.Location = new System.Drawing.Point(3, 3);
             this.tableLayoutPanel7.Name = "tableLayoutPanel7";
             this.tableLayoutPanel7.RowCount = 1;
             this.tableLayoutPanel7.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel7.Size = new System.Drawing.Size(879, 644);
+            this.tableLayoutPanel7.Size = new System.Drawing.Size(659, 524);
             this.tableLayoutPanel7.TabIndex = 2;
             // 
             // groupBox3
             // 
             this.groupBox3.Controls.Add(this.RankedList);
             this.groupBox3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.groupBox3.Location = new System.Drawing.Point(443, 4);
-            this.groupBox3.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBox3.Location = new System.Drawing.Point(332, 3);
             this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.groupBox3.Size = new System.Drawing.Size(432, 636);
+            this.groupBox3.Size = new System.Drawing.Size(324, 518);
             this.groupBox3.TabIndex = 2;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Ranked";
@@ -784,21 +738,18 @@ namespace DevProLauncher.Windows
             this.RankedList.FormattingEnabled = true;
             this.RankedList.IntegralHeight = false;
             this.RankedList.ItemHeight = 50;
-            this.RankedList.Location = new System.Drawing.Point(4, 19);
-            this.RankedList.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.RankedList.Location = new System.Drawing.Point(3, 16);
             this.RankedList.Name = "RankedList";
-            this.RankedList.Size = new System.Drawing.Size(424, 613);
+            this.RankedList.Size = new System.Drawing.Size(318, 499);
             this.RankedList.TabIndex = 0;
             // 
             // groupBox1
             // 
             this.groupBox1.Controls.Add(this.UnrankedList);
             this.groupBox1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.groupBox1.Location = new System.Drawing.Point(4, 4);
-            this.groupBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBox1.Location = new System.Drawing.Point(3, 3);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.groupBox1.Size = new System.Drawing.Size(431, 636);
+            this.groupBox1.Size = new System.Drawing.Size(323, 518);
             this.groupBox1.TabIndex = 1;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Unranked";
@@ -810,10 +761,9 @@ namespace DevProLauncher.Windows
             this.UnrankedList.FormattingEnabled = true;
             this.UnrankedList.IntegralHeight = false;
             this.UnrankedList.ItemHeight = 50;
-            this.UnrankedList.Location = new System.Drawing.Point(4, 19);
-            this.UnrankedList.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.UnrankedList.Location = new System.Drawing.Point(3, 16);
             this.UnrankedList.Name = "UnrankedList";
-            this.UnrankedList.Size = new System.Drawing.Size(423, 613);
+            this.UnrankedList.Size = new System.Drawing.Size(317, 499);
             this.UnrankedList.TabIndex = 0;
             // 
             // SearchReset
@@ -836,14 +786,39 @@ namespace DevProLauncher.Windows
             // 
             this.DevBotTimer.Interval = 1000;
             // 
+            // tableLayoutPanel15
+            // 
+            this.tableLayoutPanel15.ColumnCount = 2;
+            this.tableLayoutPanel15.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel15.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel15.Controls.Add(this.DevBotBtn, 0, 0);
+            this.tableLayoutPanel15.Controls.Add(this.CheckmateBtn, 1, 0);
+            this.tableLayoutPanel15.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tableLayoutPanel15.Location = new System.Drawing.Point(3, 38);
+            this.tableLayoutPanel15.Name = "tableLayoutPanel15";
+            this.tableLayoutPanel15.RowCount = 1;
+            this.tableLayoutPanel15.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel15.Size = new System.Drawing.Size(232, 26);
+            this.tableLayoutPanel15.TabIndex = 5;
+            // 
+            // CheckmateBtn
+            // 
+            this.CheckmateBtn.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.CheckmateBtn.Location = new System.Drawing.Point(119, 3);
+            this.CheckmateBtn.Name = "CheckmateBtn";
+            this.CheckmateBtn.Size = new System.Drawing.Size(110, 20);
+            this.CheckmateBtn.TabIndex = 6;
+            this.CheckmateBtn.Text = "Checkmate";
+            this.CheckmateBtn.UseVisualStyleBackColor = true;
+            this.CheckmateBtn.Click += new System.EventHandler(this.CheckmateBtn_Click);
+            // 
             // HubGameList_frm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1220, 652);
+            this.ClientSize = new System.Drawing.Size(915, 530);
             this.Controls.Add(this.tableLayoutPanel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "HubGameList_frm";
             this.Text = "HubGameList_frm";
             this.tableLayoutPanel1.ResumeLayout(false);
@@ -872,6 +847,7 @@ namespace DevProLauncher.Windows
             this.tableLayoutPanel7.ResumeLayout(false);
             this.groupBox3.ResumeLayout(false);
             this.groupBox1.ResumeLayout(false);
+            this.tableLayoutPanel15.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -935,5 +911,7 @@ namespace DevProLauncher.Windows
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel14;
         private System.Windows.Forms.Button DevBotBtn;
         private System.Windows.Forms.Timer DevBotTimer;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel15;
+        private System.Windows.Forms.Button CheckmateBtn;
     }
 }

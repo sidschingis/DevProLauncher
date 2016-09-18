@@ -39,6 +39,7 @@ namespace DevProLauncher.Windows.MessageBoxs
             MouseMode.Checked = Program.Config.MouseMode;
             HideSetname.Checked = Program.Config.HideSetname;
             ChainButtons.Checked = Program.Config.ChainButtons;
+            old_replay_mode.Checked = Program.Config.old_replay_mode;
 
             MusicVolume.Enabled = EnableMusic.Checked;
             MusicVolume.Value = Program.Config.MusicVolume;
@@ -106,11 +107,14 @@ namespace DevProLauncher.Windows.MessageBoxs
                 MouseMode.Text = info.optionMouseMode;
                 HideSetname.Text = info.optionHideSetname;
                 ChainButtons.Text = info.optionChainButtons;
+                old_replay_mode.Text = info.optionOldReplay;
 
                 accountTab.Text = info.optionAccountTab;
                 label7.Text = info.optionCurrentPW;
                 label8.Text = info.optionNewPW;
                 label9.Text = info.optionConfirmPW;
+                emailLbl.Text = info.optionEmail;
+                confirmEmailLbl.Text = info.optionconfirmEmail;
                 UpdateBtn.Text = info.optionUpdatePW;
 
                 LanguageInfo lang = info;
@@ -147,6 +151,7 @@ namespace DevProLauncher.Windows.MessageBoxs
             Program.Config.MouseMode = MouseMode.Checked;
             Program.Config.HideSetname = HideSetname.Checked;
             Program.Config.ChainButtons = ChainButtons.Checked;
+            Program.Config.old_replay_mode = old_replay_mode.Checked;
 
             Program.SaveConfig(Program.ConfigurationFilename,Program.Config);
             DialogResult = DialogResult.OK;

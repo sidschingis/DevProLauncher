@@ -106,7 +106,7 @@ namespace DevProLauncher.Config
         public string GameUpdating1 = "Status: Updating for ";
         public string GameUpdating2 = " seconds.";
         public string GameSpectate = "Random Spectate";
-        public string GameDuelDevBot = "Duel Devbot";
+        public string GameDuelDevBot = "Duel DevBot";
 
         public string GameAll = "All";
         public string GameSingle = "Single";
@@ -184,9 +184,12 @@ namespace DevProLauncher.Config
         public string optionMouseMode = "Mouse Mode";
         public string optionHideSetname = "Hide Setname";
         public string optionChainButtons = "Hide Chain Buttons";
+        public string optionOldReplay = "Old Replay Mode";
         public string optionCurrentPW = "Current Password";
         public string optionNewPW = "New Password";
         public string optionConfirmPW = "Confirm Password";
+        public string optionEmail = "Email";
+        public string optionconfirmEmail = "Confirm Email";
         public string optionUpdatePW = "Update";
         public string ChangeAccept = "Change Accepted";
         public string ChangeFailed = "Change Failed";
@@ -333,6 +336,7 @@ namespace DevProLauncher.Config
         public string chatTabFriends = "Friends";
         public string chatTabIgnore = "Ignore";
         public string chatKick = "Kick";
+        public string chatMute = "Local Mute";
         public string chatBan = "Ban";
         public string chatTeamRemove = "Remove from Team";
         public string chatUserCount = "User Count: ";
@@ -365,6 +369,13 @@ namespace DevProLauncher.Config
         public string kickReasonLbl = "Reason for kick";
         public string kickConfirm = "Confirm";
         public string kickCancel = "Cancel";
+
+        public string muteTitle = "Mute User";
+        public string muteMessageLbl = "Please fill out the form";
+        public string muteTimeLbl = "Time to mute (in hours)";
+        public string muteReasonLbl = "Reason for mute";
+        public string muteConfirm = "Confirm";
+        public string muteCancel = "Cancel";
 
         // ChannelList_frm.cs
 

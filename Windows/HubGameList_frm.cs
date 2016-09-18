@@ -310,11 +310,9 @@ namespace DevProLauncher.Windows
             m_rooms.Add(roomname, room);
             ListBox rooms = (room.isRanked ? RankedList : UnrankedList);
 
-            //add DevBot games to the end, other games to the beginning of list
-            if(room.playerList[0].Trim().ToLower().Equals("devbot"))
+            //Remove DevBot games
+            if(!room.playerList[0].Trim().ToLower().Equals("devbot"))
                 rooms.Items.Add(roomname);
-            else
-                rooms.Items.Insert(0, roomname);
         }
 
         public List<object> ObjectKeys()
@@ -703,12 +701,6 @@ namespace DevProLauncher.Windows
                     {
                         string player1 = players[0].Trim() + " (" + info.eloList[0].ToString() + ")";
                         string player2 = (players.Length > 1) ? players[1].Trim() + " (" + info.eloList[1].ToString() + ")" : "???";
-                        string devbotCheck = players[0].Trim();
-                        if (devbotCheck.ToLower().Equals("devbot"))
-                        {
-                            playerstring = string.Empty;
-                            return;
-                        }
                             playerstring = player1 + " vs " + player2;
                     }
                 }
@@ -884,24 +876,7 @@ namespace DevProLauncher.Windows
 
         private void Duel_DevBot_Click(object sender, EventArgs e)
         {
-            ServerInfo server = Program.MainForm.GameWindow.GetServer();
-            if (server == null)
-            {
-                MessageBox.Show("No Server Available.");
-                return;
-            }
-
-            Program.ChatServer.SendPacket(DevServerPackets.RequestDuel,
-            JsonSerializer.SerializeToString(
-             new DuelRequest
-             {
-                 username = "DevBot",
-                 duelformatstring = "600OOO8000,0,5,1,U," + LauncherHelper.GenerateString().Substring(0, 5),
-                 server = server.serverName
-             }));
-            DevBotBtn.Enabled = false;
-            DevBotBtn.Text = "120";
-            DevBotTimer.Enabled = true;
+            LauncherHelper.RunGame("-ai");
 
         }
     }

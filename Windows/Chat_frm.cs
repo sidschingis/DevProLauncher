@@ -934,8 +934,8 @@ namespace DevProLauncher.Windows
                     if (Program.UserInfo.rank > 3)
                     {
                         WriteMessage(new ChatMessage(MessageType.System, CommandType.None, null, "-- SMod Commands --"));
-                        WriteMessage(new ChatMessage(MessageType.System, CommandType.None, null, "/shutdown [forced] servername - instructs the duel server to shutdown. If 'forced' is added: Does not wait for games to finish."));
-                        WriteMessage(new ChatMessage(MessageType.System, CommandType.None, null, "/restart [forced] servername - instructs the duel server to restart. If 'forced' is added: Does not wait for games to finish."));
+                        WriteMessage(new ChatMessage(MessageType.System, CommandType.None, null, "/shutdown [false]/[forced] servername - instructs the duel server to shutdown. If 'forced' is added: Does not wait for games to finish. Do not use false if you use Forced."));
+                        WriteMessage(new ChatMessage(MessageType.System, CommandType.None, null, "/restart [false]/[forced] servername - instructs the duel server to restart. If 'forced' is added: Does not wait for games to finish. Do not use false if you use Forced."));
                         WriteMessage(new ChatMessage(MessageType.System, CommandType.None, null, "/kill [forced]- Kills all crashed cores. If 'forced' is added: Kills all cores (including running games)."));
                         WriteMessage(new ChatMessage(MessageType.System, CommandType.None, null, "/ban username time reason - Bans a user, time format has to be in hours (max 730 hours), also you must give a reason."));
                         WriteMessage(new ChatMessage(MessageType.System, CommandType.None, null, "/banusername username - Bans a user's username"));
@@ -1121,12 +1121,14 @@ namespace DevProLauncher.Windows
                 ToolStripMenuItem mnufriend = new ToolStripMenuItem(Program.LanguageManager.Translation.chatAddFriend);
                 ToolStripMenuItem mnuignore = new ToolStripMenuItem(Program.LanguageManager.Translation.chatIgnoreUser);
                 ToolStripMenuItem mnukick = new ToolStripMenuItem(Program.LanguageManager.Translation.chatKick);
+                ToolStripMenuItem mnmute = new ToolStripMenuItem(Program.LanguageManager.Translation.chatMute);
                 ToolStripMenuItem mnuban = new ToolStripMenuItem(Program.LanguageManager.Translation.chatBan);
                 ToolStripMenuItem mnuremovefriend = new ToolStripMenuItem(Program.LanguageManager.Translation.chatRemoveFriend);
                 ToolStripMenuItem mnuremoveteam = new ToolStripMenuItem(Program.LanguageManager.Translation.chatTeamRemove);
                 ToolStripMenuItem mnuspectateuser = new ToolStripMenuItem(Program.LanguageManager.Translation.chatSpectate);
 
                 mnukick.Click += KickUser;
+                mnmute.Click += MuteUser;
                 mnuban.Click += BanUser;
                 mnuprofile.Click += ViewProfile;
                 mnuduel.Click += RequestDuel;
@@ -1140,10 +1142,12 @@ namespace DevProLauncher.Windows
                 {
                     mnu.Items.AddRange(new ToolStripItem[] {mnuprofile, mnuduel,mnuspectateuser, mnufriend, mnuignore});               
                     
-                    if (Program.UserInfo.rank > 0)
-                        mnu.Items.Add(mnukick);
                     if (Program.UserInfo.rank > 1)
+                        mnu.Items.Add(mnukick);
+                    if (Program.UserInfo.rank > 3)
                         mnu.Items.Add(mnuban);
+                    if (Program.UserInfo.rank > 1)
+                        mnu.Items.Add(mnmute);
                 }
                 else
                 {
@@ -1235,7 +1239,32 @@ namespace DevProLauncher.Windows
                 }
             }
         }
+        private void MuteUser(object sender, EventArgs e)
+        {
+            ListBox list = UserListTabs.SelectedTab.Name == ChannelTab.Name ? ChannelList : UserList;
+            var input = new BanFrm(Program.LanguageManager.Translation.muteTitle,
+                                    Program.LanguageManager.Translation.muteMessageLbl,
+                                    Program.LanguageManager.Translation.muteTimeLbl,
+                                    Program.LanguageManager.Translation.muteReasonLbl,
+                                    Program.LanguageManager.Translation.muteConfirm,
+                                    Program.LanguageManager.Translation.muteCancel);
+            if ((!(list.SelectedItems.Count > 1)))
+            {
 
+                if ((input.ShowDialog() == DialogResult.OK))
+                {
+                    try
+                    {
+                        Program.ChatServer.SendPacket(DevServerPackets.ChatCommand, JsonSerializer.SerializeToString(
+                     new PacketCommand { Command = "MUTE", Data = ((UserData)list.SelectedItem).username + " " + input.inputBox1.Text + " " + input.inputBox2.Text + "|" + ChannelTabs.SelectedTab.Text }));
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show(ex.Message);
+                    }
+                }
+            }
+        }
         private void SpectateUser(object sender, EventArgs e)
         {
             ListBox list = UserListTabs.SelectedTab.Name == ChannelTab.Name ? ChannelList : UserList;

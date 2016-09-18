@@ -113,6 +113,8 @@ namespace DevProLauncher.Windows.MessageBoxs
                 label7.Text = info.optionCurrentPW;
                 label8.Text = info.optionNewPW;
                 label9.Text = info.optionConfirmPW;
+                emailLbl.Text = info.optionEmail;
+                confirmEmailLbl.Text = info.optionconfirmEmail;
                 UpdateBtn.Text = info.optionUpdatePW;
 
                 LanguageInfo lang = info;

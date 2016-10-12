@@ -63,7 +63,7 @@ namespace DevProLauncher.Network.Data
             else
                 infos.isRanked = false;
 
-            if(infos.isRanked)
+            if (infos.isRanked)
             {
                 //dont allow prerelease cards in ranked
                 infos.rule %= 4;
@@ -111,17 +111,18 @@ namespace DevProLauncher.Network.Data
                    (isNoCheckDeck ? "T" : "F") + (isNoShuffleDeck ? "T" : "F") + startLp + "," + banListType.ToString() + "," +
                    startHand.ToString() + "," + drawCount.ToString() + "," +
                    (isRanked ? "R" : "U") + (isLocked ? "L" : "") + "," + roomName;
-
         }
 
         public static string GameRule(int rule)
         {
-            switch (rule%4)
+            switch (rule % 4)
             {
                 case 0:
                     return "OCG";
+
                 case 1:
                     return "TCG";
+
                 case 2:
                     return "OCG/TCG";
             }
@@ -135,15 +136,18 @@ namespace DevProLauncher.Network.Data
             {
                 case 0:
                     return "Single";
+
                 case 1:
                     return "Match";
+
                 case 2:
                     return "Tag";
             }
 
             return "Unkown";
         }
-        public static bool CompareRoomInfo(RoomInfos playerinfo,RoomInfos otherroom)
+
+        public static bool CompareRoomInfo(RoomInfos playerinfo, RoomInfos otherroom)
         {
             if (playerinfo.rule == otherroom.rule && playerinfo.banListType == otherroom.banListType
                 && playerinfo.mode == otherroom.mode && playerinfo.isNoCheckDeck == otherroom.isNoCheckDeck

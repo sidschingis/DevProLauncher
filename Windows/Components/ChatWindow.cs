@@ -1,18 +1,19 @@
-﻿using System;
-using System.Windows.Forms;
-using System.Drawing;
-using System.Diagnostics;
-using DevProLauncher.Helpers;
+﻿using DevProLauncher.Helpers;
 using DevProLauncher.Network.Data;
+using System;
+using System.Diagnostics;
+using System.Drawing;
+using System.Windows.Forms;
 
 namespace DevProLauncher.Windows.Components
 {
     public class ChatWindow : TabPage
     {
-        readonly CustomRTB _chatLog = new CustomRTB();
+        private readonly CustomRTB _chatLog = new CustomRTB();
         public bool IsPrivate = false;
         public bool IsSystemtab = false;
-        public ChatWindow(string name,bool privatewindow)
+
+        public ChatWindow(string name, bool privatewindow)
         {
             Name = name;
             Text = name;
@@ -26,7 +27,6 @@ namespace DevProLauncher.Windows.Components
             _chatLog.ReadOnly = true;
             ApplyNewSettings();
             _chatLog.TabStop = false;
-
         }
 
         public override sealed string Text
@@ -39,13 +39,12 @@ namespace DevProLauncher.Windows.Components
         {
             if (InvokeRequired)
             {
-                Invoke(new Action<ChatMessage,bool>(WriteMessage), message,autoscroll);
+                Invoke(new Action<ChatMessage, bool>(WriteMessage), message, autoscroll);
             }
             else
             {
                 ChatHelper.WriteMessage(message, _chatLog, autoscroll);
             }
-
         }
 
         private void ChatLog_LinkClicked(object sender, LinkClickedEventArgs e)
@@ -65,6 +64,5 @@ namespace DevProLauncher.Windows.Components
             _chatLog.BackColor = (Program.Config.ColorBlindMode ? Color.White : Program.Config.ChatBGColor.ToColor());
             _chatLog.Font = new Font(Program.Config.ChatFont, (float)Program.Config.ChatSize);
         }
-
     }
 }

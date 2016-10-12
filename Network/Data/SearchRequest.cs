@@ -26,7 +26,8 @@
             MinElo = 0;
             MaxElo = 9999;
         }
-        public SearchRequest(int format, int type, int banlist, int timelimit, bool active, bool illigal,bool locked,string filter,uint minelo, uint maxelo)
+
+        public SearchRequest(int format, int type, int banlist, int timelimit, bool active, bool illigal, bool locked, string filter, uint minelo, uint maxelo)
         {
             Format = format;
             GameType = type;

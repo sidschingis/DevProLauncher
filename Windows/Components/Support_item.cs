@@ -5,7 +5,7 @@ namespace DevProLauncher.Windows.Components
 {
     public sealed partial class SupportItem : Form
     {
-        public SupportItem(Image image,string name,string des, int cost)
+        public SupportItem(Image image, string name, string des, int cost)
         {
             InitializeComponent();
             TopLevel = false;

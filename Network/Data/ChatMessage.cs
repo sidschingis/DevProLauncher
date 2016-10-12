@@ -1,5 +1,5 @@
-﻿using System.Drawing;
-using DevProLauncher.Windows.Enums;
+﻿using DevProLauncher.Windows.Enums;
+using System.Drawing;
 
 namespace DevProLauncher.Network.Data
 {
@@ -11,7 +11,7 @@ namespace DevProLauncher.Network.Data
         public int type { get; set; }
         public int command { get; set; }
 
-        public ChatMessage(MessageType type, CommandType command,UserData user, string channel, string message)
+        public ChatMessage(MessageType type, CommandType command, UserData user, string channel, string message)
         {
             this.message = message;
             this.type = (int)type;
@@ -19,7 +19,8 @@ namespace DevProLauncher.Network.Data
             this.command = (int)command;
             this.from = user;
         }
-        public ChatMessage(MessageType type,CommandType command, string channel, string message)
+
+        public ChatMessage(MessageType type, CommandType command, string channel, string message)
         {
             this.message = message;
             this.type = (int)type;
@@ -33,15 +34,20 @@ namespace DevProLauncher.Network.Data
             {
                 case MessageType.Message:
                     return Program.Config.NormalTextColor.ToColor();
+
                 case MessageType.PrivateMessage:
                     return Program.Config.NormalTextColor.ToColor();
+
                 case MessageType.Server:
                     return Program.Config.ServerMsgColor.ToColor();
+
                 case MessageType.System:
                 case MessageType.MOTD:
                     return Program.Config.SystemColor.ToColor();
+
                 case MessageType.Join:
                     return Program.Config.JoinColor.ToColor();
+
                 case MessageType.Leave:
                     return Program.Config.LeaveColor.ToColor();
             }
@@ -56,14 +62,19 @@ namespace DevProLauncher.Network.Data
             {
                 case 0:
                     return Program.Config.Level0Color.ToColor();
+
                 case 1:
                     return Program.Config.Level1Color.ToColor();
+
                 case 2:
                     return Program.Config.Level2Color.ToColor();
+
                 case 3:
                     return Program.Config.Level3Color.ToColor();
+
                 case 4:
                     return Program.Config.Level4Color.ToColor();
+
                 case 98:
                     return Program.Config.BotColor.ToColor();
             }
@@ -77,14 +88,19 @@ namespace DevProLauncher.Network.Data
             {
                 case 0:
                     return new SolidBrush(Program.Config.Level0Color.ToColor());
+
                 case 1:
                     return new SolidBrush(Program.Config.Level1Color.ToColor());
+
                 case 2:
                     return new SolidBrush(Program.Config.Level2Color.ToColor());
+
                 case 3:
                     return new SolidBrush(Program.Config.Level3Color.ToColor());
+
                 case 4:
                     return new SolidBrush(Program.Config.Level4Color.ToColor());
+
                 case 98:
                     return new SolidBrush(Program.Config.BotColor.ToColor());
             }

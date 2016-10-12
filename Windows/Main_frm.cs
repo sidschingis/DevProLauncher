@@ -1,22 +1,22 @@
-﻿using System;
-using System.Windows.Forms;
-using DevProLauncher.Config;
-using DevProLauncher.Network.Enums;
+﻿using DevProLauncher.Config;
 using DevProLauncher.Helpers;
-using System.Diagnostics;
+using DevProLauncher.Network.Enums;
 using DevProLauncher.Windows.MessageBoxs;
+using System;
+using System.Diagnostics;
+using System.Windows.Forms;
 
 namespace DevProLauncher.Windows
 {
     public partial class MainFrm : Form
     {
         public HubGameList_frm GameWindow;
-        LoginFrm m_loginWindow;
-        ChatFrm m_chatWindow;
-        SupportFrm m_devpointWindow;
-        FileManagerFrm m_filemanagerWindow;
-        CustomizeFrm m_customizerWindow;
-        RankingFrm m_rankingWindow;
+        private LoginFrm m_loginWindow;
+        private ChatFrm m_chatWindow;
+        private SupportFrm m_devpointWindow;
+        private FileManagerFrm m_filemanagerWindow;
+        private CustomizeFrm m_customizerWindow;
+        private RankingFrm m_rankingWindow;
 
         public MainFrm()
         {
@@ -42,7 +42,6 @@ namespace DevProLauncher.Windows
             mainTabs.SelectedIndexChanged += TabChange;
 
             ApplyTranslation();
-
         }
 
         public string GetVersionString()
@@ -64,6 +63,7 @@ namespace DevProLauncher.Windows
             siteBtn.Text = info.MainSiteBtn;
             MessageLabel.Text = info.MainServerMessage;
         }
+
         private void ServerMessage(string message)
         {
             if (InvokeRequired)
@@ -114,10 +114,10 @@ namespace DevProLauncher.Windows
             var devpointTab = new TabPage(info.SupportTitle);
             devpointTab.Controls.Add(m_devpointWindow);
             mainTabs.TabPages.Add(devpointTab);
-                
+
             ConnectionCheck.Enabled = true;
             ConnectionCheck.Tick += CheckConnection;
-            
+
             UpdateUsername();
 
             ProfileBtn.Enabled = true;
@@ -160,7 +160,6 @@ namespace DevProLauncher.Windows
                     {
                         Application.Exit();
                     }
-
                 }
             }
         }
@@ -185,6 +184,7 @@ namespace DevProLauncher.Windows
             LauncherHelper.GenerateConfig();
             LauncherHelper.RunGame("-d");
         }
+
         private void ReplaysBtn_Click(object sender, EventArgs e)
         {
             LauncherHelper.GenerateConfig();
@@ -201,12 +201,11 @@ namespace DevProLauncher.Windows
         {
             var settings = new Settings();
             settings.ShowDialog();
-
         }
 
         private void TabChange(object sender, EventArgs e)
         {
-           if (mainTabs.SelectedIndex == 1)
+            if (mainTabs.SelectedIndex == 1)
                 m_chatWindow.LoadDefaultChannel();
         }
     }

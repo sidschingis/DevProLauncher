@@ -25,8 +25,9 @@ namespace DevProLauncher.Windows.MessageBoxs
         {
             if (InputBox.Text == "") MessageBox.Show("Input box is empty.", "Error", MessageBoxButtons.OK);
             else
-            DialogResult = DialogResult.OK;
+                DialogResult = DialogResult.OK;
         }
+
         private void KeyPress_Enter(object sender, KeyPressEventArgs e)
         {
             if (e.KeyChar == 13)

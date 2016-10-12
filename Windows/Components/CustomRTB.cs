@@ -1,7 +1,7 @@
 ﻿using System;
+using System.Drawing;
 using System.Runtime.InteropServices;
 using System.Windows.Forms;
-using System.Drawing;
 
 namespace DevProLauncher.Windows.Components
 {
@@ -33,6 +33,7 @@ namespace DevProLauncher.Windows.Components
 
             return (rtfPoint.Y + ClientSize.Height >= maxScroll - safezone);
         }
+
         protected virtual void OnScrolledToBottom(EventArgs e)
         {
             if (ScrolledToBottom != null)
@@ -57,6 +58,5 @@ namespace DevProLauncher.Windows.Components
 
             base.WndProc(ref m);
         }
-
     }
 }

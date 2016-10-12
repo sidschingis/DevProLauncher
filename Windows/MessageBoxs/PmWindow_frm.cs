@@ -1,11 +1,11 @@
-﻿using System;
+﻿using DevProLauncher.Helpers;
+using DevProLauncher.Network.Data;
+using DevProLauncher.Windows.Components;
+using DevProLauncher.Windows.Enums;
+using System;
 using System.Diagnostics;
 using System.Drawing;
 using System.Windows.Forms;
-using DevProLauncher.Windows.Components;
-using DevProLauncher.Helpers;
-using DevProLauncher.Windows.Enums;
-using DevProLauncher.Network.Data;
 
 namespace DevProLauncher.Windows.MessageBoxs
 {
@@ -15,7 +15,7 @@ namespace DevProLauncher.Windows.MessageBoxs
 
         public PmWindowFrm(string name, bool privatewindow)
         {
-            InitializeComponent();            
+            InitializeComponent();
             Name = name;
             Text = name;
             IsPrivate = privatewindow;
@@ -26,7 +26,7 @@ namespace DevProLauncher.Windows.MessageBoxs
             ChatLog.MouseUp += Chat_MouseUp;
             ChatLog.LinkClicked += ChatLog_LinkClicked;
             ChatInput.KeyPress += ChatInput_KeyPress;
-            
+
             Activated += ChatInput_Click;
             ApplyNewSettings();
         }
@@ -52,11 +52,10 @@ namespace DevProLauncher.Windows.MessageBoxs
             {
                 ChatHelper.WriteMessage(message, ChatLog, true);
 
-                if(message.from != null)
-                    if(message.from.username != Program.UserInfo.username && !ChatInput.Focused)
+                if (message.from != null)
+                    if (message.from.username != Program.UserInfo.username && !ChatInput.Focused)
                         FlashWindow.Start(this);
             }
-
         }
 
         private void Chat_MouseUp(object sender, MouseEventArgs e)
@@ -99,9 +98,9 @@ namespace DevProLauncher.Windows.MessageBoxs
                     return;
                 if (IsPrivate && ChatInput.Text.StartsWith("/me"))
                 {
-                    if (ChatInput.Text.Length<4)
-                        ChatInput.Text=ChatInput.Text+" ";
-                    WriteMessage(new ChatMessage(MessageType.Message, CommandType.Me, Program.UserInfo, Name,Program.UserInfo.username + " " +  ChatInput.Text.Replace("/me","").Trim()));
+                    if (ChatInput.Text.Length < 4)
+                        ChatInput.Text = ChatInput.Text + " ";
+                    WriteMessage(new ChatMessage(MessageType.Message, CommandType.Me, Program.UserInfo, Name, Program.UserInfo.username + " " + ChatInput.Text.Replace("/me", "").Trim()));
                     Program.ChatServer.SendMessage(MessageType.PrivateMessage, CommandType.Me, Name, ChatInput.Text.Substring(4));
                 }
                 else if (IsPrivate && ChatInput.Text.StartsWith("/"))
@@ -116,11 +115,10 @@ namespace DevProLauncher.Windows.MessageBoxs
                     WriteMessage(new ChatMessage(MessageType.PrivateMessage, CommandType.None, Program.UserInfo, Name, ChatInput.Text));
                     Program.ChatServer.SendMessage(MessageType.PrivateMessage, CommandType.None, Name, ChatInput.Text);
                 }
-                
+
                 ChatInput.Clear();
                 e.Handled = true;
             }
         }
-
     }
 }

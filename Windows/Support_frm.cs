@@ -1,21 +1,22 @@
-﻿using System;
+﻿using DevProLauncher.Config;
+using DevProLauncher.Network.Data;
+using DevProLauncher.Network.Enums;
+using DevProLauncher.Windows.Components;
+using DevProLauncher.Windows.MessageBoxs;
+using ServiceStack.Text;
+using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Drawing;
 using System.Globalization;
 using System.Windows.Forms;
-using System.Diagnostics;
-using DevProLauncher.Config;
-using DevProLauncher.Windows.Components;
-using DevProLauncher.Windows.MessageBoxs;
-using DevProLauncher.Network.Enums;
-using DevProLauncher.Network.Data;
-using ServiceStack.Text;
 
 namespace DevProLauncher.Windows
 {
     public sealed partial class SupportFrm : Form
     {
-        readonly Dictionary<string, string> m_descriptions = new Dictionary<string, string>();
+        private readonly Dictionary<string, string> m_descriptions = new Dictionary<string, string>();
+
         public SupportFrm()
         {
             InitializeComponent();
@@ -27,7 +28,7 @@ namespace DevProLauncher.Windows
             ApplyTranslation();
 
             //prevents the last items auto sizing
-            LeftItems.Controls.Add(new Label(), 0, LeftItems.RowStyles.Count-1);
+            LeftItems.Controls.Add(new Label(), 0, LeftItems.RowStyles.Count - 1);
             RightItems.Controls.Add(new Label(), 0, LeftItems.RowStyles.Count - 1);
 
             int vertScrollWidth = SystemInformation.VerticalScrollBarWidth;
@@ -35,20 +36,21 @@ namespace DevProLauncher.Windows
 
             refreshtimer.Tick += refreshtimer_Tick;
         }
+
         public void ApplyTranslation()
         {
             LanguageInfo lang = Program.LanguageManager.Translation;
 
-           // AddItem(Properties.Resources.rankup, lang.SupportItem1Name, FormatString(lang.SupportItem1Des), 100, "DEVSTATUS", false);
+            // AddItem(Properties.Resources.rankup, lang.SupportItem1Name, FormatString(lang.SupportItem1Des), 100, "DEVSTATUS", false);
             AddItem(Properties.Resources.maskchange, lang.SupportItem2Name, FormatString(lang.SupportItem2Des), 500, "DEVRENAME", true);
             AddItem(Properties.Resources.desruct, lang.SupportItem3Name, FormatString(lang.SupportItem3Des), 50, "DEVRESETRANK", false);
             AddItem(Properties.Resources.swords, lang.SupportItem8Name, FormatString(lang.SupportItem8Des), 100, "NULL", false);
             AddItem(Properties.Resources.DNA, lang.SupportItem5Name, FormatString(lang.SupportItem5Des), 300, "DEVCOLOR", true);
             AddItem(Properties.Resources.sixsam, lang.SupportItem6Name, FormatString(lang.SupportItem6Des), 500, "DEVCREATETEAM", true);
             AddItem(Properties.Resources.message, lang.SupportItem7Name, FormatString(lang.SupportItem7Des), 150, "DEVMSG", true);
-           // AddItem(Properties.Resources.bookoflife, lang.SupportItem4Name, FormatString(lang.SupportItem4Des), 1000, "DEVUNBAN", true);
+            // AddItem(Properties.Resources.bookoflife, lang.SupportItem4Name, FormatString(lang.SupportItem4Des), 1000, "DEVUNBAN", true);
             m_descriptions.Add("DEVRENAME", lang.SupportRenameInput);
-           // m_descriptions.Add("DEVUNBAN", lang.SupportUnbanInput);
+            // m_descriptions.Add("DEVUNBAN", lang.SupportUnbanInput);
             m_descriptions.Add("DEVCREATETEAM", lang.SupportTeamNameInput);
             m_descriptions.Add("DEVMSG", lang.SupportMSGInput);
 
@@ -61,6 +63,7 @@ namespace DevProLauncher.Windows
 
             supportTxt.Text = FormatString(lang.SupportLbl);
         }
+
         private string FormatString(string text)
         {
             return text.Replace("||", Environment.NewLine);
@@ -85,18 +88,17 @@ namespace DevProLauncher.Windows
             }
         }
 
-        private void AddItem(Image image, string name, string des, int cost,string servercode,bool input)
+        private void AddItem(Image image, string name, string des, int cost, string servercode, bool input)
         {
-           TableLayoutPanel panel = (LeftItems.RowStyles.Count <= RightItems.RowStyles.Count ? LeftItems:RightItems);
-           int row = panel.RowStyles.Count - 1;
-           
-           var item = new SupportItem(image, name, des, cost);
-           item.button1.Click += Getitem;
-           item.button1.Name = (input ? "1":"0") + servercode;
-     
-           panel.Controls.Add(item, 0, row - 1);
-           panel.RowStyles.Add(new RowStyle(SizeType.Absolute, 100F));
-           
+            TableLayoutPanel panel = (LeftItems.RowStyles.Count <= RightItems.RowStyles.Count ? LeftItems : RightItems);
+            int row = panel.RowStyles.Count - 1;
+
+            var item = new SupportItem(image, name, des, cost);
+            item.button1.Click += Getitem;
+            item.button1.Name = (input ? "1" : "0") + servercode;
+
+            panel.Controls.Add(item, 0, row - 1);
+            panel.RowStyles.Add(new RowStyle(SizeType.Absolute, 100F));
         }
 
         private void Getitem(object handler, EventArgs e)
@@ -129,9 +131,10 @@ namespace DevProLauncher.Windows
                         Program.ChatServer.SendPacket(DevServerPackets.DevPointCommand,
                             JsonSerializer.SerializeToString(
                             new PacketCommand
-                                { Command = servercommand,
-                                                  Data = form.InputBox.Text.Trim()
-                        }));
+                            {
+                                Command = servercommand,
+                                Data = form.InputBox.Text.Trim()
+                            }));
                     }
                 }
                 else
@@ -142,12 +145,11 @@ namespace DevProLauncher.Windows
                         Program.ChatServer.SendPacket(DevServerPackets.DevPointCommand,
                             JsonSerializer.SerializeToString(
                             new PacketCommand
-                                {
+                            {
                                 Command = servercommand,
                                 Data = selectcolor.Color.R + "," + selectcolor.Color.G + "," + selectcolor.Color.B
                             }));
                     }
-
                 }
             }
             else
@@ -158,15 +160,15 @@ namespace DevProLauncher.Windows
                     return;
                 }
 
-                if(MessageBox.Show("Confirm","Are you sure?",MessageBoxButtons.YesNo) == DialogResult.Yes)
+                if (MessageBox.Show("Confirm", "Are you sure?", MessageBoxButtons.YesNo) == DialogResult.Yes)
                 {
                     Program.ChatServer.SendPacket(DevServerPackets.DevPointCommand,
                             JsonSerializer.SerializeToString(
                             new PacketCommand
-                                {
+                            {
                                 Command = servercommand
                             }));
-                } 
+                }
             }
         }
 
@@ -182,6 +184,7 @@ namespace DevProLauncher.Windows
             refreshbtn.Enabled = false;
             refreshtimer.Start();
         }
+
         private void refreshtimer_Tick(object sender, EventArgs e)
         {
             refreshbtn.Enabled = true;

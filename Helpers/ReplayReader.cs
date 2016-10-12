@@ -1,11 +1,11 @@
-﻿using Decoder = SevenZip.Compression.LZMA.Decoder;
+﻿using System;
 using System.IO;
-using System;
 using System.Text;
+using Decoder = SevenZip.Compression.LZMA.Decoder;
 
 namespace DevProLauncher.Helpers
 {
-    class ReplayReader
+    internal class ReplayReader
     {
         public class YgoReplay
         {

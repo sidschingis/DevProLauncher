@@ -1,13 +1,13 @@
 ﻿using System;
-using System.Windows.Forms;
 using System.Runtime.InteropServices;
+using System.Windows.Forms;
 
 namespace DevProLauncher.Windows.Components
 {
-    class FixedTabControl : TabControl
+    internal class FixedTabControl : TabControl
     {
-
         public delegate bool PreRemoveTab(int indx);
+
         public PreRemoveTab PreRemoveTabPage;
 
         public FixedTabControl()

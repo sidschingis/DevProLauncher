@@ -1,7 +1,7 @@
-﻿using System;
-using System.Windows.Forms;
-using DevProLauncher.Config;
+﻿using DevProLauncher.Config;
 using DevProLauncher.Network.Enums;
+using System;
+using System.Windows.Forms;
 
 namespace DevProLauncher.Windows.MessageBoxs
 {
@@ -18,9 +18,10 @@ namespace DevProLauncher.Windows.MessageBoxs
             Program.ChatServer.UserStats += UpdatePlayerProfile;
             FormClosed += OnClose;
         }
+
         public void OnClose(object sender, EventArgs e)
         {
-            if (Program.ChatServer.UserStats != null) 
+            if (Program.ChatServer.UserStats != null)
                 Program.ChatServer.UserStats -= UpdatePlayerProfile;
         }
 
@@ -31,7 +32,7 @@ namespace DevProLauncher.Windows.MessageBoxs
             Text = language.profileName;
             Username.Text = language.profileLblUsername;
             rank.Text = language.profileLblRank;
-            UserLevel.Text = language.profileLvl; 
+            UserLevel.Text = language.profileLvl;
             singlerank.Text = language.profileLblSingleRank;
             team.Text = language.profileLblTeam;
             elo.Text = language.profileLblElo;
@@ -87,7 +88,6 @@ namespace DevProLauncher.Windows.MessageBoxs
             txtTWinLastTurn.Text = language.profileLblLastTurn;
             txtTWinDestinyLeo.Text = language.profileLblDestinyLeo;
             txtTWinUnknown.Text = language.profileLblUnknown;
-
         }
 
         private void UpdatePlayerProfile(string message)
@@ -100,10 +100,10 @@ namespace DevProLauncher.Windows.MessageBoxs
             {
                 if (!IsDisposed)
                 {
-                    string[] sections = message.Split(new[] {"||"}, StringSplitOptions.None);
+                    string[] sections = message.Split(new[] { "||" }, StringSplitOptions.None);
                     rank.Text += sections[0];
                     singlerank.Text += sections[1];
-                    UserLevel.Text +=  sections[6];
+                    UserLevel.Text += sections[6];
                     elo.Text += sections[7];
                     singleelo.Text += sections[8];
 
@@ -253,7 +253,7 @@ namespace DevProLauncher.Windows.MessageBoxs
                     TMatchWLD.Text = rankedparts[31] + "/" + rankedparts[32] + "/" + rankedparts[33];
                     TTagWLD.Text = rankedparts[34] + "/" + rankedparts[35] + "/" + rankedparts[36];
 
-                    TeamLevel.Text +=  rankedparts[37];
+                    TeamLevel.Text += rankedparts[37];
                     TRank.Text += rankedparts[38];
 
                     int totalwins = Convert.ToInt32(rankedparts[28]) + Convert.ToInt32(rankedparts[31]) + Convert.ToInt32(rankedparts[34]);
@@ -266,8 +266,7 @@ namespace DevProLauncher.Windows.MessageBoxs
                         Ratio.Text += ratio.ToString("#.##") + "%";
                     }
                     else
-                        Ratio.Text +="0%";
-
+                        Ratio.Text += "0%";
                 }
             }
         }

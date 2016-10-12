@@ -1,11 +1,11 @@
-﻿using System;
-using Microsoft.Win32;
+﻿using Microsoft.Win32;
+using System;
 
 namespace DevProLauncher.Helpers
 {
     public static class RegEditor
     {
-       public static bool Write(string path, string key, object value)
+        public static bool Write(string path, string key, object value)
         {
             try
             {
@@ -23,6 +23,7 @@ namespace DevProLauncher.Helpers
                 return false;
             }
         }
+
         public static bool CreateDirectory(string path)
         {
             try

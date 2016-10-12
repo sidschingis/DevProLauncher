@@ -16,18 +16,22 @@ namespace DevProLauncher.Windows.Components
             /// The size of the structure in bytes.
             /// </summary>
             public uint cbSize;
+
             /// <summary>
             /// A Handle to the Window to be Flashed. The window can be either opened or minimized.
             /// </summary>
             public IntPtr hwnd;
+
             /// <summary>
             /// The Flash Status.
             /// </summary>
             public uint dwFlags;
+
             /// <summary>
             /// The number of times to Flash the window.
             /// </summary>
             public uint uCount;
+
             /// <summary>
             /// The rate at which the Window is to be flashed, in milliseconds. If Zero, the function uses the default cursor blink rate.
             /// </summary>
@@ -64,7 +68,6 @@ namespace DevProLauncher.Windows.Components
         /// Flash continuously until the window comes to the foreground.
         /// </summary>
         public const uint FLASHW_TIMERNOFG = 12;
-
 
         /// <summary>
         /// Flash the spacified Window (Form) until it recieves focus.

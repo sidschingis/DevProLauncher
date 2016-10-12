@@ -1,12 +1,12 @@
-﻿using System;
-using System.Globalization;
-using System.Windows.Forms;
-using System.IO;
-using DevProLauncher.Config;
+﻿using DevProLauncher.Config;
 using DevProLauncher.Helpers;
 using DevProLauncher.Network.Data;
 using DevProLauncher.Network.Enums;
 using ServiceStack.Text;
+using System;
+using System.Globalization;
+using System.IO;
+using System.Windows.Forms;
 
 namespace DevProLauncher.Windows.MessageBoxs
 {
@@ -16,11 +16,11 @@ namespace DevProLauncher.Windows.MessageBoxs
         {
             InitializeComponent();
 
-            Program.ChatServer.ChangeReply += ChangeResponse; 
+            Program.ChatServer.ChangeReply += ChangeResponse;
 
             Username.Text = Program.Config.DefaultUsername;
             FormClosing += ResetEvents;
-            
+
             Antialias.Text = Program.Config.Antialias.ToString(CultureInfo.InvariantCulture);
             EnableMusic.Checked = Program.Config.EnableMusic;
             EnableSound.Checked = Program.Config.EnableSound;
@@ -49,12 +49,12 @@ namespace DevProLauncher.Windows.MessageBoxs
 
             if (Directory.Exists(Program.Config.LauncherDir + "skins/"))
             {
-                string[] folders = Directory.GetDirectories(Path.Combine(Program.Config.LauncherDir ,"skins\\"));
+                string[] folders = Directory.GetDirectories(Path.Combine(Program.Config.LauncherDir, "skins\\"));
                 foreach (var folder in folders)
                     SkinList.Items.Add(Path.GetFileName(folder));
-            }            
-            
-            if(SkinList.Items.Count  > Program.Config.Skin + 1)
+            }
+
+            if (SkinList.Items.Count > Program.Config.Skin + 1)
                 SkinList.SelectedIndex = Program.Config.Skin + 1;
 
             if (Directory.Exists(Program.Config.LauncherDir + "deck/"))
@@ -122,7 +122,6 @@ namespace DevProLauncher.Windows.MessageBoxs
                 RequestSettingsbtn.Text = lang.chatoptionsBtnRequestSettings;
                 SaveBtn.Text = lang.chatoptionsBtnSave;
                 CancelBtn.Text = lang.chatoptionsBtnCancel;
-
             }
         }
 
@@ -139,7 +138,7 @@ namespace DevProLauncher.Windows.MessageBoxs
             Program.Config.Enabled3D = Enabled3d.Checked;
             Program.Config.FontSize = (int)FontSize.Value;
             Program.Config.GameFont = GameFont.Text;
-            Program.Config.Skin = SkinList.SelectedIndex == -1 ? -1: SkinList.SelectedIndex - 1;
+            Program.Config.Skin = SkinList.SelectedIndex == -1 ? -1 : SkinList.SelectedIndex - 1;
             Program.Config.AutoPlacing = AutoPlacing.Checked;
             Program.Config.RandomPlacing = RandomPlacing.Checked;
             Program.Config.AutoChain = AutoChain.Checked;
@@ -153,19 +152,17 @@ namespace DevProLauncher.Windows.MessageBoxs
             Program.Config.ChainButtons = ChainButtons.Checked;
             Program.Config.old_replay_mode = old_replay_mode.Checked;
 
-            Program.SaveConfig(Program.ConfigurationFilename,Program.Config);
+            Program.SaveConfig(Program.ConfigurationFilename, Program.Config);
             DialogResult = DialogResult.OK;
-
         }
 
         private void QuickSettingsBtn_Click(object sender, EventArgs e)
         {
-
             var form = new Host(false)
-                {
-                    Text = Program.LanguageManager.Translation.QuickHostSetting,
-                    HostBtn = {Text = Program.LanguageManager.Translation.QuickHostBtn}
-                };
+            {
+                Text = Program.LanguageManager.Translation.QuickHostSetting,
+                HostBtn = { Text = Program.LanguageManager.Translation.QuickHostBtn }
+            };
 
             if (form.ShowDialog() == DialogResult.OK)
             {
@@ -179,23 +176,22 @@ namespace DevProLauncher.Windows.MessageBoxs
                 Program.Config.TimeLimit = form.TimeLimit.Text;
                 Program.Config.EnablePrerelease = form.Prerelease.Checked;
             }
-
         }
 
         private void RequestSettingsbtn_Click(object sender, EventArgs e)
         {
             var form = new Host
-                {
-                    Text = Program.LanguageManager.Translation.chatoptionsRequestFormText,
-                    HostBtn = {Text = Program.LanguageManager.Translation.chatoptionsBtnSave},
-                    ShuffleDeck = {Enabled = false},
-                    CheckDeck = {Enabled = false},
-                    Priority = {Enabled = true},
-                    LifePoints = {Enabled = false}
-                };
+            {
+                Text = Program.LanguageManager.Translation.chatoptionsRequestFormText,
+                HostBtn = { Text = Program.LanguageManager.Translation.chatoptionsBtnSave },
+                ShuffleDeck = { Enabled = false },
+                CheckDeck = { Enabled = false },
+                Priority = { Enabled = true },
+                LifePoints = { Enabled = false }
+            };
             form.Mode.Items.Remove("Tag");
 
-            if(form.ShowDialog() == DialogResult.OK)
+            if (form.ShowDialog() == DialogResult.OK)
             {
                 Program.Config.chtCardRules = form.CardRules.Text;
                 Program.Config.chtMode = form.Mode.Text;
@@ -217,26 +213,25 @@ namespace DevProLauncher.Windows.MessageBoxs
                 return;
             }
 
-            if(!string.IsNullOrEmpty(newPassword.Text)) {
-
+            if (!string.IsNullOrEmpty(newPassword.Text))
+            {
                 if (newPassword.Text != confirmPassword.Text)
                 {
                     MessageBox.Show("New password does not match the confirm password.");
                     return;
                 }
 
-                Program.ChatServer.SendPacket(DevServerPackets.UpdatePassword, 
+                Program.ChatServer.SendPacket(DevServerPackets.UpdatePassword,
                     JsonSerializer.SerializeToString(
                     new LoginRequest()
-                        {
-                            Username = Program.UserInfo.username,
-                            Password = LauncherHelper.EncodePassword(currentPassword.Text),
-                            UID = LauncherHelper.EncodePassword(newPassword.Text)
-                        }));
+                    {
+                        Username = Program.UserInfo.username,
+                        Password = LauncherHelper.EncodePassword(currentPassword.Text),
+                        UID = LauncherHelper.EncodePassword(newPassword.Text)
+                    }));
             }
             if (!string.IsNullOrEmpty(emailInput.Text))
             {
-
                 if (emailInput.Text != confirmEmailInput.Text)
                 {
                     MessageBox.Show("New email does not match the confirm email.");
@@ -255,6 +250,7 @@ namespace DevProLauncher.Windows.MessageBoxs
             }
             UpdateBtn.Enabled = false;
         }
+
         private void ChangeResponse(DevClientPackets packet)
         {
             if (!IsDisposed)
@@ -278,10 +274,12 @@ namespace DevProLauncher.Windows.MessageBoxs
                 UpdateBtn.Enabled = true;
             }
         }
+
         private void ResetEvents(object sender, EventArgs e)
         {
             Program.ChatServer.ChangeReply -= ChangeResponse;
         }
+
         private void EnableMusic_CheckedChanged(object sender, EventArgs e)
         {
             MusicVolume.Enabled = EnableMusic.Checked;

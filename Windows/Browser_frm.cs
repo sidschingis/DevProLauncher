@@ -13,9 +13,9 @@ namespace DevProLauncher.Windows
             browser.ScriptErrorsSuppressed = true;
         }
 
-        public void Navigate(string url,bool force)
+        public void Navigate(string url, bool force)
         {
-            if((browser.Url == null || force) && !string.IsNullOrEmpty(url))
+            if ((browser.Url == null || force) && !string.IsNullOrEmpty(url))
                 browser.Navigate(url);
         }
     }

@@ -1,12 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace DevProLauncher.Network.Data
+﻿namespace DevProLauncher.Network.Data
 {
-    class ResendRequest
+    internal class ResendRequest
     {
         public string Username { get; set; }
         public string Email { get; set; }

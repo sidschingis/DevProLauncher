@@ -1,16 +1,11 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Drawing;
-using System.Globalization;
+﻿using DevProLauncher.Helpers;
+using System;
 using System.Windows.Forms;
-using DevProLauncher.Helpers;
-using DevProLauncher.Helpers.Enums;
 
 namespace DevProLauncher.Windows.Components
 {
     public sealed partial class ReplayInfoControl : Form
     {
-
         public ReplayInfoControl()
         {
             InitializeComponent();
@@ -74,7 +69,6 @@ namespace DevProLauncher.Windows.Components
                     ReplayInfo.Text += info.replayDraw + drawcount;
                     ReplayInfo.Text += Environment.NewLine;
                 }
-
             }
             catch
             {

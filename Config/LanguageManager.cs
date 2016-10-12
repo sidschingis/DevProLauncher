@@ -1,7 +1,7 @@
 ﻿using System;
-using System.Xml.Serialization;
 using System.IO;
 using System.Windows.Forms;
+using System.Xml.Serialization;
 
 namespace DevProLauncher.Config
 {
@@ -19,7 +19,7 @@ namespace DevProLauncher.Config
         }
 
         public void Save(string language)
-        {            
+        {
             if (!Directory.Exists(Path + language))
                 Directory.CreateDirectory(Path + language);
             try
@@ -48,7 +48,7 @@ namespace DevProLauncher.Config
                 textReader.Close();
                 this.language = language;
                 Loaded = true;
-                if(File.Exists(Path + language + "/strings.conf"))
+                if (File.Exists(Path + language + "/strings.conf"))
                     File.Copy(Path + language + "/strings.conf", "strings.conf", true);
                 if (File.Exists(Path + language + "/cards.cdb"))
                     File.Copy(Path + language + "/cards.cdb", "cards.cdb", true);
@@ -56,7 +56,7 @@ namespace DevProLauncher.Config
                     File.Copy(Path + "English/cards.cdb", "cards.cdb", true);
             }
             catch (Exception)
-            {   
+            {
                 MessageBox.Show("Error Loading " + language);
             }
         }

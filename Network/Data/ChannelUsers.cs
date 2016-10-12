@@ -7,7 +7,6 @@
 
         public ChannelUsers()
         {
-            
         }
 
         public ChannelUsers(string name, UserData[] users)

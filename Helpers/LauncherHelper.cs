@@ -1,17 +1,15 @@
-﻿using System;
-using System.Linq;
-using System.Security.Cryptography;
-using System.Windows.Forms;
-using System.Diagnostics;
-using System.Reflection;
-using System.IO;
-using System.Net;
+﻿using DevProLauncher.Network.Data;
+using System;
 using System.Collections.Generic;
-using System.Text;
+using System.Diagnostics;
+using System.IO;
+using System.Linq;
+using System.Net;
 using System.Net.NetworkInformation;
-using DevProLauncher.Network.Data;
-using DevProLauncher.Windows;
-using DevProLauncher.Windows.MessageBoxs;
+using System.Reflection;
+using System.Security.Cryptography;
+using System.Text;
+using System.Windows.Forms;
 
 namespace DevProLauncher.Helpers
 {
@@ -191,13 +189,13 @@ namespace DevProLauncher.Helpers
             }
         }
 
-        static void UpdateInfo(object sender, EventArgs e)
+        private static void UpdateInfo(object sender, EventArgs e)
         {
             if (GameClosed != null)
                 GameClosed();
         }
 
-        static void RefreshDeckList(object sender, EventArgs e)
+        private static void RefreshDeckList(object sender, EventArgs e)
         {
             if (DeckEditClosed != null)
                 DeckEditClosed();
@@ -211,7 +209,7 @@ namespace DevProLauncher.Helpers
             return (count > 0);
         }
 
-        public static void GenerateConfig(ServerInfo server, string roominfo,int forced=0)
+        public static void GenerateConfig(ServerInfo server, string roominfo, int forced = 0)
         {
             if (server == null)
                 return;
@@ -256,6 +254,7 @@ namespace DevProLauncher.Helpers
             writer.WriteLine("old_replay_mode = 1" + Convert.ToInt32(Program.Config.old_replay_mode));
             writer.Close();
         }
+
         public static void GenerateConfig()
         {
             if ((File.Exists(Program.Config.LauncherDir + "system.CONF")))
@@ -289,6 +288,7 @@ namespace DevProLauncher.Helpers
             writer.WriteLine("old_replay_mode = 1" + Convert.ToInt32(Program.Config.old_replay_mode));
             writer.Close();
         }
+
         public static void GenerateConfig(int fileType, string file = "")
         {
             if ((File.Exists(Program.Config.LauncherDir + "system.CONF")))
@@ -327,14 +327,16 @@ namespace DevProLauncher.Helpers
                 case 0:
                     writer.WriteLine("lastreplay = " + file);
                     break;
+
                 case 1:
                     writer.WriteLine("lastpuzzle = " + file);
                     break;
+
                 case 2:
                     writer.WriteLine("lastdeck = " + file);
                     break;
             }
-     
+
             writer.Close();
         }
 

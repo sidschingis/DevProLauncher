@@ -1,23 +1,22 @@
+using DevProLauncher.Helpers;
+using DevProLauncher.Windows.Enums;
+using DevProLauncher.Windows.MessageBoxs;
 using System;
 using System.Collections.Generic;
 using System.Drawing;
+using System.Drawing.Imaging;
+using System.IO;
 using System.Linq;
 using System.Windows.Forms;
-using System.IO;
 using System.Xml.Serialization;
-using System.Drawing.Imaging;
-using DevProLauncher.Windows.Enums;
-using DevProLauncher.Helpers;
-using DevProLauncher.Windows.MessageBoxs;
 
 namespace DevProLauncher.Windows
 {
     public sealed partial class CustomizeFrm : Form
     {
-
         public Dictionary<ContentType, Content> Data = new Dictionary<ContentType, Content>();
         public ContentType ContentView = ContentType.Covers;
-        readonly Dictionary<string, Theme> m_themes = new Dictionary<string, Theme>();
+        private readonly Dictionary<string, Theme> m_themes = new Dictionary<string, Theme>();
         public string SelectedTheme = "None";
 
         public CustomizeFrm()
@@ -27,7 +26,7 @@ namespace DevProLauncher.Windows
             Dock = DockStyle.Fill;
             Visible = true;
             ViewSelect.SelectedIndex = 0;
-            Data.Add(ContentType.Covers, new Content { AssetPath = "Assets/Covers/", IconSize = new Size(177, 252), GameItem = "textures\\cover.jpg", FileType = ".jpg", ImageSize = new Size(178,254) });
+            Data.Add(ContentType.Covers, new Content { AssetPath = "Assets/Covers/", IconSize = new Size(177, 252), GameItem = "textures\\cover.jpg", FileType = ".jpg", ImageSize = new Size(178, 254) });
             Data.Add(ContentType.Covers2, new Content { AssetPath = "Assets/Covers/", IconSize = new Size(177, 252), GameItem = "textures\\cover2.jpg", FileType = ".jpg", ImageSize = new Size(178, 254) });
             Data.Add(ContentType.Backgrounds, new Content { AssetPath = "Assets/Backgrounds/", IconSize = new Size(256, 256), GameItem = "textures\\bg.jpg", FileType = ".jpg", ImageSize = new Size(1024, 640) });
             Data.Add(ContentType.GameBackgrounds, new Content { AssetPath = "Assets/GameBackgrounds/", IconSize = new Size(256, 256), GameItem = "textures\\bg2.jpg", FileType = ".jpg", ImageSize = new Size(1024, 640) });
@@ -49,8 +48,6 @@ namespace DevProLauncher.Windows
             Data.Add(ContentType.Music, new Content { AssetPath = "Assets/Music/", IconSize = new Size(40, 40), GameItem = "sound\\", FileType = ".mp3" });
             Data.Add(ContentType.SoundEffects, new Content { AssetPath = "Assets/SoundEffects/", IconSize = new Size(40, 40), GameItem = "sound\\", FileType = ".wav" });
 
-
-
             ContentList.View = View.LargeIcon;
             LoadAssets();
             LoadThemeFiles();
@@ -63,7 +60,7 @@ namespace DevProLauncher.Windows
             ApplyTranslation();
         }
 
-        public  void ApplyTranslation()
+        public void ApplyTranslation()
         {
             RemoveThemeBtn.Text = Program.LanguageManager.Translation.cusRemoveBtn;
             AddThemeBtn.Text = Program.LanguageManager.Translation.cusAddThemeBtn;
@@ -92,7 +89,7 @@ namespace DevProLauncher.Windows
             return m_themes.Keys.Cast<object>().ToList();
         }
 
-        void LoadThemeFiles()
+        private void LoadThemeFiles()
         {
             //create theme folder
             if (!Directory.Exists("Assets/Themes/"))
@@ -107,34 +104,33 @@ namespace DevProLauncher.Windows
                 if (file.Contains(".YGOTheme"))
                 {
                     LoadTheme(file);
-// ReSharper disable AssignNullToNotNullAttribute
+                    // ReSharper disable AssignNullToNotNullAttribute
                     ThemeSelect.Items.Add(Path.GetFileNameWithoutExtension(file));
-// ReSharper restore AssignNullToNotNullAttribute
+                    // ReSharper restore AssignNullToNotNullAttribute
                 }
             }
-
         }
 
-        void LoadTheme(string filepath)
-        {       
+        private void LoadTheme(string filepath)
+        {
             var deserializer = new XmlSerializer(typeof(Theme));
             TextReader textReader = new StreamReader(filepath);
             try
             {
-    // ReSharper disable AssignNullToNotNullAttribute
+                // ReSharper disable AssignNullToNotNullAttribute
                 if (!m_themes.ContainsKey(Path.GetFileNameWithoutExtension(filepath)))
                     m_themes[Path.GetFileNameWithoutExtension(filepath)] = (Theme)deserializer.Deserialize(textReader);
-    // ReSharper restore AssignNullToNotNullAttribute
+                // ReSharper restore AssignNullToNotNullAttribute
                 textReader.Close();
             }
             catch (Exception)
             {
                 textReader.Close();
-                if(File.Exists(filepath))
+                if (File.Exists(filepath))
                     File.Delete(filepath);
             }
-
         }
+
         public ThemeObject GetThemeObject(ContentType type)
         {
             if (m_themes.ContainsKey(SelectedTheme))
@@ -156,6 +152,7 @@ namespace DevProLauncher.Windows
                 MessageBox.Show("Theme already exists.", "Exists");
             }
         }
+
         public bool ThemeExists(string name)
         {
             return m_themes.ContainsKey(name);
@@ -171,7 +168,7 @@ namespace DevProLauncher.Windows
             return Data[ContentView];
         }
 
-        void LoadAssets()
+        private void LoadAssets()
         {
             ContentList.Items.Clear();
             foreach (ContentType key in ItemKeys())
@@ -179,11 +176,11 @@ namespace DevProLauncher.Windows
                 if (!Directory.Exists(Data[key].AssetPath)) Directory.CreateDirectory(Data[key].AssetPath);
                 string[] itempath = Directory.GetFiles(Data[key].AssetPath);
                 Data[key].Images = new ImageList
-                    {
-                        TransparentColor = Color.Transparent,
-                        ColorDepth = ColorDepth.Depth16Bit,
-                        ImageSize = Data[key].IconSize
-                    };
+                {
+                    TransparentColor = Color.Transparent,
+                    ColorDepth = ColorDepth.Depth16Bit,
+                    ImageSize = Data[key].IconSize
+                };
                 foreach (string item in itempath)
                 {
                     if (key == ContentType.Music || key == ContentType.SoundEffects)
@@ -193,7 +190,6 @@ namespace DevProLauncher.Windows
                     else
                     {
                         AddImage(Data[key].Images, item);
-
                     }
                 }
             }
@@ -209,7 +205,7 @@ namespace DevProLauncher.Windows
             LoadAssets();
         }
 
-        void ChangeImageView()
+        private void ChangeImageView()
         {
             ContentList.Items.Clear();
             ContentList.LargeImageList = Data[ContentView].Images;
@@ -227,7 +223,7 @@ namespace DevProLauncher.Windows
             if (control.Text == "Player 1 Covers") ContentView = ContentType.Covers;
             if (control.Text == "Player 2 Covers") ContentView = ContentType.Covers2;
             if (control.Text == "Backgrounds") ContentView = ContentType.Backgrounds;
-            if(control.Text == "GameBackgrounds") ContentView = ContentType.GameBackgrounds;
+            if (control.Text == "GameBackgrounds") ContentView = ContentType.GameBackgrounds;
             if (control.Text == "Attack") ContentView = ContentType.AttackIcon;
             if (control.Text == "Activate") ContentView = ContentType.ActivateCircle;
             if (control.Text == "Chain") ContentView = ContentType.Chain;
@@ -273,7 +269,7 @@ namespace DevProLauncher.Windows
             }
         }
 
-        void AddImage(ImageList type, string path)
+        private void AddImage(ImageList type, string path)
         {
             var imagename = Path.GetFileNameWithoutExtension(path);
             try
@@ -300,12 +296,12 @@ namespace DevProLauncher.Windows
                 Console.WriteLine("Somthing when wrong.");
             }
         }
-        void AddIconImage(ImageList type, string path)
+
+        private void AddIconImage(ImageList type, string path)
         {
             var imagename = Path.GetFileNameWithoutExtension(path);
             var iconforFile = Icon.ExtractAssociatedIcon(path);
             type.Images.Add(imagename, iconforFile ?? SystemIcons.WinLogo);
-
         }
 
         public void InstallAsset(object sender, EventArgs args)
@@ -326,8 +322,6 @@ namespace DevProLauncher.Windows
             }
 
             MessageBox.Show("Success!", "Install");
-
-
         }
 
         public void InstallAsset(ContentType type, string path)
@@ -346,14 +340,10 @@ namespace DevProLauncher.Windows
             }
 
             //MessageBox.Show("Success!", "Install");
-
-
         }
-
 
         public void DealteAsset(object sender, EventArgs args)
         {
-
             ListViewItem item = ContentList.SelectedItems[0];
             if (MessageBox.Show("Are you sure you want to delete " + item.Text, "Confirm", MessageBoxButtons.YesNo) == DialogResult.Yes)
             {
@@ -361,9 +351,9 @@ namespace DevProLauncher.Windows
                 ContentList.Items.Remove(item);
                 File.Delete(Data[ContentView].AssetPath + item.Text + Data[ContentView].FileType);
             }
-
         }
-        void ApplyToTheme(object sender, EventArgs args)
+
+        private void ApplyToTheme(object sender, EventArgs args)
         {
             ListViewItem item = ContentList.SelectedItems[0];
             if (MessageBox.Show("Apply " + item.Text + "  to current theme?  ", "Confirm", MessageBoxButtons.YesNo) == DialogResult.Yes)
@@ -378,7 +368,7 @@ namespace DevProLauncher.Windows
             }
         }
 
-        void RemoveFromTheme(object sender, EventArgs args)
+        private void RemoveFromTheme(object sender, EventArgs args)
         {
             var item = ContentList.SelectedItems[0];
             if (MessageBox.Show("Remove " + item.Text + "  from current theme?  ", "Confirm", MessageBoxButtons.YesNo) == DialogResult.Yes)
@@ -475,7 +465,6 @@ namespace DevProLauncher.Windows
                         }
 
                         mnu.Show(this, e.Location);
-
                     }
                     else
                     {
@@ -491,43 +480,49 @@ namespace DevProLauncher.Windows
             }
         }
 
-        void mnumenumusic_Click(object sender, EventArgs args)
+        private void mnumenumusic_Click(object sender, EventArgs args)
         {
             var item = ContentList.SelectedItems[0];
             installmusic(Data[ContentView].AssetPath + item.Text + Data[ContentView].FileType, Data[ContentView].GameItem + "menu" + Data[ContentView].FileType);
         }
-        void mnudeckmusic_Click(object sender, EventArgs args)
+
+        private void mnudeckmusic_Click(object sender, EventArgs args)
         {
             var item = ContentList.SelectedItems[0];
             installmusic(Data[ContentView].AssetPath + item.Text + Data[ContentView].FileType, Data[ContentView].GameItem + "deck" + Data[ContentView].FileType);
         }
-        void mnubattlemusic_Click(object sender, EventArgs args)
+
+        private void mnubattlemusic_Click(object sender, EventArgs args)
         {
             var item = ContentList.SelectedItems[0];
             installmusic(Data[ContentView].AssetPath + item.Text + Data[ContentView].FileType, Data[ContentView].GameItem + "song" + Data[ContentView].FileType);
         }
-        void mnuadcantagemusic_Click(object sender, EventArgs args)
+
+        private void mnuadcantagemusic_Click(object sender, EventArgs args)
         {
             var item = ContentList.SelectedItems[0];
             installmusic(Data[ContentView].AssetPath + item.Text + Data[ContentView].FileType, Data[ContentView].GameItem + "song-advantage" + Data[ContentView].FileType);
         }
-        void mnudisadvantagemusic_Click(object sender, EventArgs args)
+
+        private void mnudisadvantagemusic_Click(object sender, EventArgs args)
         {
             var item = ContentList.SelectedItems[0];
             installmusic(Data[ContentView].AssetPath + item.Text + Data[ContentView].FileType, Data[ContentView].GameItem + "song-disadvantage" + Data[ContentView].FileType);
         }
-        void mnuvictorymusic_Click(object sender, EventArgs args)
+
+        private void mnuvictorymusic_Click(object sender, EventArgs args)
         {
             var item = ContentList.SelectedItems[0];
             installmusic(Data[ContentView].AssetPath + item.Text + Data[ContentView].FileType, Data[ContentView].GameItem + "duelwin" + Data[ContentView].FileType);
         }
-        void mnulosemusic_Click(object sender, EventArgs args)
+
+        private void mnulosemusic_Click(object sender, EventArgs args)
         {
             var item = ContentList.SelectedItems[0];
             installmusic(Data[ContentView].AssetPath + item.Text + Data[ContentView].FileType, Data[ContentView].GameItem + "duellose" + Data[ContentView].FileType);
         }
 
-        void PlayMusic(object sender, EventArgs args)
+        private void PlayMusic(object sender, EventArgs args)
         {
             ListViewItem item = ContentList.SelectedItems[0];
             string combinepath = Path.Combine(Application.ExecutablePath, "../");
@@ -539,10 +534,9 @@ namespace DevProLauncher.Windows
 
                 //Process.Start( "wmplayer.exe",musicpath);
             }
-
         }
 
-        void installmusic(string file, string replacefile)
+        private void installmusic(string file, string replacefile)
         {
             try
             {
@@ -579,7 +573,6 @@ namespace DevProLauncher.Windows
 
         public void AddNewAsset(object sender, EventArgs args)
         {
-
             string filetoadd = OpenFileWindow("Add " + ContentView.ToString(), Data[ContentView].FileType.ToUpper() + "(*" + Data[ContentView].FileType + ")|*" + Data[ContentView].FileType + ";");
 
             if (filetoadd == null) return;
@@ -597,8 +590,6 @@ namespace DevProLauncher.Windows
                     {
                         File.Copy(filetoadd, Data[ContentView].AssetPath + filename + Data[ContentView].FileType);
                     }
-
-
                 }
                 else
                 {
@@ -609,6 +600,7 @@ namespace DevProLauncher.Windows
             catch (Exception ex)
             { MessageBox.Show(ex.Message); }
         }
+
         public void AddNewAsset(string path)
         {
             if (path == null) return;
@@ -639,7 +631,7 @@ namespace DevProLauncher.Windows
         private void AddThemeBtn_Click(object sender, EventArgs e)
         {
             var form = new InputFrm("Add Theme", "Enter theme name", "Add", "Cancel");
-           
+
             if (form.ShowDialog() == DialogResult.OK)
             {
                 if (m_themes.ContainsKey(form.InputBox.Text))
@@ -656,13 +648,12 @@ namespace DevProLauncher.Windows
         private void RemoveThemeBtn_Click(object sender, EventArgs e)
         {
             if (ThemeSelect.Text == "") return;
-            if (MessageBox.Show("Are you sure you want to remove " + ThemeSelect.SelectedItem, "Remove theme", MessageBoxButtons.YesNo) 
+            if (MessageBox.Show("Are you sure you want to remove " + ThemeSelect.SelectedItem, "Remove theme", MessageBoxButtons.YesNo)
                 == DialogResult.Yes)
             {
                 File.Delete("Assets/Themes/" + ThemeSelect.SelectedItem + ".YGOTheme");
                 m_themes.Remove(ThemeSelect.SelectedItem.ToString());
                 ThemeSelect.Items.Remove(ThemeSelect.SelectedItem);
-                
             }
         }
 
@@ -751,6 +742,7 @@ namespace DevProLauncher.Windows
             return Items.FirstOrDefault(item => item.Type == type);
         }
     }
+
     [Serializable]
     public class ThemeObject
     {
@@ -758,5 +750,4 @@ namespace DevProLauncher.Windows
         public string Filepath;
         public string Filename;
     }
-
 }

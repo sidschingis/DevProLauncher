@@ -1,11 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Diagnostics;
 using System.Drawing;
-using System.Linq;
-using System.Text;
 using System.Windows.Forms;
 
 namespace DevProLauncher.Windows.Components
@@ -13,6 +8,7 @@ namespace DevProLauncher.Windows.Components
     public partial class Banner : Form
     {
         private string linkurl;
+
         public Banner(string name, string link, Image image)
         {
             InitializeComponent();

@@ -5,7 +5,7 @@ namespace DevProLauncher.Windows.MessageBoxs
 {
     public partial class BanFrm : Form
     {
-        public BanFrm(string title, string message,string input1Lbl, string input2Lbl, string confirmbtn, string cancelbtn)
+        public BanFrm(string title, string message, string input1Lbl, string input2Lbl, string confirmbtn, string cancelbtn)
         {
             InitializeComponent();
             Text = title;
@@ -27,8 +27,9 @@ namespace DevProLauncher.Windows.MessageBoxs
         {
             if (String.IsNullOrEmpty(inputBox1.Text)) MessageBox.Show("Input box is empty.", "Error", MessageBoxButtons.OK);
             else
-            DialogResult = DialogResult.OK;
+                DialogResult = DialogResult.OK;
         }
+
         private void KeyPress_Enter(object sender, KeyPressEventArgs e)
         {
             if (e.KeyChar == 13)

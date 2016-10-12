@@ -1,17 +1,17 @@
+using DevProLauncher.Config;
+using DevProLauncher.Helpers;
+using DevProLauncher.Network.Data;
+using DevProLauncher.Network.Enums;
+using DevProLauncher.Windows.Components;
+using DevProLauncher.Windows.Enums;
+using DevProLauncher.Windows.MessageBoxs;
+using ServiceStack.Text;
 using System;
 using System.Collections.Generic;
 using System.Drawing;
 using System.Globalization;
 using System.Linq;
 using System.Windows.Forms;
-using DevProLauncher.Network.Data;
-using DevProLauncher.Windows.Enums;
-using DevProLauncher.Windows.Components;
-using DevProLauncher.Windows.MessageBoxs;
-using DevProLauncher.Helpers;
-using DevProLauncher.Config;
-using DevProLauncher.Network.Enums;
-using ServiceStack.Text;
 
 namespace DevProLauncher.Windows
 {
@@ -241,7 +241,6 @@ namespace DevProLauncher.Windows
             OptionsTab.Text = lang.chatOptionTab;
             ChannelTab.Text = lang.chatChannelTab;
             UserListTab.Text = lang.chatUserListTab;
-
         }
 
         public void LoadIgnoreList()
@@ -383,7 +382,6 @@ namespace DevProLauncher.Windows
         public bool IgnoreUser(UserData user)
         {
             return IgnoreList.Items.Contains(user.username.ToLower()) && user.rank < 1;
-
         }
 
         public void WriteSystemMessage(string message)
@@ -682,19 +680,24 @@ namespace DevProLauncher.Windows
                                             : new SolidBrush(Program.Config.NormalTextColor.ToColor())),
                                  list.GetItemRectangle(index).Location);
                     string title;
-                    switch (user.rank) {
+                    switch (user.rank)
+                    {
                         case 1:
                             title = "Helper";
                             break;
+
                         case 2:
                             title = "TD";
                             break;
+
                         case 3:
                             title = "Mod";
                             break;
+
                         case 4:
                             title = "SMod";
                             break;
+
                         case 98:
                             title = "Bot";
                             break;
@@ -778,7 +781,6 @@ namespace DevProLauncher.Windows
                                                 : new SolidBrush(user.getUserColor())),
                                      list.GetItemRectangle(index).Location);
                     }
-
                 }
             }
             else
@@ -808,39 +810,51 @@ namespace DevProLauncher.Windows
                     case "BackgroundColorBtn":
                         Program.Config.ChatBGColor = new SerializableColor(selectcolor.Color);
                         break;
+
                     case "SystemColorBtn":
                         Program.Config.SystemColor = new SerializableColor(selectcolor.Color);
                         break;
+
                     case "LeaveColorBtn":
                         Program.Config.LeaveColor = new SerializableColor(selectcolor.Color);
                         break;
+
                     case "JoinColorBtn":
                         Program.Config.JoinColor = new SerializableColor(selectcolor.Color);
                         break;
+
                     case "MeColorBtn":
                         Program.Config.MeMsgColor = new SerializableColor(selectcolor.Color);
                         break;
+
                     case "ServerColorBtn":
                         Program.Config.ServerMsgColor = new SerializableColor(selectcolor.Color);
                         break;
+
                     case "NormalUserColorBtn":
                         Program.Config.Level0Color = new SerializableColor(selectcolor.Color);
                         break;
+
                     case "Level1ColorBtn":
                         Program.Config.Level1Color = new SerializableColor(selectcolor.Color);
                         break;
+
                     case "Level2ColorBtn":
                         Program.Config.Level2Color = new SerializableColor(selectcolor.Color);
                         break;
+
                     case "Level3ColorBtn":
                         Program.Config.Level3Color = new SerializableColor(selectcolor.Color);
                         break;
+
                     case "Level4ColorBtn":
                         Program.Config.Level4Color = new SerializableColor(selectcolor.Color);
                         break;
+
                     case "BotColorBtn":
                         Program.Config.BotColor = new SerializableColor(selectcolor.Color);
                         break;
+
                     case "NormalTextColorBtn":
                         Program.Config.NormalTextColor = new SerializableColor(selectcolor.Color);
                         break;
@@ -867,9 +881,11 @@ namespace DevProLauncher.Windows
                     var isTeam = selectedTab.Name == MessageType.Team.ToString();
                     Program.ChatServer.SendMessage(isTeam ? MessageType.Team : MessageType.Message, CommandType.Me, selectedTab.Name, ChatInput.Text.Substring(part.Length).Trim());
                     break;
+
                 case "join":
                     JoinChannel(ChatInput.Text.Substring(part.Length).Trim());
                     break;
+
                 case "leave":
                     if (selectedTab == null)
                     {
@@ -886,13 +902,16 @@ namespace DevProLauncher.Windows
                     }
 
                     break;
+
                 case "ping":
                     Program.ChatServer.SendPacket(DevServerPackets.Ping);
                     break;
+
                 case "autoscroll":
                     Autoscroll = !Autoscroll;
                     WriteMessage(new ChatMessage(MessageType.System, CommandType.None, null, (Autoscroll ? "AutoScroll Enabled." : "AutoScroll Disabled.")));
                     break;
+
                 case "help":
                     WriteMessage(new ChatMessage(MessageType.System, CommandType.None, null, "-- Basic Commands --"));
                     WriteMessage(new ChatMessage(MessageType.System, CommandType.None, null, "/me - Displays Username, and then your Message"));
@@ -909,7 +928,7 @@ namespace DevProLauncher.Windows
 
                     if (Program.UserInfo.rank == 1)
                         WriteMessage(new ChatMessage(MessageType.System, CommandType.None, null, " -- Level 1 users are classed as helpers and don't need any extra commands"));
-                        WriteMessage(new ChatMessage(MessageType.System, CommandType.None, null, "/msg - Sends a server message"));
+                    WriteMessage(new ChatMessage(MessageType.System, CommandType.None, null, "/msg - Sends a server message"));
                     if (Program.UserInfo.rank > 1)
                     {
                         WriteMessage(new ChatMessage(MessageType.System, CommandType.None, null, "-- TD Commands --"));
@@ -939,7 +958,6 @@ namespace DevProLauncher.Windows
                         WriteMessage(new ChatMessage(MessageType.System, CommandType.None, null, "/kill [forced]- Kills all crashed cores. If 'forced' is added: Kills all cores (including running games)."));
                         WriteMessage(new ChatMessage(MessageType.System, CommandType.None, null, "/ban username time reason - Bans a user, time format has to be in hours (max 730 hours), also you must give a reason."));
                         WriteMessage(new ChatMessage(MessageType.System, CommandType.None, null, "/banusername username - Bans a user's username"));
-
                     }
 
                     if (Program.UserInfo.rank == 99)
@@ -979,23 +997,28 @@ namespace DevProLauncher.Windows
                         WriteMessage(new ChatMessage(MessageType.System, CommandType.None, null, "/teamchangeleader username - changes the leader of a team"));
                     }
                     break;
+
                 case "teamdisband":
                     if (MessageBox.Show("Are you sure?", "Confirm team disband", MessageBoxButtons.YesNo) == DialogResult.Yes)
                     {
                         Program.ChatServer.SendPacket(DevServerPackets.ChatCommand, JsonSerializer.SerializeToString(new PacketCommand { Command = cmd.ToUpper(), Data = ChatInput.Text.Substring(part.Length).Trim() }));
                     }
-                    
+
                     break;
+
                 case "setmotd":
                     Program.ChatServer.SendPacket(DevServerPackets.ChatCommand, JsonSerializer.SerializeToString(new PacketCommand { Command = cmd.ToUpper(), Data = ChatInput.Text.Substring(part.Length).Trim() + "|" + ChannelTabs.SelectedTab.Text }));
                     break;
+
                 case "mute":
                 case "unmute":
                     Program.ChatServer.SendPacket(DevServerPackets.ChatCommand, JsonSerializer.SerializeToString(new PacketCommand { Command = cmd.ToUpper(), Data = ChatInput.Text.Substring(part.Length).Trim() + "|" + ChannelTabs.SelectedTab.Text }));
                     break;
+
                 case "info":
                     Program.ChatServer.SendPacket(DevServerPackets.ChatCommand, JsonSerializer.SerializeToString(new PacketCommand { Command = cmd.ToUpper(), Data = ChatInput.Text.Substring(part.Length).Trim() + "|" + ChannelTabs.SelectedTab.Text }));
                     break;
+
                 default:
                     Program.ChatServer.SendPacket(DevServerPackets.ChatCommand, JsonSerializer.SerializeToString(new PacketCommand { Command = cmd.ToUpper(), Data = ChatInput.Text.Substring(part.Length).Trim() }));
                     break;
@@ -1010,13 +1033,13 @@ namespace DevProLauncher.Windows
             {
                 return;
             }
-            
+
             string[] parts = ChatInput.Text.Split(new[] { ' ' }, StringSplitOptions.RemoveEmptyEntries);
 
             var selectedTab = (ChatWindow)ChannelTabs.SelectedTab;
             if (parts[0].StartsWith("/"))
             {
-                if(!HandleCommand(parts[0], selectedTab))
+                if (!HandleCommand(parts[0], selectedTab))
                 {
                     return;
                 }
@@ -1028,7 +1051,7 @@ namespace DevProLauncher.Windows
                     WriteMessage(new ChatMessage(MessageType.System, CommandType.None, null, "No channel Selected."));
                     return;
                 }
-                
+
                 if (selectedTab.IsSystemtab)
                 {
                     ChatInput.Clear();
@@ -1059,21 +1082,27 @@ namespace DevProLauncher.Windows
                 case "Colorblindchk":
                     Program.Config.ColorBlindMode = check.Checked;
                     break;
+
                 case "Timestampchk":
                     Program.Config.ShowTimeStamp = check.Checked;
                     break;
+
                 case "DuelRequestchk":
                     Program.Config.RefuseDuelRequests = check.Checked;
                     break;
+
                 case "HideJoinLeavechk":
                     Program.Config.HideJoinLeave = check.Checked;
                     break;
+
                 case "usernamecolorchk":
                     Program.Config.UsernameColors = usernamecolorchk.Checked;
                     break;
+
                 case "refuseteamchk":
                     Program.Config.RefuseTeamInvites = refuseteamchk.Checked;
                     break;
+
                 case "pmwindowchk":
                     Program.Config.PmWindows = check.Checked;
                     if (Program.Config.PmWindows)
@@ -1088,7 +1117,7 @@ namespace DevProLauncher.Windows
                     {
                         m_pmWindows.Values.ToList().ForEach(x => x.Close());
                     }
-                    
+
                     break;
             }
 
@@ -1097,7 +1126,7 @@ namespace DevProLauncher.Windows
 
         private void UserList_MouseUp(object sender, MouseEventArgs e)
         {
-            ListBox list = (ListBox) sender;
+            ListBox list = (ListBox)sender;
 
             if (e.Button == MouseButtons.Right)
             {
@@ -1140,8 +1169,8 @@ namespace DevProLauncher.Windows
 
                 if (!m_onlineMode)
                 {
-                    mnu.Items.AddRange(new ToolStripItem[] {mnuprofile, mnuduel,mnuspectateuser, mnufriend, mnuignore});               
-                    
+                    mnu.Items.AddRange(new ToolStripItem[] { mnuprofile, mnuduel, mnuspectateuser, mnufriend, mnuignore });
+
                     if (Program.UserInfo.rank > 1)
                         mnu.Items.Add(mnukick);
                     if (Program.UserInfo.rank > 3)
@@ -1151,11 +1180,11 @@ namespace DevProLauncher.Windows
                 }
                 else
                 {
-                    UserData user = (UserData) list.SelectedItem;
+                    UserData user = (UserData)list.SelectedItem;
                     mnu.Items.Add(mnuprofile);
                     if (user.Online)
                     {
-                        mnu.Items.AddRange(new ToolStripItem[] { mnuduel, mnuspectateuser }); 
+                        mnu.Items.AddRange(new ToolStripItem[] { mnuduel, mnuspectateuser });
                     }
                     if (m_friendMode)
                         mnu.Items.Add(mnuremovefriend);
@@ -1173,14 +1202,14 @@ namespace DevProLauncher.Windows
         private void BanUser(object sender, EventArgs e)
         {
             ListBox list = UserListTabs.SelectedTab.Name == ChannelTab.Name ? ChannelList : UserList;
-         /*  
-            if (list.SelectedItem != null && MessageBox.Show("Are you sure you want to ban " + ((UserData)list.SelectedItem).username, "Ban User", MessageBoxButtons.YesNo) == DialogResult.Yes)
-            {
-                Program.ChatServer.SendPacket(DevServerPackets.ChatCommand, JsonSerializer.SerializeToString(
-                    new PacketCommand { Command = "BAN", Data = ((UserData)list.SelectedItem).username }));
-            }
-          */
-            var input = new BanFrm( Program.LanguageManager.Translation.banTitle, 
+            /*
+               if (list.SelectedItem != null && MessageBox.Show("Are you sure you want to ban " + ((UserData)list.SelectedItem).username, "Ban User", MessageBoxButtons.YesNo) == DialogResult.Yes)
+               {
+                   Program.ChatServer.SendPacket(DevServerPackets.ChatCommand, JsonSerializer.SerializeToString(
+                       new PacketCommand { Command = "BAN", Data = ((UserData)list.SelectedItem).username }));
+               }
+             */
+            var input = new BanFrm(Program.LanguageManager.Translation.banTitle,
                                     Program.LanguageManager.Translation.banMessageLbl,
                                     Program.LanguageManager.Translation.banTimeLbl,
                                     Program.LanguageManager.Translation.banReasonLbl,
@@ -1188,13 +1217,12 @@ namespace DevProLauncher.Windows
                                     Program.LanguageManager.Translation.banCancel);
             if ((!(list.SelectedItems.Count > 1)))
             {
-
                 if ((input.ShowDialog() == DialogResult.OK))
                 {
                     try
                     {
                         Program.ChatServer.SendPacket(DevServerPackets.ChatCommand, JsonSerializer.SerializeToString(
-                     new PacketCommand { Command = "BAN", Data = ((UserData)list.SelectedItem).username+ " " +input.inputBox1.Text + " " + input.inputBox2.Text }));
+                     new PacketCommand { Command = "BAN", Data = ((UserData)list.SelectedItem).username + " " + input.inputBox1.Text + " " + input.inputBox2.Text }));
                     }
                     catch (Exception ex)
                     {
@@ -1211,11 +1239,11 @@ namespace DevProLauncher.Windows
             {
                 return;
             }
-           /*
-            Program.ChatServer.SendPacket(DevServerPackets.ChatCommand, JsonSerializer.SerializeToString(
-                new PacketCommand { Command = "KICK", Data = ((UserData)list.SelectedItem).username }));
-            */
-            var input = new BanFrm( Program.LanguageManager.Translation.kickTitle,
+            /*
+             Program.ChatServer.SendPacket(DevServerPackets.ChatCommand, JsonSerializer.SerializeToString(
+                 new PacketCommand { Command = "KICK", Data = ((UserData)list.SelectedItem).username }));
+             */
+            var input = new BanFrm(Program.LanguageManager.Translation.kickTitle,
                                     Program.LanguageManager.Translation.kickMessageLbl,
                                     Program.LanguageManager.Translation.kickReasonLbl,
                                     "",
@@ -1224,13 +1252,12 @@ namespace DevProLauncher.Windows
             input.inputBox2.Visible = false;
             if ((!(list.SelectedItems.Count > 1)))
             {
-
                 if ((input.ShowDialog() == DialogResult.OK))
                 {
                     try
                     {
                         Program.ChatServer.SendPacket(DevServerPackets.ChatCommand, JsonSerializer.SerializeToString(
-                     new PacketCommand { Command = "KICK", Data = ((UserData)list.SelectedItem).username + " " + input.inputBox1.Text}));
+                     new PacketCommand { Command = "KICK", Data = ((UserData)list.SelectedItem).username + " " + input.inputBox1.Text }));
                     }
                     catch (Exception ex)
                     {
@@ -1239,6 +1266,7 @@ namespace DevProLauncher.Windows
                 }
             }
         }
+
         private void MuteUser(object sender, EventArgs e)
         {
             ListBox list = UserListTabs.SelectedTab.Name == ChannelTab.Name ? ChannelList : UserList;
@@ -1250,7 +1278,6 @@ namespace DevProLauncher.Windows
                                     Program.LanguageManager.Translation.muteCancel);
             if ((!(list.SelectedItems.Count > 1)))
             {
-
                 if ((input.ShowDialog() == DialogResult.OK))
                 {
                     try
@@ -1265,6 +1292,7 @@ namespace DevProLauncher.Windows
                 }
             }
         }
+
         private void SpectateUser(object sender, EventArgs e)
         {
             ListBox list = UserListTabs.SelectedTab.Name == ChannelTab.Name ? ChannelList : UserList;
@@ -1321,7 +1349,6 @@ namespace DevProLauncher.Windows
                 Program.ChatServer.SendPacket(DevServerPackets.ChatCommand,
                     JsonSerializer.SerializeToString(new PacketCommand { Command = "TEAMREMOVE", Data = ((UserData)UserList.SelectedItem).username }));
             }
-
         }
 
         private void RemoveFriend(object sender, EventArgs e)
@@ -1337,7 +1364,7 @@ namespace DevProLauncher.Windows
             if (list.SelectedItem == null)
                 return;
 
-            var profile = new ProfileFrm(list.SelectedItem is string ? list.SelectedItem.ToString():((UserData)list.SelectedItem).username);
+            var profile = new ProfileFrm(list.SelectedItem is string ? list.SelectedItem.ToString() : ((UserData)list.SelectedItem).username);
             profile.ShowDialog();
         }
 
@@ -1366,11 +1393,11 @@ namespace DevProLauncher.Windows
                 Program.ChatServer.SendPacket(DevServerPackets.RequestDuel,
                     JsonSerializer.SerializeToString(
                     new DuelRequest
-                        {
-                            username = list.SelectedItem is string ? list.SelectedItem.ToString() : ((UserData)list.SelectedItem).username,
-                            duelformatstring = form.GenerateURI(false),
-                            server = server.serverName
-                        }));
+                    {
+                        username = list.SelectedItem is string ? list.SelectedItem.ToString() : ((UserData)list.SelectedItem).username,
+                        duelformatstring = form.GenerateURI(false),
+                        server = server.serverName
+                    }));
                 WriteMessage(new ChatMessage(MessageType.System, CommandType.None, null, "Duel request sent to " + (list.SelectedItem is string ? list.SelectedItem.ToString() : ((UserData)list.SelectedItem).username) + "."));
             }
         }
@@ -1437,14 +1464,14 @@ namespace DevProLauncher.Windows
                 Invoke(new Action<PacketCommand>(HandleTeamRequest), command);
                 return;
             }
-            switch(command.Command)
+            switch (command.Command)
             {
                 case "JOIN":
 
                     if (Program.Config.RefuseTeamInvites)
                     {
                         Program.ChatServer.SendPacket(DevServerPackets.TeamCommand,
-                            JsonSerializer.SerializeToString(new PacketCommand { Command = "AUTOREFUSE"}));
+                            JsonSerializer.SerializeToString(new PacketCommand { Command = "AUTOREFUSE" }));
                         return;
                     }
 
@@ -1452,27 +1479,30 @@ namespace DevProLauncher.Windows
                     {
                         WriteMessage(new ChatMessage(MessageType.System, CommandType.None, Program.UserInfo.username, "You have accepted the team invite."));
                         Program.ChatServer.SendPacket(DevServerPackets.TeamCommand,
-                            JsonSerializer.SerializeToString(new PacketCommand { Command = "ACCEPT"}));
+                            JsonSerializer.SerializeToString(new PacketCommand { Command = "ACCEPT" }));
                     }
                     else
                     {
                         WriteMessage(new ChatMessage(MessageType.System, CommandType.None, Program.UserInfo.username, "You have refused the team invite."));
                         Program.ChatServer.SendPacket(DevServerPackets.TeamCommand,
-                            JsonSerializer.SerializeToString(new PacketCommand { Command = "REFUSE"}));
+                            JsonSerializer.SerializeToString(new PacketCommand { Command = "REFUSE" }));
                     }
                     break;
+
                 case "LEAVE":
                     Program.UserInfo.team = string.Empty;
                     Program.UserInfo.teamRank = 0;
                     ChannelTabs.TabPages.Remove(GetChatWindow(MessageType.Team.ToString()));
                     WriteMessage(new ChatMessage(MessageType.System, CommandType.None, Program.UserInfo.username, "You have left the team."));
                     break;
+
                 case "REMOVED":
                     Program.UserInfo.team = string.Empty;
                     Program.UserInfo.teamRank = 0;
                     ChannelTabs.TabPages.Remove(GetChatWindow(MessageType.Team.ToString()));
                     WriteMessage(new ChatMessage(MessageType.System, CommandType.None, Program.UserInfo.username, "You have been removed from the team."));
                     break;
+
                 case "DISBAND":
                     if (Program.UserInfo.team == command.Data)
                     {
@@ -1481,7 +1511,7 @@ namespace DevProLauncher.Windows
                         ChannelTabs.TabPages.Remove(GetChatWindow(MessageType.Team.ToString()));
                     }
                     break;
-            }   
+            }
         }
 
         private void IgnoreList_MouseUp(object sender, MouseEventArgs e)
@@ -1507,6 +1537,7 @@ namespace DevProLauncher.Windows
                 mnu.Show(IgnoreList, e.Location);
             }
         }
+
         private void UnignoreUser(object sender, EventArgs e)
         {
             if (IgnoreList.SelectedItem == null)
@@ -1522,9 +1553,9 @@ namespace DevProLauncher.Windows
         private void SaveIgnoreList()
         {
             var ignoredusers = new string[IgnoreList.Items.Count];
-// ReSharper disable CoVariantArrayConversion
+            // ReSharper disable CoVariantArrayConversion
             IgnoreList.Items.CopyTo(ignoredusers, 0);
-// ReSharper restore CoVariantArrayConversion
+            // ReSharper restore CoVariantArrayConversion
             string ignorestring = string.Join(",", ignoredusers);
             Program.Config.IgnoreList = ignorestring;
             Program.SaveConfig(Program.ConfigurationFilename, Program.Config);
@@ -1560,12 +1591,12 @@ namespace DevProLauncher.Windows
 
         private void List_DoubleClick(object sender, EventArgs e)
         {
-            ListBox list = UserListTabs.SelectedTab.Name == ChannelTab.Name ? ChannelList:UserList;
+            ListBox list = UserListTabs.SelectedTab.Name == ChannelTab.Name ? ChannelList : UserList;
 
             if (list.SelectedIndex == -1)
                 return;
 
-            string user = list.Name == ChannelList.Name || list.Name == UserList.Name ? 
+            string user = list.Name == ChannelList.Name || list.Name == UserList.Name ?
                 ((UserData)list.SelectedItem).username : list.SelectedItem.ToString();
 
             if (Program.Config.PmWindows)
@@ -1621,9 +1652,8 @@ namespace DevProLauncher.Windows
         {
             string searchinfo = UserSearch.ForeColor == SystemColors.WindowFrame ? string.Empty : UserSearch.Text;
             Program.ChatServer.SendPacket(DevServerPackets.UserList,
-                JsonSerializer.SerializeToString(new PacketCommand(){ Command = "USERS", Data = searchinfo}));
+                JsonSerializer.SerializeToString(new PacketCommand() { Command = "USERS", Data = searchinfo }));
             EnableSearchReset();
-            
         }
 
         private void adminSearchBtn_Click(object sender, EventArgs e)
@@ -1632,7 +1662,6 @@ namespace DevProLauncher.Windows
             Program.ChatServer.SendPacket(DevServerPackets.UserList,
                 JsonSerializer.SerializeToString(new PacketCommand() { Command = "ADMIN", Data = searchinfo }));
             EnableSearchReset();
-            
         }
 
         private void teamSearchBtn_Click(object sender, EventArgs e)

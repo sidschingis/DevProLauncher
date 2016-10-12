@@ -2,8 +2,8 @@ using System.Drawing;
 
 namespace DevProLauncher.Config
 {
-    using System.Collections.Generic;
     using Helpers;
+    using System.Collections.Generic;
 
     public class Configuration
     {
@@ -14,7 +14,7 @@ namespace DevProLauncher.Config
         public string ServerInfoAddress = "http://en.ygodevpro.com/launcher/server.php";
         public int ServerPort = 6922;
         public string Server2099 = "DevServer2099";
-        
+
 #if DEBUG
         public int GamePort = 9911;
         public int ChatPort = 9933;
@@ -24,7 +24,7 @@ namespace DevProLauncher.Config
 #endif
 
         public string GameExe = "ygopro.exe";
-        public string LauncherDir =  "";
+        public string LauncherDir = "";
         public string DefaultUsername = "";
         public string DefaultDeck = "";
         public bool EnableSound = true;
@@ -63,16 +63,17 @@ namespace DevProLauncher.Config
         public int SearchFormat = 0;
         public int SearchMode = 0;
         public int SearchBanList = 0;
-        public int SearchTimeLimit =0;
+        public int SearchTimeLimit = 0;
         public bool SearchActive = false;
         public bool SearchIllegal = false;
         public bool SearchLocked = false;
-        public string SearchUser ="";
+        public string SearchUser = "";
         public string SearchMinElo = "";
         public string SearchMaxElo = "";
 
         //quickhost settings
         public string BanList = "";
+
         public string TimeLimit = "3 minutes";
         public string CardRules = "OCG/TCG";
         public string Mode = "Single";
@@ -86,6 +87,7 @@ namespace DevProLauncher.Config
 
         //chat settings
         public bool HideJoinLeave = true;
+
         public bool ColorBlindMode = false;
         public bool ShowTimeStamp = true;
         public bool RefuseDuelRequests = false;
@@ -128,6 +130,7 @@ namespace DevProLauncher.Config
 
         // DropBox Settings
         public string AppKey = "xxvyeb0w8ndl3kz";
+
         public string AppSecret = "sn6ggwgxk3zdsc6";
 
         // MatchMaking Settings

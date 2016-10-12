@@ -1,8 +1,8 @@
-﻿using System;
+﻿using DevProLauncher.Helpers;
+using System;
+using System.Collections.Generic;
 using System.Globalization;
 using System.Windows.Forms;
-using DevProLauncher.Helpers;
-using System.Collections.Generic;
 
 namespace DevProLauncher.Windows.MessageBoxs
 {
@@ -28,11 +28,11 @@ namespace DevProLauncher.Windows.MessageBoxs
             BanList.SelectedItem = Program.Config.BanList;
             if (BanList.SelectedItem == null && BanList.Items.Count > 0)
                 BanList.SelectedIndex = 0;
-         
+
             Mode.SelectedIndexChanged += DuelModeChanged;
 
             LifePoints.Text = (Mode.SelectedItem.ToString() == "Tag") ? "16000" : "8000";
-            if(isranked)
+            if (isranked)
             {
                 Prerelease.Enabled = false;
                 BanList.Enabled = false;
@@ -43,7 +43,7 @@ namespace DevProLauncher.Windows.MessageBoxs
                 TimeLimit.Enabled = false;
                 PasswordInput.Enabled = false;
             }
-                //CardRules.SelectedIndexChanged += CardRulesChanged;
+            //CardRules.SelectedIndexChanged += CardRulesChanged;
         }
 
         public Host()
@@ -55,7 +55,7 @@ namespace DevProLauncher.Windows.MessageBoxs
             Prerelease.Checked = Program.Config.EnablePrerelease;
             BanList.SelectedItem = Program.Config.chtBanList;
             Mode.SelectedItem = Program.Config.chtMode;
-            GameName = LauncherHelper.GenerateString().Substring(0,5);
+            GameName = LauncherHelper.GenerateString().Substring(0, 5);
             CardRules.SelectedItem = Program.Config.chtCardRules;
             Priority.Checked = Program.Config.chtEnablePrority;
             ShuffleDeck.Checked = Program.Config.chtDisableShuffleDeck;
@@ -70,7 +70,6 @@ namespace DevProLauncher.Windows.MessageBoxs
             }
 
             Mode.SelectedIndexChanged += DuelModeChanged;
-
         }
 
         public void ApplyTranslation()
@@ -133,8 +132,6 @@ namespace DevProLauncher.Windows.MessageBoxs
                 if (BanList.Items.Count > 1)
                     BanList.SelectedIndex = 1;
             }
-
-
         }
 
         private void DuelModeChanged(object sender, EventArgs e)
@@ -147,7 +144,7 @@ namespace DevProLauncher.Windows.MessageBoxs
             string gamestring;
             int rules = 0;
 
-            Dictionary<string, int> rulesDict = new Dictionary<string, int>() { 
+            Dictionary<string, int> rulesDict = new Dictionary<string, int>() {
                {"OCG" , 0}
                ,{"TCG" , 1}
                ,{"OCG/TCG" , 2}
@@ -156,8 +153,8 @@ namespace DevProLauncher.Windows.MessageBoxs
 
             rules = rulesDict[CardRules.Text];
 
-            if(Prerelease.Checked)
-                rules  |= 0x4;
+            if (Prerelease.Checked)
+                rules |= 0x4;
             gamestring = rules.ToString();
             if (Mode.Text == "Single")
                 gamestring = gamestring + "0";

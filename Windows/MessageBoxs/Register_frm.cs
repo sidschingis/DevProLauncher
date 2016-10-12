@@ -1,10 +1,10 @@
-﻿using System;
+﻿using DevProLauncher.Helpers;
+using DevProLauncher.Network.Data;
+using DevProLauncher.Network.Enums;
+using ServiceStack.Text;
+using System;
 using System.Text.RegularExpressions;
 using System.Windows.Forms;
-using DevProLauncher.Network.Enums;
-using DevProLauncher.Network.Data;
-using ServiceStack.Text;
-using DevProLauncher.Helpers;
 
 namespace DevProLauncher.Windows.MessageBoxs
 {
@@ -35,7 +35,7 @@ namespace DevProLauncher.Windows.MessageBoxs
 
         private void UsernameInput_KeyDown(object sender, KeyEventArgs e)
         {
-            if(e.KeyCode == Keys.Space)
+            if (e.KeyCode == Keys.Space)
                 e.SuppressKeyPress = true;
         }
 
@@ -85,10 +85,10 @@ namespace DevProLauncher.Windows.MessageBoxs
 
             Program.ChatServer.SendPacket(DevServerPackets.Register, JsonSerializer.SerializeToString(
                 new RegisterRequest
-                    { 
-                    Username = UsernameInput.Text, 
-                    Password= LauncherHelper.EncodePassword(PasswordInput.Text), 
-                    UID= LauncherHelper.GetUID(),
+                {
+                    Username = UsernameInput.Text,
+                    Password = LauncherHelper.EncodePassword(PasswordInput.Text),
+                    UID = LauncherHelper.GetUID(),
                     Version = Convert.ToInt32(Program.Version),
                     Email = EmailInput.Text
                 }));
@@ -101,7 +101,7 @@ namespace DevProLauncher.Windows.MessageBoxs
             {
                 if (InvokeRequired)
                 {
-                    Invoke(new Action<DevClientPackets>(RegisterResponse),packet);
+                    Invoke(new Action<DevClientPackets>(RegisterResponse), packet);
                     return;
                 }
                 if (packet == DevClientPackets.RegisterAccept)
@@ -133,7 +133,6 @@ namespace DevProLauncher.Windows.MessageBoxs
                 }
                 RegisterBtn.Enabled = true;
             }
-
         }
 
         private void ResetEvents(object sender, EventArgs e)

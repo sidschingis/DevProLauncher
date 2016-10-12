@@ -1,11 +1,10 @@
-﻿using System;
-using System.Globalization;
-using System.Text;
-using System.Windows.Forms;
-using System.IO;
-using System.Diagnostics;
-using DevProLauncher.Helpers;
+﻿using DevProLauncher.Helpers;
 using DevProLauncher.Windows.MessageBoxs;
+using System;
+using System.Diagnostics;
+using System.Globalization;
+using System.IO;
+using System.Windows.Forms;
 
 namespace DevProLauncher.Windows.Components
 {
@@ -14,7 +13,6 @@ namespace DevProLauncher.Windows.Components
         private readonly string m_fileLocation;
         private readonly string m_fileType;
         private readonly object m_infoWindow;
-
 
         public FileManagerControl(string name, string dir, string filetype)
         {
@@ -36,7 +34,7 @@ namespace DevProLauncher.Windows.Components
                 tableLayoutPanel1.ColumnStyles.RemoveAt(1);
 
             FileList.MouseUp += OnListMouseUp;
-            FileList.SelectedIndexChanged +=FileList_SelectedIndexChanged;
+            FileList.SelectedIndexChanged += FileList_SelectedIndexChanged;
             FileList.DoubleClick += GameBtn_Click;
             ApplyTranslation();
         }
@@ -58,9 +56,9 @@ namespace DevProLauncher.Windows.Components
         private void OpenBtn_Click(object sender, EventArgs e)
         {
             if (Directory.Exists(Program.Config.LauncherDir + m_fileLocation))
-// ReSharper disable AssignNullToNotNullAttribute
+                // ReSharper disable AssignNullToNotNullAttribute
                 Process.Start(Path.GetDirectoryName(Program.Config.LauncherDir + m_fileLocation));
-// ReSharper restore AssignNullToNotNullAttribute
+            // ReSharper restore AssignNullToNotNullAttribute
             else
                 MessageBox.Show(Program.Config.LauncherDir + m_fileLocation + Program.LanguageManager.Translation.fileMsgNoExist);
         }
@@ -70,8 +68,9 @@ namespace DevProLauncher.Windows.Components
             if (Name == "Decks")
             {
                 LauncherHelper.GenerateConfig(2, FileList.SelectedItem.ToString());
-                LauncherHelper.RunGame("-d");    
-            } else
+                LauncherHelper.RunGame("-d");
+            }
+            else
             {
                 if (FileList.SelectedItem == null)
                 {
@@ -93,7 +92,6 @@ namespace DevProLauncher.Windows.Components
                 LauncherHelper.GenerateConfig(0, FileList.SelectedItem + ".yrp");
                 LauncherHelper.RunGame("-r");
             }
-            
         }
 
         public void RenameItem(object sender, EventArgs e)
@@ -106,7 +104,6 @@ namespace DevProLauncher.Windows.Components
             var input = new InputFrm("Rename", Program.LanguageManager.Translation.fileNewName, Program.LanguageManager.Translation.fileInputConfirm, "Cancel");
             if ((!(FileList.SelectedItems.Count > 1)))
             {
-
                 if ((input.ShowDialog() == DialogResult.OK))
                 {
                     try
@@ -124,7 +121,6 @@ namespace DevProLauncher.Windows.Components
             else
             {
                 MessageBox.Show(Program.LanguageManager.Translation.fileMsbMulti, "Rename Error");
-
             }
         }
 
@@ -150,7 +146,6 @@ namespace DevProLauncher.Windows.Components
                 {
                     MessageBox.Show(ex.Message);
                 }
-
             }
         }
 
@@ -162,14 +157,13 @@ namespace DevProLauncher.Windows.Components
                 string[] files = Directory.GetFiles(Program.Config.LauncherDir + m_fileLocation);
                 foreach (string item in files)
                 {
-                    if(item.EndsWith(m_fileType))
-// ReSharper disable AssignNullToNotNullAttribute
+                    if (item.EndsWith(m_fileType))
+                        // ReSharper disable AssignNullToNotNullAttribute
                         FileList.Items.Add(Path.GetFileNameWithoutExtension(item));
-// ReSharper restore AssignNullToNotNullAttribute
+                    // ReSharper restore AssignNullToNotNullAttribute
                 }
             }
         }
-
 
         private void OnListMouseUp(object sender, MouseEventArgs e)
         {
@@ -184,9 +178,9 @@ namespace DevProLauncher.Windows.Components
                     item2.Click += RenameItem;
                     item3.Click += DeleteItem;
                     strip.Items.AddRange(new ToolStripItem[] {
-					item2,
-					item3
-				});
+                    item2,
+                    item3
+                });
                     strip.Show(this, e.Location);
                 }
             }
@@ -196,7 +190,7 @@ namespace DevProLauncher.Windows.Components
         {
             if (FileList.SelectedIndex == -1)
                 return;
-            
+
             if (Name == "Replays")
             {
                 ((ReplayInfoControl)m_infoWindow).ReadReplay(Program.Config.LauncherDir + m_fileLocation + FileList.SelectedItem + ".yrp");
@@ -218,7 +212,6 @@ namespace DevProLauncher.Windows.Components
                     {
                         MessageBox.Show(ex.Message);
                     }
-
                 }
                 RefreshFileList();
             }
@@ -228,6 +221,5 @@ namespace DevProLauncher.Windows.Components
         {
             RefreshFileList();
         }
-        
     }
 }

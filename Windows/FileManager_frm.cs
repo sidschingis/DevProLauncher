@@ -1,5 +1,5 @@
-﻿using System.Windows.Forms;
-using DevProLauncher.Windows.Components;
+﻿using DevProLauncher.Windows.Components;
+using System.Windows.Forms;
 
 namespace DevProLauncher.Windows
 {
@@ -7,6 +7,7 @@ namespace DevProLauncher.Windows
     {
         private readonly FileManagerControl m_deckTab;
         private readonly FileManagerControl m_replayTab;
+
         public FileManagerFrm()
         {
             InitializeComponent();

@@ -1,11 +1,11 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Drawing;
-using System.Linq;
-using System.IO;
+﻿using DevProLauncher.Network.Data;
 using DevProLauncher.Windows.Components;
 using DevProLauncher.Windows.Enums;
-using DevProLauncher.Network.Data;
+using System;
+using System.Collections.Generic;
+using System.Drawing;
+using System.IO;
+using System.Linq;
 
 namespace DevProLauncher.Helpers
 {
@@ -25,7 +25,7 @@ namespace DevProLauncher.Helpers
             if (window.Text != "")//start a new line unless theres no text
                 window.AppendText(Environment.NewLine);
             window.Select(window.TextLength, 0);
-            
+
             if ((CommandType)message.command == CommandType.Me)
             {
                 string LogFile = "";
@@ -52,7 +52,7 @@ namespace DevProLauncher.Helpers
                 {
                     WriteText(window, "[" + DateTime.Now.ToLongTimeString() + "] ", (Program.Config.ColorBlindMode ? Color.Black : Program.Config.NormalTextColor.ToColor()));
                 }
-                if (message.from.rank > 0 && message.from.rank <99)
+                if (message.from.rank > 0 && message.from.rank < 99)
                 {
                     WriteText(window, "[", (Program.Config.ColorBlindMode ? Color.Black : Program.Config.NormalTextColor.ToColor()));
 
@@ -63,29 +63,33 @@ namespace DevProLauncher.Helpers
                         case 1:
                             text = "Helper";
                             break;
+
                         case 2:
                             text = "TD";
                             break;
+
                         case 3:
                             text = "Mod";
                             break;
+
                         case 4:
                             text = "SMod";
                             break;
+
                         case 98:
                             text = "Bot";
                             break;
-                        /*
-                        case 99:
-                            text = "Dev";
-                            break;
-                            */
+                            /*
+                            case 99:
+                                text = "Dev";
+                                break;
+                                */
                     }
                     LogText += text;
                     LogText += "]";
 
                     WriteText(window, text, (Program.Config.ColorBlindMode ? Color.Black : message.RankColor()));
-                   
+
                     WriteText(window, "]", (Program.Config.ColorBlindMode ? Color.Black : Program.Config.NormalTextColor.ToColor()));
                 }
                 WriteText(window, message.message, Program.Config.MeMsgColor.ToColor());
@@ -97,7 +101,7 @@ namespace DevProLauncher.Helpers
             }
             else if ((MessageType)message.type == MessageType.Team && (CommandType)message.command == CommandType.TeamServerMessage)
             {
-                WriteText(window, "[" + DateTime.Now.ToLongTimeString() + "] " + "[TeamMessage] " + message.message,(Program.Config.ColorBlindMode ? Color.Black : Program.Config.ServerMsgColor.ToColor()));
+                WriteText(window, "[" + DateTime.Now.ToLongTimeString() + "] " + "[TeamMessage] " + message.message, (Program.Config.ColorBlindMode ? Color.Black : Program.Config.ServerMsgColor.ToColor()));
             }
             else if ((MessageType)message.type == MessageType.Message || (MessageType)message.type == MessageType.PrivateMessage || (MessageType)message.type == MessageType.Team)
             {
@@ -117,28 +121,32 @@ namespace DevProLauncher.Helpers
                         case 1:
                             text = "Helper";
                             break;
+
                         case 2:
                             text = "TD";
                             break;
+
                         case 3:
                             text = "Mod";
                             break;
+
                         case 4:
                             text = "SMod";
                             break;
+
                         case 98:
                             text = "Bot";
                             break;
-                     /*   case 99:
-                            text = "Dev";
-                            break; */
+                            /*   case 99:
+                                   text = "Dev";
+                                   break; */
                     }
                     LogText += text;
                     LogText += "]";
 
                     WriteText(window, text, (Program.Config.ColorBlindMode ? Color.Black : message.RankColor()));
 
-                    WriteText(window, "]", (Program.Config.ColorBlindMode ? Color.Black : Program.Config.NormalTextColor.ToColor()));              
+                    WriteText(window, "]", (Program.Config.ColorBlindMode ? Color.Black : Program.Config.NormalTextColor.ToColor()));
                 }
                 WriteText(window, "[", (Program.Config.ColorBlindMode ? Color.Black : Program.Config.NormalTextColor.ToColor()));
                 if (Program.Config.UsernameColors)
@@ -162,7 +170,7 @@ namespace DevProLauncher.Helpers
                 WriteText(window, "]: ", (Program.Config.ColorBlindMode ? Color.Black : Program.Config.NormalTextColor.ToColor()));
 
                 //if (message.from.rank == 0)
-                    WriteText(window, message.message.Trim(), (Program.Config.ColorBlindMode ? Color.Black : message.MessageColor()));
+                WriteText(window, message.message.Trim(), (Program.Config.ColorBlindMode ? Color.Black : message.MessageColor()));
                 //else
                 //    FormatText(message.message.Trim(), window);
                 string LogFile = "";
@@ -173,7 +181,7 @@ namespace DevProLauncher.Helpers
                     LogText = "[" + DateTime.Now.ToLongTimeString() + "] " + LogText;
                     LogFile = message.channel + DateTime.Now.ToString(".dd") + ".txt";
                 }
-                else if ((MessageType)message.type == MessageType.PrivateMessage) 
+                else if ((MessageType)message.type == MessageType.PrivateMessage)
                 {
                     LogDirectory += @"PMs\"; ;
                     LogText = "[" + DateTime.Now + "] " + LogText;
@@ -185,8 +193,7 @@ namespace DevProLauncher.Helpers
                 if (LogFile != "")
                     if (!Directory.Exists(LogDirectory))
                         Directory.CreateDirectory(LogDirectory);
-                    File.AppendAllText(LogDirectory + LogFile, LogText + Environment.NewLine);
-
+                File.AppendAllText(LogDirectory + LogFile, LogText + Environment.NewLine);
             }
             else if ((MessageType)message.type == MessageType.System || (MessageType)message.type == MessageType.Server || (MessageType)message.type == MessageType.MOTD)
             {
@@ -194,8 +201,8 @@ namespace DevProLauncher.Helpers
                 {
                     WriteText(window, "[" + DateTime.Now.ToLongTimeString() + "] ", (Program.Config.ColorBlindMode ? Color.Black : Program.Config.NormalTextColor.ToColor()));
                 }
-                WriteText(window,"[", (Program.Config.ColorBlindMode ? Color.Black : Program.Config.NormalTextColor.ToColor()));
-                WriteText(window, ((MessageType)message.type).ToString() ,(Program.Config.ColorBlindMode ? Color.Black : message.MessageColor()));
+                WriteText(window, "[", (Program.Config.ColorBlindMode ? Color.Black : Program.Config.NormalTextColor.ToColor()));
+                WriteText(window, ((MessageType)message.type).ToString(), (Program.Config.ColorBlindMode ? Color.Black : message.MessageColor()));
                 WriteText(window, "]: ", (Program.Config.ColorBlindMode ? Color.Black : Program.Config.NormalTextColor.ToColor()));
                 WriteText(window, message.message, (Program.Config.ColorBlindMode ? Color.Black : Program.Config.NormalTextColor.ToColor()));
             }
@@ -212,7 +219,7 @@ namespace DevProLauncher.Helpers
                 window.ScrollToCaret();
         }
 
-        public static void SendMessage(string chatInput,string channel,bool isprivate)
+        public static void SendMessage(string chatInput, string channel, bool isprivate)
         {
             Program.ChatServer.SendMessage(isprivate ? MessageType.PrivateMessage : MessageType.Message,
                                            CommandType.None, channel, chatInput);

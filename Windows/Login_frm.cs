@@ -1,17 +1,17 @@
-﻿using System;
-using System.ComponentModel;
-using System.Windows.Forms;
+﻿using DevProLauncher.Config;
 using DevProLauncher.Helpers;
-using System.Diagnostics;
-using System.IO;
-using DevProLauncher.Config;
-using DevProLauncher.Network.Enums;
 using DevProLauncher.Network.Data;
-using ServiceStack.Text;
-using DevProLauncher.Windows.MessageBoxs;
+using DevProLauncher.Network.Enums;
 using DevProLauncher.Windows.Components;
+using DevProLauncher.Windows.MessageBoxs;
+using ServiceStack.Text;
+using System;
+using System.ComponentModel;
+using System.Diagnostics;
 using System.Drawing;
+using System.IO;
 using System.Threading;
+using System.Windows.Forms;
 
 namespace DevProLauncher.Windows
 {
@@ -19,13 +19,12 @@ namespace DevProLauncher.Windows
     {
         public LoginFrm()
         {
-            
             InitializeComponent();
             TopLevel = false;
             Dock = DockStyle.Fill;
             Visible = true;
 
-            Program.ChatServer.LoginReply += LoginResponse; 
+            Program.ChatServer.LoginReply += LoginResponse;
             //Program.ChatServer.ValidateReply += ValidateResponse;
 
             usernameInput.Text = Program.Config.DefaultUsername;
@@ -66,13 +65,11 @@ namespace DevProLauncher.Windows
                 passwordInput.Text = Program.Config.EncodedPassword;
                 usernameInput.Text = Program.Config.SavedUsername;
             }
-
         }
 
         public bool Connect()
         {
             return Program.ChatServer.Connect(Program.Config.ServerAddress, Program.Config.ChatPort);
-
         }
 
         public void ApplyTranslation()
@@ -89,11 +86,11 @@ namespace DevProLauncher.Windows
                 savePassCheckBox.Text = Program.LanguageManager.Translation.LoginSavePass;
             }
         }
+
         private void ShowAd()
         {
             try
             {
-
                 //PatchNotes.Navigate("http://en.ygodevpro.com/launcher/indexlauncher.php", false);
 
                 //string loc = LauncherHelper.GetLocation();
@@ -108,44 +105,48 @@ namespace DevProLauncher.Windows
                         image = Properties.Resources.cardmarketDE;
                         lang = "de";
                         break;
+
                     case "spanish":
                         image = Properties.Resources.cardmarketES;
                         lang = "es";
                         break;
+
                     case "french":
                         image = Properties.Resources.cardmarketFR;
                         lang = "fr";
                         break;
+
                     case "italian":
                         image = Properties.Resources.cardmarketIT;
                         lang = "it";
                         break;
+
                     default:
                         image = Properties.Resources.cardmarketEN;
                         lang = "en";
                         break;
-                }      
-            
-                this.BeginInvoke((MethodInvoker) delegate {
-                    var item = new Banner("tcgmarket", "http://158.69.116.140/web-devpro/linktracker.php?lang="+lang, image);
+                }
+
+                this.BeginInvoke((MethodInvoker)delegate
+                {
+                    var item = new Banner("tcgmarket", "http://158.69.116.140/web-devpro/linktracker.php?lang=" + lang, image);
                     item.Dock = DockStyle.Right;
                     AdPanel.Controls.Add(item, 0, 0);
                 });
-                
             }
-            catch 
+            catch
             {
-
             }
         }
 
         /*deprecated*/
+
         private void WebRedirect(object sender, CancelEventArgs e)
         {
             try
             {
-                var webbrowser = (WebBrowser) sender;
-                if(!webbrowser.StatusText.StartsWith("http://en.ygodevpro.com/"))
+                var webbrowser = (WebBrowser)sender;
+                if (!webbrowser.StatusText.StartsWith("http://en.ygodevpro.com/"))
                 {
                     e.Cancel = true;
                     Process.Start(webbrowser.StatusText);
@@ -153,9 +154,9 @@ namespace DevProLauncher.Windows
             }
             catch (Exception)
             {
-                
             }
         }
+
         private void UsernameInput_KeyDown(object sender, KeyEventArgs e)
         {
             if (e.KeyCode == Keys.Space)
@@ -176,7 +177,6 @@ namespace DevProLauncher.Windows
             ApplyTranslation();
             Program.MainForm.ReLoadLanguage();
         }
-
 
         private void loginBtn_Click(object sender, EventArgs e)
         {
@@ -206,8 +206,9 @@ namespace DevProLauncher.Windows
                             savePassCheckBox.Checked);
             Program.ChatServer.SendPacket(DevServerPackets.Login,
             JsonSerializer.SerializeToString(
-            new LoginRequest { Username = usernameInput.Text, Password = (encoded ? passwordInput.Text:LauncherHelper.EncodePassword(passwordInput.Text)), UID = LauncherHelper.GetUID(), Version = Convert.ToInt32(Program.Version)}));
+            new LoginRequest { Username = usernameInput.Text, Password = (encoded ? passwordInput.Text : LauncherHelper.EncodePassword(passwordInput.Text)), UID = LauncherHelper.GetUID(), Version = Convert.ToInt32(Program.Version) }));
         }
+
         private void ValidateResponse(DevClientPackets type, LoginData data)
         {
             if (InvokeRequired)
@@ -216,6 +217,7 @@ namespace DevProLauncher.Windows
                 return;
             }
         }
+
         private void LoginResponse(DevClientPackets type, LoginData data)
         {
             if (InvokeRequired)
@@ -238,15 +240,15 @@ namespace DevProLauncher.Windows
                 if (Program.UserInfo == null)
                 {
                     Program.UserInfo = new UserData
-                        {
-                            rank = data.UserRank,
-                            username = data.Username,
-                            team = data.Team,
-                            teamRank = data.TeamRank
-                        };
+                    {
+                        rank = data.UserRank,
+                        username = data.Username,
+                        team = data.Team,
+                        teamRank = data.TeamRank
+                    };
                     Program.LoginKey = data.LoginKey;
                     Program.MainForm.Login();
-                    
+
                     if (savePassCheckBox.Checked)
                     {
                         if (!Program.Config.SavePassword || Program.Config.SavedUsername != usernameInput.Text)
@@ -294,7 +296,6 @@ namespace DevProLauncher.Windows
                     MessageBox.Show("Not connected to server.");
         }
 
-
         private void LoadBtn_Click(object sender, EventArgs e)
         {
             LoadBtn.Visible = false;
@@ -336,6 +337,5 @@ namespace DevProLauncher.Windows
             var form = new Recover_frm();
             form.ShowDialog();
         }
-
     }
 }

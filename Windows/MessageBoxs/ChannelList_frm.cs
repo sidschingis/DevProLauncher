@@ -1,8 +1,8 @@
+using DevProLauncher.Network.Data;
+using DevProLauncher.Network.Enums;
 using System;
 using System.Drawing;
 using System.Windows.Forms;
-using DevProLauncher.Network.Enums;
-using DevProLauncher.Network.Data;
 
 namespace DevProLauncher.Windows.MessageBoxs
 {
@@ -20,13 +20,14 @@ namespace DevProLauncher.Windows.MessageBoxs
 
             ApplyTranslations();
         }
+
         public void ApplyTranslations()
         {
             CreateBtn.Text = info.channelCreate;
             JoinBtn.Text = info.channelJoin;
             DefaultBtn.Text = info.channelDefault;
-
         }
+
         public void GenerateChannelList(ChannelData[] channels)
         {
             if (InvokeRequired)
@@ -40,12 +41,13 @@ namespace DevProLauncher.Windows.MessageBoxs
                 ChannelList.Items.Add(channel);
             }
         }
+
         public void RemoveEvents(object sender, EventArgs e)
         {
             FormClosed -= RemoveEvents;
-// ReSharper disable DelegateSubtraction
+            // ReSharper disable DelegateSubtraction
             if (Program.ChatServer.ChannelRequest != null) Program.ChatServer.ChannelRequest -= GenerateChannelList;
-// ReSharper restore DelegateSubtraction
+            // ReSharper restore DelegateSubtraction
         }
 
         private void DrawList_Channels(object sender, DrawItemEventArgs e)
@@ -66,7 +68,7 @@ namespace DevProLauncher.Windows.MessageBoxs
 
                 //// Print text
                 g.DrawString(channel.name + " (" + channel.userCount + ")" + (defualt ? " (Default)" : ""), e.Font,
-                    (selected) ? Brushes.White : Brushes.Black ,
+                    (selected) ? Brushes.White : Brushes.Black,
                     list.GetItemRectangle(index).Location);
             }
 
@@ -104,7 +106,7 @@ namespace DevProLauncher.Windows.MessageBoxs
             else
                 Program.Config.DefaultChannel = channel.name;
             ChannelList.Refresh();
-            Program.SaveConfig(Program.ConfigurationFilename,Program.Config);
+            Program.SaveConfig(Program.ConfigurationFilename, Program.Config);
         }
     }
 }

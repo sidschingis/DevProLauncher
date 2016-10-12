@@ -1,9 +1,9 @@
-﻿using System.Windows.Forms;
+﻿using System;
 using System.Drawing;
-using System;
+using System.Windows.Forms;
+
 namespace DevProLauncher.Windows.Components
 {
-    
     public sealed class DoubleBufferedListBox : ListBox
     {
         public DoubleBufferedListBox()
@@ -15,6 +15,7 @@ namespace DevProLauncher.Windows.Components
                 true);
             DrawMode = DrawMode.OwnerDrawFixed;
         }
+
         protected override void OnPaint(PaintEventArgs e)
         {
             var iRegion = new Region(e.ClipRectangle);
@@ -50,23 +51,21 @@ namespace DevProLauncher.Windows.Components
         }
 
         public void UpdateList()
-	    {            
-		    int i = 0;
-		    BeginUpdate();
-		    foreach (String item in Items)
-		    {
-		        if (Items.Count > i)
-		            Items[i] = item;
-			    else 
-				   Items.Add(item);
-				i++;
-		    }
+        {
+            int i = 0;
+            BeginUpdate();
+            foreach (String item in Items)
+            {
+                if (Items.Count > i)
+                    Items[i] = item;
+                else
+                    Items.Add(item);
+                i++;
+            }
             while (Items.Count > i)
                 Items.Remove(i);
 
             EndUpdate();
-		}
-
-     }
-
+        }
     }
+}

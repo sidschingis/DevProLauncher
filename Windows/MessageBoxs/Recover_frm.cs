@@ -1,10 +1,9 @@
-﻿using System;
-using System.Text.RegularExpressions;
-using System.Windows.Forms;
-using DevProLauncher.Network.Enums;
+﻿using DevProLauncher.Helpers;
 using DevProLauncher.Network.Data;
+using DevProLauncher.Network.Enums;
 using ServiceStack.Text;
-using DevProLauncher.Helpers;
+using System;
+using System.Windows.Forms;
 
 namespace DevProLauncher.Windows.MessageBoxs
 {
@@ -31,18 +30,20 @@ namespace DevProLauncher.Windows.MessageBoxs
                 resendBtn.Text = Program.LanguageManager.Translation.RecoverBtnResend;
             }
         }
+
         private void UsernameInput_KeyDown(object sender, KeyEventArgs e)
         {
             if (e.KeyCode == Keys.Space)
                 e.SuppressKeyPress = true;
         }
-         private void ResetResponse(DevClientPackets packet)
+
+        private void ResetResponse(DevClientPackets packet)
         {
             if (!IsDisposed)
             {
                 if (InvokeRequired)
                 {
-                    Invoke(new Action<DevClientPackets>(ResetResponse),packet);
+                    Invoke(new Action<DevClientPackets>(ResetResponse), packet);
                     return;
                 }
                 if (packet == DevClientPackets.ResetAccept)
@@ -58,36 +59,34 @@ namespace DevProLauncher.Windows.MessageBoxs
                 }
                 submitBtn.Enabled = true;
             }
-
         }
 
-         private void RecoverResponse(DevClientPackets packet)
-         {
-             if (!IsDisposed)
-             {
-                 if (InvokeRequired)
-                 {
-                     Invoke(new Action<DevClientPackets>(RecoverResponse), packet);
-                     return;
-                 }
-                 if (packet == DevClientPackets.RecoverAccept)
-                 {
-                     if (MessageBox.Show(Program.LanguageManager.Translation.RecoverMsbResendOK) == DialogResult.OK)
-                     {
-                         DialogResult = DialogResult.OK;
-                     }
-                 }
-                 if (packet == DevClientPackets.RecoverFailed)
-                 {
-                     if (MessageBox.Show(Program.LanguageManager.Translation.RecoverMsbResendFail) == DialogResult.OK)
-                     {
-                         DialogResult = DialogResult.OK;
-                     }
-                 }
-                 submitBtn.Enabled = true;
-             }
-
-         }
+        private void RecoverResponse(DevClientPackets packet)
+        {
+            if (!IsDisposed)
+            {
+                if (InvokeRequired)
+                {
+                    Invoke(new Action<DevClientPackets>(RecoverResponse), packet);
+                    return;
+                }
+                if (packet == DevClientPackets.RecoverAccept)
+                {
+                    if (MessageBox.Show(Program.LanguageManager.Translation.RecoverMsbResendOK) == DialogResult.OK)
+                    {
+                        DialogResult = DialogResult.OK;
+                    }
+                }
+                if (packet == DevClientPackets.RecoverFailed)
+                {
+                    if (MessageBox.Show(Program.LanguageManager.Translation.RecoverMsbResendFail) == DialogResult.OK)
+                    {
+                        DialogResult = DialogResult.OK;
+                    }
+                }
+                submitBtn.Enabled = true;
+            }
+        }
 
         private void ResetEvents(object sender, EventArgs e)
         {
@@ -101,7 +100,8 @@ namespace DevProLauncher.Windows.MessageBoxs
             {
                 MessageBox.Show(Program.LanguageManager.Translation.RecoverMsbUsername);
                 return;
-            } if (string.IsNullOrEmpty(emailInput.Text))
+            }
+            if (string.IsNullOrEmpty(emailInput.Text))
             {
                 MessageBox.Show(Program.LanguageManager.Translation.RecoverMsbEmail);
                 return;

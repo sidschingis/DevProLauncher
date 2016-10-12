@@ -1,4 +1,5 @@
 ﻿using System;
+
 namespace DevProLauncher.Network.Data
 {
     [Serializable]

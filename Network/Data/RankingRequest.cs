@@ -1,15 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-
-namespace DevProLauncher.Network.Data
+﻿namespace DevProLauncher.Network.Data
 {
-    class RankingRequest
+    internal class RankingRequest
     {
         public RankingRequest()
         {
-
         }
     }
 }

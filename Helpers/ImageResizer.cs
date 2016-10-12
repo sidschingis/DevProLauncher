@@ -1,8 +1,8 @@
 ﻿using System;
 using System.Drawing;
+using System.Drawing.Imaging;
 using System.IO;
 using System.Windows.Forms;
-using System.Drawing.Imaging;
 
 namespace DevProLauncher.Helpers
 {
@@ -65,12 +65,12 @@ namespace DevProLauncher.Helpers
         public static string OpenFileWindow(string title, string startpath, string filefilter)
         {
             OpenFileDialog dialog = new OpenFileDialog
-                {
-                    InitialDirectory = startpath,
-                    Title = title,
-                    Filter = filefilter,
-                    Multiselect = true
-                };
+            {
+                InitialDirectory = startpath,
+                Title = title,
+                Filter = filefilter,
+                Multiselect = true
+            };
 
             return (dialog.ShowDialog() == DialogResult.OK) ? dialog.FileName : null;
         }

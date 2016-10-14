@@ -60,6 +60,7 @@
         RecoverFailed = 57,
         ResetAccept = 58,
         ResetFailed = 59,
-        BlacklistName = 60
+        BlacklistName = 60,
+        UpdateServerStatus = 61,
     }
 }

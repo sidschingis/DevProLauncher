@@ -628,11 +628,21 @@ namespace DevProLauncher.Windows
                 }
             }
 
-            if (serverList.Count == 0)
+            List<ServerInfo> tempList = new List<ServerInfo>();
+
+            foreach (var KVP in serverList)
+            {
+                if (KVP.Value.status == ServerInfo.Status.Open)
+                {
+                    tempList.Add(KVP.Value);
+                }
+            }
+
+            if (tempList.Count == 0)
                 return null;
 
-            int serverselect = Program.Rand.Next(0, serverList.Count);
-            return serverList.ElementAt(serverselect).Value;
+            int serverselect = Program.Rand.Next(0, tempList.Count);
+            return tempList.ElementAt(serverselect);
         }
 
         public ServerInfo GetServer(string serverName)

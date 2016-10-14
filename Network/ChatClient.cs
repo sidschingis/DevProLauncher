@@ -536,6 +536,11 @@ namespace DevProLauncher.Network
                     }
                     break;
 
+                case DevClientPackets.UpdateServerStatus:
+                    ServerInfo serverInfo = JsonSerializer.DeserializeFromString<ServerInfo>(Encoding.UTF8.GetString(e.Reader.ReadBytes(e.Raw.Length)));
+                    Program.ServerList[serverInfo.serverName] = serverInfo;
+                    break;
+
                 case DevClientPackets.JoinChannelAccept:
                     if (JoinChannel != null)
                         JoinChannel(Encoding.UTF8.GetString(e.Reader.ReadBytes(e.Raw.Length)));

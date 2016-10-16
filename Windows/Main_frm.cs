@@ -59,7 +59,7 @@ namespace DevProLauncher.Windows
             DeckBtn.Text = info.MainDeckBtn;
             ReplaysBtn.Text = info.MainReplaysBtn;
             OfflineBtn.Text = info.MainOfflineBtn;
-            forumBtn.Text = info.MainForumBtn;
+            forumBtn.Text = "Site";
             siteBtn.Text = info.MainSiteBtn;
             MessageLabel.Text = info.MainServerMessage;
         }
@@ -171,12 +171,12 @@ namespace DevProLauncher.Windows
 
         private void ForumBtn_Click(object sender, EventArgs e)
         {
-            Process.Start("https://ygodevpro.com/forum/index.php/BoardList/");
+            Process.Start("https://ygodevpro.com/forum/");
         }
 
         private void Bugtracker_Click(object sender, EventArgs e)
         {
-            Process.Start("https://ygodevpro.com");
+            Process.Start("http://www.ygodevpro.com/");
         }
 
         private void DeckBtn_Click(object sender, EventArgs e)

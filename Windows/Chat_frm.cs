@@ -669,7 +669,7 @@ namespace DevProLauncher.Windows
 
             if (!m_onlineMode)
             {
-                if (user.rank > 0 && user.rank < 99)
+                if (user.usertag != "" || user.rank > 0 && user.rank < 99)
                 {
                     // Print text
                     g.DrawString("[", e.Font,
@@ -680,36 +680,37 @@ namespace DevProLauncher.Windows
                                             : new SolidBrush(Program.Config.NormalTextColor.ToColor())),
                                  list.GetItemRectangle(index).Location);
                     string title;
-                    switch (user.rank)
-                    {
-                        case 1:
-                            title = "Helper";
-                            break;
+                    title = user.usertag;
+                    //switch (user.rank)
+                    //{
+                    //    case 1:
+                    //        title = "Helper";
+                    //        break;
 
-                        case 2:
-                            title = "TD";
-                            break;
+                    //    case 2:
+                    //        title = "TD";
+                    //        break;
 
-                        case 3:
-                            title = "Mod";
-                            break;
+                    //    case 3:
+                    //        title = "Mod";
+                    //        break;
 
-                        case 4:
-                            title = "SMod";
-                            break;
+                    //    case 4:
+                    //        title = "SMod";
+                    //        break;
 
-                        case 98:
-                            title = "Bot";
-                            break;
-                        /*
-                        case 99:
-                            title = "Dev";
-                            break;
-                        //*/
-                        default:
-                            title = "";
-                            break;
-                    }
+                    //    case 98:
+                    //        title = "Bot";
+                    //        break;
+                    //    /*
+                    //    case 99:
+                    //        title = "Dev";
+                    //        break;
+                    //    //*/
+                    //    default:
+                    //        title = user.usertag;
+                    //        break;
+                    //}
                     g.DrawString(title, e.Font,
                                     (selected)
                                         ? Brushes.White

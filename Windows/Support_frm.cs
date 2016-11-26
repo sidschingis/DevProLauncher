@@ -48,8 +48,10 @@ namespace DevProLauncher.Windows
             AddItem(Properties.Resources.DNA, lang.SupportItem5Name, FormatString(lang.SupportItem5Des), 300, "DEVCOLOR", true);
             AddItem(Properties.Resources.sixsam, lang.SupportItem6Name, FormatString(lang.SupportItem6Des), 500, "DEVCREATETEAM", true);
             AddItem(Properties.Resources.message, lang.SupportItem7Name, FormatString(lang.SupportItem7Des), 150, "DEVMSG", true);
+            AddItem(Properties.Resources.rankup, lang.SupportUserTagName, FormatString(lang.SupportUserTagDes), 500, "DEVTAG", true);
             // AddItem(Properties.Resources.bookoflife, lang.SupportItem4Name, FormatString(lang.SupportItem4Des), 1000, "DEVUNBAN", true);
             m_descriptions.Add("DEVRENAME", lang.SupportRenameInput);
+            m_descriptions.Add("DEVTAG", lang.SupportRenameInput);
             // m_descriptions.Add("DEVUNBAN", lang.SupportUnbanInput);
             m_descriptions.Add("DEVCREATETEAM", lang.SupportTeamNameInput);
             m_descriptions.Add("DEVMSG", lang.SupportMSGInput);

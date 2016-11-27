@@ -16,9 +16,18 @@ namespace DevProLauncher.Network.Data
         public int teamRank { get; set; }
         public bool Online { get; set; }
 
+        public string usertag { get; set; }
+        public int tagcolor { get; set; }
+        public DateTime validUntil { get; set; }
+
         public Color getUserColor()
         {
             return Color.FromArgb(a, r, g, b);
+        }
+
+        public Color getTagColor()
+        {
+            return Color.FromArgb(tagcolor);
         }
     }
 }

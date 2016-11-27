@@ -446,6 +446,8 @@ namespace DevProLauncher.Config
         public string SupportItem7Des = "Send a server message to everyone.(Limited: 3 Messages per day)";
         public string SupportItem8Name = "Custom Sleeves";
         public string SupportItem8Des = "Upload a custom sleeve that all users will be able to see in duels.";
+        public string SupportUserTagName = "User Tag";
+        public string SupportUserTagDes = "Add a custom user Tag to your name for one month.";
 
         public string SupportBalance = "Balance";
         public string Supportgb2 = "Support DevPro";
@@ -455,6 +457,7 @@ namespace DevProLauncher.Config
         public string SupportUnbanInput = "Enter Username";
         public string SupportTeamNameInput = "Enter Team Name";
         public string SupportMSGInput = "Enter Message";
+        public string SupportTagInput = "Enter New Tag";
 
         public string SupportRefreshBtn = "Refresh";
         public string SupportTransferBtn = "Transfer";

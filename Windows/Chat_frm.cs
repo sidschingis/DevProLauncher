@@ -669,7 +669,7 @@ namespace DevProLauncher.Windows
 
             if (!m_onlineMode)
             {
-                if (user.rank > 0 && user.rank < 99)
+                if (user.usertag != "" || user.rank > 0 && user.rank < 99)
                 {
                     // Print text
                     g.DrawString("[", e.Font,
@@ -680,36 +680,37 @@ namespace DevProLauncher.Windows
                                             : new SolidBrush(Program.Config.NormalTextColor.ToColor())),
                                  list.GetItemRectangle(index).Location);
                     string title;
-                    switch (user.rank)
-                    {
-                        case 1:
-                            title = "Helper";
-                            break;
+                    title = user.usertag;
+                    //switch (user.rank)
+                    //{
+                    //    case 1:
+                    //        title = "Helper";
+                    //        break;
 
-                        case 2:
-                            title = "TD";
-                            break;
+                    //    case 2:
+                    //        title = "TD";
+                    //        break;
 
-                        case 3:
-                            title = "Mod";
-                            break;
+                    //    case 3:
+                    //        title = "Mod";
+                    //        break;
 
-                        case 4:
-                            title = "SMod";
-                            break;
+                    //    case 4:
+                    //        title = "SMod";
+                    //        break;
 
-                        case 98:
-                            title = "Bot";
-                            break;
-                        /*
-                        case 99:
-                            title = "Dev";
-                            break;
-                        //*/
-                        default:
-                            title = "";
-                            break;
-                    }
+                    //    case 98:
+                    //        title = "Bot";
+                    //        break;
+                    //    /*
+                    //    case 99:
+                    //        title = "Dev";
+                    //        break;
+                    //    //*/
+                    //    default:
+                    //        title = user.usertag;
+                    //        break;
+                    //}
                     g.DrawString(title, e.Font,
                                     (selected)
                                         ? Brushes.White
@@ -958,6 +959,7 @@ namespace DevProLauncher.Windows
                         WriteMessage(new ChatMessage(MessageType.System, CommandType.None, null, "/kill [forced]- Kills all crashed cores. If 'forced' is added: Kills all cores (including running games)."));
                         WriteMessage(new ChatMessage(MessageType.System, CommandType.None, null, "/ban username time reason - Bans a user, time format has to be in hours (max 730 hours), also you must give a reason."));
                         WriteMessage(new ChatMessage(MessageType.System, CommandType.None, null, "/banusername username - Bans a user's username"));
+                        WriteMessage(new ChatMessage(MessageType.System, CommandType.None, null, "/getservers - Gives duel servers listed"));
                     }
 
                     if (Program.UserInfo.rank == 99)
@@ -973,7 +975,6 @@ namespace DevProLauncher.Windows
                         WriteMessage(new ChatMessage(MessageType.System, CommandType.None, null, "/setmps number - Changes the messages per second"));
                         WriteMessage(new ChatMessage(MessageType.System, CommandType.None, null, "/addpoints username amount - Adds DevPoints to the given username"));
                         WriteMessage(new ChatMessage(MessageType.System, CommandType.None, null, "/removepoints username amount - Removes DevPoints to the given username"));
-                        WriteMessage(new ChatMessage(MessageType.System, CommandType.None, null, "/getservers - Gives duel servers listed"));
                     }
 
                     if (Program.UserInfo.teamRank >= 0 && Program.UserInfo.team != string.Empty)

@@ -52,7 +52,7 @@ namespace DevProLauncher.Helpers
                 {
                     WriteText(window, "[" + DateTime.Now.ToLongTimeString() + "] ", (Program.Config.ColorBlindMode ? Color.Black : Program.Config.NormalTextColor.ToColor()));
                 }
-                if (message.from.rank > 0 && message.from.rank < 99)
+                if (message.from.usertag != "" || message.from.rank > 0 && message.from.rank < 99)
                 {
                     WriteText(window, "[", (Program.Config.ColorBlindMode ? Color.Black : Program.Config.NormalTextColor.ToColor()));
 
@@ -78,6 +78,9 @@ namespace DevProLauncher.Helpers
 
                         case 98:
                             text = "Bot";
+                            break;
+                        default:
+                            text = message.from.usertag;
                             break;
                             /*
                             case 99:
@@ -110,37 +113,41 @@ namespace DevProLauncher.Helpers
                 {
                     WriteText(window, "[" + DateTime.Now.ToLongTimeString() + "] ", (Program.Config.ColorBlindMode ? Color.Black : Program.Config.NormalTextColor.ToColor()));
                 }
-                if (message.from.rank > 0 && message.from.rank < 99)
+                if (message.from.usertag != "" || message.from.rank > 0 && message.from.rank < 99)
                 {
                     WriteText(window, "[", (Program.Config.ColorBlindMode ? Color.Black : Program.Config.NormalTextColor.ToColor()));
 
                     LogText += "[";
                     string text = "";
-                    switch (message.from.rank)
-                    {
-                        case 1:
-                            text = "Helper";
-                            break;
+                    text = message.from.usertag;
+                    //switch (message.from.rank)
+                    //{
+                    //    case 1:
+                    //        text = "Helper";
+                    //        break;
 
-                        case 2:
-                            text = "TD";
-                            break;
+                    //    case 2:
+                    //        text = "TD";
+                    //        break;
 
-                        case 3:
-                            text = "Mod";
-                            break;
+                    //    case 3:
+                    //        text = "Mod";
+                    //        break;
 
-                        case 4:
-                            text = "SMod";
-                            break;
+                    //    case 4:
+                    //        text = "SMod";
+                    //        break;
 
-                        case 98:
-                            text = "Bot";
-                            break;
-                            /*   case 99:
-                                   text = "Dev";
-                                   break; */
-                    }
+                    //    case 98:
+                    //        text = "Bot";
+                    //        break;
+                    //    default:
+                    //        text = message.from.usertag;
+                    //        break;
+                    //        /*   case 99:
+                    //               text = "Dev";
+                    //               break; */
+                    //}
                     LogText += text;
                     LogText += "]";
 

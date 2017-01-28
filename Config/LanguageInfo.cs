@@ -412,7 +412,7 @@ namespace DevProLauncher.Config
         public string MainCustomizeTab = "Customize";
         public string MainAboutTab = "About";
 
-        public string MainForumBtn = "Bugtracker";
+        public string MainForumBtn = "Discord";
         public string MainSiteBtn = "Forum";
         public string MainDeckBtn = "Deck Edit";
         public string MainReplaysBtn = "Replays";

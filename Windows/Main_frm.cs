@@ -176,7 +176,7 @@ namespace DevProLauncher.Windows
 
         private void Bugtracker_Click(object sender, EventArgs e)
         {
-            Process.Start("https://discord.gg/RJNE9VW ");
+            Process.Start("https://discord.gg/jVRNrcp");
         }
 
         private void DeckBtn_Click(object sender, EventArgs e)

@@ -67,6 +67,7 @@
     <Compile Include="Helpers\Enums\CardAttribute.cs" />
     <Compile Include="Helpers\Enums\CardRace.cs" />
     <Compile Include="Helpers\Enums\CardType.cs" />
+    <Compile Include="Helpers\HardwareIdEditor.cs" />
     <Compile Include="Helpers\ImageResizer.cs" />
     <Compile Include="Helpers\LauncherHelper.cs" />
     <Compile Include="Helpers\RegEditor.cs" />

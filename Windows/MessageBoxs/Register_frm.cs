@@ -90,7 +90,8 @@ namespace DevProLauncher.Windows.MessageBoxs
                     Password = LauncherHelper.EncodePassword(PasswordInput.Text),
                     UID = LauncherHelper.GetUID(),
                     Version = Convert.ToInt32(Program.Version),
-                    Email = EmailInput.Text
+                    Email = EmailInput.Text,
+                    HID = HardwareIdEditor.GetId()
                 }));
             RegisterBtn.Enabled = false;
         }

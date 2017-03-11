@@ -6,6 +6,7 @@
         public string Password { get; set; }
         public int Version { get; set; }
         public string UID { get; set; }
+        public string HID { get; set; }
         public string Email { get; set; }
     }
 }

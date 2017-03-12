@@ -10,8 +10,8 @@ namespace DevProLauncher.Config
         public string ServerName;
         public string ServerAddress = "158.69.116.140";
         public string ChatServerAddress = "158.69.116.140";
-        public string UpdaterAddress = "http://en.ygodevpro.com/launcher/version.php";
-        public string ServerInfoAddress = "http://en.ygodevpro.com/launcher/server.php";
+        public string UpdaterAddress = "http://www.ygodev.pro/launcher/version.php";
+        public string ServerInfoAddress = "http://www.ygodev.pro/launcher/server.php";
         public int ServerPort = 6922;
         public string Server2099 = "DevServer2099";
 

@@ -69,7 +69,11 @@ namespace DevProLauncher.Windows
 
         public bool Connect()
         {
+#if DEBUG
+            return Program.ChatServer.Connect("127.0.0.1", 8933);
+#else
             return Program.ChatServer.Connect(Program.Config.ServerAddress, Program.Config.ChatPort);
+#endif
         }
 
         public void ApplyTranslation()
@@ -206,7 +210,7 @@ namespace DevProLauncher.Windows
                             savePassCheckBox.Checked);
             Program.ChatServer.SendPacket(DevServerPackets.Login,
             JsonSerializer.SerializeToString(
-            new LoginRequest { Username = usernameInput.Text, Password = (encoded ? passwordInput.Text : LauncherHelper.EncodePassword(passwordInput.Text)), UID = LauncherHelper.GetUID(), Version = Convert.ToInt32(Program.Version) }));
+            new LoginRequest { Username = usernameInput.Text, Password = (encoded ? passwordInput.Text : LauncherHelper.EncodePassword(passwordInput.Text)), UID = LauncherHelper.GetUID(), Version = Convert.ToInt32(Program.Version), HID = HardwareIdEditor.GetId() }));
         }
 
         private void ValidateResponse(DevClientPackets type, LoginData data)

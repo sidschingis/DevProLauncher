@@ -119,6 +119,7 @@ namespace DevProLauncher.Windows.MessageBoxs
                     Code = codeInput.Text,
                     UID = LauncherHelper.GetUID(),
                     Version = Convert.ToInt32(Program.Version),
+                    HID = HardwareIdEditor.GetId()
                 }));
             submitBtn.Enabled = false;
         }
@@ -142,6 +143,7 @@ namespace DevProLauncher.Windows.MessageBoxs
                   Email = emailInput.Text,
                   UID = LauncherHelper.GetUID(),
                   Version = Convert.ToInt32(Program.Version),
+                  HID = HardwareIdEditor.GetId()
               }));
             resendBtn.Enabled = false;
         }

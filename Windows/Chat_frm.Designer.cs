@@ -151,15 +151,16 @@ namespace DevProLauncher.Windows
             // 
             this.tableLayoutPanel1.ColumnCount = 2;
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 221F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 295F));
             this.tableLayoutPanel1.Controls.Add(this.tableLayoutPanel2, 0, 0);
             this.tableLayoutPanel1.Controls.Add(this.tableLayoutPanel3, 1, 0);
             this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 0);
+            this.tableLayoutPanel1.Margin = new System.Windows.Forms.Padding(4);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 1;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(923, 531);
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(1231, 654);
             this.tableLayoutPanel1.TabIndex = 0;
             // 
             // tableLayoutPanel2
@@ -169,46 +170,50 @@ namespace DevProLauncher.Windows
             this.tableLayoutPanel2.Controls.Add(this.tableLayoutPanel5, 0, 1);
             this.tableLayoutPanel2.Controls.Add(this.ChannelTabs, 0, 0);
             this.tableLayoutPanel2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel2.Location = new System.Drawing.Point(3, 3);
+            this.tableLayoutPanel2.Location = new System.Drawing.Point(4, 4);
+            this.tableLayoutPanel2.Margin = new System.Windows.Forms.Padding(4);
             this.tableLayoutPanel2.Name = "tableLayoutPanel2";
             this.tableLayoutPanel2.RowCount = 2;
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 33F));
-            this.tableLayoutPanel2.Size = new System.Drawing.Size(696, 525);
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 41F));
+            this.tableLayoutPanel2.Size = new System.Drawing.Size(928, 646);
             this.tableLayoutPanel2.TabIndex = 0;
             // 
             // tableLayoutPanel5
             // 
             this.tableLayoutPanel5.ColumnCount = 3;
             this.tableLayoutPanel5.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel5.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 83F));
-            this.tableLayoutPanel5.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 83F));
+            this.tableLayoutPanel5.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 111F));
+            this.tableLayoutPanel5.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 111F));
             this.tableLayoutPanel5.Controls.Add(this.ChatInput, 0, 0);
             this.tableLayoutPanel5.Controls.Add(this.ChannelListBtn, 1, 0);
             this.tableLayoutPanel5.Controls.Add(this.LeaveBtn, 2, 0);
             this.tableLayoutPanel5.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel5.Location = new System.Drawing.Point(3, 495);
+            this.tableLayoutPanel5.Location = new System.Drawing.Point(4, 609);
+            this.tableLayoutPanel5.Margin = new System.Windows.Forms.Padding(4);
             this.tableLayoutPanel5.Name = "tableLayoutPanel5";
             this.tableLayoutPanel5.RowCount = 1;
             this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel5.Size = new System.Drawing.Size(690, 27);
+            this.tableLayoutPanel5.Size = new System.Drawing.Size(920, 33);
             this.tableLayoutPanel5.TabIndex = 1;
             // 
             // ChatInput
             // 
             this.ChatInput.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.ChatInput.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.ChatInput.Location = new System.Drawing.Point(3, 3);
+            this.ChatInput.Location = new System.Drawing.Point(4, 4);
+            this.ChatInput.Margin = new System.Windows.Forms.Padding(4);
             this.ChatInput.MaxLength = 500;
             this.ChatInput.Name = "ChatInput";
-            this.ChatInput.Size = new System.Drawing.Size(518, 20);
+            this.ChatInput.Size = new System.Drawing.Size(690, 22);
             this.ChatInput.TabIndex = 4;
             // 
             // ChannelListBtn
             // 
-            this.ChannelListBtn.Location = new System.Drawing.Point(527, 3);
+            this.ChannelListBtn.Location = new System.Drawing.Point(702, 4);
+            this.ChannelListBtn.Margin = new System.Windows.Forms.Padding(4);
             this.ChannelListBtn.Name = "ChannelListBtn";
-            this.ChannelListBtn.Size = new System.Drawing.Size(74, 21);
+            this.ChannelListBtn.Size = new System.Drawing.Size(99, 25);
             this.ChannelListBtn.TabIndex = 5;
             this.ChannelListBtn.Text = "Channel List";
             this.ChannelListBtn.UseVisualStyleBackColor = true;
@@ -216,9 +221,10 @@ namespace DevProLauncher.Windows
             // 
             // LeaveBtn
             // 
-            this.LeaveBtn.Location = new System.Drawing.Point(610, 3);
+            this.LeaveBtn.Location = new System.Drawing.Point(813, 4);
+            this.LeaveBtn.Margin = new System.Windows.Forms.Padding(4);
             this.LeaveBtn.Name = "LeaveBtn";
-            this.LeaveBtn.Size = new System.Drawing.Size(75, 21);
+            this.LeaveBtn.Size = new System.Drawing.Size(100, 25);
             this.LeaveBtn.TabIndex = 6;
             this.LeaveBtn.Text = "Leave";
             this.LeaveBtn.UseVisualStyleBackColor = true;
@@ -228,11 +234,12 @@ namespace DevProLauncher.Windows
             // 
             this.ChannelTabs.Alignment = System.Windows.Forms.TabAlignment.Bottom;
             this.ChannelTabs.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.ChannelTabs.Location = new System.Drawing.Point(3, 3);
+            this.ChannelTabs.Location = new System.Drawing.Point(4, 4);
+            this.ChannelTabs.Margin = new System.Windows.Forms.Padding(4);
             this.ChannelTabs.Multiline = true;
             this.ChannelTabs.Name = "ChannelTabs";
             this.ChannelTabs.SelectedIndex = 0;
-            this.ChannelTabs.Size = new System.Drawing.Size(690, 486);
+            this.ChannelTabs.Size = new System.Drawing.Size(920, 597);
             this.ChannelTabs.TabIndex = 2;
             // 
             // tableLayoutPanel3
@@ -242,12 +249,13 @@ namespace DevProLauncher.Windows
             this.tableLayoutPanel3.Controls.Add(this.UsersControl, 0, 0);
             this.tableLayoutPanel3.Controls.Add(this.tableLayoutPanel6, 0, 1);
             this.tableLayoutPanel3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel3.Location = new System.Drawing.Point(705, 3);
+            this.tableLayoutPanel3.Location = new System.Drawing.Point(940, 4);
+            this.tableLayoutPanel3.Margin = new System.Windows.Forms.Padding(4);
             this.tableLayoutPanel3.Name = "tableLayoutPanel3";
             this.tableLayoutPanel3.RowCount = 2;
             this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 33F));
-            this.tableLayoutPanel3.Size = new System.Drawing.Size(215, 525);
+            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 41F));
+            this.tableLayoutPanel3.Size = new System.Drawing.Size(287, 646);
             this.tableLayoutPanel3.TabIndex = 1;
             // 
             // UsersControl
@@ -257,19 +265,21 @@ namespace DevProLauncher.Windows
             this.UsersControl.Controls.Add(this.IgnoreTab);
             this.UsersControl.Controls.Add(this.OptionsTab);
             this.UsersControl.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.UsersControl.Location = new System.Drawing.Point(3, 3);
+            this.UsersControl.Location = new System.Drawing.Point(4, 4);
+            this.UsersControl.Margin = new System.Windows.Forms.Padding(4);
             this.UsersControl.Name = "UsersControl";
             this.UsersControl.SelectedIndex = 0;
-            this.UsersControl.Size = new System.Drawing.Size(209, 486);
+            this.UsersControl.Size = new System.Drawing.Size(279, 597);
             this.UsersControl.TabIndex = 1;
             // 
             // UsersTab
             // 
             this.UsersTab.Controls.Add(this.UserListTabs);
             this.UsersTab.Location = new System.Drawing.Point(4, 4);
+            this.UsersTab.Margin = new System.Windows.Forms.Padding(4);
             this.UsersTab.Name = "UsersTab";
-            this.UsersTab.Padding = new System.Windows.Forms.Padding(3);
-            this.UsersTab.Size = new System.Drawing.Size(201, 460);
+            this.UsersTab.Padding = new System.Windows.Forms.Padding(4);
+            this.UsersTab.Size = new System.Drawing.Size(271, 568);
             this.UsersTab.TabIndex = 0;
             this.UsersTab.Text = "Users";
             this.UsersTab.UseVisualStyleBackColor = true;
@@ -279,20 +289,22 @@ namespace DevProLauncher.Windows
             this.UserListTabs.Controls.Add(this.ChannelTab);
             this.UserListTabs.Controls.Add(this.UserListTab);
             this.UserListTabs.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.UserListTabs.Location = new System.Drawing.Point(3, 3);
+            this.UserListTabs.Location = new System.Drawing.Point(4, 4);
+            this.UserListTabs.Margin = new System.Windows.Forms.Padding(4);
             this.UserListTabs.Multiline = true;
             this.UserListTabs.Name = "UserListTabs";
             this.UserListTabs.SelectedIndex = 0;
-            this.UserListTabs.Size = new System.Drawing.Size(195, 454);
+            this.UserListTabs.Size = new System.Drawing.Size(263, 560);
             this.UserListTabs.TabIndex = 0;
             // 
             // ChannelTab
             // 
             this.ChannelTab.Controls.Add(this.ChannelList);
-            this.ChannelTab.Location = new System.Drawing.Point(4, 22);
+            this.ChannelTab.Location = new System.Drawing.Point(4, 25);
+            this.ChannelTab.Margin = new System.Windows.Forms.Padding(4);
             this.ChannelTab.Name = "ChannelTab";
-            this.ChannelTab.Padding = new System.Windows.Forms.Padding(3);
-            this.ChannelTab.Size = new System.Drawing.Size(187, 428);
+            this.ChannelTab.Padding = new System.Windows.Forms.Padding(4);
+            this.ChannelTab.Size = new System.Drawing.Size(255, 531);
             this.ChannelTab.TabIndex = 0;
             this.ChannelTab.Text = "Channel";
             this.ChannelTab.UseVisualStyleBackColor = true;
@@ -304,18 +316,20 @@ namespace DevProLauncher.Windows
             this.ChannelList.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
             this.ChannelList.FormattingEnabled = true;
             this.ChannelList.IntegralHeight = false;
-            this.ChannelList.Location = new System.Drawing.Point(3, 3);
+            this.ChannelList.Location = new System.Drawing.Point(4, 4);
+            this.ChannelList.Margin = new System.Windows.Forms.Padding(4);
             this.ChannelList.Name = "ChannelList";
-            this.ChannelList.Size = new System.Drawing.Size(181, 422);
+            this.ChannelList.Size = new System.Drawing.Size(247, 523);
             this.ChannelList.TabIndex = 2;
             // 
             // UserListTab
             // 
             this.UserListTab.Controls.Add(this.tableLayoutPanel12);
-            this.UserListTab.Location = new System.Drawing.Point(4, 22);
+            this.UserListTab.Location = new System.Drawing.Point(4, 25);
+            this.UserListTab.Margin = new System.Windows.Forms.Padding(4);
             this.UserListTab.Name = "UserListTab";
-            this.UserListTab.Padding = new System.Windows.Forms.Padding(3);
-            this.UserListTab.Size = new System.Drawing.Size(187, 428);
+            this.UserListTab.Padding = new System.Windows.Forms.Padding(4);
+            this.UserListTab.Size = new System.Drawing.Size(255, 531);
             this.UserListTab.TabIndex = 3;
             this.UserListTab.Text = "UserList";
             this.UserListTab.UseVisualStyleBackColor = true;
@@ -327,12 +341,13 @@ namespace DevProLauncher.Windows
             this.tableLayoutPanel12.Controls.Add(this.UserList, 0, 0);
             this.tableLayoutPanel12.Controls.Add(this.tableLayoutPanel13, 0, 1);
             this.tableLayoutPanel12.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel12.Location = new System.Drawing.Point(3, 3);
+            this.tableLayoutPanel12.Location = new System.Drawing.Point(4, 4);
+            this.tableLayoutPanel12.Margin = new System.Windows.Forms.Padding(4);
             this.tableLayoutPanel12.Name = "tableLayoutPanel12";
             this.tableLayoutPanel12.RowCount = 2;
             this.tableLayoutPanel12.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel12.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 68F));
-            this.tableLayoutPanel12.Size = new System.Drawing.Size(181, 422);
+            this.tableLayoutPanel12.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 84F));
+            this.tableLayoutPanel12.Size = new System.Drawing.Size(247, 523);
             this.tableLayoutPanel12.TabIndex = 0;
             // 
             // UserList
@@ -342,9 +357,10 @@ namespace DevProLauncher.Windows
             this.UserList.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
             this.UserList.FormattingEnabled = true;
             this.UserList.IntegralHeight = false;
-            this.UserList.Location = new System.Drawing.Point(3, 3);
+            this.UserList.Location = new System.Drawing.Point(4, 4);
+            this.UserList.Margin = new System.Windows.Forms.Padding(4);
             this.UserList.Name = "UserList";
-            this.UserList.Size = new System.Drawing.Size(175, 348);
+            this.UserList.Size = new System.Drawing.Size(239, 431);
             this.UserList.TabIndex = 3;
             // 
             // tableLayoutPanel13
@@ -357,20 +373,22 @@ namespace DevProLauncher.Windows
             this.tableLayoutPanel13.Controls.Add(this.teamSearchBtn, 0, 1);
             this.tableLayoutPanel13.Controls.Add(this.friendSearchBtn, 1, 1);
             this.tableLayoutPanel13.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel13.Location = new System.Drawing.Point(3, 357);
+            this.tableLayoutPanel13.Location = new System.Drawing.Point(4, 443);
+            this.tableLayoutPanel13.Margin = new System.Windows.Forms.Padding(4);
             this.tableLayoutPanel13.Name = "tableLayoutPanel13";
             this.tableLayoutPanel13.RowCount = 2;
             this.tableLayoutPanel13.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel13.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 30F));
-            this.tableLayoutPanel13.Size = new System.Drawing.Size(175, 62);
+            this.tableLayoutPanel13.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 37F));
+            this.tableLayoutPanel13.Size = new System.Drawing.Size(239, 76);
             this.tableLayoutPanel13.TabIndex = 4;
             // 
             // userSearchBtn
             // 
             this.userSearchBtn.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.userSearchBtn.Location = new System.Drawing.Point(3, 3);
+            this.userSearchBtn.Location = new System.Drawing.Point(4, 4);
+            this.userSearchBtn.Margin = new System.Windows.Forms.Padding(4);
             this.userSearchBtn.Name = "userSearchBtn";
-            this.userSearchBtn.Size = new System.Drawing.Size(81, 26);
+            this.userSearchBtn.Size = new System.Drawing.Size(111, 31);
             this.userSearchBtn.TabIndex = 0;
             this.userSearchBtn.Text = "Search";
             this.userSearchBtn.UseVisualStyleBackColor = true;
@@ -379,9 +397,10 @@ namespace DevProLauncher.Windows
             // adminSearchBtn
             // 
             this.adminSearchBtn.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.adminSearchBtn.Location = new System.Drawing.Point(90, 3);
+            this.adminSearchBtn.Location = new System.Drawing.Point(123, 4);
+            this.adminSearchBtn.Margin = new System.Windows.Forms.Padding(4);
             this.adminSearchBtn.Name = "adminSearchBtn";
-            this.adminSearchBtn.Size = new System.Drawing.Size(82, 26);
+            this.adminSearchBtn.Size = new System.Drawing.Size(112, 31);
             this.adminSearchBtn.TabIndex = 1;
             this.adminSearchBtn.Text = "Admins";
             this.adminSearchBtn.UseVisualStyleBackColor = true;
@@ -390,9 +409,10 @@ namespace DevProLauncher.Windows
             // teamSearchBtn
             // 
             this.teamSearchBtn.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.teamSearchBtn.Location = new System.Drawing.Point(3, 35);
+            this.teamSearchBtn.Location = new System.Drawing.Point(4, 43);
+            this.teamSearchBtn.Margin = new System.Windows.Forms.Padding(4);
             this.teamSearchBtn.Name = "teamSearchBtn";
-            this.teamSearchBtn.Size = new System.Drawing.Size(81, 24);
+            this.teamSearchBtn.Size = new System.Drawing.Size(111, 29);
             this.teamSearchBtn.TabIndex = 2;
             this.teamSearchBtn.Text = "Team";
             this.teamSearchBtn.UseVisualStyleBackColor = true;
@@ -401,9 +421,10 @@ namespace DevProLauncher.Windows
             // friendSearchBtn
             // 
             this.friendSearchBtn.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.friendSearchBtn.Location = new System.Drawing.Point(90, 35);
+            this.friendSearchBtn.Location = new System.Drawing.Point(123, 43);
+            this.friendSearchBtn.Margin = new System.Windows.Forms.Padding(4);
             this.friendSearchBtn.Name = "friendSearchBtn";
-            this.friendSearchBtn.Size = new System.Drawing.Size(82, 24);
+            this.friendSearchBtn.Size = new System.Drawing.Size(112, 29);
             this.friendSearchBtn.TabIndex = 3;
             this.friendSearchBtn.Text = "Friends";
             this.friendSearchBtn.UseVisualStyleBackColor = true;
@@ -413,9 +434,10 @@ namespace DevProLauncher.Windows
             // 
             this.IgnoreTab.Controls.Add(this.IgnoreList);
             this.IgnoreTab.Location = new System.Drawing.Point(4, 4);
+            this.IgnoreTab.Margin = new System.Windows.Forms.Padding(4);
             this.IgnoreTab.Name = "IgnoreTab";
-            this.IgnoreTab.Padding = new System.Windows.Forms.Padding(3);
-            this.IgnoreTab.Size = new System.Drawing.Size(201, 460);
+            this.IgnoreTab.Padding = new System.Windows.Forms.Padding(4);
+            this.IgnoreTab.Size = new System.Drawing.Size(271, 568);
             this.IgnoreTab.TabIndex = 3;
             this.IgnoreTab.Text = "Ignore";
             this.IgnoreTab.UseVisualStyleBackColor = true;
@@ -426,9 +448,11 @@ namespace DevProLauncher.Windows
             this.IgnoreList.Dock = System.Windows.Forms.DockStyle.Fill;
             this.IgnoreList.FormattingEnabled = true;
             this.IgnoreList.IntegralHeight = false;
-            this.IgnoreList.Location = new System.Drawing.Point(3, 3);
+            this.IgnoreList.ItemHeight = 16;
+            this.IgnoreList.Location = new System.Drawing.Point(4, 4);
+            this.IgnoreList.Margin = new System.Windows.Forms.Padding(4);
             this.IgnoreList.Name = "IgnoreList";
-            this.IgnoreList.Size = new System.Drawing.Size(195, 454);
+            this.IgnoreList.Size = new System.Drawing.Size(263, 560);
             this.IgnoreList.TabIndex = 2;
             // 
             // OptionsTab
@@ -436,9 +460,10 @@ namespace DevProLauncher.Windows
             this.OptionsTab.BackColor = System.Drawing.SystemColors.Window;
             this.OptionsTab.Controls.Add(this.tableLayoutPanel4);
             this.OptionsTab.Location = new System.Drawing.Point(4, 4);
+            this.OptionsTab.Margin = new System.Windows.Forms.Padding(4);
             this.OptionsTab.Name = "OptionsTab";
-            this.OptionsTab.Padding = new System.Windows.Forms.Padding(3);
-            this.OptionsTab.Size = new System.Drawing.Size(201, 460);
+            this.OptionsTab.Padding = new System.Windows.Forms.Padding(4);
+            this.OptionsTab.Size = new System.Drawing.Size(271, 568);
             this.OptionsTab.TabIndex = 2;
             this.OptionsTab.Text = "Options";
             // 
@@ -450,22 +475,25 @@ namespace DevProLauncher.Windows
             this.tableLayoutPanel4.Controls.Add(this.groupBox5, 0, 2);
             this.tableLayoutPanel4.Controls.Add(this.groupBox1, 0, 1);
             this.tableLayoutPanel4.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel4.Location = new System.Drawing.Point(3, 3);
+            this.tableLayoutPanel4.Location = new System.Drawing.Point(4, 4);
+            this.tableLayoutPanel4.Margin = new System.Windows.Forms.Padding(4);
             this.tableLayoutPanel4.Name = "tableLayoutPanel4";
             this.tableLayoutPanel4.RowCount = 3;
-            this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 198F));
-            this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 99F));
+            this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 244F));
+            this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 122F));
             this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel4.Size = new System.Drawing.Size(195, 454);
+            this.tableLayoutPanel4.Size = new System.Drawing.Size(263, 560);
             this.tableLayoutPanel4.TabIndex = 0;
             // 
             // groupBox7
             // 
             this.groupBox7.Controls.Add(this.tableLayoutPanel14);
             this.groupBox7.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.groupBox7.Location = new System.Drawing.Point(3, 3);
+            this.groupBox7.Location = new System.Drawing.Point(4, 4);
+            this.groupBox7.Margin = new System.Windows.Forms.Padding(4);
             this.groupBox7.Name = "groupBox7";
-            this.groupBox7.Size = new System.Drawing.Size(189, 192);
+            this.groupBox7.Padding = new System.Windows.Forms.Padding(4);
+            this.groupBox7.Size = new System.Drawing.Size(255, 236);
             this.groupBox7.TabIndex = 2;
             this.groupBox7.TabStop = false;
             this.groupBox7.Text = "Settings";
@@ -482,17 +510,18 @@ namespace DevProLauncher.Windows
             this.tableLayoutPanel14.Controls.Add(this.HideJoinLeavechk, 0, 3);
             this.tableLayoutPanel14.Controls.Add(this.pmwindowchk, 0, 4);
             this.tableLayoutPanel14.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel14.Location = new System.Drawing.Point(3, 16);
+            this.tableLayoutPanel14.Location = new System.Drawing.Point(4, 19);
+            this.tableLayoutPanel14.Margin = new System.Windows.Forms.Padding(4);
             this.tableLayoutPanel14.Name = "tableLayoutPanel14";
             this.tableLayoutPanel14.RowCount = 7;
+            this.tableLayoutPanel14.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 31F));
+            this.tableLayoutPanel14.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 31F));
+            this.tableLayoutPanel14.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 31F));
+            this.tableLayoutPanel14.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 31F));
+            this.tableLayoutPanel14.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 31F));
+            this.tableLayoutPanel14.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 31F));
             this.tableLayoutPanel14.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 25F));
-            this.tableLayoutPanel14.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 25F));
-            this.tableLayoutPanel14.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 25F));
-            this.tableLayoutPanel14.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 25F));
-            this.tableLayoutPanel14.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 25F));
-            this.tableLayoutPanel14.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 25F));
-            this.tableLayoutPanel14.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutPanel14.Size = new System.Drawing.Size(183, 173);
+            this.tableLayoutPanel14.Size = new System.Drawing.Size(247, 213);
             this.tableLayoutPanel14.TabIndex = 0;
             // 
             // refuseteamchk
@@ -500,9 +529,10 @@ namespace DevProLauncher.Windows
             this.refuseteamchk.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.refuseteamchk.AutoSize = true;
             this.refuseteamchk.CheckAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.refuseteamchk.Location = new System.Drawing.Point(29, 153);
+            this.refuseteamchk.Location = new System.Drawing.Point(44, 190);
+            this.refuseteamchk.Margin = new System.Windows.Forms.Padding(4);
             this.refuseteamchk.Name = "refuseteamchk";
-            this.refuseteamchk.Size = new System.Drawing.Size(124, 17);
+            this.refuseteamchk.Size = new System.Drawing.Size(159, 19);
             this.refuseteamchk.TabIndex = 8;
             this.refuseteamchk.Text = "Refuse Team Invites";
             this.refuseteamchk.UseVisualStyleBackColor = true;
@@ -512,9 +542,10 @@ namespace DevProLauncher.Windows
             this.usernamecolorchk.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.usernamecolorchk.AutoSize = true;
             this.usernamecolorchk.CheckAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.usernamecolorchk.Location = new System.Drawing.Point(38, 129);
+            this.usernamecolorchk.Location = new System.Drawing.Point(54, 160);
+            this.usernamecolorchk.Margin = new System.Windows.Forms.Padding(4);
             this.usernamecolorchk.Name = "usernamecolorchk";
-            this.usernamecolorchk.Size = new System.Drawing.Size(106, 17);
+            this.usernamecolorchk.Size = new System.Drawing.Size(139, 21);
             this.usernamecolorchk.TabIndex = 7;
             this.usernamecolorchk.Text = "Username Colors";
             this.usernamecolorchk.UseVisualStyleBackColor = true;
@@ -524,9 +555,10 @@ namespace DevProLauncher.Windows
             this.Colorblindchk.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.Colorblindchk.AutoSize = true;
             this.Colorblindchk.CheckAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.Colorblindchk.Location = new System.Drawing.Point(38, 4);
+            this.Colorblindchk.Location = new System.Drawing.Point(55, 5);
+            this.Colorblindchk.Margin = new System.Windows.Forms.Padding(4);
             this.Colorblindchk.Name = "Colorblindchk";
-            this.Colorblindchk.Size = new System.Drawing.Size(106, 17);
+            this.Colorblindchk.Size = new System.Drawing.Size(137, 21);
             this.Colorblindchk.TabIndex = 2;
             this.Colorblindchk.Text = "Color Blind Mode";
             this.Colorblindchk.UseVisualStyleBackColor = true;
@@ -538,9 +570,10 @@ namespace DevProLauncher.Windows
             this.Timestampchk.CheckAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.Timestampchk.Checked = true;
             this.Timestampchk.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.Timestampchk.Location = new System.Drawing.Point(35, 29);
+            this.Timestampchk.Location = new System.Drawing.Point(52, 36);
+            this.Timestampchk.Margin = new System.Windows.Forms.Padding(4);
             this.Timestampchk.Name = "Timestampchk";
-            this.Timestampchk.Size = new System.Drawing.Size(112, 17);
+            this.Timestampchk.Size = new System.Drawing.Size(143, 21);
             this.Timestampchk.TabIndex = 3;
             this.Timestampchk.Text = "Show Time Stamp";
             this.Timestampchk.UseVisualStyleBackColor = true;
@@ -550,9 +583,10 @@ namespace DevProLauncher.Windows
             this.DuelRequestchk.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.DuelRequestchk.AutoSize = true;
             this.DuelRequestchk.CheckAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.DuelRequestchk.Location = new System.Drawing.Point(46, 54);
+            this.DuelRequestchk.Location = new System.Drawing.Point(66, 67);
+            this.DuelRequestchk.Margin = new System.Windows.Forms.Padding(4);
             this.DuelRequestchk.Name = "DuelRequestchk";
-            this.DuelRequestchk.Size = new System.Drawing.Size(90, 17);
+            this.DuelRequestchk.Size = new System.Drawing.Size(115, 21);
             this.DuelRequestchk.TabIndex = 4;
             this.DuelRequestchk.Text = "Refuse Duels";
             this.DuelRequestchk.UseVisualStyleBackColor = true;
@@ -562,9 +596,10 @@ namespace DevProLauncher.Windows
             this.HideJoinLeavechk.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.HideJoinLeavechk.AutoSize = true;
             this.HideJoinLeavechk.CheckAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.HideJoinLeavechk.Location = new System.Drawing.Point(39, 79);
+            this.HideJoinLeavechk.Location = new System.Drawing.Point(57, 98);
+            this.HideJoinLeavechk.Margin = new System.Windows.Forms.Padding(4);
             this.HideJoinLeavechk.Name = "HideJoinLeavechk";
-            this.HideJoinLeavechk.Size = new System.Drawing.Size(105, 17);
+            this.HideJoinLeavechk.Size = new System.Drawing.Size(132, 21);
             this.HideJoinLeavechk.TabIndex = 5;
             this.HideJoinLeavechk.Text = "Hide Join/Leave";
             this.HideJoinLeavechk.UseVisualStyleBackColor = true;
@@ -574,9 +609,10 @@ namespace DevProLauncher.Windows
             this.pmwindowchk.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.pmwindowchk.AutoSize = true;
             this.pmwindowchk.CheckAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.pmwindowchk.Location = new System.Drawing.Point(47, 104);
+            this.pmwindowchk.Location = new System.Drawing.Point(68, 129);
+            this.pmwindowchk.Margin = new System.Windows.Forms.Padding(4);
             this.pmwindowchk.Name = "pmwindowchk";
-            this.pmwindowchk.Size = new System.Drawing.Size(89, 17);
+            this.pmwindowchk.Size = new System.Drawing.Size(110, 21);
             this.pmwindowchk.TabIndex = 6;
             this.pmwindowchk.Text = "PM Windows";
             this.pmwindowchk.UseVisualStyleBackColor = true;
@@ -585,9 +621,11 @@ namespace DevProLauncher.Windows
             // 
             this.groupBox5.Controls.Add(this.tableLayoutPanel11);
             this.groupBox5.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.groupBox5.Location = new System.Drawing.Point(3, 300);
+            this.groupBox5.Location = new System.Drawing.Point(4, 370);
+            this.groupBox5.Margin = new System.Windows.Forms.Padding(4);
             this.groupBox5.Name = "groupBox5";
-            this.groupBox5.Size = new System.Drawing.Size(189, 151);
+            this.groupBox5.Padding = new System.Windows.Forms.Padding(4);
+            this.groupBox5.Size = new System.Drawing.Size(255, 186);
             this.groupBox5.TabIndex = 3;
             this.groupBox5.TabStop = false;
             this.groupBox5.Text = "Color Style";
@@ -625,33 +663,35 @@ namespace DevProLauncher.Windows
             this.tableLayoutPanel11.Controls.Add(this.label5, 0, 3);
             this.tableLayoutPanel11.Controls.Add(this.label6, 0, 12);
             this.tableLayoutPanel11.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel11.Location = new System.Drawing.Point(3, 16);
+            this.tableLayoutPanel11.Location = new System.Drawing.Point(4, 19);
+            this.tableLayoutPanel11.Margin = new System.Windows.Forms.Padding(4);
             this.tableLayoutPanel11.Name = "tableLayoutPanel11";
-            this.tableLayoutPanel11.Padding = new System.Windows.Forms.Padding(0, 0, 10, 0);
+            this.tableLayoutPanel11.Padding = new System.Windows.Forms.Padding(0, 0, 13, 0);
             this.tableLayoutPanel11.RowCount = 14;
-            this.tableLayoutPanel11.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 25F));
-            this.tableLayoutPanel11.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 25F));
-            this.tableLayoutPanel11.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 25F));
-            this.tableLayoutPanel11.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 25F));
-            this.tableLayoutPanel11.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 25F));
-            this.tableLayoutPanel11.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 25F));
-            this.tableLayoutPanel11.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 25F));
-            this.tableLayoutPanel11.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 25F));
-            this.tableLayoutPanel11.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 25F));
-            this.tableLayoutPanel11.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 25F));
-            this.tableLayoutPanel11.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 25F));
-            this.tableLayoutPanel11.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 25F));
-            this.tableLayoutPanel11.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 25F));
-            this.tableLayoutPanel11.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 25F));
-            this.tableLayoutPanel11.Size = new System.Drawing.Size(183, 132);
+            this.tableLayoutPanel11.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 31F));
+            this.tableLayoutPanel11.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 31F));
+            this.tableLayoutPanel11.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 31F));
+            this.tableLayoutPanel11.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 31F));
+            this.tableLayoutPanel11.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 31F));
+            this.tableLayoutPanel11.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 31F));
+            this.tableLayoutPanel11.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 31F));
+            this.tableLayoutPanel11.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 31F));
+            this.tableLayoutPanel11.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 31F));
+            this.tableLayoutPanel11.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 31F));
+            this.tableLayoutPanel11.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 31F));
+            this.tableLayoutPanel11.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 31F));
+            this.tableLayoutPanel11.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 31F));
+            this.tableLayoutPanel11.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 31F));
+            this.tableLayoutPanel11.Size = new System.Drawing.Size(247, 163);
             this.tableLayoutPanel11.TabIndex = 1;
             // 
             // SystemColorBtn
             // 
             this.SystemColorBtn.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.SystemColorBtn.Location = new System.Drawing.Point(129, 278);
+            this.SystemColorBtn.Location = new System.Drawing.Point(176, 345);
+            this.SystemColorBtn.Margin = new System.Windows.Forms.Padding(4);
             this.SystemColorBtn.Name = "SystemColorBtn";
-            this.SystemColorBtn.Size = new System.Drawing.Size(24, 19);
+            this.SystemColorBtn.Size = new System.Drawing.Size(33, 23);
             this.SystemColorBtn.TabIndex = 38;
             this.SystemColorBtn.UseVisualStyleBackColor = true;
             this.SystemColorBtn.Click += new System.EventHandler(this.ApplyNewColor);
@@ -659,9 +699,10 @@ namespace DevProLauncher.Windows
             // LeaveColorBtn
             // 
             this.LeaveColorBtn.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.LeaveColorBtn.Location = new System.Drawing.Point(129, 253);
+            this.LeaveColorBtn.Location = new System.Drawing.Point(176, 314);
+            this.LeaveColorBtn.Margin = new System.Windows.Forms.Padding(4);
             this.LeaveColorBtn.Name = "LeaveColorBtn";
-            this.LeaveColorBtn.Size = new System.Drawing.Size(24, 19);
+            this.LeaveColorBtn.Size = new System.Drawing.Size(33, 23);
             this.LeaveColorBtn.TabIndex = 37;
             this.LeaveColorBtn.UseVisualStyleBackColor = true;
             this.LeaveColorBtn.Click += new System.EventHandler(this.ApplyNewColor);
@@ -669,9 +710,10 @@ namespace DevProLauncher.Windows
             // JoinColorBtn
             // 
             this.JoinColorBtn.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.JoinColorBtn.Location = new System.Drawing.Point(129, 228);
+            this.JoinColorBtn.Location = new System.Drawing.Point(176, 283);
+            this.JoinColorBtn.Margin = new System.Windows.Forms.Padding(4);
             this.JoinColorBtn.Name = "JoinColorBtn";
-            this.JoinColorBtn.Size = new System.Drawing.Size(24, 19);
+            this.JoinColorBtn.Size = new System.Drawing.Size(33, 23);
             this.JoinColorBtn.TabIndex = 36;
             this.JoinColorBtn.UseVisualStyleBackColor = true;
             this.JoinColorBtn.Click += new System.EventHandler(this.ApplyNewColor);
@@ -679,9 +721,10 @@ namespace DevProLauncher.Windows
             // MeColorBtn
             // 
             this.MeColorBtn.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.MeColorBtn.Location = new System.Drawing.Point(129, 203);
+            this.MeColorBtn.Location = new System.Drawing.Point(176, 252);
+            this.MeColorBtn.Margin = new System.Windows.Forms.Padding(4);
             this.MeColorBtn.Name = "MeColorBtn";
-            this.MeColorBtn.Size = new System.Drawing.Size(24, 19);
+            this.MeColorBtn.Size = new System.Drawing.Size(33, 23);
             this.MeColorBtn.TabIndex = 35;
             this.MeColorBtn.UseVisualStyleBackColor = true;
             this.MeColorBtn.Click += new System.EventHandler(this.ApplyNewColor);
@@ -689,9 +732,10 @@ namespace DevProLauncher.Windows
             // ServerColorBtn
             // 
             this.ServerColorBtn.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.ServerColorBtn.Location = new System.Drawing.Point(129, 178);
+            this.ServerColorBtn.Location = new System.Drawing.Point(176, 221);
+            this.ServerColorBtn.Margin = new System.Windows.Forms.Padding(4);
             this.ServerColorBtn.Name = "ServerColorBtn";
-            this.ServerColorBtn.Size = new System.Drawing.Size(24, 19);
+            this.ServerColorBtn.Size = new System.Drawing.Size(33, 23);
             this.ServerColorBtn.TabIndex = 34;
             this.ServerColorBtn.UseVisualStyleBackColor = true;
             this.ServerColorBtn.Click += new System.EventHandler(this.ApplyNewColor);
@@ -699,9 +743,10 @@ namespace DevProLauncher.Windows
             // NormalUserColorBtn
             // 
             this.NormalUserColorBtn.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.NormalUserColorBtn.Location = new System.Drawing.Point(129, 153);
+            this.NormalUserColorBtn.Location = new System.Drawing.Point(176, 190);
+            this.NormalUserColorBtn.Margin = new System.Windows.Forms.Padding(4);
             this.NormalUserColorBtn.Name = "NormalUserColorBtn";
-            this.NormalUserColorBtn.Size = new System.Drawing.Size(24, 19);
+            this.NormalUserColorBtn.Size = new System.Drawing.Size(33, 23);
             this.NormalUserColorBtn.TabIndex = 33;
             this.NormalUserColorBtn.UseVisualStyleBackColor = true;
             this.NormalUserColorBtn.Click += new System.EventHandler(this.ApplyNewColor);
@@ -709,27 +754,32 @@ namespace DevProLauncher.Windows
             // Level1ColorBtn
             // 
             this.Level1ColorBtn.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.Level1ColorBtn.Location = new System.Drawing.Point(129, 128);
+            this.Level1ColorBtn.Location = new System.Drawing.Point(176, 159);
+            this.Level1ColorBtn.Margin = new System.Windows.Forms.Padding(4);
             this.Level1ColorBtn.Name = "Level1ColorBtn";
-            this.Level1ColorBtn.Size = new System.Drawing.Size(24, 19);
+            this.Level1ColorBtn.Size = new System.Drawing.Size(33, 23);
             this.Level1ColorBtn.TabIndex = 32;
             this.Level1ColorBtn.UseVisualStyleBackColor = true;
             this.Level1ColorBtn.Click += new System.EventHandler(this.ApplyNewColor);
             // 
             // Level2ColorBtn
             // 
-            this.Level2ColorBtn.Location = new System.Drawing.Point(129, 303);
+            this.Level2ColorBtn.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.Level2ColorBtn.Location = new System.Drawing.Point(176, 376);
+            this.Level2ColorBtn.Margin = new System.Windows.Forms.Padding(4);
             this.Level2ColorBtn.Name = "Level2ColorBtn";
-            this.Level2ColorBtn.Size = new System.Drawing.Size(24, 19);
+            this.Level2ColorBtn.Size = new System.Drawing.Size(33, 23);
             this.Level2ColorBtn.TabIndex = 50;
             this.Level2ColorBtn.UseVisualStyleBackColor = true;
             this.Level2ColorBtn.Click += new System.EventHandler(this.ApplyNewColor);
             // 
             // Level3ColorBtn
             // 
-            this.Level3ColorBtn.Location = new System.Drawing.Point(129, 103);
+            this.Level3ColorBtn.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.Level3ColorBtn.Location = new System.Drawing.Point(176, 128);
+            this.Level3ColorBtn.Margin = new System.Windows.Forms.Padding(4);
             this.Level3ColorBtn.Name = "Level3ColorBtn";
-            this.Level3ColorBtn.Size = new System.Drawing.Size(24, 19);
+            this.Level3ColorBtn.Size = new System.Drawing.Size(33, 23);
             this.Level3ColorBtn.TabIndex = 39;
             this.Level3ColorBtn.UseVisualStyleBackColor = true;
             this.Level3ColorBtn.Click += new System.EventHandler(this.ApplyNewColor);
@@ -737,9 +787,10 @@ namespace DevProLauncher.Windows
             // Level4ColorBtn
             // 
             this.Level4ColorBtn.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.Level4ColorBtn.Location = new System.Drawing.Point(129, 78);
+            this.Level4ColorBtn.Location = new System.Drawing.Point(176, 97);
+            this.Level4ColorBtn.Margin = new System.Windows.Forms.Padding(4);
             this.Level4ColorBtn.Name = "Level4ColorBtn";
-            this.Level4ColorBtn.Size = new System.Drawing.Size(24, 19);
+            this.Level4ColorBtn.Size = new System.Drawing.Size(33, 23);
             this.Level4ColorBtn.TabIndex = 40;
             this.Level4ColorBtn.UseVisualStyleBackColor = true;
             this.Level4ColorBtn.Click += new System.EventHandler(this.ApplyNewColor);
@@ -747,9 +798,10 @@ namespace DevProLauncher.Windows
             // BotColorBtn
             // 
             this.BotColorBtn.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.BotColorBtn.Location = new System.Drawing.Point(129, 53);
+            this.BotColorBtn.Location = new System.Drawing.Point(176, 66);
+            this.BotColorBtn.Margin = new System.Windows.Forms.Padding(4);
             this.BotColorBtn.Name = "BotColorBtn";
-            this.BotColorBtn.Size = new System.Drawing.Size(24, 19);
+            this.BotColorBtn.Size = new System.Drawing.Size(33, 23);
             this.BotColorBtn.TabIndex = 30;
             this.BotColorBtn.UseVisualStyleBackColor = true;
             this.BotColorBtn.Click += new System.EventHandler(this.ApplyNewColor);
@@ -757,9 +809,10 @@ namespace DevProLauncher.Windows
             // NormalTextColorBtn
             // 
             this.NormalTextColorBtn.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.NormalTextColorBtn.Location = new System.Drawing.Point(129, 28);
+            this.NormalTextColorBtn.Location = new System.Drawing.Point(176, 35);
+            this.NormalTextColorBtn.Margin = new System.Windows.Forms.Padding(4);
             this.NormalTextColorBtn.Name = "NormalTextColorBtn";
-            this.NormalTextColorBtn.Size = new System.Drawing.Size(24, 19);
+            this.NormalTextColorBtn.Size = new System.Drawing.Size(33, 23);
             this.NormalTextColorBtn.TabIndex = 29;
             this.NormalTextColorBtn.UseVisualStyleBackColor = true;
             this.NormalTextColorBtn.Click += new System.EventHandler(this.ApplyNewColor);
@@ -767,9 +820,10 @@ namespace DevProLauncher.Windows
             // label8
             // 
             this.label8.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label8.Location = new System.Drawing.Point(3, 200);
+            this.label8.Location = new System.Drawing.Point(4, 248);
+            this.label8.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(120, 25);
+            this.label8.Size = new System.Drawing.Size(164, 31);
             this.label8.TabIndex = 20;
             this.label8.Text = "/Me Message";
             this.label8.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -777,9 +831,10 @@ namespace DevProLauncher.Windows
             // label7
             // 
             this.label7.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label7.Location = new System.Drawing.Point(3, 175);
+            this.label7.Location = new System.Drawing.Point(4, 217);
+            this.label7.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(120, 25);
+            this.label7.Size = new System.Drawing.Size(164, 31);
             this.label7.TabIndex = 18;
             this.label7.Text = "Server Message";
             this.label7.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -787,9 +842,10 @@ namespace DevProLauncher.Windows
             // label4
             // 
             this.label4.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label4.Location = new System.Drawing.Point(3, 150);
+            this.label4.Location = new System.Drawing.Point(4, 186);
+            this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(120, 25);
+            this.label4.Size = new System.Drawing.Size(164, 31);
             this.label4.TabIndex = 17;
             this.label4.Text = "Normal Username";
             this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -797,9 +853,10 @@ namespace DevProLauncher.Windows
             // label9
             // 
             this.label9.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label9.Location = new System.Drawing.Point(3, 125);
+            this.label9.Location = new System.Drawing.Point(4, 155);
+            this.label9.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(120, 25);
+            this.label9.Size = new System.Drawing.Size(164, 31);
             this.label9.TabIndex = 16;
             this.label9.Text = "Helper";
             this.label9.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -807,9 +864,10 @@ namespace DevProLauncher.Windows
             // label11
             // 
             this.label11.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label11.Location = new System.Drawing.Point(3, 50);
+            this.label11.Location = new System.Drawing.Point(4, 62);
+            this.label11.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(120, 25);
+            this.label11.Size = new System.Drawing.Size(164, 31);
             this.label11.TabIndex = 14;
             this.label11.Text = "Bot";
             this.label11.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -817,9 +875,10 @@ namespace DevProLauncher.Windows
             // label12
             // 
             this.label12.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label12.Location = new System.Drawing.Point(3, 25);
+            this.label12.Location = new System.Drawing.Point(4, 31);
+            this.label12.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(120, 25);
+            this.label12.Size = new System.Drawing.Size(164, 31);
             this.label12.TabIndex = 13;
             this.label12.Text = "Normal Text";
             this.label12.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -827,9 +886,10 @@ namespace DevProLauncher.Windows
             // label13
             // 
             this.label13.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label13.Location = new System.Drawing.Point(3, 0);
+            this.label13.Location = new System.Drawing.Point(4, 0);
+            this.label13.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(120, 25);
+            this.label13.Size = new System.Drawing.Size(164, 31);
             this.label13.TabIndex = 12;
             this.label13.Text = "Chat Background";
             this.label13.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -837,9 +897,10 @@ namespace DevProLauncher.Windows
             // label14
             // 
             this.label14.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label14.Location = new System.Drawing.Point(3, 225);
+            this.label14.Location = new System.Drawing.Point(4, 279);
+            this.label14.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(120, 25);
+            this.label14.Size = new System.Drawing.Size(164, 31);
             this.label14.TabIndex = 22;
             this.label14.Text = "Join";
             this.label14.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -847,9 +908,10 @@ namespace DevProLauncher.Windows
             // label15
             // 
             this.label15.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label15.Location = new System.Drawing.Point(3, 250);
+            this.label15.Location = new System.Drawing.Point(4, 310);
+            this.label15.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(120, 25);
+            this.label15.Size = new System.Drawing.Size(164, 31);
             this.label15.TabIndex = 23;
             this.label15.Text = "Leave";
             this.label15.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -857,9 +919,10 @@ namespace DevProLauncher.Windows
             // label16
             // 
             this.label16.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label16.Location = new System.Drawing.Point(3, 275);
+            this.label16.Location = new System.Drawing.Point(4, 341);
+            this.label16.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(120, 25);
+            this.label16.Size = new System.Drawing.Size(164, 31);
             this.label16.TabIndex = 26;
             this.label16.Text = "System";
             this.label16.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -867,9 +930,10 @@ namespace DevProLauncher.Windows
             // BackgroundColorBtn
             // 
             this.BackgroundColorBtn.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.BackgroundColorBtn.Location = new System.Drawing.Point(129, 3);
+            this.BackgroundColorBtn.Location = new System.Drawing.Point(176, 4);
+            this.BackgroundColorBtn.Margin = new System.Windows.Forms.Padding(4);
             this.BackgroundColorBtn.Name = "BackgroundColorBtn";
-            this.BackgroundColorBtn.Size = new System.Drawing.Size(24, 19);
+            this.BackgroundColorBtn.Size = new System.Drawing.Size(33, 23);
             this.BackgroundColorBtn.TabIndex = 27;
             this.BackgroundColorBtn.UseVisualStyleBackColor = true;
             this.BackgroundColorBtn.Click += new System.EventHandler(this.ApplyNewColor);
@@ -878,9 +942,10 @@ namespace DevProLauncher.Windows
             // 
             this.label3.AutoSize = true;
             this.label3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label3.Location = new System.Drawing.Point(3, 100);
+            this.label3.Location = new System.Drawing.Point(4, 124);
+            this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(120, 25);
+            this.label3.Size = new System.Drawing.Size(164, 31);
             this.label3.TabIndex = 41;
             this.label3.Text = "Mod";
             this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -888,9 +953,10 @@ namespace DevProLauncher.Windows
             // label5
             // 
             this.label5.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label5.Location = new System.Drawing.Point(3, 75);
+            this.label5.Location = new System.Drawing.Point(4, 93);
+            this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(120, 25);
+            this.label5.Size = new System.Drawing.Size(164, 31);
             this.label5.TabIndex = 42;
             this.label5.Text = "SMod";
             this.label5.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -899,9 +965,10 @@ namespace DevProLauncher.Windows
             // 
             this.label6.AutoSize = true;
             this.label6.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label6.Location = new System.Drawing.Point(3, 300);
+            this.label6.Location = new System.Drawing.Point(4, 372);
+            this.label6.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(120, 25);
+            this.label6.Size = new System.Drawing.Size(164, 31);
             this.label6.TabIndex = 43;
             this.label6.Text = "TD";
             this.label6.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -910,9 +977,11 @@ namespace DevProLauncher.Windows
             // 
             this.groupBox1.Controls.Add(this.tableLayoutPanel7);
             this.groupBox1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.groupBox1.Location = new System.Drawing.Point(3, 201);
+            this.groupBox1.Location = new System.Drawing.Point(4, 248);
+            this.groupBox1.Margin = new System.Windows.Forms.Padding(4);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(189, 93);
+            this.groupBox1.Padding = new System.Windows.Forms.Padding(4);
+            this.groupBox1.Size = new System.Drawing.Size(255, 114);
             this.groupBox1.TabIndex = 4;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Font Settings";
@@ -925,22 +994,24 @@ namespace DevProLauncher.Windows
             this.tableLayoutPanel7.Controls.Add(this.FontList, 0, 1);
             this.tableLayoutPanel7.Controls.Add(this.tableLayoutPanel8, 0, 2);
             this.tableLayoutPanel7.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel7.Location = new System.Drawing.Point(3, 16);
+            this.tableLayoutPanel7.Location = new System.Drawing.Point(4, 19);
+            this.tableLayoutPanel7.Margin = new System.Windows.Forms.Padding(4);
             this.tableLayoutPanel7.Name = "tableLayoutPanel7";
             this.tableLayoutPanel7.RowCount = 3;
             this.tableLayoutPanel7.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 36.58537F));
             this.tableLayoutPanel7.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 63.41463F));
-            this.tableLayoutPanel7.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 32F));
-            this.tableLayoutPanel7.Size = new System.Drawing.Size(183, 74);
+            this.tableLayoutPanel7.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 39F));
+            this.tableLayoutPanel7.Size = new System.Drawing.Size(247, 91);
             this.tableLayoutPanel7.TabIndex = 0;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
             this.label1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label1.Location = new System.Drawing.Point(3, 0);
+            this.label1.Location = new System.Drawing.Point(4, 0);
+            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(177, 15);
+            this.label1.Size = new System.Drawing.Size(239, 19);
             this.label1.TabIndex = 1;
             this.label1.Text = "Font";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -950,9 +1021,10 @@ namespace DevProLauncher.Windows
             this.FontList.Dock = System.Windows.Forms.DockStyle.Fill;
             this.FontList.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.FontList.FormattingEnabled = true;
-            this.FontList.Location = new System.Drawing.Point(3, 18);
+            this.FontList.Location = new System.Drawing.Point(4, 23);
+            this.FontList.Margin = new System.Windows.Forms.Padding(4);
             this.FontList.Name = "FontList";
-            this.FontList.Size = new System.Drawing.Size(177, 21);
+            this.FontList.Size = new System.Drawing.Size(239, 24);
             this.FontList.TabIndex = 0;
             // 
             // tableLayoutPanel8
@@ -962,20 +1034,22 @@ namespace DevProLauncher.Windows
             this.tableLayoutPanel8.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel8.Controls.Add(this.label2, 0, 0);
             this.tableLayoutPanel8.Controls.Add(this.FontSize, 1, 0);
-            this.tableLayoutPanel8.Location = new System.Drawing.Point(3, 44);
+            this.tableLayoutPanel8.Location = new System.Drawing.Point(4, 55);
+            this.tableLayoutPanel8.Margin = new System.Windows.Forms.Padding(4);
             this.tableLayoutPanel8.Name = "tableLayoutPanel8";
             this.tableLayoutPanel8.RowCount = 1;
             this.tableLayoutPanel8.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel8.Size = new System.Drawing.Size(149, 27);
+            this.tableLayoutPanel8.Size = new System.Drawing.Size(199, 32);
             this.tableLayoutPanel8.TabIndex = 4;
             // 
             // label2
             // 
             this.label2.AutoSize = true;
             this.label2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label2.Location = new System.Drawing.Point(3, 0);
+            this.label2.Location = new System.Drawing.Point(4, 0);
+            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(68, 27);
+            this.label2.Size = new System.Drawing.Size(91, 32);
             this.label2.TabIndex = 4;
             this.label2.Text = "Font Size";
             this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -984,14 +1058,15 @@ namespace DevProLauncher.Windows
             // 
             this.FontSize.DecimalPlaces = 2;
             this.FontSize.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.FontSize.Location = new System.Drawing.Point(77, 3);
+            this.FontSize.Location = new System.Drawing.Point(103, 4);
+            this.FontSize.Margin = new System.Windows.Forms.Padding(4);
             this.FontSize.Minimum = new decimal(new int[] {
             1,
             0,
             0,
             0});
             this.FontSize.Name = "FontSize";
-            this.FontSize.Size = new System.Drawing.Size(69, 20);
+            this.FontSize.Size = new System.Drawing.Size(92, 22);
             this.FontSize.TabIndex = 3;
             this.FontSize.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.FontSize.Value = new decimal(new int[] {
@@ -1005,11 +1080,12 @@ namespace DevProLauncher.Windows
             this.tableLayoutPanel6.ColumnCount = 1;
             this.tableLayoutPanel6.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel6.Controls.Add(this.UserSearch, 0, 0);
-            this.tableLayoutPanel6.Location = new System.Drawing.Point(3, 495);
+            this.tableLayoutPanel6.Location = new System.Drawing.Point(4, 609);
+            this.tableLayoutPanel6.Margin = new System.Windows.Forms.Padding(4);
             this.tableLayoutPanel6.Name = "tableLayoutPanel6";
             this.tableLayoutPanel6.RowCount = 1;
             this.tableLayoutPanel6.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel6.Size = new System.Drawing.Size(209, 24);
+            this.tableLayoutPanel6.Size = new System.Drawing.Size(279, 30);
             this.tableLayoutPanel6.TabIndex = 2;
             // 
             // UserSearch
@@ -1017,20 +1093,22 @@ namespace DevProLauncher.Windows
             this.UserSearch.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.UserSearch.Dock = System.Windows.Forms.DockStyle.Fill;
             this.UserSearch.ForeColor = System.Drawing.SystemColors.WindowFrame;
-            this.UserSearch.Location = new System.Drawing.Point(3, 3);
+            this.UserSearch.Location = new System.Drawing.Point(4, 4);
+            this.UserSearch.Margin = new System.Windows.Forms.Padding(4);
             this.UserSearch.Name = "UserSearch";
-            this.UserSearch.Size = new System.Drawing.Size(203, 20);
+            this.UserSearch.Size = new System.Drawing.Size(271, 22);
             this.UserSearch.TabIndex = 1;
             this.UserSearch.Text = "Search";
             this.UserSearch.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // ChatFrm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(923, 531);
+            this.ClientSize = new System.Drawing.Size(1231, 654);
             this.Controls.Add(this.tableLayoutPanel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "ChatFrm";
             this.Text = "NewChat_frm";
             this.tableLayoutPanel1.ResumeLayout(false);

@@ -59,7 +59,7 @@ namespace DevProLauncher.Windows
             DeckBtn.Text = info.MainDeckBtn;
             ReplaysBtn.Text = info.MainReplaysBtn;
             OfflineBtn.Text = info.MainOfflineBtn;
-            forumBtn.Text = "Site";
+            forumBtn.Text = "Discord";
             siteBtn.Text = info.MainSiteBtn;
             MessageLabel.Text = info.MainServerMessage;
         }
@@ -176,7 +176,7 @@ namespace DevProLauncher.Windows
 
         private void Bugtracker_Click(object sender, EventArgs e)
         {
-            Process.Start("http://www.ygodevpro.com/");
+            Process.Start("https://discord.gg/jVRNrcp");
         }
 
         private void DeckBtn_Click(object sender, EventArgs e)

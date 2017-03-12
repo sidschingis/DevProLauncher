@@ -16,7 +16,7 @@ namespace DevProLauncher
 {
     internal static class Program
     {
-        public const string Version = "210570";
+        public const string Version = "210710";
         public static Configuration Config;
         public static LanguageManager LanguageManager;
         public static ChatClient ChatServer;
@@ -162,7 +162,7 @@ namespace DevProLauncher
             {
                 if (MessageBox.Show(LanguageManager.Translation.pMsbOldVers,
 "Update DevPro", MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation) == DialogResult.Yes)
-                { Process.Start("https://en.ygodevpro.com/"); };
+                { Process.Start("http://www.ygodevpro.com/"); };
             }
 
             if (!result.StartsWith("KO"))
